@@ -13,8 +13,44 @@
 </head>
 <body>
 <div id="target">Loading...</div>
+<script id="name-template" type="x-tmpl-mustache">
+	{{#1.I}}The World of Traveling{{/1.I}}
+	{{#2.I}}The World of Restless{{/2.I}}
+	{{#3.I}}The World of Individual{{/3.I}}
+	{{#4.I}}The World of Combative{{/4.I}}
+	{{#5.I}}The World of Exploring{{/5.I}}
+	{{#6.I}}The World of Networking{{/6.I}}
+	{{#7.I}}The World of the Mightiest{{/7.I}}
+	{{#8.I}}The World of Productive{{/8.I}}
+	{{#9.I}}A World of Publicly Owned{{/9.I}}
+
+	{{#1.II}}Traders{{/1.II}}
+	{{#2.II}}Pioneers{{/2.II}}
+	{{#3.II}}Industrialists{{/3.II}}
+	{{#4.II}}Generals{{/4.II}}
+	{{#5.II}}Explorers{{/5.II}}
+	{{#6.II}}Road Builders{{/6.II}}
+	{{#7.II}}Big Landowners{{/7.II}}
+	{{#8.II}}Businessmen{{/8.II}}
+	{{#9.II}}Stock Companies{{/9.II}}
+
+	{{#1.III}}on Journeys.{{/1.III}}
+	{{#2.III}}pressed for time.{{/2.III}}
+	{{#3.III}}with a Bias to Individualism.{{/3.III}}
+	{{#4.III}}with Potential for Violence.{{/4.III}}
+	{{#5.III}}on the Way to the Unknown.{{/5.III}}
+	{{#6.III}}with Connections.{{/6.III}}
+	{{#7.III}}Craving for Recognition.{{/7.III}}
+	{{#8.III}}with Production Needs.{{/8.III}}
+	{{#9.III}}by External Financing.{{/9.III}}
+</script>
 <script id="template" type="x-tmpl-mustache">
 	<div class="container">
+	<div class="row name">
+		<div class="col-md-12 col-xs-12">
+			<h1>World {{world.0}}{{world.1}}{{world.2}}: {{long_name}}</h1>
+		</div>
+	</div>
 	<div class="row top">
 		<div class="col-md-2 col-xs-2">
 			<div class="heading"><h2>Map {{map.value}}</h2></div>
@@ -107,6 +143,9 @@
 				{{/8}}
 				{{^8}}<p>Place 1 barrack and 1 militia on all free cities, which are not chosen as capitals.</p>{{/8}}
 			{{/4}}
+			{{#5}}
+				<p>Place all map tiles in separate stacks in a row as follows: city, water, grassland, forest, field, mountain and desert.</p>
+			{{/5}}
 		</div>
 	</div>
 	{{#capture}}
@@ -225,6 +264,18 @@
 				</div>
 			{{/4.III}}
 		{{/4}}
+		{{#5}}
+			<div class="note col-md-3 col-xs-4">
+				<h2>Example Exploring:</h2>
+				<img src="exploring-example.png" style="width: 100%">
+			</div>
+			{{#5.II}}
+				<div class="note col-md-3 col-xs-4">
+					<h2>Example Income:</h2>
+					<p>During the first few rounds Rachel explored 8 tiles and placed settlements first onto 6 tiles. Thus, she gets an income of $90 = $20 (base income for the capital) + $40 (8 explored tiles) + $30 (6 first settlements).</p>
+				</div>
+			{{/5.II}}
+		{{/5}}
 	</div>
 	</div>
 	<div class="container">
@@ -326,6 +377,36 @@
 				{{#9}}<p>If the attacking stock company conquers an opposing capital by immediately moving 1 additional active resident onto the neutralized city, it also conquers all other tiles of the defender by exchanging the armies with its own. If the attacker only neutralizes the capital, the defender loses all of his tiles without the attacker conquering them. Afterwards the players lose all shares of the defeated stock company without substituion. The stock company starts anew and may be established again by the players in the next share round (SR).{{#1.1}} Place all delivered goods of that company separately next to the map, as they still count for the game end!{{/1.1}}</p>{{/9}}
 			{{/4.III}}
 		{{/4}}
+		{{#5.I}}<p>The player may explore and adjacent unknown space with 1 active resident. He places that resident back into his storage (except if it explores water, instead it is placed exhausted on the starting tile).</p>{{/5.I}}
+		{{#5.II}}
+			{{#2}}<p>The player may explore any number of adjacent unknown spaces with 1 active resident. He places that resident back into his storage (excpet if it explores only water, instead it is placed exhausted on the starting tile).</p>{{/2}}
+			{{^2}}{{#4}}<p>The player may explore and adjacent unknown space with 1 active resident. He places that resident back into his storage (except if it explores water, instead it is placed exhausted on the starting tile).</p>{{/4}}{{/2}}
+			{{^2}}{{^4}}<p>The player may explore an adjacent unknown space with 1 active resident. Afterwards the resident is exhausted on the starting tile.</p>{{/4}}{{/2}}
+		{{/5.II}}
+		{{#5.III}}<p>The player may explore any number of adjacent unknown spaces with 1 active resident. He places that resident back into his storage (except if it explores only water, instead it is placed exhauted on the starting tile).</p>{{/5.III}}
+		{{#5}}
+			<p><b>Exploring:</b> After choosing the destination space, the player places the explorer tiles next to the following stacks, until he placed all 6 tiles.</p>
+			<ol>
+				<li><b>City:</b> # of explorer tiles = # of tiles between the destination space and the closest city (Across existing land tiles). New cities are never located adjacent to other cities!</li>
+				<li><b>Water:</b> # of explorer tiles = # of tiles between the destination space and the central city (across linear distance, even across water or empty spaces). New water tiles are never located adjacent to other water tiles!</li>
+				<li><b>Land tiles:</b> 1 explorer tile next to each stack, in the following order: grassland, forest field, mountain, desert.</li>
+				<li><b>Remaining explorer tiles:</b> 1 additional explorer tile next to each stack, which already received 1 or more explorer tiles, in the following order: city, water, grassland, forest, field, mountain desert, if necessary repeatedly.</li>
+			</ol>
+			<p>Afterwards the player rolls 1 die and places the corresponding map tile on the destination space. See the example <b>Exploring</b>.</p>
+			{{#mapnum.1}}<p>The players may only explore in a distance of 4 spaces around the central city. Thus, following the adjacency rules above the players will not always explore all cities or water tiles.</p>{{/mapnum.1}}
+			{{#5.I}}
+				<p>The player immediately gets 1 victory point (VP) for each explored tile, including water. Then, place a stack of 2 "1 VP" tokens on each explored land tile and a stack of 4 "1 VP" tokens on each explored city.</p>
+				<p>During the game the player gets additional victory points (VP) by taking them from the appropriate tiles:</p>
+				<ol>
+					<li>The player gets 1 VP for placing the collectively 1st settlement on the tile.</li>
+					<li>The player gets the last VP from a land tile only, if he exhausts 1 resident for the action harvest on the corresponding tile (On cities the player needs to do this for each of the last three VP tokens). The player does not get this VP, if he exhausts his resident for another action that tile.</li>
+				</ol>
+			{{/5.I}}
+			{{#5.II}}
+				{{#3.I}}<p>The player may move any number of his active residents from adjacent tiles onto the just explored tile without exhausting them in this way.</p>{{/3.I}}
+				{{#4.I}}<p>Depending on the terrain the player discovers or receives the following. <span class="desert icon"></span> empty, <span class="grass icon"></span> & <span class="forest icon"></span> 1 own settlement, <span class="grain icon"></span> 1 own settlement + 1 own exhausted resident, <span class="mountain icon"></span> 1 militia. For defeating this militia once-only $20. <span class="city icon"> 1 barrack and 1 militia. The player does not get income tokens for discovered settlements!</p>{{/4.I}}
+			{{/5.II}}
+		{{/5}}
 	{{/capture}}
 	{{#hascapture}}
 		<div class="row section">
@@ -366,6 +447,10 @@
 		{{#3}}{{^3.III}}{{^residents}}
 			<p>The player may place 1 settlement on a city, when he moves there with his transport trolley (This is a voluntary action. Because of the limited number of his settlements the player may pass on this action!).</p>
 		{{/residents}}{{/3.III}}{{/3}}
+		{{#5}}{{^residents}}<p>
+			{{^5.I}}The transport trolley may explore new tiles. It must move onto the newly explored tile for 1 movement point (MP), it only needs 2 MP for moving onto each mountain. If the player explores 1 water tile, he needs 1 MP but the transport trolley must remain on the starting tile. If the player explores 1 mountain tile with his last MP, the transport trolley must remain on the starting tile, too.{{/5.I}}
+			{{#5.II}}The player may place 1 settlement on a tile, when he arrives there with his transport trolley, see <b>Income</b> (This is a voluntary action. Because of the limited number of his settlements the player may pass on this action!).{{/5.II}}
+		</p>{{/residents}}{{/5}}
 	{{/capture}}
 	{{#hascapture}}
 		<div class="row section">
@@ -428,6 +513,12 @@
 				<tr><th>bonus income</th><td>$0</td><td>$5</td><td>$10</td><td>$20</td><td>$30</td></tr>
 			</table>
 		{{/4.II}}
+		{{#5.II}}
+			<p>The player gets $20 base income for the capital, plus $5 for each tile he explored (including water) plus $5 for each settlement, which the player placed first on a tile. For a better overview the player places 1 income token for each explored tile and settlement in front of himself, see the example <b>Income</b>.</p>
+			{{#2}}<p>If the player removes his settlement and then the tile is completely empty, the next player placing a new first settlement on that tile also takes 1 income token.</p>{{/2}}
+			{{^2}}{{#4}}<p>If the player removes his settlement and then the tile is completely empty, the next player placing a new first settlement on that tile also takes 1 income token.</p>{{/4}}{{/2}}
+			{{^2}}{{^4}}{{#7.I}}<p>If the player removes his settlement and then the tile is completely empty, the next player placing a new first settlement on that tile also takes 1 income token.</p>{{/7.I}}{{/4}}{{/2}}
+		{{/5.II}}
 
 		{{#3.I}}
 			<p>The players place their income for now to one side, until they paid taxes in the next Phase 1.</p>
@@ -489,6 +580,9 @@
 					{{#2}}<li>In <b>Phase 3 D</b> neutralizes or conquers the last capital of another player.</li>{{/2}}
 				</ol>
 			{{/4.I}}
+			{{#5.I}}
+				<p>The game ends at the end of the round, if only 7 or less map tiles are still unexplored.</p>
+			{{/5.I}}
 		</div>
 	</div>
 
@@ -510,6 +604,10 @@
 			<p>The players get the following victory points (VP): 3 VP for each own land tile, 5 VP for each own city.</p>
 			<p>The player with the most VP wins the game! In case of a tie, the tied player with more armies on the map wins the game.</p>
 		{{/4.I}}
+		{{#5.I}}
+			<p>The players score victory points (VP) during the game for exploring, settling and activating tiles.</p>
+			<p>The player with the most VP wins the game! In case of a tie, the tied player with the most residents (not settlements) on the map wins the game.</p>
+		{{/5.I}}
 	{{/capture}}
 	{{#hascapture}}
 		<div class="row section">
@@ -568,6 +666,7 @@
 
 	var module_defs = {
 		'1': {
+			'name': 'Pick up & Deliver',
 			'I': {
 				'residents': false,
 				'map': {'priority': 3, 'value': 3},
@@ -618,6 +717,7 @@
 			},
 		},
 		'2': {
+			'name': 'Race',
 			'I': {
 				'residents': false,
 				'map': {'priority': 4, 'value': 5},
@@ -676,6 +776,7 @@
 			},
 		},
 		'3': {
+			'name': 'Privileges',
 			'I': {
 				'residents': false,
 				'map': {'priority': 4, 'value': 5},
@@ -699,6 +800,7 @@
 			},
 		},
 		'4': {
+			'name': 'Military',
 			'I': {
 				'residents': true,
 				'map': {'priority': 2, 'value': 2},
@@ -722,6 +824,7 @@
 			},
 		},
 		'5': {
+			'name': 'Exploring',
 			'I': {
 				'residents': true,
 				'map': {'priority': 1, 'func': explorer_map},
@@ -745,6 +848,7 @@
 			},
 		},
 		'6': {
+			'name': 'Roads',
 			'I': {
 				'residents': true,
 				'map': {'priority': 4, 'value': 5},
@@ -768,6 +872,7 @@
 			},
 		},
 		'7': {
+			'name': 'Majorities',
 			'I': {
 				'residents': true,
 				'map': {'priority': 4, 'value': 5},
@@ -791,6 +896,7 @@
 			},
 		},
 		'8': {
+			'name': 'Production',
 			'I': {
 				'residents': true,
 				'map': {'priority': 4, 'value': 5},
@@ -819,6 +925,7 @@
 			},
 		},
 		'9': {
+			'name': 'Shares',
 			'I': {
 				'residents': false,
 				'map': {'priority': 9, 'value': 0},
@@ -894,12 +1001,14 @@
 			'residents': modules['I']['residents'] || modules['II']['residents'] || modules['III']['residents'],
 			'hurry': world.indexOf('2') != -1 || world.indexOf('8') != -1,
 			'map': priority_match([modules['I']['map'], modules['II']['map'], modules['III']['map']]),
+			'mapnum': {},
 			'order': priority_match([modules['I']['order'], modules['II']['order'], modules['III']['order']]),
 			'money': priority_match([modules['I']['money'], modules['II']['money'], modules['III']['money']]),
 		};
 		params[world[0]] = {'I': true};
 		params[world[1]] = {'II': true};
 		params[world[2]] = {'III': true};
+		params['mapnum'][params.map.value] = true;
 
 		// Run pre-render hooks and assemble the list of parts
 		var game_parts = {};
@@ -926,6 +1035,8 @@
 			return a['id'] - b['id'];
 		});
 		params['parts'] = part_list;
+
+		params['long_name'] = Mustache.render($('#name-template').html(), params);
 
 		var rendered = Mustache.render(template, params);
 		$("#target").html(rendered);

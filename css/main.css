@@ -9,6 +9,9 @@
 
 	.container {
 		page-break-after: always;
+	}
+
+	.row {
 		page-break-inside: avoid;
 	}
 }
@@ -20,6 +23,10 @@
 
 p {
 	margin-bottom: 5px;
+}
+
+p:last-child {
+	margin-bottom: 0;
 }
 
 .dice {
@@ -107,6 +114,17 @@ table th {
 	font-size: 1.1em;
 	font-weight: bold;
 	margin: 0;
+}
+
+.name h1 {
+	font-size: 1.5em;
+	font-weight: bold;
+	margin: 1em 0;
+}
+
+.name .col-md-12, .name .col-xs-12 {
+	background-color: black;
+	color: white;
 }
 
 .top .col-md-2, .top .col-md-3, .top .col-xs-2, .top .col-xs-3 {
