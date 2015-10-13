@@ -5,126 +5,10 @@
   	<script src="js/jquery-1.11.3.min.js"></script>
   	<script src="js/mustache.min.js"></script>
   	<script src="js/bootstrap.min.js"></script>
-  	<link rel="stylesheet" href="css/bootstrap.min.css">
+  	<link rel="stylesheet" href="css/bootstrap.css">
   	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+  	<link rel="stylesheet" href="css/main.css" media="all">
   	<style type="text/css">
-  		ul.parts {
-  			padding-left: 0;
-  		}
-  		ul.parts li {
-  			display: inline;
-  			list-style-type: none;
-  		}
-
-  		ul.parts li:after {
-  			content: ", ";
-  		}
-
-  		ul.parts li:last-child:after {
-  			content: "";
-  		}
-
-  		ul.parts span {
-	  		width: 1.5em;
-	  		height: 1.5em;
-	  		font-size: 0.8em;
-	  		padding: 1px;
-	  		margin-right: 0.2em;
-	  		display: inline-block;
-	  		line-height: 100%;
-	  		-moz-border-radius: 50%;
-	  		border-radius: 50%;
-	  		border: 1px solid black;
-	  		text-align: center;
-	  	}
-
-	  	.example img {
-	  		width: 300px;
-	  	}
-
-	  	table {
-	  		border-collapse: collapse;
-	  	}
-
-	  	table td, table th {
-	  		text-align: center;
-	  		border: 1px solid black;
-	  		padding: 0.2em;
-	  	}
-
-	  	table th {
-	  		font-weight: bold;
-	  	}
-
-	  	.icon {
-	  		display: inline-block;
-	  		line-height: 100%;
-	  		width: 1em;
-	  		height: 1em;
-	  		background-size: 1em 1em;
-	  	}
-
-	  	.bigicon {
-	  		display: inline-block;
-	  		line-height: 100%;
-	  		width: 2em;
-	  		height: 2em;
-	  		background-size: 2em 2em;
-	  		vertical-align: middle;
-	  	}
-
-	  	.grass { background-image: url('grass-icon.png'); }
-	  	.forest { background-image: url('forest-icon.png'); }
-	  	.grain { background-image: url('grain-icon.png'); }
-	  	.desert { background-image: url('desert-icon.png'); }
-	  	.city { background-image: url('city-icon.png'); }
-	  	.mountain { background-image: url('mountain-icon.png'); }
-	  	.factory { background-image: url('factory-bigicon.png'); }
-
-	  	.top h2 {
-	  		font-size: 1.1em;
-	  		font-weight: bold;
-	  	}
-
-	  	.top .col-md-2 {
-	  		padding-left: 0;
-	  		padding-right: 0;
-	  	}
-
-	  	.top .heading {
-	  		background-color: black;
-	  		color: white;
-	  		height: 4em;
-	  		margin-bottom: 1em;
-	  		border-radius: 0 0 15px 15px;
-	  		padding-left: 15px;
-	  		padding-right: 15px;
-	  	}
-
-	  	.section {
-	  		display: -webkit-box;
-	  		display: -webkit-flex;
-	  		display: -ms-flexbox;
-	  		display: flex;
-	  		margin-bottom: 1em;
-	  	}
-
-	  	.section .col-md-2 {
-	  		background: black;
-	  		border-radius: 0 15px 15px 0;
-	  	}
-
-	  	.section .col-md-2 h1 {
-	  		color: white;
-	  		font-size: 1.1em;
-	  		font-weight: bold;
-	  	}
-
-	  	.section .col-md-10 {
-	  		border: 1px solid black;
-	  		margin-left: -15px;
-	  		padding-left: 30px;
-	  	}
   	</style>
 </head>
 <body>
@@ -132,10 +16,10 @@
 <script id="template" type="x-tmpl-mustache">
 	<div class="container">
 	<div class="row top">
-		<div class="col-md-2">
+		<div class="col-md-2 col-xs-2">
 			<div class="heading"><h2>Map {{map.value}}</h2></div>
 		</div>
-		<div class="col-md-8">
+		<div class="col-md-7 col-xs-7">
 			<div class="heading">
 				{{#order.clockwise}}
 					<h2>Clockwise player order</h2>
@@ -154,7 +38,7 @@
 				{{/order.shares}}
 			</div>
 		</div>
-		<div class="col-md-2">
+		<div class="col-md-3 col-xs-3">
 			<div class="heading">
 				<h2>Starting Money</h2>
 				{{#money.fixed}}<p>Each player gets ${{money.amount}}</p>{{/money.fixed}}
@@ -165,8 +49,8 @@
 		</div>
 	</div>
 	<div class="row section">
-		<div class="col-md-2"><h1>Special game parts</h1></div>
-		<div class="col-md-10">
+		<div class="col-md-2 col-xs-2"><h1>Special game parts</h1></div>
+		<div class="col-md-10 col-xs-10">
 			<ul class="parts">
 				{{#parts}}
 					<li><span>{{id}}</span>{{count}} {{name}}</li>
@@ -175,8 +59,8 @@
 		</div>
 	</div>
 	<div class="row section">
-		<div class="col-md-2"><h1>Game Preparation</h1></div>
-		<div class="col-md-10">
+		<div class="col-md-2 col-xs-2"><h1>Game Preparation</h1></div>
+		<div class="col-md-10 col-xs-10">
 			{{#1}}
 				{{^1.III}}
 					<p>Display cities with their goods side atop. {{^8}}Place 4 goods onto each city, matching the small circular symbol.{{/8}}{{#8}}The cities remain empty.{{/8}}</p>
@@ -210,84 +94,140 @@
 				<p>Shuffle the privileges separated by card backs I, II, III and place them in a single stack, so that the cards with the back I are on top, the cards with the back III are at the bottom.</p>
 				<p>Place the price token next to the map. Draw 1 privilege per player and place them in a face-up row to the right of the price token, so that the minimal bid for each privilege is $20.</p>
 				{{^3.III}}<p>Depending on the # of players place the matching player order cards and 1 resident of each player next to the map.</p>{{/3.III}}
-			{{/3}} 
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-12">
-			{{#1}}
-				<div class="table">
-					<h2>Prices for Upgrades</h2>
-					<table>
-						<tr><th>4, 5, 7 MP</th><td>each {{#1.III}}{{#residents}}$30{{/residents}}{{^residents}}$50{{/residents}}{{/1.III}}{{^1.III}}$50{{/1.III}}</td></tr>
-						<tr><th>2 cargo holds</th><td>$80</td></tr>
-					</table>
-				</div>
-				{{^residents}}
-					<div class="table">
-						<h2>Prices for additional movement points (MP)</h2>
-						<table>
-							<tr><th>Additional MP</th><th>+1</th><th>+2</th><th>+3</th><th>+4</th><th>+5</th></tr>
-							<tr><th>Total costs</th><td>$20</td><td>$50</td><td>$90</td><td>$140</td><td>$200</td></tr>
-						</table>
-					</div>
-				{{/residents}}
-				{{#1.I}}
-					<div class="table">
-						<h2>Final Scoring:</h2>
-						<p>The player gets the following victory points (VP) for each of the five types of goods, dependent on the # of goods he delivered.</p>
-						<table>
-							<tr><th># of delivered goods of a single type</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5+</th></tr>
-							<tr><th>victory points (VP)</th><td>5 VP</td><td>9 VP</td><td>12 VP</td><td>14 VP</td><td>15 VP</td></tr>
-						</table>
-					</div>
-				{{/1.I}}
-			{{/1}}
-			{{#2.I}}
-				<div class="table">
-					<h2>Final Scoring:</h2>
-					<p>The player gets the following victory points (VP) for their residents on X city cards, whereby X equals the # of cities triggering the game end.</p>
-					<table>
-						<tr><th># of city cards with residents</th><th>X - 3 and less</th><th>X - 2</th><th>X - 1</th><th>X</th><th>X + 1 and more</th></tr>
-						<tr><th>victory points (VP)</th><td>22 VP</td><td>26 VP</td><td>32 VP</td><td>40 VP</td><td>50 VP</td></tr>
-					</table>
-					{{^residents}}<p>The player gets 1 additional VP for each movement point of his transport trolley he used to move out of the last reached city.</p>{{/residents}}
-				</div>
-				<div class="example">
-					<img src="example-2-i.png">
-					<p><b>Example Final Scoring:</b> In a game with 3 players Camille triggers the game end, as she placed 8 of her residents on city cards. She gets 40 VP. Paul has only 7 residents on city cards. Thus, Paul gets 32 VP. {{^residents}}Anne moved her transport trolley another 3 MP out of the last reached city. She gets an additional 3 VP.{{/residents}}</p>
-				</div>
-			{{/2.I}}
-			{{#2.II}}
-				<div class="example">
-					<img src="example-2-ii.png">
-					<h2>Example Income:</h2>
-					<p>During his turn Paul placed first settlements on 1 field, 1 forest and city "5", additionally 1 settlement on city "1" where Rachel already has her settlement. He placed 1 resident each on top of both city cards. Now, he gets $90. $20 (base income for his capital) + $20 (1st settlements on field, forest and on city "5") + $50 (for his overall 2nd and 3rd resident on the city cards). Afterwards, he moves both residents to the bottom of the city cards.</p>
-				</div>
-			{{/2.II}}
-			{{#3}}
-				{{^3.III}}
-					<div class="table">
-						<h2>Calculation of taxes:</h2>
-						<p>To simplify this process, the first player pays $2 taxes for each full $10 of this income, the other players except the last pay $1 taxes for each full $10 of their income. The last pays $0 taxes.</p>
-					</div>
-					<div class="example">
-						<h2>Example:</h2>
-						<p>Camille gets an income of $68. Thus, she must pay $12 taxes for the full $60 of her income for being first.</p>
-					</div>
-					<div class="table">
-						<h2>Factory:</h2>
-						<p>The players pay the following prices for building a factory on a city.</p>
-						<table>
-							<tr><th>1st <span class="factory bigicon"></span></th><th>2nd <span class="factory bigicon"></span></th><th>3rd <span class="factory bigicon"></span></th></tr>
-							<tr><td>$20</td><td>$30</td><td>$40</td></tr>
-						</table>
-					</div>
-				{{/3.III}}
 			{{/3}}
+			{{#4}}
+				{{#9}}
+					{{^9.III}}<p>The stock companies may choose any capitals at the edge of the map.</p>{{/9.III}}
+					{{#9.III}}<p>Depending on the # of players, choose the following capitals: 2♟: Capitals are across from each other. 3♟: Capitals are equidistant from each other. 4♟: Both unselected capitals are across from each other.</p>{{/9.III}}
+				{{/9}}
+				{{^9}}<p>Depending on the # of players, choose the following capitals: 2♟: Capitals are across from each other. 3♟: Capitals are equidistant from each other. 4♟: Both unselected capitals are across from each other.</p>{{/9}}
+				{{#8}}
+					{{^8.III}}<p>Place 1 barrack on all free cities. These barracks are considered trading houses.</p>{{/8.III}}
+					{{#8.III}}<p>Place 1 barrack and 1 militia on all free cities, which are not chosen as capitals.</p>{{/8.III}}
+				{{/8}}
+				{{^8}}<p>Place 1 barrack and 1 militia on all free cities, which are not chosen as capitals.</p>{{/8}}
+			{{/4}}
 		</div>
 	</div>
+	{{#capture}}
+		{{#8}}{{#5}}<p>Place 1 barrack and 1 militia on all free cities, which are explored during the game.</p>{{/5}}{{/8}}
+	{{/capture}}
+	{{#hascapture}}
+	<div class="row section">
+		<div class="col-md-2 col-xs-2"><h1>Playing the Game</h1></div>
+		<div class="col-md-10 col-xs-10">{{{captured}}}</div>
+	</div>
+	{{/hascapture}}
+	<div class="row notes">
+		{{#2.II}}
+			<div class="note col-md-4 col-xs-4">
+				<img src="example-2-ii.png" style="width: 100%">
+				<h2>Example Income:</h2>
+				<p>During his turn Paul placed first settlements on 1 field, 1 forest and city "5", additionally 1 settlement on city "1" where Rachel already has her settlement. He placed 1 resident each on top of both city cards. Now, he gets $90. $20 (base income for his capital) + $20 (1st settlements on field, forest and on city "5") + $50 (for his overall 2nd and 3rd resident on the city cards). Afterwards, he moves both residents to the bottom of the city cards.</p>
+			</div>
+		{{/2.II}}
+		{{#3}}
+			{{^3.III}}
+				<div class="note col-md-3 col-xs-4">
+					<h2>Calculation of taxes:</h2>
+					<p>To simplify this process, the first player pays $2 taxes for each full $10 of this income, the other players except the last pay $1 taxes for each full $10 of their income. The last pays $0 taxes.</p>
 
+					<h2>Example:</h2>
+					<p>Camille gets an income of $68. Thus, she must pay $12 taxes for the full $60 of her income for being first.</p>
+				</div>
+				<div class="note col-md-3 col-xs-4">
+					<h2>Factory:</h2>
+					<p>The players pay the following prices for building a factory on a city.</p>
+					<table>
+						<tr><th>1st <span class="factory bigicon"></span></th><th>2nd <span class="factory bigicon"></span></th><th>3rd <span class="factory bigicon"></span></th></tr>
+						<tr><td>$20</td><td>$30</td><td>$40</td></tr>
+					</table>
+				</div>
+			{{/3.III}}
+		{{/3}}
+		{{#1}}
+			<div class="note col-md-2 col-xs-3">
+				<h2>Prices for Upgrades</h2>
+				<table>
+					<tr><th>4, 5, 7 MP</th><td>each {{#1.III}}{{#residents}}$30{{/residents}}{{^residents}}$50{{/residents}}{{/1.III}}{{^1.III}}$50{{/1.III}}</td></tr>
+					<tr><th>2 cargo holds</th><td>$80</td></tr>
+				</table>
+			</div>
+			{{^residents}}
+				<div class="note col-md-3 col-xs-4">
+					<h2>Prices for additional movement points (MP)</h2>
+					<table>
+						<tr><th>Additional MP</th><th>+1</th><th>+2</th><th>+3</th><th>+4</th><th>+5</th></tr>
+						<tr><th>Total costs</th><td>$20</td><td>$50</td><td>$90</td><td>$140</td><td>$200</td></tr>
+					</table>
+				</div>
+			{{/residents}}
+			{{#1.I}}
+				<div class="note col-md-4 col-xs-8">
+					<h2>Final Scoring:</h2>
+					<p>The player gets the following victory points (VP) for each of the five types of goods, dependent on the # of goods he delivered.</p>
+					<table>
+						<tr><th># of delivered goods of a single type</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5+</th></tr>
+						<tr><th>victory points (VP)</th><td>5 VP</td><td>9 VP</td><td>12 VP</td><td>14 VP</td><td>15 VP</td></tr>
+					</table>
+				</div>
+			{{/1.I}}
+		{{/1}}
+		{{#2.I}}
+			<div class="note col-md-4 col-xs-4">
+				<h2>Final Scoring:</h2>
+				<p>The player gets the following victory points (VP) for their residents on X city cards, whereby X equals the # of cities triggering the game end.</p>
+				<table>
+					<tr><th># of city cards with residents</th><th>X - 3 and less</th><th>X - 2</th><th>X - 1</th><th>X</th><th>X + 1 and more</th></tr>
+					<tr><th>victory points (VP)</th><td>22 VP</td><td>26 VP</td><td>32 VP</td><td>40 VP</td><td>50 VP</td></tr>
+				</table>
+				{{^residents}}<p>The player gets 1 additional VP for each movement point of his transport trolley he used to move out of the last reached city.</p>{{/residents}}
+			</div>
+			<div class="note col-md-3 col-xs-3">
+				<img src="example-2-i.png">
+				<p><b>Example Final Scoring:</b> In a game with 3 players Camille triggers the game end, as she placed 8 of her residents on city cards. She gets 40 VP. Paul has only 7 residents on city cards. Thus, Paul gets 32 VP. {{^residents}}Anne moved her transport trolley another 3 MP out of the last reached city. She gets an additional 3 VP.{{/residents}}</p>
+			</div>
+		{{/2.I}}
+		{{#4}}
+			{{^4.III}}
+				<div class="note col-md-12 col-xs-12">
+					<h2>Fight Sequence:</h2>
+					<ol>
+						<li>The attacker rolls 1 die for each attacking army. For each hit he removes 1 defending army (excess hits are forfeited).</li>
+						<li>Only if the defender suffers losses, he rolls 1 die for each of his removed armies. For each hit he removes 1 attacking army (excess hits are forfeited).</li>
+						<li>If all defending armies are removed and at least 1 attacking army survives, the attacker conquers the tile and exchanges 1 resident into 1 settlement. If at least 1 defending army sufvives, the attacker retreats all surviving armies into any adjacent areas under his control (in which are actual no fights).</li>
+					</ol>
+				</div>
+				<div class="note col-md-4 col-xs-6">
+					<h2>Dice Results:</h2>
+					<table>
+						<tr><th>dice result</th><th class="dice">⚀⚁</th><th class="dice">⚂⚃</th><th class="dice">⚄⚅</th></tr>
+						<tr><th>attack</th><td>0 hits</td><td>1 hit</td><td>2 hits</td></tr>
+						<tr><th>defense</th><td>0 hits</td><td colspan="2">1 hit</td></tr>
+					</table>
+				</div>
+				<div class="note col-md-4 col-xs-6">
+					<p>If the attacker attacks an opponent on...</p>
+					<p>... <span class="mountain bigicon"></span> or <span class="city bigicon"></span>: -1 for each single die roll of the attacker.</p>
+					<p>... <span class="grass bigicon"></span> or <span class="grain bigicon"></span>: +1 for each single die roll of the attacker.</p>
+				</div>
+			{{/4.III}}
+			{{#4.II}}
+				<div class="note col-md-3 col-xs-6">
+					<h2>Example Income:</h2>
+					<p>In addition to her capital Camille additionally controls 2 wood, 3 grasslands, 1 mountain and 2 city tiles. She gets an income of $70 = $20 (base income for the capital) + $40 (8 additional tiles) + $10 (3 different types of land tiles).</p>
+				</div>
+			{{/4.II}}
+			{{#4.III}}
+				<div class="note col-md-3 col-xs-6">
+					<h2>Fight Sequence:</h2>
+					<p>If the attacker moves 1 army onto an opposing tile, both players each remove 1 army on that tile. This process is repeated if necessary, until the last defending army is removed and the tile is neutralized.</p>
+				</div>
+			{{/4.III}}
+		{{/4}}
+	</div>
+	</div>
+	<div class="container">
 	{{#capture}}
 		{{#3}}{{^3.III}}
 			<p>At game start, all players make a secret bid with their starting money ($0 is a valid bid). Starting with the highest bidder, each player chooses a position in the player order and his capital on the map. In case of a tie, randomly draw lots for the order of choice (the losers get $2 for each lost draw).</p>
@@ -297,15 +237,15 @@
 	{{/capture}}
 	{{#hascapture}}
 		<div class="row section">
-			<div class="col-md-2"><h1>Phase 1: Player Order</h1></div>
-			<div class="col-md-10">{{{captured}}}</div>
+			<div class="col-md-2 col-xs-2"><h1>Phase 1: Player Order</h1></div>
+			<div class="col-md-10 col-xs-10">{{{captured}}}</div>
 		</div>
 	{{/hascapture}}
 
 	{{#3}}{{^3.III}}
 		<div class="row section">
-			<div class="col-md-2"><h1>Phase 2: Privileges</h1></div>
-			<div class="col-md-10">
+			<div class="col-md-2 col-xs-2"><h1>Phase 2: Privileges</h1></div>
+			<div class="col-md-10 col-xs-10">
 				<p>If there are still unsold privileges from the former round, place the price token to the right of these privileges. The starting bid for these privileges drops to $0. Draw new privileges and place them to the right of the price token, until you either draw 1 new privilege per player or there are a # of privileges in the row of cards depending on the # of players: 4 (2♟), 5 (3♟), 6 (4♟) or 7 privileges (5 stock companies). The starting bid for the new privileges is $20.</p>
 				<p>All privileges are now auctioned from left to right, one at a time. Beginning with the 1st player all players bid clockwise in sitting order around the table, until there is a highest bid. If a player passes he may only bid again for the next privilege. The highest bidder pays the amount to the bank and places the privilege face up in front of him. If the starting bid of the privilege was $0 and all players pass again, remove that privilege from the game!</p>
 				<p>The player may only buy each type of privilege once. He may use his privileges immediately after purchase.</p>
@@ -316,13 +256,13 @@
 	{{#capture}}
 		{{#2}}{{#residents}}
 			<p>At the start of his turn, the player may change his capital by exchanging his headquarters with 1 of his own settlements in any other city.</p>
-			<p>If the player does not have enough residents to buy in <b>Phase 3 B</b> or enough settlements to settle a tile in <b>Phase 3 D/3 E/3 G</p> in his storage, he may take back the missing pieces from the game map without substitution and place them directly back on the map. If he takes back 1 settlement, he mustr take back all residents on the same tile.</p>
+			<p>If the player does not have enough residents to buy in <b>Phase 3 B</b> or enough settlements to settle a tile in <b>Phase 3 D/3 E/3 G</b> in his storage, he may take back the missing pieces from the game map without substitution and place them directly back on the map. If he takes back 1 settlement, he mustr take back all residents on the same tile.</p>
 		{{/residents}}{{/2}}
 	{{/capture}}
 	{{#hascapture}}
 		<div class="row section">
-			<div class="col-md-2"><h1>Phase 3 A: Capital</h1></div>
-			<div class="col-md-10">{{{captured}}}</div>
+			<div class="col-md-2 col-xs-2"><h1>Phase 3 A: Capital</h1></div>
+			<div class="col-md-10 col-xs-10">{{{captured}}}</div>
 		</div>
 	{{/hascapture}}
 
@@ -332,14 +272,14 @@
 		{{/1}}
 		{{#3.III}}
 			<p>If there are less privileges in the row of cards as the # of players at the start of this phase, the active player draws 1 privilege and places it to the right of the row of cards (2♟: If less than 3 privileges are in the row of cards, the player draws 1 privilege). The price of a newly drawn privilege is always $20.</p>
-			<p>Now the player may buy 1 privilege for $20. IF he does not buy one pirileve, the price drops for all privileges for $0 and the price token is placed on the right of the row of cards. Newly drawn privileges are again placed on the right of the price token, so their price is $20. If at any time there are privileges with different backs (I, II or III) in that row, the price for all privileges with the lower back drops to $0 and the price token is placed to the right of them.</p>
+			<p>Now the player may buy 1 privilege for $20. If he does not buy one privilege, the price drops for all privileges for $0 and the price token is placed on the right of the row of cards. Newly drawn privileges are again placed on the right of the price token, so their price is $20. If at any time there are privileges with different backs (I, II or III) in that row, the price for all privileges with the lower back drops to $0 and the price token is placed to the right of them.</p>
 			<p>The player may only buy each type of privilege once. He may use his privileges immediately after purchase.</p>
 		{{/3.III}}
 	{{/capture}}
 	{{#hascapture}}
 		<div class="row section">
-			<div class="col-md-2"><h1>Phase 3 C: Purchase</h1></div>
-			<div class="col-md-10">{{{captured}}}</div>
+			<div class="col-md-2 col-xs-2"><h1>Phase 3 C: Purchase</h1></div>
+			<div class="col-md-10 col-xs-10">{{{captured}}}</div>
 		</div>
 	{{/hascapture}}
 
@@ -351,20 +291,54 @@
 				{{#4}}<p>The player reaches an opposing city the first time, if he moves 1 of his residents on this city. In that case he places 1 additional resident from his storage on top of the matching city card (moving on the city is important, not the outcome of the following fight!).</p>{{/4}}
 			{{/2.III}}
 		{{/2}}
+		{{#4}}
+			<p>
+				All residents and settlements (including the headquarters in the capital) count as armies. The player attacks opponents with his residents, but defends his tiles with all his armies he has there.
+				{{#4.I}}If the capital is attacked, the headquarters defends itself last and counts as 3 armies. The free cities defend themselves with their barracks and militia.{{/4.I}}
+				{{^4.I}}{{#2}}If the capital is attacked, the headquarters defends itself last and counts as 3 armies. The free cities defend themselves with their barracks and militia.{{/2}}{{/4.I}}
+				{{^4.I}}{{^2}}{{#9.I}}If the capital is attacked, the headquarters defends itself last and counts as 3 armies. The free cities defend themselves with their barracks and militia.{{/9.I}}{{/2}}{{/4.I}}
+				{{^2}}{{^9.I}}{{#4.III}}The capital of another player cannot be attacked.{{/4.III}}{{/9.I}}{{/2}}
+				{{#4.II}}{{^2}}{{^9.I}}The capital of another player cannot be attacked.{{/9.I}}{{/2}}{{/4.II}}
+			</p>
+			<p>
+				Only 1 player may have a settlement on a tile.
+				{{^4.III}}
+					{{^2}}If the player attacks an opponent by moving residents onto one of his tiles, these residents are exhausted and cannot leave the tile. The player will resolve all fights on tiles in <b>Phase 3 G</b>, where he attacks an opponent. He decides, in which order he resolves these fights.{{/2}}
+					{{#2}}
+						After the player moved all requested residents onto an opposing tile, these residents are exhausted. A fight follows immediately, see <b>Fight Sequence</b> and table <b>Dice Results</b>. If at least 1 defender survives the attack, the attacker cannot attack this tile again in the same round. The player may move additional active residents onto neutralized or conquered tiles.
+					{{/2}}
+				{{/4.III}}
+				{{#4.III}}As soon as the player moves a resident onto an opposing tile, a fight follows immediately, see <b>Fight Sequence</b>.{{/4.III}}
+				{{#2}}
+					If the capital of the defender is neutralized or conquered, the defender immediately chooses a new capital by replacing his settlement on one of his cities with his headquarters.
+						{{#4.I}}If the defender does not control another city, the game ends, see <b>Game End</b>.{{/4.I}}
+						{{^4.I}}If the defender only controls the capital (and possibly additional land tiles), his capital cannot be attacked{{#9.I}} (exception, see below){{/9.I}}.{{/4.I}}
+				{{/2}}
+			</p>
+			{{^4.III}}{{#2}}
+				{{#3}}<p>If the attacker neutralizes an opposing city, 1 existing factory there is destroyed. If the attacker later conquers the city with 1 additional resident, he gets the remaining factories there.</p>{{/3}}
+				{{#8}}<p>There are no fights in cities, so any number of players may have their own trading houses there. If the player conquers a land tile, he also conquers an existing plant. If the land tile is neutralized, the plant remains abandoned for now.</p>{{/8}}
+				{{#4.II}}{{#9}}<p>If the attacking stock company conquers an opposing capital by immediately moving 1 additional active resident onto the neutralized city, it also conquers all other tiles of the defender by exchanging the armies with its own.{{#2.III}} If the attacking stock company neutralizes the last capital of the defender, it may conquer that capital immediately after the fight by moving 1 additional active resident onto the neutralized city.{{/2.III}} If the attacker only neutralizes the capital, the defender loses all of his tiles without the attacker conquering them. Afterwards the players lose all shares of the defeated stock company without substituion. The stock company starts anew and may be established again by the players in the next share round (SR).{{#1.1}} Place all delivered goods of that company separately next to the map, as they still count for the game end!{{/1.1}}</p>{{/9}}{{/4.II}}
+			{{/2}}{{/4.III}}
+			{{#4.III}}
+				{{#3}}<p>If the attacker neutralizes an opposing city, 1 existing factory there is destroyed. IF the attacker later conquers the city with 1 additional resident, he gets the remaining factories there.</p>{{/3}}
+				{{#8}}<p>There are no fights in cities, so any number of players may have their own trading houses there. If the player conquers a land tile, he also conquers an existing plant. If the land tile is neutralized, the plant remains abandoned for now.</p>{{/8}}
+				{{#9}}<p>If the attacking stock company conquers an opposing capital by immediately moving 1 additional active resident onto the neutralized city, it also conquers all other tiles of the defender by exchanging the armies with its own. If the attacker only neutralizes the capital, the defender loses all of his tiles without the attacker conquering them. Afterwards the players lose all shares of the defeated stock company without substituion. The stock company starts anew and may be established again by the players in the next share round (SR).{{#1.1}} Place all delivered goods of that company separately next to the map, as they still count for the game end!{{/1.1}}</p>{{/9}}
+			{{/4.III}}
+		{{/4}}
 	{{/capture}}
 	{{#hascapture}}
 		<div class="row section">
-			<div class="col-md-2"><h1>Phase 3 D: Residents</h1></div>
-			<div class="col-md-10">{{{captured}}}</div>
+			<div class="col-md-2 col-xs-2"><h1>Phase 3 D: Residents</h1></div>
+			<div class="col-md-10 col-xs-10">{{{captured}}}</div>
 		</div>
 	{{/hascapture}}
-
 
 	{{#capture}}
 		{{#1}}
 			{{^1.III}}<p>The player may transport 1 good of any type or up to 2 of his exhausted residents per cargo hold. He may load and unload his transport trolley any number of times. If he unloads goods on a land tile or a city, which has no demand for these goods, the goods remain there until any player loads them again onto his transport trolley.</p>{{/1.III}}
 			{{#1.III}}<p>The player may transport up to 2 of his exhausted residents per cargo hold. He may load and unload his transport trolley any number of times.</p>{{/1.III}}
-			<p>The player needs 1 MP to move his transport trolley from tile to tile; but he needs 2 MP for the movement from any t ile up on each mountain. The transport trolley with loaded residents may move through tiles without settlements of the player, which are empty or have opposing settlements and residents. If the player unloads residents on a tile without 1 of his settlements, 1 resident turns into 1 settlement.</p>
+			<p>The player needs 1 MP to move his transport trolley from tile to tile; but he needs 2 MP for the movement from any tile up on each mountain. The transport trolley with loaded residents may move through tiles without settlements of the player, which are empty or have opposing settlements and residents. If the player unloads residents on a tile without 1 of his settlements, 1 resident turns into 1 settlement.</p>
 			{{^1.III}}<p>
 				The goal of the player is to deliver the goods to a city, which has demand for this type of good. Each city takes only 1 good for each listed goods type.
 				{{#1.I}}The player places the delivered goods face up in front of himself and covers the matching spaces on the cities with covering tokens.{{/1.I}}
@@ -395,20 +369,37 @@
 	{{/capture}}
 	{{#hascapture}}
 		<div class="row section">
-			<div class="col-md-2"><h1>Phase 3 E: Transport Trolley</h1></div>
-			<div class="col-md-10">{{{captured}}}</div>
+			<div class="col-md-2 col-xs-2"><h1>Phase 3 E: Transport Trolley</h1></div>
+			<div class="col-md-10 col-xs-10">{{{captured}}}</div>
 		</div>
 	{{/hascapture}}
 
 	{{#3}}{{^3.III}}
 		<div class="row section">
-			<div class="col-md-2"><h1>Phase 3 F: Factories</h1></div>
-			<div class="col-md-10">
+			<div class="col-md-2 col-xs-2"><h1>Phase 3 F: Factories</h1></div>
+			<div class="col-md-10 col-xs-10">
 				<p>Each round, the player may buy at max 1 factory on each city, if he has 1 settlement there and pays the matching costs, see left for the table Factory. On a city, the players in common may build a total of 3 factories.</p>
 				<p>The player marks his factory with his settlement. If he owns several factories in the same city, he stacks them below his settlement.</p>
 			</div>
 		</div>
 	{{/3.III}}{{/3}}
+
+	{{#capture}}
+		{{^2}}
+			{{#4}}{{^4.III}}
+				<p>A fight happens, if armies of 2 different players are on the same tile. See <b>Fight Sequence</b> and table <b>Dice Results</b>.</p>
+				{{#3}}{{^3.III}}<p>If the attacker neutralizes an opposing city, 1 existing factory there is destroyed. If the attacker later conquers the city with 1 additional resident, he gets the remaining factories there.</p>{{/3.III}}{{/3}}
+				{{#8}}{{^8.III}}<p>There are no fights in cities, so any number of players may have their own trading houses there. If the player conquers a land tile, he also conquers an existing plant. If the land tile is neutralized, the plant remains abandoned for now.</p>{{/8.III}}{{/8}}
+			{{/4.III}}{{/4}}
+			{{#4.II}}{{#9.I}}<p>If the attacking stock company conquers an opposing capital, it also conquers all other tiles of the defender and exchanges the armies with its own. If it only neutralizes the opposing capital, the defender loses all of his tiles without the attacker conquering them. Afterwards the players lose all shares of the defated stock company without substitution. The stock company starts anew and may be established again by the players in the next share round (SR).</p>{{/9.I}}{{/4.II}}
+		{{/2}}
+	{{/capture}}
+	{{#hascapture}}
+		<div class="row section">
+			<div class="col-md-2 col-xs-2"><h1>Phase 3 G: Fight</h1></div>
+			<div class="col-md-10 col-xs-10">{{{captured}}}</div>
+		</div>
+	{{/hascapture}}
 
 	{{#capture}}
 		{{#1.II}}
@@ -430,6 +421,13 @@
 		{{#3.II}}
 			<p>The player gets $20 base income for his capital, plus $15 for each of his factories. All players place their income for now to one side, until they paid taxes in the next Phase 1.</p>
 		{{/3.II}}
+		{{#4.II}}
+			<p>The players receive $20 base income for their capital, plus $5 for each additionally owned tile. The players also receive a bonus income for different types of land tiles (non city tiles), see the example <b>Income</b>.</p>
+			<table>
+				<tr><th># of different types of land tiles</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
+				<tr><th>bonus income</th><td>$0</td><td>$5</td><td>$10</td><td>$20</td><td>$30</td></tr>
+			</table>
+		{{/4.II}}
 
 		{{#3.I}}
 			<p>The players place their income for now to one side, until they paid taxes in the next Phase 1.</p>
@@ -437,8 +435,8 @@
 	{{/capture}}
 	{{#hascapture}}
 		<div class="row section">
-			<div class="col-md-2"><h1>Phase 3 H: Income</h1></div>
-			<div class="col-md-10">{{{captured}}}</div>
+			<div class="col-md-2 col-xs-2"><h1>Phase 3 H: Income</h1></div>
+			<div class="col-md-10 col-xs-10">{{{captured}}}</div>
 		</div>
 	{{/hascapture}}
 
@@ -455,14 +453,14 @@
 	{{/capture}}
 	{{#hascapture}}
 		<div class="row section">
-			<div class="col-md-2"><h1>Mid-Term Scorings</h1></div>
-			<div class="col-md-10">{{{captured}}}</div>
+			<div class="col-md-2 col-xs-2"><h1>Mid-Term Scorings</h1></div>
+			<div class="col-md-10 col-xs-10">{{{captured}}}</div>
 		</div>
 	{{/hascapture}}
 
 	<div class="row section">
-		<div class="col-md-2"><h1>Game End</h1></div>
-		<div class="col-md-10">
+		<div class="col-md-2 col-xs-2"><h1>Game End</h1></div>
+		<div class="col-md-10 col-xs-10">
 			{{#1.I}}<p>The game ends at the end of the round, after all players commonly delivered at least 23 goods tiles.</p>{{/1.I}}
 			{{#2.I}}
 				{{^residents}}
@@ -482,6 +480,15 @@
 			{{#3.1}}
 				<p>The game ends at the end of the round, after a total of at least 20 factories stand in the cities.</p>
 			{{/3.1}}
+			{{#4.I}}
+				<p>The game ends immediately after the end of the active player's turn, if the active player:</p>
+				<ol>
+					<li>In <b>Phase 3 C</b> buys all his residents from his storage</li>
+					<li>In <b>Phase 3 D</b> places his last settlement from his storage on the map</li>
+					{{^8.II}}{{^2}}<li>In <b>Phase 3 G</b> neutralizes or conquers the capital of another player. If the attacker conquers the capital, he also conquers all other tiles of the defender and exchanges the armies with his own. If he neutralizes the capital, the defender loses all of his tiles without the attacker conquering them.</li>{{/2}}{{/8.II}}
+					{{#2}}<li>In <b>Phase 3 D</b> neutralizes or conquers the last capital of another player.</li>{{/2}}
+				</ol>
+			{{/4.I}}
 		</div>
 	</div>
 
@@ -499,11 +506,15 @@
 			<p>The players get victory points (VP) during the game for building factories and getting certain privileges.</p>
 			<p>The player with the most VP wins the game! In case of a tie, the tied player with the most money wins the game.</p>
 		{{/3.I}}
+		{{#4.I}}
+			<p>The players get the following victory points (VP): 3 VP for each own land tile, 5 VP for each own city.</p>
+			<p>The player with the most VP wins the game! In case of a tie, the tied player with more armies on the map wins the game.</p>
+		{{/4.I}}
 	{{/capture}}
 	{{#hascapture}}
 		<div class="row section">
-			<div class="col-md-2"><h1>Final Scoring</h1></div>
-			<div class="col-md-10">{{{captured}}}</div>
+			<div class="col-md-2 col-xs-2"><h1>Final Scoring</h1></div>
+			<div class="col-md-10 col-xs-10">{{{captured}}}</div>
 		</div>
 	{{/hascapture}}
 	</div>

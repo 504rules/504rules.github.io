@@ -1,0 +1,174 @@
+* {
+	font-size: 12px;
+}
+
+@media print {
+	* {
+		font-size: 10px;
+	}
+
+	.container {
+		page-break-after: always;
+		page-break-inside: avoid;
+	}
+}
+
+
+.top p {
+	margin-bottom: 0;
+}
+
+p {
+	margin-bottom: 5px;
+}
+
+.dice {
+	font-size: 25px;
+}
+
+ul.parts {
+	padding-left: 0;
+}
+ul.parts li {
+	display: inline;
+	list-style-type: none;
+}
+
+ul.parts li:after {
+	content: ", ";
+}
+
+ul.parts li:last-child:after {
+	content: "";
+}
+
+ul.parts span {
+	width: 1.5em;
+	height: 1.5em;
+	font-size: 0.8em;
+	padding: 1px;
+	margin-right: 0.2em;
+	display: inline-block;
+	line-height: 100%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	border: 1px solid black;
+	text-align: center;
+}
+
+ol {
+	padding-left: 15px;
+}
+
+.example img {
+	width: 300px;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table td, table th {
+	text-align: center;
+	border: 1px solid black;
+	padding: 0.2em;
+}
+
+table th {
+	font-weight: bold;
+}
+
+.icon {
+	display: inline-block;
+	line-height: 100%;
+	width: 1em;
+	height: 1em;
+	background-size: 1em 1em;
+}
+
+.bigicon {
+	display: inline-block;
+	line-height: 100%;
+	width: 2em;
+	height: 2em;
+	background-size: 2em 2em;
+	vertical-align: middle;
+}
+
+.grass { background-image: url('../grass-icon.png'); }
+.forest { background-image: url('../forest-icon.png'); }
+.grain { background-image: url('../grain-icon.png'); }
+.desert { background-image: url('../desert-icon.png'); }
+.city { background-image: url('../city-icon.png'); }
+.mountain { background-image: url('../mountain-icon.png'); }
+.factory { background-image: url('../factory-bigicon.png'); }
+
+.top h2 {
+	font-size: 1.1em;
+	font-weight: bold;
+	margin: 0;
+}
+
+.top .col-md-2, .top .col-md-3, .top .col-xs-2, .top .col-xs-3 {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.top .heading {
+	background-color: black;
+	color: white;
+	height: 75px;
+	margin-top: -15px;
+	margin-bottom: 15px;
+	border-radius: 0 0 15px 15px;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 25px;
+}
+
+.section {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	margin-bottom: 1em;
+}
+
+.section .col-md-2 {
+	background: black;
+	border-radius: 0 15px 15px 0;
+	padding: 15px;
+	margin: 0;
+}
+
+.section .col-md-2 h1 {
+	color: white;
+	font-size: 1.1em;
+	font-weight: bold;
+	margin: 0;
+}
+
+.section .col-md-10 {
+	border: 1px solid black;
+	margin-left: -15px;
+	padding-left: 30px;
+}
+
+.notes {
+	margin-bottom: 15px;
+}
+
+.note {
+	margin-bottom: 10px;
+}
+
+.note h2 {
+	font-size: 1.1em;
+	font-weight: bold;
+	margin: 0;
+	display: inline-block;
+}
+
+.note p {
+	margin: 0;
+}
