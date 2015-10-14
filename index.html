@@ -148,6 +148,9 @@
 			{{#5}}
 				<p>Place all map tiles in separate stacks in a row as follows: city, water, grassland, forest, field, mountain and desert.</p>
 			{{/5}}
+			{{#6}}
+				<p>Place the majority board next to the game map and place the marking tokens for each player below this board.</p>
+			{{/6}}
 		</div>
 	</div>
 	{{#capture}}
@@ -278,6 +281,38 @@
 				</div>
 			{{/5.II}}
 		{{/5}}
+		{{#6}}
+			<div class="note col-md-4 col-xs-6">
+				<h2>Road:</h2>
+				<p>The player needs a # of active residents on 1 or both tiles to build a road there (depending on the more expensive terrain).</p>
+				<table>
+					<tr><th><span class="city bigicon"></span> / <span class="mountain bigicon"></span></th><th><span class="forest bigicon"></span> / <span class="desert bigicon"></span></th><th><span class="grain bigicon"></span> / <span class="grass bigicon"></span></th></tr>
+					<tr><td>3 residents</td><td>2 residents</td><td>1 resident</td></tr>
+				</table>
+				<p>Additionally the player needs +1 resident for each already build opposing road between 2 concerned tiles.</p>
+			</div>
+
+			{{#6.I}}
+				<div class="note col-md-4 col-xs-6">
+					<h2>Final Scoring:</h2>
+					<p>The player gets the following victory points (VP) for each of his tiles according to the majority board.</p>
+					<table>
+						<tr><th><span class="city bigicon"></span> / <span class="mountain bigicon"></span></th><th><span class="forest bigicon"></span> / <span class="grain bigicon"></span> / <span class="grass bigicon"></span></th><th><span class="desert bigicon"></th></tr>
+						<tr><td>3 VP</td><td>2 VP</td><td>1 VP</td></tr>
+					</table>
+					<p>Additionally 3 VP for each set consisting of 1 city, 1 grassland, 1 field, 1 forest, 1 mountain (no desert).</p>
+					<h2>Example Final Scoring:</h2>
+					<p>Anne scores a total of 58 VP: 27 (5 vities, 4 mountains) + 22 (4 grasslands, 2 forests, 5 fields) + 3 (3 deserts) + 6 (2 sets of all terrain types excluding desert).</p>
+				</div>
+			{{/6.I}}
+
+			{{#6.II}}
+				<div class="note col-md-3 col-xs-4">
+					<h2>Example Income:</h2>
+					<p>Anne gets a total of $75: $20 (Base income for the capital) + $10 (1 additional city) + $25 (1 grassland, 2 forest, 2 fields) + $10 (1 mountain) + $10 (1 set). The 3rd forest does not give her income in the moment, as until now she only connected 2 cities.</p>
+				</div>
+			{{/6.II}}
+		{{/6}}
 	</div>
 	</div>
 	<div class="container">
@@ -409,13 +444,35 @@
 				{{#4.I}}<p>Depending on the terrain the player discovers or receives the following. <span class="desert icon"></span> empty, <span class="grass icon"></span> & <span class="forest icon"></span> 1 own settlement, <span class="grain icon"></span> 1 own settlement + 1 own exhausted resident, <span class="mountain icon"></span> 1 militia. For defeating this militia once-only $20. <span class="city icon"> 1 barrack and 1 militia. The player does not get income tokens for discovered settlements!</p>{{/4.I}}
 			{{/5.II}}
 		{{/5}}
+		{{#6}}
+			<p><b>Roads:</b> If the player has 1 settlement each on two adjacent tiles, he may connect both tiles with 1 of his roads. To build a road he needs a the number of active residents equal to the more expensive of the two terrain types, see the table <b>Road</b>. {{^6.III}}He places 1 of his used residents back into his supply and places 1 road. The remaining residents are exhausted from the build and will be available again in the next round. {{/6.III}}{{#6.III}}All of the used residents are exhausted and are available again in the next round.{{/6.III}}</p>
+			{{^6.III}}<p>The player must build his roads in a connected network. His 1st road must start in his capital, afterwards the network may branch out in any direction.</p>{{/6.III}}
+			{{#6.III}}<p>The play may build his roads on any tiles, they do not need to start in his capital and do not need to be connected.</p>{{/6.III}}
+			{{#4}}
+				<p>
+					The players build neutral roads, so there is always only 1 road between 2 tiles.
+					{{^6.III}}The roads built by a player must be connected with his capital solely across tiles controlled by that player.{{/6.III}}
+					{{#6.I}}The player only counts a land tile on the majority board, if he is the first who connects that land tile with 1 road. Multiple players may count a city each once, if they control that city during the game AND connect it via roads solely across their own tiles to their capital. Each player counts his capital, when he builds his first road.{{/6.I}}
+					{{#6.II}}The roads built by a player must be connected with his capital solely across tiles controlled by that player. The player counts these tiles on the majority board (including his capital, but no deserts). If the player loses the control of a tile, he must subtract all tiles on the majority board, which now are not connected anymore via roads to his capital solely across his own tiles.{{/6.II}}
+					The player may move his active residents any distance along roads on his own tiles without exhausting them in this way.
+				</p>
+				{{^4.III}}<p>If the player moves 1 or more residents onto an opposing tile, he may build 1 road onto that tile, too (even though he has no settlement there and must fight in <b>Phase 3 G</b>).</p>{{/4.III}}
+			{{/4}}
+			{{^4}}
+				<p>The player may move his active units any distance along his roads without exhausting them in this way.</p>
+				{{#6.I}}<p>Directly after building a road, the player counts all the new tiles he connected on the majority board (including his capital). This way, each tile may be counted by multiple players!</p>{{/6.I}}
+				{{#6.II}}<p>Directly after building a road, the player counts all the new tiles he connected on the majority board (including his capital, but no deserts). This way, each tile may be counted by multiple players! Each city has demand for the different types of terrain, so the player's goal is to connect one of each of the terrain types for each of the cities he connects with his roads.</p>{{/6.II}}
+				<p>{{#2}}{{^6.III}}If the player changes his capital, he cannot start a new network. {{/6.III}}If the player removes 1 settlement from the map, his roads to that tile turn neutral{{^6.III}}, and he subtracts that tile on the majority board{{/6.III}}. The 1st player, who owns 1 settlement each on both these tiles, exchanges the neutral road with one of his own roads, if it is connected to his other roads and he does not own a road there.{{^6.III}} He counts it on the majority board.{{/6.III}}{{/2}}</p>
+				<p>{{#7.I}}{{^6.III}}If the player changes his capital, he cannot start a new network. {{/6.III}}If the player removes 1 settlement from the map, his roads to that tile turn neutral{{^6.III}}, and he subtracts that tile on the majority board{{/6.III}}. The 1st player, who owns 1 settlement each on both these tiles, exchanges the neutral road with one of his own roads, if it is connected to his other roads and he does not own a road there.{{^6.III}} He counts it on the majority board.{{/6.III}}{{/7.I}}</p>
+			{{/4}}
+		{{/6}}
 	{{/capture}}
-	{{#hascapture}}
+	{{#hascapture}}{{#residents}}
 		<div class="row section">
 			<div class="col-md-2 col-xs-2"><h1>Phase 3 D: Residents</h1></div>
 			<div class="col-md-10 col-xs-10">{{{captured}}}</div>
 		</div>
-	{{/hascapture}}
+	{{/residents}}{{/hascapture}}
 
 	{{#capture}}
 		{{#1}}
@@ -453,6 +510,7 @@
 			{{^5.I}}The transport trolley may explore new tiles. It must move onto the newly explored tile for 1 movement point (MP), it only needs 2 MP for moving onto each mountain. If the player explores 1 water tile, he needs 1 MP but the transport trolley must remain on the starting tile. If the player explores 1 mountain tile with his last MP, the transport trolley must remain on the starting tile, too.{{/5.I}}
 			{{#5.II}}The player may place 1 settlement on a tile, when he arrives there with his transport trolley, see <b>Income</b> (This is a voluntary action. Because of the limited number of his settlements the player may pass on this action!).{{/5.II}}
 		</p>{{/residents}}{{/5}}
+		{{#6}}{{#1.III}}<p>Once per turn and following the building rules for roads, the player may build 1 road for free from the tile with his transport trolley, if he has 1 settlement each on both affected tiles.</p>{{/1.III}}{{/6}}
 	{{/capture}}
 	{{#hascapture}}
 		<div class="row section">
@@ -521,6 +579,7 @@
 			{{^2}}{{#4}}<p>If the player removes his settlement and then the tile is completely empty, the next player placing a new first settlement on that tile also takes 1 income token.</p>{{/4}}{{/2}}
 			{{^2}}{{^4}}{{#7.I}}<p>If the player removes his settlement and then the tile is completely empty, the next player placing a new first settlement on that tile also takes 1 income token.</p>{{/7.I}}{{/4}}{{/2}}
 		{{/5.II}}
+		{{#6.II}}<p>The player gets $20 base income for his capital, plus $10 for each additional city he connected. Furthermore each of his connected cities gives the player money for 1 land tile of each type (except deserts): he gets $5 for grassland, field & forest, $10 for mountian, plus a bonus of $10 for each set containing 1 city, 1 grassland, 1 field, 1 forest, 1 mountain (no desert), see the example <b>Income</b>.</p>{{/6.II}}
 
 		{{#3.I}}
 			<p>The players place their income for now to one side, until they paid taxes in the next Phase 1.</p>
@@ -585,6 +644,11 @@
 			{{#5.I}}
 				<p>The game ends at the end of the round, if only 7 or less map tiles are still unexplored.</p>
 			{{/5.I}}
+			{{#6.I}}
+				{{#4}}<p>The game ends at the end of the round, after the players commonly build exactly 40 roads.</p>{{/4}}
+				{{^4}}{{#9.II}}<p>The game ends at the end of the round, after at least 1 stock company connects 4 cities to its roads.</p>{{/9.II}}{{/4}}
+				{{^4}}{{^9.II}}<p>Depending on the # of players, the game ends at the end of the round, after at least 1 player connects 7 (2♟), 6 (3♟) or 5 (4♟) cities to his roads.</p>{{/9.II}}{{/4}}
+			{{/6.I}}
 		</div>
 	</div>
 
@@ -610,6 +674,10 @@
 			<p>The players score victory points (VP) during the game for exploring, settling and activating tiles.</p>
 			<p>The player with the most VP wins the game! In case of a tie, the tied player with the most residents (not settlements) on the map wins the game.</p>
 		{{/5.I}}
+		{{#6.I}}
+			<p>The players get victory points (VP) for each of their tiles regarding to the majority table, see the table and example for <b>Final Scoring</b>.</p>
+			<p>The player with the most VP wins the game. {{#4}}In case of a tie the tied player with the most residents on tiles with neutral roads wins.{{/4}}{{^4}}In case of a tie, the tied player with the most residents on tiles with his roads wins.{{/4}}</p>
+		{{/6.I}}
 	{{/capture}}
 	{{#hascapture}}
 		<div class="row section">
