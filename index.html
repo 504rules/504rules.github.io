@@ -14,6 +14,8 @@
 <body>
 <div id="target">Loading...</div>
 <script id="name-template" type="x-tmpl-mustache">
+	World {{world.0}}{{world.1}}{{world.2}}:
+	
 	{{#1.I}}The World of Traveling{{/1.I}}
 	{{#2.I}}The World of Restless{{/2.I}}
 	{{#3.I}}The World of Individual{{/3.I}}
@@ -48,7 +50,7 @@
 	<div class="container">
 	<div class="row name">
 		<div class="col-md-12 col-xs-12">
-			<h1>World {{world.0}}{{world.1}}{{world.2}}: {{long_name}}</h1>
+			<h1>{{long_name}}</h1>
 		</div>
 	</div>
 	<div class="row top">
@@ -1037,6 +1039,7 @@
 		params['parts'] = part_list;
 
 		params['long_name'] = Mustache.render($('#name-template').html(), params);
+		$("title").text(params['long_name'])
 
 		var rendered = Mustache.render(template, params);
 		$("#target").html(rendered);
