@@ -14,6 +14,10 @@
 	.row {
 		page-break-inside: avoid;
 	}
+
+	#editbutton {
+		display: none;
+	}
 }
 
 
@@ -122,9 +126,18 @@ table th {
 	margin: 1em 0;
 }
 
+.name h1 span {
+	font-size: 1em;
+}
+
 .name .col-md-12, .name .col-xs-12 {
 	background-color: black;
 	color: white;
+}
+
+.name input {
+	color: black;
+	width: 2em;
 }
 
 .top .col-md-2, .top .col-md-3, .top .col-xs-2, .top .col-xs-3 {
