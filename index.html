@@ -122,13 +122,24 @@
 					<p>Place the 10 city cards face up next to the map.</p>
 					<p>To mark the chosen capitals, place 1 resident of each player onto the matching city cards.</p>
 					{{^residents}}<p>The players place their remaining 9 residents on the 9 cities, which they did not choose as their own capitals.</p>{{/residents}}
-					{{#1}}<p>Place 1 good of each type with 5 VP on it next to the map.</p>{{/1}}
-					{{#3}}<p>Place two factories with 10 VP each next to the map.</p>{{/3}}
-					{{#4}}<p>Place 3 VP next to the first city space of the majority board, 4 VP next to the second space, and so forth.</p>{{/4}}
-					{{#5}}<p>Place 5 VP below each terrain column of the majority board.</p>{{/5}}
-					{{#6}}<p>Place 5 VP below each terrain column of the majority board.</p>{{/6}}
-					{{#7}}<p>Place 10 VP next to the first row of the majority board, and 20 VP next to the second row of the majority board.</p>{{/7}}
-					{{#8}}<p>Place 1 good of each type with 5 VP on it next to the map.</p>{{/8}}
+				{{/2.III}}
+				{{#2.III}}
+					{{#1.I}}<p>Place 1 good of each type with 5 VP on it next to the map.</p>{{/1.I}}
+					{{#3.I}}<p>Place two factories with 10 VP each next to the map.</p>{{/3.I}}
+					{{#4.I}}<p>Place 3 VP next to the first city space of the majority board, 4 VP next to the second space, and so forth.</p>{{/4.I}}
+					{{#5.I}}<p>Place 5 VP below each terrain column of the majority board.</p>{{/5.I}}
+					{{#6.I}}<p>Place 5 VP below each terrain column of the majority board.</p>{{/6.I}}
+					{{#7.I}}<p>Place 10 VP next to the first row of the majority board, and 20 VP next to the second row of the majority board.</p>{{/7.I}}
+					{{#8.I}}<p>Place 1 good of each type with 5 VP on it next to the map.</p>{{/8.I}}
+					{{#9.I}}
+						{{#1.II}}<p>Place 1 good of each type with $50 on it next to the map.</p>{{/1.II}}
+						{{#3.II}}<p>Place two factories with $100 each next to the map.</p>{{/3.II}}
+						{{#4.II}}<p>Place $30 next to the first city space of the majority board, $40 next to the second space, and so forth.</p>{{/4.II}}
+						{{#5.II}}<p>Place $50 below each terrain column of the majority board.</p>{{/5.II}}
+						{{#6.II}}<p>Place $50 below each terrain column of the majority board.</p>{{/6.II}}
+						{{#7.II}}<p>Place $100 next to the first row of the majority board, and $200 next to the second row of the majority board.</p>{{/7.II}}
+						{{#8.II}}<p>Place 1 good of each type with $50 on it next to the map.</p>{{/8.II}}
+					{{/9.I}}
 				{{/2.III}}
 			{{/2}}
 			{{#3}}
@@ -679,6 +690,15 @@
 			{{#6.I}}<p>Award 5 VP from the stack set aside on the corresponding column of the majority board to the first player to connect one of the 6 terrain types (no water) with his roads a third time.</p>{{/6.I}}
 			{{#7.I}}<p>Award 10 VP to the first player to control 2 of each terrain type (no water). Award 20 VP to the first player to control 2 of each terrain type (no water).</p>{{/7.I}}
 			{{#8.I}}<p>Award 5 VP from the stack set aside for this purpose to the first player owning 3 plants of a good type.</p>{{/8.I}}
+			{{#9.I}}
+				{{#1.II}}<p>Award $50 to the first stock company delivering one of the good types a second time from the stack set aside for this purpose.</p>{{/1.II}}
+				{{#3.II}}<p>Award $100 to the first stock company having at least 1 factory in 3 cities, and to the first stock company having 3 factories in 1 city.</p>{{/3.II}}
+				{{#4.II}}<p>Award money to a stock company when they conquer a free city from the stacks set aside on the majority board ($30 for the first free city, $40 for the second, etc).</p>{{/4.II}}
+				{{#5.II}}<p>Award $50 from the stack set aside on the corresponding column of the majority board to the first stock company to explore each of the 6 terrain types (no water).</p>{{/5.II}}
+				{{#6.II}}<p>Award $50 from the stack set aside on the corresponding column of the majority board to the first stock company to connect one of the 6 terrain types (no water) with his roads a third time.</p>{{/6.II}}
+				{{#7.II}}<p>Award $100 to the first stock company to control 2 of each terrain type (no water). Award $200 to the first stock company to control 2 of each terrain type (no water).</p>{{/7.II}}
+				{{#8.II}}<p>Award $50 from the stack set aside for this purpose to the first stock company owning 3 plants of a good type.</p>{{/8.II}}
+			{{/9.I}}
 		{{/2.III}}
 	{{/capture}}
 	{{#hascapture}}
