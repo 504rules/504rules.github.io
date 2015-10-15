@@ -155,6 +155,22 @@
 			{{#6}}
 				<p>Place the majority board next to the game map and place the marking tokens for each player below this board.</p>
 			{{/6}}
+			{{#7}}
+				{{#7.I}}
+					{{^9.II}}
+						<p>2♟, 3♟, 4♟: Depending on the # of players, take the corresponding starting and scoring cards. Place the 2 starting cards next to the map. Then shuffle the corresponding scoring cards separated by their backs of I, II, III and place them in 3 face down rows next to the starting cards.</p>
+					{{/9.II}}
+					{{#9.II}}
+						<p>Possibly, not all 5 stock companies are always active. Thus, the players take the following cards for each business round (BR):</p>
+						<ul>
+							<li>1. & 2. BR: Choose the starting card matching the number of active stock companies.</li>
+							<li>3. BR: Take the scoring cards with back I. Shuffle the card "1st scoring" with a # of <span class="glyphicon glyphicon-ok"></span> cards, so there is a face down card for each active stock company.</li>
+							<li>4. & 5. BR: Accordingly use the scoring cards with the back II or III.</li>
+						</ul>
+					{{/9.II}}
+				{{/7.I}}
+				<p>Place the majority board next to the game map and place 6 marking tokens for each player below this board.</p>
+
 		</div>
 	</div>
 	{{#capture}}
@@ -317,6 +333,41 @@
 				</div>
 			{{/6.II}}
 		{{/6}}
+		{{#7.I}}
+			<div class="note col-md-4 col-xs-8">
+				<h2>Scoring:</h2>
+				<table>
+					<tr><th></th><th><span class="city bigicon"></span></th><th><span class="grass bigicon"></span></th><th><span class="forest bigicon"></span></th><th><span class="grain bigicon"></span></th><th><span class="mountain bigicon"></span></th><th><span class="desert bigicon"></th></tr>
+					<tr><th>1st place</th><td>10 VP</td><td>10 VP</td><td>9 VP</td><td>8 VP</td><td>7 VP</td><td>6 VP</td></tr>
+					<tr><th>2nd place (not for 2 players)</th><td>6 VP</td><td>6 VP</td><td>5 VP</td><td>4 VP</td><td>3 VP</td><td>2 VP</td></tr>
+				</table>
+				<p>In case of a tie for 1st place all concerned players each get 2 VP less (this applies for 2 players, too) and 0 VP for 2nd place. In case of a tie for 2nd place all concerned players get the stated VP.</p>
+				<p><b>Example Scoring:</b> In a game with 3 players Camille has majorities for cities, forests and a 2nd place for mountains. She gets 22 VP. Afterwards she must remove 5 residents from the game map (1 resident for each 4 VP).</p>
+			</div>
+		{{/7.I}}
+		{{#7.II}}
+			<div class="note col-md-4 col-xs-8">
+				<h2>Income:</h2>
+				<p>The player gets the # of tiles x $10 for each majority, up to the stated maximum.</p>
+				<table>
+					<tr><th></th><th><span class="city bigicon"></span></th><th><span class="grass bigicon"></span></th><th><span class="forest bigicon"></span></th><th><span class="grain bigicon"></span></th><th><span class="mountain bigicon"></span></th><th><span class="desert bigicon"></th></tr>
+					<tr><td>max. $50</td><td>max. $50</td><td>max. $45</td><td>max. $40</td><td>max. $35</td><td>max. $30</td></tr>
+				</table>
+				<p>In case of a tie all concerned players get the calculated income up to the stated maximum.</p>
+				<p><b>Example Income:</b> Camilled has majorities for grasslands (2 tiles) and fields (% tiles). She gets a total of $80 = $20 (base income for the capital) + $20 (for 2 grasslands) + $40 (maximum for 4 fields). The additional field only secures her majority, but does not increase her income!</p>
+			</div>
+		{{/7.II}}
+		{{#7.III}}
+			<div class="note col-md-4 col-xs-8">
+				<h2>Final Scoring:</h2>
+				<p>The player gets additional victory points (VP) for majorities. In case of a tie all players with the majority get the stated VP.</p>
+				<table>
+					<tr><th></th><th><span class="city bigicon"></span></th><th><span class="grass bigicon"></span></th><th><span class="forest bigicon"></span></th><th><span class="grain bigicon"></span></th><th><span class="mountain bigicon"></span></th><th><span class="desert bigicon"></th></tr>
+					<tr><td>6 VP</td><td>6 VP</td><td>5 VP</td><td>4 VP</td><td>4 VP</td><td>3 VP</td><td>2 VP</td></tr>
+				</table>
+				<p><b>Example Final Scoring:</b> Camille has majorities for forests and mountains. She gets additional 8 VP.</p>
+			</div>
+		{{/7.III}}
 	</div>
 	</div>
 	<div class="container">
