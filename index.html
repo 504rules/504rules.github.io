@@ -377,6 +377,17 @@
 			<p>Starting with the 2nd round, determine the player order according to the income of the former round, from high to low (in case of a tie reverse the player order of the former round for the tied players). According to the new player order the players must pay taxes for their last income: The 1st player pays 20%, the last pays 0%, and all other players pay 10% of their last income, see left for <b>Calculation of taxes</b>. Because of higher taxes the 1st player may get a lower income compared to the 2nd player.</p>
 			{{#3.I}}{{#9.II}}<p>The stock company order for the 1st business round (BR) is determined in reverse order of establishment. If stock companies are only established in later share rounds (SR), just for once they are first in stock company order in the next BR!</p>{{/9.II}}{{/3.I}}
 		{{/3.III}}{{/3}}
+		{{#7.I}}
+			{{^9.II}}
+				<p>At the start of the game the player order is randomly determined and 1 resident of each player is placed on the spaces of the 1st starting card.</p>
+			{{/9.II}}
+			{{#9.II}}
+				<p>The stock company order for the 1st business round (BR) is determined in <b>reverse</b> order of establishment. If stock companies are only established in later share rounds (SR), just for once they are first in stock company order in the next BR, if necessary in reverse order of establishment!</p>
+			{{/9.II}}
+			<p>After all players have taken one complete turn, the player order is readjusted. For the 2nd turn set the new player order by lpacing the residents on the spaces of the 2nd starting card and starting with the 3rd r ound separately on the face down scoring cards.</p>
+			<p>As long as the players do not have victory points (VP), simply reverse the player order of the former turn. As soon as the players have VP, the new player order is determined according to VP from few to most. The player with the fewest VP is new starting player, the player with most VP is last. In case of a tie reverse the player order of all concerned players of the former turn.</p>
+			{{#3.II}}<p>Starting with the 2nd round the income is taxed according to the money, but the player order according to VP. In case of a tie for highest income, the player must pay 20%, whose turn is now earlier in player order. In case of a tie for lowest income, the player pays no taxes, whose turn is now later in the player order.</p>{{/3.II}}
+		{{/7.I}}
 	{{/capture}}
 	{{#hascapture}}
 		<div class="row section">
@@ -516,11 +527,21 @@
 			{{^4}}
 				<p>The player may move his active units any distance along his roads without exhausting them in this way.</p>
 				{{#6.I}}<p>Directly after building a road, the player counts all the new tiles he connected on the majority board (including his capital). This way, each tile may be counted by multiple players!</p>{{/6.I}}
-				{{#6.II}}<p>Directly after building a road, the player counts all the new tiles he connected on the majority board (including his capital, but no deserts). This way, each tile may be counted by multiple players! Each city has demand for the different types of terrain, so the player's goal is to connect one of each of the terrain types for each of the cities he connects with his roads.</p>{{/6.II}}
+				{{#6.II}}<p>Directly after building a road, the player counts all the new tiles he connected on the majority board (including his capital{{^7}}, but no deserts{{/7}}). This way, each tile may be counted by multiple players! Each city has demand for the different types of terrain, so the player's goal is to connect one of each of the terrain types for each of the cities he connects with his roads.</p>{{/6.II}}
 				<p>{{#2}}{{^6.III}}If the player changes his capital, he cannot start a new network. {{/6.III}}If the player removes 1 settlement from the map, his roads to that tile turn neutral{{^6.III}}, and he subtracts that tile on the majority board{{/6.III}}. The 1st player, who owns 1 settlement each on both these tiles, exchanges the neutral road with one of his own roads, if it is connected to his other roads and he does not own a road there.{{^6.III}} He counts it on the majority board.{{/6.III}}{{/2}}</p>
 				<p>{{#7.I}}{{^6.III}}If the player changes his capital, he cannot start a new network. {{/6.III}}If the player removes 1 settlement from the map, his roads to that tile turn neutral{{^6.III}}, and he subtracts that tile on the majority board{{/6.III}}. The 1st player, who owns 1 settlement each on both these tiles, exchanges the neutral road with one of his own roads, if it is connected to his other roads and he does not own a road there.{{^6.III}} He counts it on the majority board.{{/6.III}}{{/7.I}}</p>
 			{{/4}}
 		{{/6}}
+		{{#7}}
+			{{^7.II}}
+				<p>Each time the player places 1 settlement on a tile, he counts the matching type of terrain on the majority board (including his capital).</p>
+			{{/7.II}}
+			{{#7.II}}
+				{{#8}}<p>The player counts a land tile, if he builds the plant (if he builds a "fish"-plant, he counts the original terrain). Additionally he counts a city, if he builds his trading house there (including his capital).</p>{{/8}}
+				{{^8}}{{^6}}<p>The player counts a tile, when he places 1 settlement on that tile (including his capital).</p>{{/6}}{{/8}}
+			{{/7.II}}
+			{{#4}}<p>If the player conquers the tile of another player, he counts that tile on the majority board, while the other player subtracts it.</p>{{/4}}
+		{{/7}}
 	{{/capture}}
 	{{#hascapture}}
 		<div class="row section">
@@ -566,6 +587,7 @@
 			{{#5.II}}The player may place 1 settlement on a tile, when he arrives there with his transport trolley, see <b>Income</b> (This is a voluntary action. Because of the limited number of his settlements the player may pass on this action!).{{/5.II}}
 		</p>{{/residents}}{{/5}}
 		{{#6}}{{#1.III}}<p>Once per turn and following the building rules for roads, the player may build 1 road for free from the tile with his transport trolley, if he has 1 settlement each on both affected tiles.</p>{{/1.III}}{{/6}}
+		{{^residents}}{{#7.III}}<p>The player may place 1 settlement on 1 tile, when he arrives there with his transport trolley. He counts the matching type of terrain on the majority board (This is a voluntary action. Because of the limited number of his settlements the player may pass on this action!)</p>{{/7.III}}{{/residents}}
 	{{/capture}}
 	{{#hascapture}}
 		<div class="row section">
@@ -635,6 +657,7 @@
 			{{^2}}{{^4}}{{#7.I}}<p>If the player removes his settlement and then the tile is completely empty, the next player placing a new first settlement on that tile also takes 1 income token.</p>{{/7.I}}{{/4}}{{/2}}
 		{{/5.II}}
 		{{#6.II}}<p>The player gets $20 base income for his capital, plus $10 for each additional city he connected. Furthermore each of his connected cities gives the player money for 1 land tile of each type (except deserts): he gets $5 for grassland, field & forest, $10 for mountian, plus a bonus of $10 for each set containing 1 city, 1 grassland, 1 field, 1 forest, 1 mountain (no desert), see the example <b>Income</b>.</p>{{/6.II}}
+		{{#7.II}}<p>The player gets $20 base income for the capital, plus income for the majorities as stated above, see table and example <b>Income</b>.</p>{{/7.II}}
 
 		{{#3.I}}
 			<p>The players place their income for now to one side, until they paid taxes in the next Phase 1.</p>
@@ -661,6 +684,21 @@
 	{{#hascapture}}
 		<div class="row section">
 			<div class="col-md-2 col-xs-2"><h1>Mid-Term Scorings</h1></div>
+			<div class="col-md-10 col-xs-10">{{{captured}}}</div>
+		</div>
+	{{/hascapture}}
+
+	{{#capture}}
+		{{#7.I}}
+			<p>Starting with the 3rd round, the player now removes his resident from the face down scoring card and turns this card face up. If the card shows a <span class="glyphicon glyphicon-ok"></span>, the next player continues with his turn. If it is one of the three scorings, the game is paused for an immediate scoring!</p>
+			<p><b>1st and 2nd Scoring:</b> The players get victory points (VP) for their majorities, see table and example <b>Scoring</b>.</p>
+			<p><b>3rd Scoring (Final Scoring):</b> The players get victory points (VP) for their majorities, see the table and example <b>Scoring</b>. All players missing their last turn get once-only additional 3 VP.</p>
+			<p>Following each scoring, each player adds the VP he got in the actual scoring. Starting with the player getting the most VP, each player must remove 1 resident for each {{^9.II}}3 VP (2♟) or 4 VP (3♟, 4♟){{/9.II}}{{#9.II}}4 VP{{/9.II}} from the map. IF he has not enough residents, he now must remove 1 settlement for each missing resident, so all remaining settlements are still on connected tiles to his capital. He cannot remove the headquarters on his capital. If the player cannot remove enough residents and settlements, he does not score the VPs for those pieces. Afterwards the player must adjust his marking tokens on the majority board. In case of a tie for VP use the actual turn order for concerned players.</p>
+		{{/7.I}}
+	{{/capture}}
+	{{#hascapture}}
+		<div class="row section">
+			<div class="col-md-2 col-xs-2"><h1>Phase 5: Scoring and Final Scoring</h1></div>
 			<div class="col-md-10 col-xs-10">{{{captured}}}</div>
 		</div>
 	{{/hascapture}}
@@ -704,6 +742,10 @@
 				{{^4}}{{#9.II}}<p>The game ends at the end of the round, after at least 1 stock company connects 4 cities to its roads.</p>{{/9.II}}{{/4}}
 				{{^4}}{{^9.II}}<p>Depending on the # of players, the game ends at the end of the round, after at least 1 player connects 7 (2♟), 6 (3♟) or 5 (4♟) cities to his roads.</p>{{/9.II}}{{/4}}
 			{{/6.I}}
+			{{#7.I}}
+				<p>The game ends immediately, after the 3rd scoring is turned face up. The <b>Final Scoring</b> takes place, see above.</p>
+				<p>The player with the most VP wins the game! In case of a tie, the tied player with the most residents and settlements on the game map wins.</p>
+			{{/7.I}}
 		</div>
 	</div>
 
@@ -733,6 +775,9 @@
 			<p>The players get victory points (VP) for each of their tiles regarding to the majority table, see the table and example for <b>Final Scoring</b>.</p>
 			<p>The player with the most VP wins the game. {{#4}}In case of a tie the tied player with the most residents on tiles with neutral roads wins.{{/4}}{{^4}}In case of a tie, the tied player with the most residents on tiles with his roads wins.{{/4}}</p>
 		{{/6.I}}
+		{{#7.III}}
+			<p>The players get additional victory points (VP) for majorities during the final scoring, see table and example of the <b>Final Scoring</b>.</p>
+		{{/7.III}}
 	{{/capture}}
 	{{#hascapture}}
 		<div class="row section">
