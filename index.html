@@ -170,7 +170,7 @@
 					{{/9.II}}
 				{{/7.I}}
 				<p>Place the majority board next to the game map and place 6 marking tokens for each player below this board.</p>
-
+			{{/7}}
 		</div>
 	</div>
 	{{#capture}}
@@ -1145,7 +1145,7 @@
 			},
 			'world': world,
 			'module': modules,
-			'residents': modules['I']['residents'] || modules['II']['residents'] || modules['III']['residents'],
+			'residents': modules['I']['residents'] || modules['II']['residents'] || modules['III']['residents'] || world.indexOf('1') == -1,
 			'hurry': world.indexOf('2') != -1 || world.indexOf('8') != -1,
 			'map': priority_match([modules['I']['map'], modules['II']['map'], modules['III']['map']]),
 			'mapnum': {},
