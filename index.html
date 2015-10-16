@@ -182,6 +182,16 @@
 				{{/7.I}}
 				<p>Place the majority board next to the game map and place 6 marking tokens for each player below this board.</p>
 			{{/7}}
+			{{#8}}
+				{{^8.III}}
+					<p>Display land and water tiles with the goods side atop.</p>
+					<p>Deserts do not produce goods themselves (but see <span class="water-adjacent icon"></span>).</p>
+				{{/8.III}}
+				{{#8.III}}{{#1}}
+					<p>Display land and water tiles with the goods side atop.</p>
+					<p>Deserts do not produce goods themselves (but see <span class="water-adjacent icon"></span>).</p>
+				{{/1}}{{/8.III}}
+			{{/8}}
 		</div>
 	</div>
 	{{#capture}}
@@ -238,7 +248,7 @@
 				</div>
 			{{/residents}}
 			{{#1.I}}
-				<div class="note col-md-4 col-xs-8">
+				<div class="note col-md-6 col-xs-8">
 					<h2>Final Scoring:</h2>
 					<p>The player gets the following victory points (VP) for each of the five types of goods, dependent on the # of goods he delivered.</p>
 					<table>
@@ -379,6 +389,51 @@
 				<p><b>Example Final Scoring:</b> Camille has majorities for forests and mountains. She gets additional 8 VP.</p>
 			</div>
 		{{/7.III}}
+		{{#8}}
+			<div class="note col-md-3 col-xs-6">
+				<h2>Plant:</h2>
+				<p>The player needs a # of active residents on the matching tile to build the plant.</p>
+				<table>
+					<tr><th><span class="grass bigicon"></span> / <span class="grain bigicon"></span></th><th><span class="forest bigicon"></span> / <span class="water-adjacent bigicon"></span>*</th><th><span class="mountain bigicon"></span></th></tr>
+					<tr><th>1 resident</th><th>2 residents</th><th>3 residents</th></tr>
+				</table>
+				<p>* On a land tile next to water, the player may build 1 fish-plant.</p>
+			</div>
+
+			{{^8.III}}
+				<div class="note col-md-3 col-xs-6">
+					<h2>Trading House:</h2>
+					<p>The player must pay money for his trading house, depending on the # of players/stock companies already having their trading houses in that city.</p>
+					<table>
+						<tr><th>First</th><th>Second</th><th>Third</th><th>Fourth</th></tr>
+						<tr><td>$0</td><td>$10</td><td>$20</td><td>$30</td></tr>
+					</table>
+				</div>
+			{{/8.III}}
+
+			{{#8.I}}
+				<div class="note col-md-4 col-xs-6">
+					<h2>Final Scoring:</h2>
+					<p>The player gets 2 VP for each trading house (including his headquarters in the capital). Additionally the player gets VP for each set of different types of goods.</p>
+					<table>
+						<tr><th># of different types of goods</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
+						<tr><th>Total VP</th><td>1 VP</td><td>3 VP</td><td>6 VP</td><td>10 VP</td><td>15 VP</td></tr>
+					</table>
+					<p><b>Example Final Scoring:</b> Paul owns 5 trading houses (including his headquarters) and can score up to 6 goods. He built a total of 9 plants and received 9 goods (3 wheat, 3 cattle, 2 fish, 1 wood). He misses ore for a complete set of 5 different goods, so he exchanges 1 wheat and 1 cattle for 1 ore. Afterwards he gets 26 VP = 10 (for 5 trading houses) + 15 (set with 5 different goods) + 1 (set with 1 wheat). He scored the maximum number goods, so he does not get VP for the surplus cattle and fish.</p>
+				</div>
+			{{/8.I}}
+			{{#8.II}}
+				<div class="note col-md-4 col-xs-6">
+					<h2>Goods Sale:</h2>
+					<p>The player gets income for each set of different types of goods.</p>
+					<table>
+						<tr><th># of different types of goods</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
+						<tr><th>Income for each set</th><td>$10</td><td>$25</td><td>$45</td><td>$70</td><td>$100</td></tr>
+					</table>
+					<p><b>Example Income:</b> Paul owns 5 trading houses (including his headquarters) and can sell up to 6 goods to them. He built 8 plants and now gets 8 goods (3 wheat, 2 cattle, 2 fish, 1 wood). He misses 1 ore for a complete set of 5 different goods, so he exchanges 1 wheat and 1 cattle for 1 ore. H e gets $130 = $20 (base income for his capital) + $100 (set with 5 different goods) + $10 (set with 1 good). He sold the maximum number of 6 goods to his trading houses and stores the surplus wheat face up in front of him for a later sale.</p>
+				</div>
+			{{/8.II}}
+		{{/8}}
 	</div>
 	</div>
 	<div class="container">
@@ -440,6 +495,10 @@
 			<p>Now the player may buy 1 privilege for $20. If he does not buy one privilege, the price drops for all privileges for $0 and the price token is placed on the right of the row of cards. Newly drawn privileges are again placed on the right of the price token, so their price is $20. If at any time there are privileges with different backs (I, II or III) in that row, the price for all privileges with the lower back drops to $0 and the price token is placed to the right of them.</p>
 			<p>The player may only buy each type of privilege once. He may use his privileges immediately after purchase.</p>
 		{{/3.III}}
+		{{#8.III}}
+			<p>Starting with the 2nd round the player may buy only at max 2 more residents than the # of plants he owns in each turn.</p>
+			<p><b>Example:</b> If the player owns 4 plants, he may only buy up to 6 residents.</p>
+		{{/8.III}}
 	{{/capture}}
 	{{#hascapture}}
 		<div class="row section">
@@ -553,6 +612,13 @@
 			{{/7.II}}
 			{{#4}}<p>If the player conquers the tile of another player, he counts that tile on the majority board, while the other player subtracts it.</p>{{/4}}
 		{{/7}}
+		{{#8}}
+			<p><b>Plants:</b> On each land tile the players commonly may build a total of 1 plant. The player needs active residents depending on the terrain, see the table <b>Plant</b>. Afterwards the used residents are exhausted and available again in the next round. The player marks the ownership by placing his settlement on the plant. {{#8.I}}The player places that good face up in front of himself.{{/8.I}} {{#1}}The plant immediately produces 1 goods tile, which is placed on top of the plant for now.{{/1}}</p>
+			{{^8.III}}
+				<p><b>Trading House:</b> If the plater moves residents onto a city and exchanges 1 resident into 1 settlement, it becomes his trading house. The player must pay additional money to build this trading house, see the table <b>Trading House</b>. If the player does not have enough money, he cannot move onto the city.</p>
+				{{#4}}<p>Any number of players may build trading houses on each city (no fights on cities). The players must take the trading houses of the militia into account, so even the first player must pay money to build his trading house!</p>{{/4}}
+			{{/8.III}}
+		{{/8}}
 	{{/capture}}
 	{{#hascapture}}
 		<div class="row section">
@@ -599,6 +665,10 @@
 		</p>{{/residents}}{{/5}}
 		{{#6}}{{#1.III}}<p>Once per turn and following the building rules for roads, the player may build 1 road for free from the tile with his transport trolley, if he has 1 settlement each on both affected tiles.</p>{{/1.III}}{{/6}}
 		{{^residents}}{{#7.III}}<p>The player may place 1 settlement on 1 tile, when he arrives there with his transport trolley. He counts the matching type of terrain on the majority board (This is a voluntary action. Because of the limited number of his settlements the player may pass on this action!)</p>{{/7.III}}{{/residents}}
+		{{#1}}{{#8}}
+			{{^8.III}}<p>The player must transport the goods to his trading houses on the cities{{^1.III}}, and additionally he must follow the demand of the cities{{/1.III}}. He places the delivered goods for the moment on top of the trading house. {{#8.I}}See below at <b>Final Scoring</b>{{/8.I}}{{#8.II}}See below at <b>Phase 3 H:Income</b>{{/8.II}} for the limited delivery quantities of trading houses.</p>{{/8.III}}
+			{{#8.III}}<p>The player must transport the goods to the cities. He must follow the demand of the cities, as explained in that module. He places the delivered goods face up in front of himself.</p>{{/8.III}}
+		{{/8}}{{/1}}
 	{{/capture}}
 	{{#hascapture}}
 		<div class="row section">
@@ -669,6 +739,10 @@
 		{{/5.II}}
 		{{#6.II}}<p>The player gets $20 base income for his capital, plus $10 for each additional city he connected. Furthermore each of his connected cities gives the player money for 1 land tile of each type (except deserts): he gets $5 for grassland, field & forest, $10 for mountian, plus a bonus of $10 for each set containing 1 city, 1 grassland, 1 field, 1 forest, 1 mountain (no desert), see the example <b>Income</b>.</p>{{/6.II}}
 		{{#7.II}}<p>The player gets $20 base income for the capital, plus income for the majorities as stated above, see table and example <b>Income</b>.</p>{{/7.II}}
+		{{#8.II}}
+			<p>{{^1}}During this phase, the player gets 1 matching good for each of his plants from the general storage.{{/1}}{{#1}}The player may sell goods already delivered to his trading houses.{{/1}} He may sell {{^4}}1 good{{/4}}{{#4}}2 goods{{/4}} to each of his trading houses{{^4}} (up to 2 goods to the headquarters in his capital){{/4}}. {{^1}}Afterwards, he places the sold goods back into the general storage.{{/1}}{{#1}}Afterwards, the goods remain on the trading houses.{{/1}}</p>
+			<p>The player gets $20 base income for his capital and additional income for the sold goods, see the table and example <b>Scoring</b>. {{^1}}The player may exchange goods in a ratio of 2:1 into different goods types, to get a higher income for the sale. He may store any number of goods face up in front of him for a later sale.{{/1}}</p>
+		{{/8.II}}
 
 		{{#3.I}}
 			<p>The players place their income for now to one side, until they paid taxes in the next Phase 1.</p>
@@ -766,6 +840,24 @@
 				<p>The game ends immediately, after the 3rd scoring is turned face up. The <b>Final Scoring</b> takes place, see above.</p>
 				<p>The player with the most VP wins the game! In case of a tie, the tied player with the most residents and settlements on the game map wins.</p>
 			{{/7.I}}
+			{{#8.I}}
+				{{^4}}
+					{{#9}}
+						<p>The game ends at the end of the round, after at least 1 stock company owns at least 4 trading houses and at least 5 goods.</p>
+					{{/9}}
+					{{^9}}
+						<p>Depending on the # of players the game ends at the end of the round, after at least 1 player owns 8 (2♟), 7 (3♟) or 6 (4♟) trading houses and at least 5 goods.</p>
+					{{/9}}
+				{{/4}}
+				{{#4}}
+					{{#9}}
+						<p>The game ends at the end of the round, after at least 1 stock company owns at least 3 trading houses and at least 5 goods.</p>
+					{{/9}}
+					{{^9}}
+						<p>Depending on the # of players the game ends at the end of the round, after at least 1 player owns 6 (2♟), 5 (3♟) or 4 (4♟) trading houses and at least 5 goods.</p>
+					{{/9}}
+				{{/4}}
+			{{/8.I}}
 		</div>
 	</div>
 
@@ -795,6 +887,11 @@
 			<p>The players get victory points (VP) for each of their tiles regarding to the majority table, see the table and example for <b>Final Scoring</b>.</p>
 			<p>The player with the most VP wins the game. {{#4}}In case of a tie the tied player with the most residents on tiles with neutral roads wins.{{/4}}{{^4}}In case of a tie, the tied player with the most residents on tiles with his roads wins.{{/4}}</p>
 		{{/6.I}}
+		{{#8.I}}
+			<p>The player takes the goods {{#1}}on top of his trading houses{{/1}}{{^1}}in front of him{{/1}} and may score {{#4}}2 goods{{/4}}{{^4}}1 good{{/4}} for each of his trading houses{{^4}} (up to 2 goods for the headquarters in his capital){{/4}}. The player gets victory points (VP) for all scored goods, see the table and example <b>Final Scoring</b>. Before scoring the player may exchange goods in a ratio of 2:1 into different goods types, to get more valuable sets.</p>
+			<p>The player with the most VP wins the game! In case of a tie, the tied player with the most plants wins the game.</p>
+		{{/8.I}}
+
 		{{#7.III}}
 			<p>The players get additional victory points (VP) for majorities during the final scoring, see table and example of the <b>Final Scoring</b>.</p>
 		{{/7.III}}
