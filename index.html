@@ -100,6 +100,11 @@
 			</ul>
 		</div>
 	</div>
+	{{#9}}{{^9.III}}<div class="row warning">
+		<div class="col-md-12 col-xs-12">
+			<p>IMPORTANT: Because of the complexity of the game rules you only find a summary of the most important details. The complete rules are in the rules booklet!</p>
+		</div>
+	</div>{{/9.III}}{{/9}}
 	<div class="row section">
 		<div class="col-md-2 col-xs-2"><h1>Game Preparation</h1></div>
 		<div class="col-md-10 col-xs-10">
@@ -192,10 +197,24 @@
 					<p>Deserts do not produce goods themselves (but see <span class="water-adjacent icon"></span>).</p>
 				{{/1}}{{/8.III}}
 			{{/8}}
+			{{#9.I}}
+				<p>Prepare the game for 5 stock companies.</p>
+			{{/9.I}}
+			{{#9.II}}
+				<p>Prepare the game for 5 stock companies. The stock companies each get the following money for their company assets: blue & orange each get $100, white & purple each get $150, green gets $200.</p>
+			{{/9.II}}
+			{{#9.III}}
+				<p>Each player is CEO of a small private stock company and takes the president's share as his title deed. He places the remaining 8 shares with the dark side in front of himself. Mark the share values of all players at $20 on the share value board. Depending on the # of players lay out the matching player order cards and place 1 resident of each player next to these cards.</p>
+			{{/9.III}}
+			{{#9}}{{^9.III}}
+				<p>Lay out the {{#9.II}}{{#7.I}}scoring{{/7.I}}{{^7.I}}player order{{/7.I}}{{/9.II}}{{^9.II}}player order{{/9.II}} cards for 5 companies for the business rounds (BR) and place 1 resident of each company next to these cards. 1 player gets the starting player card for the 1st share round (SR).</p>
+			{{/9.III}}{{/9}}
 		</div>
 	</div>
 	{{#capture}}
 		{{#8}}{{#5}}<p>Place 1 barrack and 1 militia on all free cities, which are explored during the game.</p>{{/5}}{{/8}}
+		{{#9.I}}<p>Play the game in the following order of turns: SR, BR, BR, SR, BR, SR, BR, SR, BR, game end.</p>{{/9.I}}
+		{{#9.II}}<p>Play the game in <b>alternating</b> turns: SR, BR, SR, BR, SR, BR, etc.</p>{{/9.II}}
 	{{/capture}}
 	{{#hascapture}}
 	<div class="row section">
@@ -434,9 +453,68 @@
 				</div>
 			{{/8.II}}
 		{{/8}}
+		{{#9.I}}
+			<div class="note col-md-12 col-xs-12">
+				<p><b>Calculation of Dividends:</b> The company pays $1 dividends for each full $10 income to each share ($2 ot the president's share)</p>
+				<p><b>Example:</b> The green company gets an income of $68. Thus, it pays $6 dividends. Camille is the only player owning 5 shares and gets $30. The company gets the remaining $38 for their company assets.</p>
+			</div>
+		{{/9.I}}
+		{{#9.II}}
+			<div class="note col-md-12 col-xs-12">
+				<p><b>Calculation of Dividends:</b> The company pays $1 dividends for each full $20 income to each share ($2 to the president's share).</p>
+			</div>
+			<div class="note col-md-8 col-xs-8">
+				<p><b>Bonus VP at the Final Scoring:</b> The stock companies with the most victory points (VP) get additional VP.</p>
+				<table>
+					<tr><th>1st company</th><th>2nd company</th><th>3rd company</th><th>4th company</th><th>5th company</th></tr>
+					<tr><td>5 VP</td><td>3 VP</td><td>2 VP</td><td>1 VP</td><td>0 VP</td></tr>
+				</table>
+			</div>
+			<div class="note col-md-4 col-xs-4">
+				<p>In case of a tie add the VP of the respective places for the concerned companies and divide them (round up).</p>
+				<p><b>Example:</b> If 2 companies share the 2nd place, each company gets additional 3 VP = (3 + 2) / 2.</p>
+			</div>
+		{{/9.II}}
+		{{#9.III}}
+			<div class="note col-md-8 col-xs-8">
+				<p><b>Bonus VP at the Final Scoring:</b> The player's stock companies with the most victory points (VP) get additional VP.</p>
+				<table>
+					<tr><th></th><th>1st company</th><th>2nd company</th><th>3rd company</th><th>4th company</th></tr>
+					<tr><th>2 ♟</th><td>3 VP</td><td>0 VP</td><td></td><td></td></tr>
+					<tr><th>3 ♟</th><td>3 VP</td><td>1 VP</td><td>0 VP</td><td></td></tr>
+					<tr><th>4 ♟</th><td>4 VP</td><td>2 VP</td><td>1 VP</td><td>0 VP</td></tr>
+				</table>
+			</div>
+			<div class="note col-md-3 col-xs-4"
+				<p>In the case of a tie add the VP of the respective places for the concerned companies and divide them (round up).</p>
+				<p><b>Example:</b> In a game with 4 players, if 2 companies share the 2nd place, each company gets additional 2 VP = (2 + 1) / 2.</p>
+			</div>
+		{{/9.III}}		
 	</div>
 	</div>
 	<div class="container">
+
+	{{#9}}{{^9.III}}
+		<div class="row section">
+			<div class="col-md-2 col-xs-2"><h1>Share Round</h1></div>
+			<div class="col-md-10 col-xs-10">
+				<p>During the SR, the players can choose the following actions: <b>buy 0-1 shares &amp; sell any number of shares, pass or get out</b>.</p>
+				<p><b>Buying Shares:</b> The price for all shares always matches the actual share value. The company gets the fixed issue price. A single player may only own max 50% of the shares of a single stock company.</p>
+				<p><b>Establishing a stock company:</b> The players buy the "2"-president's share for twice the fixed issue price and become the president of that stock company.</p>
+				<p>
+					<b>Selling Shares:</b> The sale price always matches the actual share value. Independent of the number of sold shares, the share value of the concerned stock companies drops by $10.
+					 {{#9.I}}The players together may only sell 50% of the shares of a single stock company to the bank.{{/9.I}}
+					 {{#9.II}}The players may sell all "1"-shares to the bank (only the president's share must remain in the ownership of a player).{{/9.II}}
+				</p>
+				<p>
+					<b>End of the SR:</b> The share values of the companies raise by $10, 
+					{{#9.II}}whose shares were bought most during this SR <b>AND</b>{{/9.II}}
+					whose shares are now 100% owned by players.
+				</p>
+			</div>
+		</div>
+	{{/9.III}}{{/9}}
+
 	{{#capture}}
 		{{#3}}{{^3.III}}
 			<p>At game start, all players make a secret bid with their starting money ($0 is a valid bid). Starting with the highest bidder, each player chooses a position in the player order and his capital on the map. In case of a tie, randomly draw lots for the order of choice (the losers get $2 for each lost draw).</p>
@@ -462,6 +540,21 @@
 		</div>
 	{{/hascapture}}
 
+	{{#9}}
+		<div class="row section">
+			<div class="col-md-2 col-xs-2"><h1>Phase 1: Company Order</h1></div>
+			<div class="col-md-10 col-xs-10">
+				{{^9.III}}
+					<p>The order of the stock companies matches the actual share values from high to low. In case of a tie the order of the concerned companies matches the stack of share value markers from top to bottom.</p>
+					{{#9.I}}{{#3.II}}<p>Starting with the 2nd round the income is taxed according to the amount, but the stock company order according to the actual share value.</p>{{/3.II}}{{/9.I}}
+				{{/9.III}}
+				{{#9.III}}
+					<p>At the start of the game the turn order is randomly determined. Starting with the 2nd round determine the player order according to the income of the ormer round, from low to high. In case of a tie simply reverse the player order of the concerned players.</p>
+				{{/9.III}}
+			</div>
+		</div>
+	{{/9}}
+
 	{{#3}}{{^3.III}}
 		<div class="row section">
 			<div class="col-md-2 col-xs-2"><h1>Phase 2: Privileges</h1></div>
@@ -485,6 +578,16 @@
 			<div class="col-md-10 col-xs-10">{{{captured}}}</div>
 		</div>
 	{{/hascapture}}
+
+	{{#9.III}}
+		<div class="row section">
+			<div class="col-md-2 col-xs-2"><h1>Phase 3 B: Stock Dealing</h1></div>
+			<div class="col-md-10 col-xs-10">
+				<p>The player may buy any number of shares of the other players from the bank for the actual share value, if these were already sole in a former round to the bank (if their dark side is face up). The player cannot sell these shares again!</p>
+				<p>Additionally, the player may sell exactly 1 of his shares to the bank during his turn. He places the share for now with the light side face up into the bank and gets money according to the actual share value (this money is not considered as income!). Then, the share value drops by $10. The player cannot sell his president's share! The player may conduct this <b>sale during his complete turn</b> to get missing money for one of his actions!</p>
+			</div>
+		</div>
+	{{/9.III}}
 
 	{{#capture}}
 		{{#1}}
@@ -743,6 +846,9 @@
 			<p>{{^1}}During this phase, the player gets 1 matching good for each of his plants from the general storage.{{/1}}{{#1}}The player may sell goods already delivered to his trading houses.{{/1}} He may sell {{^4}}1 good{{/4}}{{#4}}2 goods{{/4}} to each of his trading houses{{^4}} (up to 2 goods to the headquarters in his capital){{/4}}. {{^1}}Afterwards, he places the sold goods back into the general storage.{{/1}}{{#1}}Afterwards, the goods remain on the trading houses.{{/1}}</p>
 			<p>The player gets $20 base income for his capital and additional income for the sold goods, see the table and example <b>Scoring</b>. {{^1}}The player may exchange goods in a ratio of 2:1 into different goods types, to get a higher income for the sale. He may store any number of goods face up in front of him for a later sale.{{/1}}</p>
 		{{/8.II}}
+		{{#9.I}}<p>Place the income of the stock company, which it gets according to the module on <b>TOP II</b>, separate from the company assets to the side for now</p>{{/9.I}}
+		{{#9.II}}<p>Follow the rules regarding income of the module on <b>TOP I</b>. Place the income of the stock company separate from the company assets to the side for now.</p>{{/9.II}}
+		{{#9.III}}<p>The players place their income for now separately from their cash. After all players got their income, the players with the highest income raise their share values by $20. All other players raise their share values by $10. Finally flip all shares sold to the bank during this round, so their dark sides are face up again.</p>{{/9.III}}
 
 		{{#3.I}}
 			<p>The players place their income for now to one side, until they paid taxes in the next Phase 1.</p>
@@ -781,6 +887,24 @@
 			<div class="col-md-10 col-xs-10">{{{captured}}}</div>
 		</div>
 	{{/hascapture}}
+
+	{{#9}}{{^9.III}}
+		<div class="row section">
+			<div class="col-md-2 col-xs-2"><h1>Phase 4: Dividends</h1></div>
+			<div class="col-md-10 col-xs-10">
+				{{#9.I}}
+					<p>The presidents decide if they pay a dividend or keep the income in their company assets.</p>
+					<p><b>Pay a dividend:</b> According to the owned shares the income is divided between players, the bank and the stock company (the stock company keeps the remains). See the <b>Calculation of Dividends</b>. The share value of the company raises by $10.</p>
+					<p><b>Keep the income:</b> Place the whole income into the company assets. The share value remains the same.</p>
+					<p><b>Afterwards pay maintenance costs:</b> $3 each for all settlements and $1 each for all residents of the stock company. The president must pay missing payments with his own money.</p>
+				{{/9.I}}
+				{{#9.II}}
+					<p>Raise the actual share values of the 2 stock companies with the highest and second highest income by $10. Drop the actual share values of all companies with lowest income by $10. Mark all changes of the actual share values on the share value board in order of the former share values from high to low.</p>
+					<p>All stock companies pay a dividend to players and the bank. The presidents keep the remaining income and place it on the company assets. See the <b>Calculation of Dividends</b>.</p>
+				{{/9.II}}
+			</div>
+		</div>
+	{{/9.III}}{{/9}}
 
 	{{#capture}}
 		{{#7.I}}
@@ -858,6 +982,7 @@
 					{{/9}}
 				{{/4}}
 			{{/8.I}}
+			{{#9.I}}<p>The game ends after the 5th business round (BR). All companies pay a dividend for the last income and must pay maintenance cost for a final time!</p>{{/9.I}}
 		</div>
 	</div>
 
@@ -891,6 +1016,17 @@
 			<p>The player takes the goods {{#1}}on top of his trading houses{{/1}}{{^1}}in front of him{{/1}} and may score {{#4}}2 goods{{/4}}{{^4}}1 good{{/4}} for each of his trading houses{{^4}} (up to 2 goods for the headquarters in his capital){{/4}}. The player gets victory points (VP) for all scored goods, see the table and example <b>Final Scoring</b>. Before scoring the player may exchange goods in a ratio of 2:1 into different goods types, to get more valuable sets.</p>
 			<p>The player with the most VP wins the game! In case of a tie, the tied player with the most plants wins the game.</p>
 		{{/8.I}}
+		{{#9}}
+			{{#9.I}}
+				<p>The players determine their wealth: EAch player counts his money and adds the actual share value of each of his own shares according to the share value board to his money (the president's share counts twice). {{#7.III}}The share value of each share is $1 higher for each VP of the stock company.{{/7.III}}</p>
+				<p>The player with the biggest wealth wins the game! In case of a tie, all tied players share the victory.</p>
+			{{/9.I}}
+			{{^9.I}}
+				<p>First, the players determine the victory points (VP) of the 5 stock companies. Second, the best stock companies (having the most VP) get bonus VP, see table <b>Bonus VP at the Final Scoring</b>.</p>
+				<p>The players get VP for each of their shares equal to the total number of VP of the matching stock companies (the president's share counts twice!).</p>
+				<p>The player with the most VP wins the game! In case of a tie, all tied players share the victory.</p>
+			{{/9.I}}
+		{{/9}}
 
 		{{#7.III}}
 			<p>The players get additional victory points (VP) for majorities during the final scoring, see table and example of the <b>Final Scoring</b>.</p>
