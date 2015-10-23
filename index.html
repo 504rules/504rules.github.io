@@ -474,6 +474,55 @@
 				<p>In case of a tie add the VP of the respective places for the concerned companies and divide them (round up).</p>
 				<p><b>Example:</b> If 2 companies share the 2nd place, each company gets additional 3 VP = (3 + 2) / 2.</p>
 			</div>
+			
+			{{#2.I}}
+				<div class="note col-md-4 col-xs-4">
+					<img src="example-2-ii.png" style="width: 100%">
+					<h2>Example Income:</h2>
+					<p>During his turn Paul placed first settlements on 1 field, 1 forest and city "5", additionally 1 settlement on city "1" where Rachel already has her settlement. He placed 1 resident each on top of both city cards. Now, he gets $90. $20 (base income for his capital) + $20 (1st settlements on field, forest and on city "5") + $50 (for his overall 2nd and 3rd resident on the city cards). Afterwards, he moves both residents to the bottom of the city cards.</p>
+				</div>
+			{{/2.I}}
+			{{#4.I}}
+				<div class="note col-md-3 col-xs-6">
+					<h2>Example Income:</h2>
+					<p>In addition to her capital Camille additionally controls 2 wood, 3 grasslands, 1 mountain and 2 city tiles. She gets an income of $70 = $20 (base income for the capital) + $40 (8 additional tiles) + $10 (3 different types of land tiles).</p>
+				</div>
+			{{/4.I}}
+			{{#5.I}}
+				<div class="note col-md-3 col-xs-4">
+					<h2>Example Income:</h2>
+					<p>During the first few rounds Rachel explored 8 tiles and placed settlements first onto 6 tiles. Thus, she gets an income of $90 = $20 (base income for the capital) + $40 (8 explored tiles) + $30 (6 first settlements).</p>
+				</div>
+			{{/5.I}}
+			{{#6.I}}
+				<div class="note col-md-3 col-xs-4">
+					<h2>Example Income:</h2>
+					<p>Anne gets a total of $75: $20 (Base income for the capital) + $10 (1 additional city) + $25 (1 grassland, 2 forest, 2 fields) + $10 (1 mountain) + $10 (1 set). The 3rd forest does not give her income in the moment, as until now she only connected 2 cities.</p>
+				</div>
+			{{/6.I}}
+			{{#7.I}}
+				<div class="note col-md-4 col-xs-8">
+					<h2>Income:</h2>
+					<p>The player gets the # of tiles x $10 for each majority, up to the stated maximum.</p>
+					<table>
+						<tr><th></th><th><span class="city bigicon"></span></th><th><span class="grass bigicon"></span></th><th><span class="forest bigicon"></span></th><th><span class="grain bigicon"></span></th><th><span class="mountain bigicon"></span></th><th><span class="desert bigicon"></th></tr>
+						<tr><td>max. $50</td><td>max. $50</td><td>max. $45</td><td>max. $40</td><td>max. $35</td><td>max. $30</td></tr>
+					</table>
+					<p>In case of a tie all concerned players get the calculated income up to the stated maximum.</p>
+					<p><b>Example Income:</b> Camilled has majorities for grasslands (2 tiles) and fields (% tiles). She gets a total of $80 = $20 (base income for the capital) + $20 (for 2 grasslands) + $40 (maximum for 4 fields). The additional field only secures her majority, but does not increase her income!</p>
+				</div>
+			{{/7.I}}
+			{{#8.I}}
+				<div class="note col-md-4 col-xs-6">
+					<h2>Goods Sale:</h2>
+					<p>The player gets income for each set of different types of goods.</p>
+					<table>
+						<tr><th># of different types of goods</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
+						<tr><th>Income for each set</th><td>$10</td><td>$25</td><td>$45</td><td>$70</td><td>$100</td></tr>
+					</table>
+					<p><b>Example Income:</b> Paul owns 5 trading houses (including his headquarters) and can sell up to 6 goods to them. He built 8 plants and now gets 8 goods (3 wheat, 2 cattle, 2 fish, 1 wood). He misses 1 ore for a complete set of 5 different goods, so he exchanges 1 wheat and 1 cattle for 1 ore. H e gets $130 = $20 (base income for his capital) + $100 (set with 5 different goods) + $10 (set with 1 good). He sold the maximum number of 6 goods to his trading houses and stores the surplus wheat face up in front of him for a later sale.</p>
+				</div>
+			{{/8.I}}
 		{{/9.II}}
 		{{#9.III}}
 			<div class="note col-md-8 col-xs-8">
@@ -489,7 +538,7 @@
 				<p>In the case of a tie add the VP of the respective places for the concerned companies and divide them (round up).</p>
 				<p><b>Example:</b> In a game with 4 players, if 2 companies share the 2nd place, each company gets additional 2 VP = (2 + 1) / 2.</p>
 			</div>
-		{{/9.III}}		
+		{{/9.III}}
 	</div>
 	</div>
 	<div class="container">
@@ -846,8 +895,44 @@
 			<p>{{^1}}During this phase, the player gets 1 matching good for each of his plants from the general storage.{{/1}}{{#1}}The player may sell goods already delivered to his trading houses.{{/1}} He may sell {{^4}}1 good{{/4}}{{#4}}2 goods{{/4}} to each of his trading houses{{^4}} (up to 2 goods to the headquarters in his capital){{/4}}. {{^1}}Afterwards, he places the sold goods back into the general storage.{{/1}}{{#1}}Afterwards, the goods remain on the trading houses.{{/1}}</p>
 			<p>The player gets $20 base income for his capital and additional income for the sold goods, see the table and example <b>Scoring</b>. {{^1}}The player may exchange goods in a ratio of 2:1 into different goods types, to get a higher income for the sale. He may store any number of goods face up in front of him for a later sale.{{/1}}</p>
 		{{/8.II}}
-		{{#9.I}}<p>Place the income of the stock company, which it gets according to the module on <b>TOP II</b>, separate from the company assets to the side for now</p>{{/9.I}}
-		{{#9.II}}<p>Follow the rules regarding income of the module on <b>TOP I</b>. Place the income of the stock company separate from the company assets to the side for now.</p>{{/9.II}}
+		{{#9.I}}<p>Place the income of the stock company separate from the company assets to the side for now</p>{{/9.I}}
+		{{#9.II}}
+			{{#1.I}}
+				<p>The player gets $20 base income for the capital, plus once-only money for each good delivered in <b>Phase 3 E</b>. The player balances accounts separately for each good. He gets the price for the 1st good according to the goods price board and adjusts all prices: the price for the delivered good drops 3 spaces, the prices for all other goods each rise 1 space. Then, the player gets the price for the 2nd good etc.! The price for a type of goods cannot drop below the first "$10" space and cannot rise above $140. Finally, the player places all delivered goods into the general storage.</p>
+				{{#4}}<p>If the player delivers goods to a city without his settlements, he must pay $1 for each full $10 of this sale to the owner of the city, or in case of a free city, payment goes to the bank.</p>{{/4}}
+			{{/1.I}}
+			{{#2.I}}
+				<p>The player gets $20 base income for his capital, plus once-only money for each settlement, which he placed on an empty tile during this turn, depending on the type of terrain: He gets $5 for <span class="grass icon"></span>, <span class="forest icon"></span>, <span class="grain icon"></span>, <span class="desert icon"></span> and $10 for <span class="city icon"></span> and <span class="mountain icon"></span>. Additionally the player gets once-only money each time he places a new resident on 1 or more city cards in <b>Phase 3 D</b>. For the overall 1st resident $10, for the overall 2nd resident $20 etc. Afterwards he moves the new residents to the bottom of the matching city cards - see example of <b>Income</b>.</p>
+				{{#1}}
+					<p>If the player removes his settlement and then there are no settlements left on the tile, the next player placing a first settlement on that tile gets again once-only $5 (once-only $10 for city and mountain).</p>
+				{{/1}}
+				{{^1}}
+					{{#4}}<p>If the player removes his settlement and then there are no settlements left on the tile, the next player placing a first settlement on that tile gets again once-only $5 (once-only $10 for city and mountain).</p>{{/4}}
+				{{/1}}
+			{{/2.I}}
+			{{#3.I}}
+				<p>The player gets $20 base income for his capital, plus $15 for each of his factories. All players place their income for now to one side, until they paid taxes in the next Phase 1.</p>
+			{{/3.I}}
+			{{#4.I}}
+				<p>The players receive $20 base income for their capital, plus $5 for each additionally owned tile. The players also receive a bonus income for different types of land tiles (non city tiles), see the example <b>Income</b>.</p>
+				<table>
+					<tr><th># of different types of land tiles</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
+					<tr><th>bonus income</th><td>$0</td><td>$5</td><td>$10</td><td>$20</td><td>$30</td></tr>
+				</table>
+			{{/4.I}}
+			{{#5.I}}
+				<p>The player gets $20 base income for the capital, plus $5 for each tile he explored (including water) plus $5 for each settlement, which the player placed first on a tile. For a better overview the player places 1 income token for each explored tile and settlement in front of himself, see the example <b>Income</b>.</p>
+				{{#2}}<p>If the player removes his settlement and then the tile is completely empty, the next player placing a new first settlement on that tile also takes 1 income token.</p>{{/2}}
+				{{^2}}{{#4}}<p>If the player removes his settlement and then the tile is completely empty, the next player placing a new first settlement on that tile also takes 1 income token.</p>{{/4}}{{/2}}
+			{{/5.I}}
+			{{#6.I}}<p>The player gets $20 base income for his capital, plus $10 for each additional city he connected. Furthermore each of his connected cities gives the player money for 1 land tile of each type (except deserts): he gets $5 for grassland, field & forest, $10 for mountian, plus a bonus of $10 for each set containing 1 city, 1 grassland, 1 field, 1 forest, 1 mountain (no desert), see the example <b>Income</b>.</p>{{/6.II}}
+			{{#7.I}}<p>The player gets $20 base income for the capital, plus income for the majorities as stated above, see table and example <b>Income</b>.</p>{{/7.II}}
+			{{#8.I}}
+				<p>{{^1}}During this phase, the player gets 1 matching good for each of his plants from the general storage.{{/1}}{{#1}}The player may sell goods already delivered to his trading houses.{{/1}} He may sell {{^4}}1 good{{/4}}{{#4}}2 goods{{/4}} to each of his trading houses{{^4}} (up to 2 goods to the headquarters in his capital){{/4}}. {{^1}}Afterwards, he places the sold goods back into the general storage.{{/1}}{{#1}}Afterwards, the goods remain on the trading houses.{{/1}}</p>
+				<p>The player gets $20 base income for his capital and additional income for the sold goods, see the table and example <b>Scoring</b>. {{^1}}The player may exchange goods in a ratio of 2:1 into different goods types, to get a higher income for the sale. He may store any number of goods face up in front of him for a later sale.{{/1}}</p>
+			{{/8.I}}
+			<p>Place the income of the stock company separate from the company assets to the side for now.</p>
+		{{/9.II}}
 		{{#9.III}}<p>The players place their income for now separately from their cash. After all players got their income, the players with the highest income raise their share values by $20. All other players raise their share values by $10. Finally flip all shares sold to the bank during this round, so their dark sides are face up again.</p>{{/9.III}}
 
 		{{#3.I}}
