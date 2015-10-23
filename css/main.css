@@ -204,3 +204,12 @@ table th {
 .note p {
 	margin: 0;
 }
+
+.warning  {
+	border: 1px solid black;
+	border-top: 5px solid black;
+	border-bottom: 5px solid black;
+	margin-right: 0;
+	margin-bottom: 15px;
+	padding: 7px;
+}
