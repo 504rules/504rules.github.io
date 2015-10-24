@@ -659,7 +659,7 @@
 		</div>
 	{{/hascapture}}
 
-	{{#capture}}
+	{{#capture}}{{#residents}}
 		{{#hurry}}<p>While moving, the residents are <b>in a hurry</b>. Thus, if the player moves them onto tiles with at least 1 of his exhausted residents, they remain active.</p>{{/hurry}}
 		{{#2}}
 			{{^2.III}}
@@ -771,7 +771,7 @@
 				{{#4}}<p>Any number of players may build trading houses on each city (no fights on cities). The players must take the trading houses of the militia into account, so even the first player must pay money to build his trading house!</p>{{/4}}
 			{{/8.III}}
 		{{/8}}
-	{{/capture}}
+	{{/residents}}{{/capture}}
 	{{#hascapture}}
 		<div class="row section">
 			<div class="col-md-2 col-xs-2"><h1>Phase 3 D: Residents</h1></div>
