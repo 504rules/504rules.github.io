@@ -520,7 +520,6 @@
 						<tr><th># of different types of goods</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
 						<tr><th>Income for each set</th><td>$10</td><td>$25</td><td>$45</td><td>$70</td><td>$100</td></tr>
 					</table>
-					<p><b>Example Income:</b> The green company owns 5 trading houses (including its headquarters) and can sell up to 6 goods to them. The company built 8 plants and now gets 8 goods (3 wheat, 2 cattle, 2 fish, 1 wood). It misses 1 ore for a complete set of 5 different goods, so it exchanges 1 wheat and 1 cattle for 1 ore. The company gets $130 = $20 (base income for its capital) + $100 (set with 5 different goods) + $10 (set with 1 good). It sold the maximum number of 6 goods to its trading houses and stores the surplus wheat face up in front of the company card for a later sale.</p>
 				</div>
 			{{/8.I}}
 		{{/9.II}}
@@ -663,7 +662,7 @@
 		{{#hurry}}<p>While moving, the residents are <b>in a hurry</b>. Thus, if the player moves them onto tiles with at least 1 of his exhausted residents, they remain active.</p>{{/hurry}}
 		{{#2}}
 			{{^2.III}}
-				<p>The first time the player reaches 1 city and exchanges 1 resident for 1 settlement, he places that resident directly on top of the matching city card. IMPORTANT: The players must reach the cities once during the game. They do not need to stay there until the end of the game. The players may voluntarily remove their settlements from these cities during the game, or may be forced to remove them because of war!</p>
+				<p>The first time the player reaches 1 city and exchanges 1 resident for 1 settlement, he places {{#9}}a settlement{{/9}}{{^9}}that resident{{/9}} directly on top of the matching city card. IMPORTANT: The players must reach the cities once during the game. They do not need to stay there until the end of the game. The players may voluntarily remove their settlements from these cities during the game, or may be forced to remove them because of war!</p>
 				{{#4}}<p>The player reaches an opposing city the first time, if he moves 1 of his residents on this city. In that case he places 1 additional resident from his storage on top of the matching city card (moving on the city is important, not the outcome of the following fight!).</p>{{/4}}
 			{{/2.III}}
 		{{/2}}
@@ -858,7 +857,7 @@
 
 	{{#capture}}
 		{{#1.II}}
-			<p>The player gets $20 base income for the capital, plus once-only money for each good delivered in <b>Phase 3 E</b>. The player balances accounts separately for each good. He gets the price for the 1st good according to the goods price board and adjusts all prices: the price for the delivered good drops 3 spaces, the prices for all other goods each rise 1 space. Then, the player gets the price for the 2nd good etc.! The price for a type of goods cannot drop below the first "$10" space and cannot rise above $140. Finally, the player places all delivered goods into the general storage.</p>
+			<p>The player gets $20 base income for the capital, plus once-only money for each good delivered in <b>Phase 3 E</b>. The player balances accounts separately for each good. He gets the price for the 1st good according to the goods price board and adjusts all prices: the price for the delivered good drops 3 spaces, the prices for all other goods each rise 1 space. Then, the player gets the price for the 2nd good etc.! The price for a type of goods cannot drop below the first "$10" space and cannot rise above $140. {{^9}}Finally, the player places all delivered goods into the general storage.{{/9}}{{#9}}Afterwards, the goods remain in front of the company card.{{/9}}</p>
 			{{#4}}<p>If the player delivers goods to a city without his settlements, he must pay $1 for each full $10 of this sale to the owner of the city, or in case of a free city, payment goes to the bank.</p>{{/4}}
 		{{/1.II}}
 		{{#2.II}}
@@ -902,7 +901,7 @@
 				{{#4}}<p>If the company delivers goods to a city without its settlements, it must pay $1 for each full $10 of this sale to the owner of the city, or in case of a free city, payment goes to the bank.</p>{{/4}}
 			{{/1.I}}
 			{{#2.I}}
-				<p>The company gets $20 base income for its capital, plus once-only money for each settlement, which it placed on an empty tile during this turn, depending on the type of terrain: It gets $5 for <span class="grass icon"></span>, <span class="forest icon"></span>, <span class="grain icon"></span>, <span class="desert icon"></span> and $10 for <span class="city icon"></span> and <span class="mountain icon"></span>. Additionally the company gets once-only money each time it places a new resident on 1 or more city cards in <b>Phase 3 D</b>. For the overall 1st resident $10, for the overall 2nd resident $20 etc. Afterwards it moves the new residents to the bottom of the matching city cards - see example of <b>Income</b>.</p>
+				<p>The company gets $20 base income for its capital, plus once-only money for each settlement, which it placed on an empty tile during this turn, depending on the type of terrain: It gets $5 for <span class="grass icon"></span>, <span class="forest icon"></span>, <span class="grain icon"></span>, <span class="desert icon"></span> and $10 for <span class="city icon"></span> and <span class="mountain icon"></span>. Additionally the company gets once-only money each time it places a settlement on 1 or more city cards in <b>Phase 3 D</b>. For the overall 1st resident $10, for the overall 2nd resident $20 etc. Afterwards it moves the new residents to the bottom of the matching city cards - see example of <b>Income</b>.</p>
 				{{#1}}
 					<p>If the company removes its settlement and then there are no settlements left on the tile, the next company placing a first settlement on that tile gets again once-only $5 (once-only $10 for city and mountain).</p>
 				{{/1}}
@@ -928,7 +927,7 @@
 			{{#6.I}}<p>The company gets $20 base income for its capital, plus $10 for each additional city it connected. Furthermore each of its connected cities gives the company money for 1 land tile of each type (except deserts): it gets $5 for grassland, field & forest, $10 for mountian, plus a bonus of $10 for each set containing 1 city, 1 grassland, 1 field, 1 forest, 1 mountain (no desert), see the example <b>Income</b>.</p>{{/6.I}}
 			{{#7.I}}<p>The company gets $20 base income for the capital, plus income for the majorities as stated above, see table and example <b>Income</b>.</p>{{/7.I}}
 			{{#8.I}}
-				<p>{{^1}}During this phase, the company gets 1 matching good for each of its plants from the general storage.{{/1}}{{#1}}The company may sell goods already delivered to its trading houses.{{/1}} It may sell {{^4}}1 good{{/4}}{{#4}}2 goods{{/4}} to each of its trading houses{{^4}} (up to 2 goods to the headquarters in its capital){{/4}}. {{^1}}Afterwards, it places the sold goods back into the general storage.{{/1}}{{#1}}Afterwards, the goods remain on the trading houses.{{/1}}</p>
+				<p>{{^1}}The company may sell goods already produced in its plants.{{/1}}{{#1}}The company may sell goods already delivered to its trading houses.{{/1}} It may sell 1 good to each of its trading houses (up to 2 goods to the headquarters in its capital). {{^1}}Afterwards, the goods remain in front of the company card.{{/1}}{{#1}}Afterwards, the goods remain on the trading houses.{{/1}}</p>
 				<p>The company gets $20 base income for his capital and additional income for the sold goods, see the table and example <b>Scoring</b>. {{^1}}The company may exchange goods in a ratio of 2:1 into different goods types, to get a higher income for the sale. It may store any number of goods face up in front of it for a later sale.{{/1}}</p>
 			{{/8.I}}
 			<p>Place the income of the stock company separate from the company assets to the side for now.</p>
