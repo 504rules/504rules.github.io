@@ -49,6 +49,7 @@
 	<div class="row name">
 		<div class="col-md-12 col-xs-12">
 			<h1>
+				<span class="glyphicon glyphicon-random" id="randomize"></span>
 				<span class="glyphicon glyphicon-edit" id="editbutton"></span>
 				World
 				<span id="worldno">{{world.0}}{{world.1}}{{world.2}}</span>
@@ -1494,6 +1495,16 @@
 			window.location.hash = "#" + worldno
 	}
 
+	function shuffle(arr, num) {
+		if(num == undefined)
+			num = arr.length;
+		for(var i = 0; i < num; i++) {
+			var j = Math.floor(Math.random() * (arr.length - i - 1)) + i + 1;
+			var temp = arr[i];
+			arr[i] = arr[j];
+			arr[j] = temp;
+		}
+	}
 
 	function load() {
 		var world = validate_world(window.location.hash.substr(1)) || ['1', '2', '3'];
@@ -1596,6 +1607,12 @@
 			update_world($("#worldno-entry").val());
 			$("#worldno-entry, #worldno").toggle();
 		});
+
+		$("#randomize").click(function() {
+			modules = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
+			shuffle(modules, 3);
+			update_world(modules[0] + modules[1] + modules[2])
+		})
 	}
 	$(document).ready(load);
 	$(window).bind('hashchange', load);

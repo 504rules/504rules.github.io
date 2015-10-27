@@ -15,11 +15,14 @@
 		page-break-inside: avoid;
 	}
 
-	#editbutton {
+	#editbutton, #randomize {
 		display: none;
 	}
 }
 
+#editbutton, #randomize {
+	margin-right: 5px;
+}
 
 .top p {
 	margin-bottom: 0;
