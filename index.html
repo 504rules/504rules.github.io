@@ -1104,17 +1104,20 @@
 			<p>The player takes the goods {{#1}}on top of his trading houses{{/1}}{{^1}}in front of him{{/1}} and may score {{#4}}2 goods{{/4}}{{^4}}1 good{{/4}} for each of his trading houses{{^4}} (up to 2 goods for the headquarters in his capital){{/4}}. The player gets victory points (VP) for all scored goods, see the table and example <b>Final Scoring</b>. Before scoring the player may exchange goods in a ratio of 2:1 into different goods types, to get more valuable sets.</p>
 			<p>The player with the most VP wins the game! In case of a tie, the tied player with the most plants wins the game.</p>
 		{{/8.I}}
-		{{#9}}
-			{{#9.I}}
-				<p>The players determine their wealth: Each player counts his money and adds the actual share value of each of his own shares according to the share value board to his money (the president's share counts twice). {{#7.III}}The share value of each share is $1 higher for each VP of the stock company.{{/7.III}}</p>
-				<p>The player with the biggest wealth wins the game! In case of a tie, all tied players share the victory.</p>
-			{{/9.I}}
-			{{^9.I}}
-				<p>First, the players determine the victory points (VP) of the 5 stock companies. Second, the best stock companies (having the most VP) get bonus VP, see table <b>Bonus VP at the Final Scoring</b>.</p>
-				<p>The players get VP for each of their shares equal to the total number of VP of the matching stock companies (the president's share counts twice!).</p>
-				<p>The player with the most VP wins the game! In case of a tie, all tied players share the victory.</p>
-			{{/9.I}}
-		{{/9}}
+		{{#9.I}}
+			<p>The players determine their wealth: Each player counts his money and adds the actual share value of each of his own shares according to the share value board to his money (the president's share counts twice). {{#7.III}}The share value of each share is $1 higher for each VP of the stock company.{{/7.III}}</p>
+			<p>The player with the biggest wealth wins the game! In case of a tie, all tied players share the victory.</p>
+		{{/9.I}}
+		{{#9.II}}
+			<p>First, the players determine the victory points (VP) of the 5 stock companies. Second, the best stock companies (having the most VP) get bonus VP, see table <b>Bonus VP at the Final Scoring</b>.</p>
+			<p>The players get VP for each of their shares equal to the total number of VP of the matching stock companies (the president's share counts twice!).</p>
+			<p>The player with the most VP wins the game! In case of a tie, all tied players share the victory.</p>
+		{{/9.II}}
+		{{#9.III}}
+			<p>First, the players determine the victory points (VP) of the 5 stock companies. Second, the best stock companies (having the most VP) get bonus VP, see table <b>Bonus VP at the Final Scoring</b>.</p>
+			<p>The players get VP for each of their shares equal to the total number of VP of the matching stock companies (the players do not get VP for the president's share!).</p>
+			<p>The player with the most VP wins the game! In case of a tie, all tied players share the victory.</p>
+		{{/9.III}}
 
 		{{#7.III}}
 			<p>The players get additional victory points (VP) for majorities during the final scoring, see table and example of the <b>Final Scoring</b>.</p>
