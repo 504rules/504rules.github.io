@@ -109,6 +109,11 @@ table th {
 	vertical-align: middle;
 }
 
+.meeple {
+	width: 1.5em;
+	height: 1.5em;
+}
+
 .grass { background-image: url('../grass-icon.png'); }
 .forest { background-image: url('../forest-icon.png'); }
 .grain { background-image: url('../grain-icon.png'); }

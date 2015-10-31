@@ -55,14 +55,17 @@
 				<span id="worldno">{{world.0}}{{world.1}}{{world.2}}</span>
 				<input type="text" id="worldno-entry" style="display: none">
 				: {{long_name}}
-				{{#residents}}<img src="meeple.png" style="width: 1.8%">{{/residents}}
-				{{^residents}}<img src="meeple_not.png" style="width: 1.8%">{{/residents}}
 			</h1>
 		</div>
 	</div>
 	<div class="row top">
 		<div class="col-md-2 col-xs-2">
-			<div class="heading"><h2>Map {{map.value}}</h2></div>
+			<div class="heading">
+				<h2>Map {{map.value}}</h2>
+					<p>{{#residents}}<img src="meeple.png" class="meeple">{{/residents}}
+					{{^residents}}<img src="meeple_not.png" class="meeple">{{/residents}}</p>
+
+			</div>
 		</div>
 		<div class="col-md-7 col-xs-7">
 			<div class="heading">
@@ -81,7 +84,6 @@
 					<h2>Round-based company order</h2>
 					<p>(according to share values from high to low)</p>
 				{{/order.shares}}
-				Playing with{{^residents}}out{{/residents}} residents.
 			</div>
 		</div>
 		<div class="col-md-3 col-xs-3">
