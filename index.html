@@ -55,6 +55,8 @@
 				<span id="worldno">{{world.0}}{{world.1}}{{world.2}}</span>
 				<input type="text" id="worldno-entry" style="display: none">
 				: {{long_name}}
+				{{#residents}}<img src="meeple.png" style="width: 1.8%">{{/residents}}
+				{{^residents}}<img src="meeple_not.png" style="width: 1.8%">{{/residents}}
 			</h1>
 		</div>
 	</div>
@@ -79,6 +81,7 @@
 					<h2>Round-based company order</h2>
 					<p>(according to share values from high to low)</p>
 				{{/order.shares}}
+				Playing with{{^residents}}out{{/residents}} residents.
 			</div>
 		</div>
 		<div class="col-md-3 col-xs-3">
@@ -654,6 +657,9 @@
 			<p>Starting with the 2nd round the player may buy only at max 2 more residents than the # of plants he owns in each turn.</p>
 			<p><b>Example:</b> If the player owns 4 plants, he may only buy up to 6 residents.</p>
 		{{/8.III}}
+		{{#residents}}
+			<p>The player may buy residents for 10$ each and place them on the board.<p>
+		{{/residents}}
 	{{/capture}}
 	{{#hascapture}}
 		<div class="row section">
