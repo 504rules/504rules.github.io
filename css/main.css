@@ -114,14 +114,14 @@ table th {
 	height: 1.5em;
 }
 
-.grass { background-image: url('../grass-icon.png'); }
-.forest { background-image: url('../forest-icon.png'); }
-.grain { background-image: url('../grain-icon.png'); }
-.desert { background-image: url('../desert-icon.png'); }
-.city { background-image: url('../city-icon.png'); }
-.mountain { background-image: url('../mountain-icon.png'); }
-.factory { background-image: url('../factory-bigicon.png'); }
-.water-adjacent { background-image: url('../water-adjacent-icon.png'); }
+.grass { background-image: url('../img/grass-icon.png'); }
+.forest { background-image: url('../img/forest-icon.png'); }
+.grain { background-image: url('../img/grain-icon.png'); }
+.desert { background-image: url('../img/desert-icon.png'); }
+.city { background-image: url('../img/city-icon.png'); }
+.mountain { background-image: url('../img/mountain-icon.png'); }
+.factory { background-image: url('../img/factory-bigicon.png'); }
+.water-adjacent { background-image: url('../img/water-adjacent-icon.png'); }
 
 .top h2 {
 	font-size: 1.1em;
