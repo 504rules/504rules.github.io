@@ -1058,7 +1058,9 @@
 			{{/6.I}}
 			{{#7.I}}
 				<p>The game ends immediately, after the 3rd scoring is turned face up. The <b>Final Scoring</b> takes place, see above.</p>
-				<p>The player with the most VP wins the game! In case of a tie, the tied player with the most residents and settlements on the game map wins.</p>
+				{{^9}}
+					<p>The player with the most VP wins the game! In case of a tie, the tied player with the most residents and settlements on the game map wins.</p>
+				{{/9}}				
 			{{/7.I}}
 			{{#8.I}}
 				{{^4}}
@@ -1083,53 +1085,107 @@
 	</div>
 
 	{{#capture}}
-		{{#1.I}}
-			<p>The players score victory points (VP) for the delivered goods, see left for the table <b>Victory Points (VP)</b>.</p>
-			<p>The player with the most VP wins the game! In case of a tie, the tied player having the most goods (1 or 2) in the cargo holds of his transport trolley wins the game. If there is still a tie, the tied player with the highest income in the last game round wins the game.</p>
-		{{/1.I}}
-		{{#2.I}}
-			<p>The players get victory points (VP) for their residents on the city cards, see the table and example for <b>Final Scoring</b>.</p>
-			{{^residents}}<p>The player gets additional VP for remaining movement points of his transport trolley. The player with the most VP wins the game. In case of a tie all tied players win the game!</p>{{/residents}}
-			{{#residents}}<p>The player with the most VP wins the game! In the case of a tie, the tied player with the most residents and settlements on the map wins the game.</p>{{/residents}}
-		{{/2.I}}
-		{{#3.I}}
-			<p>The players get victory points (VP) during the game for building factories and getting certain privileges.</p>
-			<p>The player with the most VP wins the game! In case of a tie, the tied player with the most money wins the game.</p>
-		{{/3.I}}
-		{{#4.I}}
-			<p>The players get the following victory points (VP): 3 VP for each own land tile, 5 VP for each own city.</p>
-			<p>The player with the most VP wins the game! In case of a tie, the tied player with more armies on the map wins the game.</p>
-		{{/4.I}}
-		{{#5.I}}
-			<p>The players score victory points (VP) during the game for exploring, settling and activating tiles.</p>
-			<p>The player with the most VP wins the game! In case of a tie, the tied player with the most residents (not settlements) on the map wins the game.</p>
-		{{/5.I}}
-		{{#6.I}}
-			<p>The players get victory points (VP) for each of their tiles regarding to the majority table, see the table and example for <b>Final Scoring</b>.</p>
-			<p>The player with the most VP wins the game. {{#4}}In case of a tie the tied player with the most residents on tiles with neutral roads wins.{{/4}}{{^4}}In case of a tie, the tied player with the most residents on tiles with his roads wins.{{/4}}</p>
-		{{/6.I}}
-		{{#8.I}}
-			<p>The player takes the goods {{#1}}on top of his trading houses{{/1}}{{^1}}in front of him{{/1}} and may score {{#4}}2 goods{{/4}}{{^4}}1 good{{/4}} for each of his trading houses{{^4}} (up to 2 goods for the headquarters in his capital){{/4}}. The player gets victory points (VP) for all scored goods, see the table and example <b>Final Scoring</b>. Before scoring the player may exchange goods in a ratio of 2:1 into different goods types, to get more valuable sets.</p>
-			<p>The player with the most VP wins the game! In case of a tie, the tied player with the most plants wins the game.</p>
-		{{/8.I}}
-		{{#9.I}}
-			<p>The players determine their wealth: Each player counts his money and adds the actual share value of each of his own shares according to the share value board to his money (the president's share counts twice). {{#7.III}}The share value of each share is $1 higher for each VP of the stock company.{{/7.III}}</p>
-			<p>The player with the biggest wealth wins the game! In case of a tie, all tied players share the victory.</p>
-		{{/9.I}}
-		{{#9.II}}
-			<p>First, the players determine the victory points (VP) of the 5 stock companies. Second, the best stock companies (having the most VP) get bonus VP, see table <b>Bonus VP at the Final Scoring</b>.</p>
-			<p>The players get VP for each of their shares equal to the total number of VP of the matching stock companies (the president's share counts twice!).</p>
-			<p>The player with the most VP wins the game! In case of a tie, all tied players share the victory.</p>
-		{{/9.II}}
-		{{#9.III}}
-			<p>First, the players determine the victory points (VP) of the 5 stock companies. Second, the best stock companies (having the most VP) get bonus VP, see table <b>Bonus VP at the Final Scoring</b>.</p>
-			<p>The players get VP for each of their shares equal to the total number of VP of the matching stock companies (the players do not get VP for the president's share!).</p>
-			<p>The player with the most VP wins the game! In case of a tie, all tied players share the victory.</p>
-		{{/9.III}}
+		{{#9}}
+			{{#9.I}}
+				<p>The players determine their wealth: Each player counts his money and adds the actual share value of each of his own shares according to the share value board to his money (the president's share counts twice). {{#7.III}}The share value of each share is $1 higher for each VP of the stock company.{{/7.III}}</p>
+				<p>The player with the biggest wealth wins the game! In case of a tie, all tied players share the victory.</p>
+			{{/9.I}}
+			{{^9.I}}
+				<p>The players determine the victory points (VP) of the 5 stock companies.</p> 
+				{{#1.I}}
+					<p>The companies score victory points (VP) for the delivered goods, see left for the table <b>Victory Points (VP)</b>.</p>
+				{{/1.I}}
+				{{#2.I}}
+					<p>The companies get victory points (VP) for their residents on the city cards, see the table and example for <b>Final Scoring</b>.</p>
+					{{^residents}}<p>The companies get additional VP for remaining movement points of his transport trolley. </p>{{/residents}}
+				{{/2.I}}
+				{{#3.I}}
+					<p>The companies get victory points (VP) during the game for building factories and getting certain privileges.</p>
+				{{/3.I}}
+				{{#4.I}}
+					<p>The companies get the following victory points (VP): 3 VP for each own land tile, 5 VP for each own city.</p>
+				{{/4.I}}
+				{{#5.I}}
+					<p>The companies score victory points (VP) during the game for exploring, settling and activating tiles.</p>
+				{{/5.I}}
+				{{#6.I}}
+					<p>The companies get victory points (VP) for each of their tiles regarding to the majority table, see the table and example for <b>Final Scoring</b>.</p>
+				{{/6.I}}
+				{{#7.I}}
+					<p>The companies have earned vp in 3 scoring rounds during the game.</p>
+				{{/7.I}
+				{{#8.I}}
+					<p>The companies takes the goods {{#1}}on top of his trading houses{{/1}}{{^1}}in front of him{{/1}} and may score {{#4}}2 goods{{/4}}{{^4}}1 good{{/4}} for each of his trading houses{{^4}} (up to 2 goods for the headquarters in his capital){{/4}}. The player gets victory points (VP) for all scored goods, see the table and example <b>Final Scoring</b>. Before scoring the player may exchange goods in a ratio of 2:1 into different goods types, to get more valuable sets.</p>
+				{{/8.I}}
 
-		{{#7.III}}
-			<p>The players get additional victory points (VP) for majorities during the final scoring, see table and example of the <b>Final Scoring</b>.</p>
-		{{/7.III}}
+				{{#7.III}}
+					<p>The companies get additional victory points (VP) for majorities during the final scoring, see table and example of the <b>Final Scoring</b>.</p>
+				{{/7.III}}
+				<p>The best stock companies (having the most VP) get bonus VP, see table <b>Bonus VP at the Final Scoring</b>.</p>
+			{{/9.I}}
+			{{#9.II}}
+				<p>The players get VP for each of their shares equal to the total number of VP of the matching stock companies (the president's share counts twice!).</p>
+				<p>The player with the most VP wins the game! In case of a tie, all tied players share the victory.</p>
+			{{/9.II}}
+			{{#9.III}}
+				<p>The players get VP for each of their shares equal to the total number of VP of the matching stock companies (the players do not get VP for the president's share!).</p>
+				<p>The player with the most VP wins the game! In case of a tie, all tied players share the victory.</p>
+			{{/9.III}}
+
+		{{/9}}
+		{{^9}}
+			{{#1.I}}
+				<p>The players score victory points (VP) for the delivered goods, see left for the table <b>Victory Points (VP)</b>.</p>
+				{{#7.III}}
+					<p>The players get additional victory points (VP) for majorities during the final scoring, see table and example of the <b>Final Scoring</b>.</p>
+				{{/7.III}}
+				<p>The player with the most VP wins the game! In case of a tie, the tied player having the most goods (1 or 2) in the cargo holds of his transport trolley wins the game. If there is still a tie, the tied player with the highest income in the last game round wins the game.</p>
+			{{/1.I}}
+			{{#2.I}}
+				<p>The players get victory points (VP) for their residents on the city cards, see the table and example for <b>Final Scoring</b>.</p>
+				{{#7.III}}
+					<p>The players get additional victory points (VP) for majorities during the final scoring, see table and example of the <b>Final Scoring</b>.</p>
+				{{/7.III}}
+				{{^residents}}<p>The players get additional VP for remaining movement points of his transport trolley. The player with the most VP wins the game. In case of a tie all tied players win the game!</p>{{/residents}}
+				{{#residents}}<p>The player with the most VP wins the game! In the case of a tie, the tied player with the most residents and settlements on the map wins the game.</p>{{/residents}}
+			{{/2.I}}
+			{{#3.I}}
+				<p>The players get victory points (VP) during the game for building factories and getting certain privileges.</p>
+				{{#7.III}}
+					<p>The players get additional victory points (VP) for majorities during the final scoring, see table and example of the <b>Final Scoring</b>.</p>
+				{{/7.III}}
+				<p>The player with the most VP wins the game! In case of a tie, the tied player with the most money wins the game.</p>
+			{{/3.I}}
+			{{#4.I}}
+				<p>The players get the following victory points (VP): 3 VP for each own land tile, 5 VP for each own city.</p>
+				{{#7.III}}
+					<p>The players get additional victory points (VP) for majorities during the final scoring, see table and example of the <b>Final Scoring</b>.</p>
+				{{/7.III}}
+				<p>The player with the most VP wins the game! In case of a tie, the tied player with more armies on the map wins the game.</p>
+			{{/4.I}}
+			{{#5.I}}
+				<p>The players score victory points (VP) during the game for exploring, settling and activating tiles.</p>
+				{{#7.III}}
+					<p>The players get additional victory points (VP) for majorities during the final scoring, see table and example of the <b>Final Scoring</b>.</p>
+				{{/7.III}}
+				<p>The player with the most VP wins the game! In case of a tie, the tied player with the most residents (not settlements) on the map wins the game.</p>
+			{{/5.I}}
+			{{#6.I}}
+				<p>The players get victory points (VP) for each of their tiles regarding to the majority table, see the table and example for <b>Final Scoring</b>.</p>
+				{{#7.III}}
+					<p>The players get additional victory points (VP) for majorities during the final scoring, see table and example of the <b>Final Scoring</b>.</p>
+				{{/7.III}}
+				<p>The player with the most VP wins the game. {{#4}}In case of a tie the tied player with the most residents on tiles with neutral roads wins.{{/4}}{{^4}}In case of a tie, the tied player with the most residents on tiles with his roads wins.{{/4}}</p>
+			{{/6.I}}
+			{{#8.I}}
+				<p>The player takes the goods {{#1}}on top of his trading houses{{/1}}{{^1}}in front of him{{/1}} and may score {{#4}}2 goods{{/4}}{{^4}}1 good{{/4}} for each of his trading houses{{^4}} (up to 2 goods for the headquarters in his capital){{/4}}. The player gets victory points (VP) for all scored goods, see the table and example <b>Final Scoring</b>. Before scoring the player may exchange goods in a ratio of 2:1 into different goods types, to get more valuable sets.</p>
+				{{#7.III}}
+					<p>The players get additional victory points (VP) for majorities during the final scoring, see table and example of the <b>Final Scoring</b>.</p>
+				{{/7.III}}
+				<p>The player with the most VP wins the game! In case of a tie, the tied player with the most plants wins the game.</p>
+			{{/8.I}}
+
+		{{/9}}
 	{{/capture}}
 	{{#hascapture}}
 		<div class="row section">
