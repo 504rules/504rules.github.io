@@ -29,7 +29,7 @@
 }
 
 p {
-	margin-bottom: 1em;
+	margin-bottom: 5px;
 }
 
 p:last-child {
@@ -191,7 +191,7 @@ table th {
 .section .col-md-10 {
 	border: 1px solid black;
 	margin-left: -15px;
-	padding:1em 2em 1em 3em;
+	padding-left: 30px;
 }
 
 .notes {
