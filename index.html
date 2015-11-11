@@ -134,24 +134,6 @@
 					<p>To mark the chosen capitals, place 1 resident of each player onto the matching city cards.</p>
 					{{^residents}}<p>The players place their remaining 9 residents on the 9 cities, which they did not choose as their own capitals.</p>{{/residents}}
 				{{/2.III}}
-				{{#2.III}}
-					{{#1.I}}<p>Place 1 good of each type with 5 VP on it next to the map.</p>{{/1.I}}
-					{{#3.I}}<p>Place two factories with 10 VP each next to the map.</p>{{/3.I}}
-					{{#4.I}}<p>Place 3 VP next to the first city space of the majority board, 4 VP next to the second space, and so forth.</p>{{/4.I}}
-					{{#5.I}}<p>Place 5 VP below each terrain column of the majority board.</p>{{/5.I}}
-					{{#6.I}}<p>Place 5 VP below each terrain column of the majority board.</p>{{/6.I}}
-					{{#7.I}}<p>Place 10 VP next to the first row of the majority board, and 20 VP next to the second row of the majority board.</p>{{/7.I}}
-					{{#8.I}}<p>Place 1 good of each type with 5 VP on it next to the map.</p>{{/8.I}}
-					{{#9.I}}
-						{{#1.II}}<p>Place 1 good of each type with $50 on it next to the map.</p>{{/1.II}}
-						{{#3.II}}<p>Place two factories with $100 each next to the map.</p>{{/3.II}}
-						{{#4.II}}<p>Place $30 next to the first city space of the majority board, $40 next to the second space, and so forth.</p>{{/4.II}}
-						{{#5.II}}<p>Place $50 below each terrain column of the majority board.</p>{{/5.II}}
-						{{#6.II}}<p>Place $50 below each terrain column of the majority board.</p>{{/6.II}}
-						{{#7.II}}<p>Place $100 next to the first row of the majority board, and $200 next to the second row of the majority board.</p>{{/7.II}}
-						{{#8.II}}<p>Place 1 good of each type with $50 on it next to the map.</p>{{/8.II}}
-					{{/9.I}}
-				{{/2.III}}
 			{{/2}}
 			{{#3}}
 				<p>Depending on the 3 modules take the appropriate privileges. 4♟ or 5 stock companies: Take 2 cards of each privilege. 3♟: First take 1 card of each privilege, shuffle them and remove half of them from the game. Then, add 1 card of each privilege to the remaining half. 2♟: Take 1 card of each privilege.</p>
@@ -174,9 +156,14 @@
 			{{#5}}
 				<p>Place all map tiles in separate stacks in a row as follows: city, water, grassland, forest, field, mountain and desert.</p>
 			{{/5}}
-			{{#6}}{{^6.III}}
-				<p>Place the majority board next to the game map and place the marking tokens for each player below this board.</p>
-			{{/6.III}}{{/6}}
+			{{^7}}
+				{{#6.I}}
+					<p>Place the majority board next to the game map with the column for deserts showing and place the 6 marking tokens for each player below this board.</p>
+				{{/6.I}}
+				{{#6.II}}
+					<p>Place the majority board next to the game map with{{^2.III}}out{{/2.III}}{{#2.III}}{{^5.I}}out{{/5.I}}{{/2.III}} the column for deserts showing and place 5 of the marking tokens for each player below this board.</p>
+				{{/6.II}}
+			{{/7}}
 			{{#7}}
 				{{#7.I}}
 					{{^9.II}}
@@ -191,8 +178,38 @@
 						</ul>
 					{{/9.II}}
 				{{/7.I}}
-				<p>Place the majority board next to the game map and place 6 marking tokens for each player below this board.</p>
+				<p>Place the majority board next to the game map with the column for deserts showing and place the 6 marking tokens for each player below this board.</p>
 			{{/7}}
+			{{#2.III}}
+				{{#1.I}}<p>Place 1 good of each type with 5 VP on it next to the map.</p>{{/1.I}}
+				{{#3.I}}<p>Place two factories with 10 VP each next to the map.</p>{{/3.I}}
+				{{#4.I}}
+					{{^6}}{{^7}}<p>Place the majority board next to the game map.</p>{{/7}}{{/6}}
+					<p>Place 3 VP next to the first city space of the majority board, 4 VP next to the second space, and so forth.</p>
+				{{/4.I}}
+				{{#5.I}}
+					{{^6}}{{^7}}<p>Place the majority board next to the game map with the column for deserts showing and place the 6 marking tokens for each player below this board.</p>{{/7}}{{/6}}
+					<p>Place 5 VP below each terrain column of the majority board.</p>
+				{{/5.I}}
+				{{#6.I}}<p>Place 5 VP below each terrain column of the majority board.</p>{{/6.I}}
+				{{#7.I}}<p>Place 10 VP next to the first row of the majority board, and 20 VP next to the second row of the majority board.</p>{{/7.I}}
+				{{#8.I}}<p>Place 1 good of each type with 5 VP on it next to the map.</p>{{/8.I}}
+				{{#9.I}}
+					{{#1.II}}<p>Place 1 good of each type with $50 on it next to the map.</p>{{/1.II}}
+					{{#3.II}}<p>Place two factories with $100 each next to the map.</p>{{/3.II}}
+					{{#4.II}}
+						<p>Place the majority board next to the game map.</p>
+						<p>Place $30 next to the first city space of the majority board, $40 next to the second space, and so forth.</p>
+					{{/4.II}}
+					{{#5.II}}
+						<p>Place the majority board next to the game map with the column for deserts showing and place the 6 marking tokens for each stock company below this board.</p>
+						<p>Place $50 below each terrain column of the majority board.</p>
+					{{/5.II}}
+					{{#6.II}}<p>Place $50 below each terrain column of the majority board.</p>{{/6.II}}
+					{{#7.II}}<p>Place $100 next to the first row of the majority board, and $200 next to the second row of the majority board.</p>{{/7.II}}
+					{{#8.II}}<p>Place 1 good of each type with $50 on it next to the map.</p>{{/8.II}}
+				{{/9.I}}
+			{{/2.III}}
 			{{#8}}
 				{{^8.III}}
 					<p>Display land and water tiles with the goods side atop.</p>
@@ -737,11 +754,16 @@
 					<li>The player gets 1 VP for placing the collectively 1st settlement on the tile.</li>
 					<li>The player gets the last VP from a land tile only, if he exhausts 1 resident for the action harvest on the corresponding tile (On cities the player needs to do this for each of the last three VP tokens). The player does not get this VP, if he exhausts his resident for another action that tile.</li>
 				</ol>
+				{{#2.III}}<p>The player counts that tile on the majority board.</p>{{/2.III}}
 			{{/5.I}}
 			{{#5.II}}
 				{{#3.I}}<p>The player may move any number of his active residents from adjacent tiles onto the just explored tile without exhausting them in this way.</p>{{/3.I}}
 				{{#4.I}}<p>Depending on the terrain the player discovers or receives the following. <span class="desert icon"></span> empty, <span class="grass icon"></span> & <span class="forest icon"></span> 1 own settlement, <span class="grain icon"></span> 1 own settlement + 1 own exhausted resident, <span class="mountain icon"></span> 1 militia. For defeating this militia once-only $20. <span class="city icon"></span> 1 barrack and 1 militia. The player does not get income tokens for discovered settlements!</p>{{/4.I}}
+				{{#2.III}}{{#9.I}}<p>The player counts that tile on the majority board.</p>{{/9.I}}{{/2.III}}
 			{{/5.II}}
+			{{#2.III}}
+			
+			{{/2.III}}
 		{{/5}}
 		{{#6}}
 			<p><b>Roads:</b> If the player has 1 settlement each on two adjacent tiles, he may connect both tiles with 1 of his roads. To build a road he needs a the number of active residents equal to the more expensive of the two terrain types, see the table <b>Road</b>. {{^6.III}}He places 1 of his used residents back into his supply and places 1 road. The remaining residents are exhausted from the build and will be available again in the next round. {{/6.III}}{{#6.III}}All of the used residents are exhausted and are available again in the next round.{{/6.III}}</p>
@@ -962,7 +984,7 @@
 			{{#1.I}}<p>Award 5 VP to the first player delivering one of the good types a second time from the stack set aside for this purpose.</p>{{/1.I}}
 			{{#3.I}}<p>Award 10 VP to the first player having at least 1 factory in 3 cities, and to the first player having 3 factories in 1 city.</p>{{/3.I}}
 			{{#4.I}}<p>Award VP to a player when they conquer a free city from the stacks set aside on the majority board (3 for the first free city, 4 for the second, etc).</p>{{/4.I}}
-			{{#5.I}}<p>Award 5VP from the stack set aside on the corresponding column of the majority board to the first player to explore each of the 6 terrain types (no water).</p>{{/5.I}}
+			{{#5.I}}<p>Award 5VP from the stack set aside on the corresponding column of the majority board to the first player to explore one of the 6 terrain types (no water) three times.</p>{{/5.I}}
 			{{#6.I}}<p>Award 5 VP from the stack set aside on the corresponding column of the majority board to the first player to connect one of the 6 terrain types (no water) with his roads a third time.</p>{{/6.I}}
 			{{#7.I}}<p>Award 10 VP to the first player to control 2 of each terrain type (no water). Award 20 VP to the first player to control 2 of each terrain type (no water).</p>{{/7.I}}
 			{{#8.I}}<p>Award 5 VP from the stack set aside for this purpose to the first player owning 3 plants of a good type.</p>{{/8.I}}
@@ -970,7 +992,7 @@
 				{{#1.II}}<p>Award $50 to the first stock company delivering one of the good types a second time from the stack set aside for this purpose.</p>{{/1.II}}
 				{{#3.II}}<p>Award $100 to the first stock company having at least 1 factory in 3 cities, and to the first stock company having 3 factories in 1 city.</p>{{/3.II}}
 				{{#4.II}}<p>Award money to a stock company when they conquer a free city from the stacks set aside on the majority board ($30 for the first free city, $40 for the second, etc).</p>{{/4.II}}
-				{{#5.II}}<p>Award $50 from the stack set aside on the corresponding column of the majority board to the first stock company to explore each of the 6 terrain types (no water).</p>{{/5.II}}
+				{{#5.II}}<p>Award $50 from the stack set aside on the corresponding column of the majority board to the first stock company to explore one of the 6 terrain types (no water) three times.</p>{{/5.II}}
 				{{#6.II}}<p>Award $50 from the stack set aside on the corresponding column of the majority board to the first stock company to connect one of the 6 terrain types (no water) with his roads a third time.</p>{{/6.II}}
 				{{#7.II}}<p>Award $100 to the first stock company to control 2 of each terrain type (no water). Award $200 to the first stock company to control 2 of each terrain type (no water).</p>{{/7.II}}
 				{{#8.II}}<p>Award $50 from the stack set aside for this purpose to the first stock company owning 3 plants of a good type.</p>{{/8.II}}
