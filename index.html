@@ -134,24 +134,6 @@
 					<p>To mark the chosen capitals, place 1 resident of each player onto the matching city cards.</p>
 					{{^residents}}<p>The players place their remaining 9 residents on the 9 cities, which they did not choose as their own capitals.</p>{{/residents}}
 				{{/2.III}}
-				{{#2.III}}
-					{{#1.I}}<p>Place 1 good of each type with 5 VP on it next to the map.</p>{{/1.I}}
-					{{#3.I}}<p>Place two factories with 10 VP each next to the map.</p>{{/3.I}}
-					{{#4.I}}<p>Place 3 VP next to the first city space of the majority board, 4 VP next to the second space, and so forth.</p>{{/4.I}}
-					{{#5.I}}<p>Place 5 VP below each terrain column of the majority board.</p>{{/5.I}}
-					{{#6.I}}<p>Place 5 VP below each terrain column of the majority board.</p>{{/6.I}}
-					{{#7.I}}<p>Place 10 VP next to the first row of the majority board, and 20 VP next to the second row of the majority board.</p>{{/7.I}}
-					{{#8.I}}<p>Place 1 good of each type with 5 VP on it next to the map.</p>{{/8.I}}
-					{{#9.I}}
-						{{#1.II}}<p>Place 1 good of each type with $50 on it next to the map.</p>{{/1.II}}
-						{{#3.II}}<p>Place two factories with $100 each next to the map.</p>{{/3.II}}
-						{{#4.II}}<p>Place $30 next to the first city space of the majority board, $40 next to the second space, and so forth.</p>{{/4.II}}
-						{{#5.II}}<p>Place $50 below each terrain column of the majority board.</p>{{/5.II}}
-						{{#6.II}}<p>Place $50 below each terrain column of the majority board.</p>{{/6.II}}
-						{{#7.II}}<p>Place $100 next to the first row of the majority board, and $200 next to the second row of the majority board.</p>{{/7.II}}
-						{{#8.II}}<p>Place 1 good of each type with $50 on it next to the map.</p>{{/8.II}}
-					{{/9.I}}
-				{{/2.III}}
 			{{/2}}
 			{{#3}}
 				<p>Depending on the 3 modules take the appropriate privileges. 4♟ or 5 stock companies: Take 2 cards of each privilege. 3♟: First take 1 card of each privilege, shuffle them and remove half of them from the game. Then, add 1 card of each privilege to the remaining half. 2♟: Take 1 card of each privilege.</p>
@@ -174,9 +156,14 @@
 			{{#5}}
 				<p>Place all map tiles in separate stacks in a row as follows: city, water, grassland, forest, field, mountain and desert.</p>
 			{{/5}}
-			{{#6}}{{^6.III}}
-				<p>Place the majority board next to the game map and place the marking tokens for each player below this board.</p>
-			{{/6.III}}{{/6}}
+			{{^7}}
+				{{#6.I}}
+					<p>Place the majority board next to the game map with the column for deserts showing and place the 6 marking tokens for each player below this board.</p>
+				{{/6.I}}
+				{{#6.II}}
+					<p>Place the majority board next to the game map with{{^2.III}}out{{/2.III}}{{#2.III}}{{^9.I}}{{^5.I}}out{{/5.I}}{{/9.I}}{{/2.III}} the column for deserts showing and place {{^2.III}}5 of the{{/2.III}}{{#2.III}}{{^9.I}}5 of the{{/9.I}}{{#9.I}}the 6{{/9.I}}{{/2.III}} marking tokens for each player below this board.</p>
+				{{/6.II}}
+			{{/7}}
 			{{#7}}
 				{{#7.I}}
 					{{^9.II}}
@@ -191,8 +178,42 @@
 						</ul>
 					{{/9.II}}
 				{{/7.I}}
-				<p>Place the majority board next to the game map and place 6 marking tokens for each player below this board.</p>
+				<p>Place the majority board next to the game map with the column for deserts showing and place the 6 marking tokens for each player below this board.</p>
 			{{/7}}
+			{{#2.III}}
+				{{^5.I}}{{^6}}{{^7}}
+					{{^9.I}}<p>Majority {{^4.I}}board and {{/4.I}}markers not needed in this combination.</p>{{/9.I}}
+					{{#9.I}}{{^5.II}}<p>Majority {{^4.II}}board and {{/4.II}}markers not needed in this combination.</p>{{/5.II}}{{/9.I}}
+				{{/7}}{{/6}}{{/5.I}}
+				{{#1.I}}<p>Place 1 good of each type with 5 VP on it next to the map.</p>{{/1.I}}
+				{{#3.I}}<p>Place two factories with 10 VP each next to the map.</p>{{/3.I}}
+				{{#4.I}}
+					{{^6}}{{^7}}<p>Place the majority board next to the game map.</p>{{/7}}{{/6}}
+					<p>Place 3 VP next to the first city space of the majority board, 4 VP next to the second space, and so forth.</p>
+				{{/4.I}}
+				{{#5.I}}
+					{{^6}}{{^7}}<p>Place the majority board next to the game map with the column for deserts showing and place the 6 marking tokens for each player below this board.</p>{{/7}}{{/6}}
+					<p>Place 5 VP below each terrain column of the majority board. {{#6}}Place 6 other tokens, such as settlements, per player below the majority board to track exploration.{{/6}}{{#7}}Place 6 other tokens, such as roads, per player below the majority board to track exploration.{{/7}}</p>
+				{{/5.I}}
+				{{#6.I}}<p>Place 5 VP below each terrain column of the majority board.</p>{{/6.I}}
+				{{#7.I}}<p>Place 10 VP next to the first row of the majority board, and 20 VP next to the second row of the majority board.</p>{{/7.I}}
+				{{#8.I}}<p>Place 1 good of each type with 5 VP on it next to the map.</p>{{/8.I}}
+				{{#9.I}}
+					{{#1.II}}<p>Place 1 good of each type with $50 on it next to the map.</p>{{/1.II}}
+					{{#3.II}}<p>Place two factories with $100 each next to the map.</p>{{/3.II}}
+					{{#4.II}}
+						<p>Place the majority board next to the game map.</p>
+						<p>Place $30 next to the first city space of the majority board, $40 next to the second space, and so forth.</p>
+					{{/4.II}}
+					{{#5.II}}
+						<p>Place the majority board next to the game map with the column for deserts showing and place the 6 marking tokens for each stock company below this board.</p>
+						<p>Place $50 below each terrain column of the majority board.</p>
+					{{/5.II}}
+					{{#6.II}}<p>Place $50 below each terrain column of the majority board.</p>{{/6.II}}
+					{{#7.II}}<p>Place $100 next to the first row of the majority board, and $200 next to the second row of the majority board.</p>{{/7.II}}
+					{{#8.II}}<p>Place 1 good of each type with $50 on it next to the map.</p>{{/8.II}}
+				{{/9.I}}
+			{{/2.III}}
 			{{#8}}
 				{{^8.III}}
 					<p>Display land and water tiles with the goods side atop.</p>
@@ -737,11 +758,20 @@
 					<li>The player gets 1 VP for placing the collectively 1st settlement on the tile.</li>
 					<li>The player gets the last VP from a land tile only, if he exhausts 1 resident for the action harvest on the corresponding tile (On cities the player needs to do this for each of the last three VP tokens). The player does not get this VP, if he exhausts his resident for another action that tile.</li>
 				</ol>
+				{{#2.III}}
+					<p>The player counts that tile on the majority board.</p>
+					{{#6.II}}<p>Note: Use another token like a settlement to track exploration. Do not add this to the count of your road network.</p>{{/6.II}}
+					{{#7.II}}<p>Note: Use another token like a road to track exploration. Do not add this to the count of your majorities.</p>{{/7.II}}
+					{{/2.III}}
 			{{/5.I}}
 			{{#5.II}}
 				{{#3.I}}<p>The player may move any number of his active residents from adjacent tiles onto the just explored tile without exhausting them in this way.</p>{{/3.I}}
 				{{#4.I}}<p>Depending on the terrain the player discovers or receives the following. <span class="desert icon"></span> empty, <span class="grass icon"></span> & <span class="forest icon"></span> 1 own settlement, <span class="grain icon"></span> 1 own settlement + 1 own exhausted resident, <span class="mountain icon"></span> 1 militia. For defeating this militia once-only $20. <span class="city icon"></span> 1 barrack and 1 militia. The player does not get income tokens for discovered settlements!</p>{{/4.I}}
+				{{#2.III}}{{#9.I}}<p>The player counts that tile on the majority board.</p>{{/9.I}}{{/2.III}}
 			{{/5.II}}
+			{{#2.III}}
+			
+			{{/2.III}}
 		{{/5}}
 		{{#6}}
 			<p><b>Roads:</b> If the player has 1 settlement each on two adjacent tiles, he may connect both tiles with 1 of his roads. To build a road he needs a the number of active residents equal to the more expensive of the two terrain types, see the table <b>Road</b>. {{^6.III}}He places 1 of his used residents back into his supply and places 1 road. The remaining residents are exhausted from the build and will be available again in the next round. {{/6.III}}{{#6.III}}All of the used residents are exhausted and are available again in the next round.{{/6.III}}</p>
@@ -752,7 +782,7 @@
 					The players build neutral roads, so there is always only 1 road between 2 tiles.
 					{{^6.III}}The roads built by a player must be connected with his capital solely across tiles controlled by that player.{{/6.III}}
 					{{#6.I}}The player only counts a land tile on the majority board, if he is the first who connects that land tile with 1 road. Multiple players may count a city each once, if they control that city during the game AND connect it via roads solely across their own tiles to their capital. Each player counts his capital, when he builds his first road.{{/6.I}}
-					{{#6.II}}The roads built by a player must be connected with his capital solely across tiles controlled by that player. The player counts these tiles on the majority board (including his capital, but no deserts). If the player loses the control of a tile, he must subtract all tiles on the majority board, which now are not connected anymore via roads to his capital solely across his own tiles.{{/6.II}}
+					{{#6.II}}The roads built by a player must be connected with his capital solely across tiles controlled by that player. The player counts these tiles on the majority board (including his capital{{^7}}, but no deserts{{/7}}). If the player loses the control of a tile, he must subtract all tiles on the majority board, which now are not connected anymore via roads to his capital solely across his own tiles.{{/6.II}}
 					The player may move his active residents any distance along roads on his own tiles without exhausting them in this way.
 				</p>
 				{{^4.III}}<p>If the player moves 1 or more residents onto an opposing tile, he may build 1 road onto that tile, too (even though he has no settlement there and must fight in <b>Phase 3 G</b>).</p>{{/4.III}}
@@ -762,19 +792,19 @@
 				{{#6.I}}<p>Directly after building a road, the player counts all the new tiles he connected on the majority board (including his capital). This way, each tile may be counted by multiple players!</p>{{/6.I}}
 				{{#6.II}}<p>Directly after building a road, the player counts all the new tiles he connected on the majority board (including his capital{{^7}}, but no deserts{{/7}}). This way, each tile may be counted by multiple players! Each city has demand for the different types of terrain, so the player's goal is to connect one of each of the terrain types for each of the cities he connects with his roads.</p>{{/6.II}}
 				<p>{{#2}}{{^6.III}}If the player changes his capital, he cannot start a new network. {{/6.III}}If the player removes 1 settlement from the map, his roads to that tile turn neutral{{^6.III}}, and he subtracts that tile on the majority board{{/6.III}}. The 1st player, who owns 1 settlement each on both these tiles, exchanges the neutral road with one of his own roads, if it is connected to his other roads and he does not own a road there.{{^6.III}} He counts it on the majority board.{{/6.III}}{{/2}}</p>
-				<p>{{#7.I}}{{^6.III}}If the player changes his capital, he cannot start a new network. {{/6.III}}If the player removes 1 settlement from the map, his roads to that tile turn neutral{{^6.III}}, and he subtracts that tile on the majority board{{/6.III}}. The 1st player, who owns 1 settlement each on both these tiles, exchanges the neutral road with one of his own roads, if it is connected to his other roads and he does not own a road there.{{^6.III}} He counts it on the majority board.{{/6.III}}{{/7.I}}</p>
+				<p>{{^2}}{{#7.I}}{{^6.III}}If the player changes his capital, he cannot start a new network. {{/6.III}}If the player removes 1 settlement from the map, his roads to that tile turn neutral{{^6.III}}, and he subtracts that tile on the majority board{{/6.III}}. The 1st player, who owns 1 settlement each on both these tiles, exchanges the neutral road with one of his own roads, if it is connected to his other roads and he does not own a road there.{{^6.III}} He counts it on the majority board.{{/6.III}}{{/7.I}}{{/2}}</p>
 			{{/4}}
 		{{/6}}
-		{{#7}}
+		{{#7}}{{^6.I}}{{^6.II}}
 			{{^7.II}}
 				<p>Each time the player places 1 settlement on a tile, he counts the matching type of terrain on the majority board (including his capital).</p>
 			{{/7.II}}
 			{{#7.II}}
 				{{#8}}<p>The player counts a land tile, if he builds the plant (if he builds a "fish"-plant, he counts the original terrain). Additionally he counts a city, if he builds his trading house there (including his capital).</p>{{/8}}
-				{{^8}}{{^6}}<p>The player counts a tile, when he places 1 settlement on that tile (including his capital).</p>{{/6}}{{/8}}
+				{{^8}}<p>The player counts a tile, when he places 1 settlement on that tile (including his capital).</p>{{/8}}
 			{{/7.II}}
-			{{#4}}<p>If the player conquers the tile of another player, he counts that tile on the majority board, while the other player subtracts it.</p>{{/4}}
-		{{/7}}
+			{{#4}}<p>If the player conquers the tile of another player{{#8}} that contains a plant{{/8}}, he counts that tile on the majority board, while the other player subtracts it.</p>{{/4}}
+		{{/6.II}}{{/6.I}}{{/7}}
 		{{#8}}
 			<p><b>Plants:</b> On each land tile the players commonly may build a total of 1 plant. The player needs active residents depending on the terrain, see the table <b>Plant</b>. Afterwards the used residents are exhausted and available again in the next round. The player marks the ownership by placing his settlement on the plant. {{#8.I}}The player places that good face up in front of himself.{{/8.I}} {{#1}}The plant immediately produces 1 goods tile, which is placed on top of the plant for now.{{/1}}</p>
 			{{^8.III}}
@@ -963,7 +993,7 @@
 			{{#1.I}}<p>Award 5 VP to the first player delivering one of the good types a second time from the stack set aside for this purpose.</p>{{/1.I}}
 			{{#3.I}}<p>Award 10 VP to the first player having at least 1 factory in 3 cities, and to the first player having 3 factories in 1 city.</p>{{/3.I}}
 			{{#4.I}}<p>Award VP to a player when they conquer a free city from the stacks set aside on the majority board (3 for the first free city, 4 for the second, etc).</p>{{/4.I}}
-			{{#5.I}}<p>Award 5VP from the stack set aside on the corresponding column of the majority board to the first player to explore each of the 6 terrain types (no water).</p>{{/5.I}}
+			{{#5.I}}<p>Award 5VP from the stack set aside on the corresponding column of the majority board to the first player to explore one of the 6 terrain types (no water) three times.</p>{{/5.I}}
 			{{#6.I}}<p>Award 5 VP from the stack set aside on the corresponding column of the majority board to the first player to connect one of the 6 terrain types (no water) with his roads a third time.</p>{{/6.I}}
 			{{#7.I}}<p>Award 10 VP to the first player to control 1 of each terrain type (no water). Award 20 VP to the first player to control 2 of each terrain type (no water).</p>{{/7.I}}
 			{{#8.I}}<p>Award 5 VP from the stack set aside for this purpose to the first player owning 3 plants of a good type.</p>{{/8.I}}
@@ -971,9 +1001,9 @@
 				{{#1.II}}<p>Award $50 to the first stock company delivering one of the good types a second time from the stack set aside for this purpose.</p>{{/1.II}}
 				{{#3.II}}<p>Award $100 to the first stock company having at least 1 factory in 3 cities, and to the first stock company having 3 factories in 1 city.</p>{{/3.II}}
 				{{#4.II}}<p>Award money to a stock company when they conquer a free city from the stacks set aside on the majority board ($30 for the first free city, $40 for the second, etc).</p>{{/4.II}}
-				{{#5.II}}<p>Award $50 from the stack set aside on the corresponding column of the majority board to the first stock company to explore each of the 6 terrain types (no water).</p>{{/5.II}}
+				{{#5.II}}<p>Award $50 from the stack set aside on the corresponding column of the majority board to the first stock company to explore one of the 6 terrain types (no water) three times.</p>{{/5.II}}
 				{{#6.II}}<p>Award $50 from the stack set aside on the corresponding column of the majority board to the first stock company to connect one of the 6 terrain types (no water) with his roads a third time.</p>{{/6.II}}
-				{{#7.II}}<p>Award $100 to the first stock company to control 2 of each terrain type (no water). Award $200 to the first stock company to control 2 of each terrain type (no water).</p>{{/7.II}}
+				{{#7.II}}<p>Award $100 to the first stock company to control 1 of each terrain type (no water). Award $200 to the first stock company to control 2 of each terrain type (no water).</p>{{/7.II}}
 				{{#8.II}}<p>Award $50 from the stack set aside for this purpose to the first stock company owning 3 plants of a good type.</p>{{/8.II}}
 			{{/9.I}}
 		{{/2.III}}
@@ -1328,7 +1358,7 @@
 				'map': {'priority': 4, 'value': 5},
 				'order': {'priority': 4, 'clockwise': true},
 				'money': {'priority': 6, 'increasing': true},
-				'parts': {'17': 1},
+				'parts': {'17': 1, '18': 30},
 				'before_render': function(params, module) {
 					switch(params.world[0]) {
 					case '1':
