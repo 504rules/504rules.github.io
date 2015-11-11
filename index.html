@@ -281,7 +281,7 @@
 				<h2>Prices for Upgrades</h2>
 				<table>
 					<tr><th>4, 5, 7 MP</th><td>each {{#1.III}}{{#residents}}$30{{/residents}}{{^residents}}$50{{/residents}}{{/1.III}}{{^1.III}}$50{{/1.III}}</td></tr>
-					<tr><th>2 cargo holds</th><td>$80</td></tr>
+					<tr><th>2 cargo holds</th><td>{{#1.III}}$40{{/1.III}}{{^1.III}}$80{{/1.III}}</td></tr>
 				</table>
 			</div>
 			{{^residents}}
@@ -874,8 +874,9 @@
 		<div class="row section">
 			<div class="col-md-2 col-xs-2"><h1>Phase 3 F: Factories</h1></div>
 			<div class="col-md-10 col-xs-10">
-				<p>Each round, the player may buy at max 1 factory on each city, if he has 1 settlement there and pays the matching costs, see left for the table Factory. On a city, the players in common may build a total of 3 factories.</p>
+				<p>Each round, the player may buy at max 1 factory on each city, if he has 1 settlement there and pays the matching costs, see left for the table Factory.{{#3.I}} The player immediately gets 5 victory points (VP) for building the factory.{{/3.I}} On a city, the players in common may build a total of 3 factories.
 				<p>The player marks his factory with his settlement. If he owns several factories in the same city, he stacks them below his settlement.</p>
+				
 			</div>
 		</div>
 	{{/3.III}}{{/3}}
@@ -994,7 +995,7 @@
 			{{#4.I}}<p>Award VP to a player when they conquer a free city from the stacks set aside on the majority board (3 for the first free city, 4 for the second, etc).</p>{{/4.I}}
 			{{#5.I}}<p>Award 5VP from the stack set aside on the corresponding column of the majority board to the first player to explore one of the 6 terrain types (no water) three times.</p>{{/5.I}}
 			{{#6.I}}<p>Award 5 VP from the stack set aside on the corresponding column of the majority board to the first player to connect one of the 6 terrain types (no water) with his roads a third time.</p>{{/6.I}}
-			{{#7.I}}<p>Award 10 VP to the first player to control 2 of each terrain type (no water). Award 20 VP to the first player to control 2 of each terrain type (no water).</p>{{/7.I}}
+			{{#7.I}}<p>Award 10 VP to the first player to control 1 of each terrain type (no water). Award 20 VP to the first player to control 2 of each terrain type (no water).</p>{{/7.I}}
 			{{#8.I}}<p>Award 5 VP from the stack set aside for this purpose to the first player owning 3 plants of a good type.</p>{{/8.I}}
 			{{#9.I}}
 				{{#1.II}}<p>Award $50 to the first stock company delivering one of the good types a second time from the stack set aside for this purpose.</p>{{/1.II}}
