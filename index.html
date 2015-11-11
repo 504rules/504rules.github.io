@@ -181,6 +181,10 @@
 				<p>Place the majority board next to the game map with the column for deserts showing and place the 6 marking tokens for each player below this board.</p>
 			{{/7}}
 			{{#2.III}}
+				{{^5.I}}{{^6}}{{^7}}
+					{{^9.I}}<p>Majority {{^4.I}}board and {{/4.I}}markers not needed in this combination.</p>{{/9.I}}
+					{{#9.I}}{{^5.II}}<p>Majority {{^4.II}}board and {{/4.II}}markers not needed in this combination.</p>{{/5.II}}{{/9.I}}
+				{{/7}}{{/6}}{{/5.I}}
 				{{#1.I}}<p>Place 1 good of each type with 5 VP on it next to the map.</p>{{/1.I}}
 				{{#3.I}}<p>Place two factories with 10 VP each next to the map.</p>{{/3.I}}
 				{{#4.I}}
@@ -189,7 +193,7 @@
 				{{/4.I}}
 				{{#5.I}}
 					{{^6}}{{^7}}<p>Place the majority board next to the game map with the column for deserts showing and place the 6 marking tokens for each player below this board.</p>{{/7}}{{/6}}
-					<p>Place 5 VP below each terrain column of the majority board.</p>
+					<p>Place 5 VP below each terrain column of the majority board. {{#6}}Place 6 other tokens, such as settlements, per player below the majority board to track exploration.{{/6}}{{#7}}Place 6 other tokens, such as roads, per player below the majority board to track exploration.{{/7}}</p>
 				{{/5.I}}
 				{{#6.I}}<p>Place 5 VP below each terrain column of the majority board.</p>{{/6.I}}
 				{{#7.I}}<p>Place 10 VP next to the first row of the majority board, and 20 VP next to the second row of the majority board.</p>{{/7.I}}
@@ -754,7 +758,11 @@
 					<li>The player gets 1 VP for placing the collectively 1st settlement on the tile.</li>
 					<li>The player gets the last VP from a land tile only, if he exhausts 1 resident for the action harvest on the corresponding tile (On cities the player needs to do this for each of the last three VP tokens). The player does not get this VP, if he exhausts his resident for another action that tile.</li>
 				</ol>
-				{{#2.III}}<p>The player counts that tile on the majority board.</p>{{/2.III}}
+				{{#2.III}}
+					<p>The player counts that tile on the majority board.</p>
+					{{#6.II}}<p>Note: Use another token like a settlement to track exploration. Do not add this to the count of your road network.</p>{{/6.II}}
+					{{#7.II}}<p>Note: Use another token like a road to track exploration. Do not add this to the count of your majorities.</p>{{/7.II}}
+					{{/2.III}}
 			{{/5.I}}
 			{{#5.II}}
 				{{#3.I}}<p>The player may move any number of his active residents from adjacent tiles onto the just explored tile without exhausting them in this way.</p>{{/3.I}}
@@ -1349,7 +1357,7 @@
 				'map': {'priority': 4, 'value': 5},
 				'order': {'priority': 4, 'clockwise': true},
 				'money': {'priority': 6, 'increasing': true},
-				'parts': {'17': 1},
+				'parts': {'17': 1, '18': 30},
 				'before_render': function(params, module) {
 					switch(params.world[0]) {
 					case '1':
