@@ -782,7 +782,7 @@
 					The players build neutral roads, so there is always only 1 road between 2 tiles.
 					{{^6.III}}The roads built by a player must be connected with his capital solely across tiles controlled by that player.{{/6.III}}
 					{{#6.I}}The player only counts a land tile on the majority board, if he is the first who connects that land tile with 1 road. Multiple players may count a city each once, if they control that city during the game AND connect it via roads solely across their own tiles to their capital. Each player counts his capital, when he builds his first road.{{/6.I}}
-					{{#6.II}}The roads built by a player must be connected with his capital solely across tiles controlled by that player. The player counts these tiles on the majority board (including his capital, but no deserts). If the player loses the control of a tile, he must subtract all tiles on the majority board, which now are not connected anymore via roads to his capital solely across his own tiles.{{/6.II}}
+					{{#6.II}}The roads built by a player must be connected with his capital solely across tiles controlled by that player. The player counts these tiles on the majority board (including his capital{{^7}}, but no deserts{{/7}}). If the player loses the control of a tile, he must subtract all tiles on the majority board, which now are not connected anymore via roads to his capital solely across his own tiles.{{/6.II}}
 					The player may move his active residents any distance along roads on his own tiles without exhausting them in this way.
 				</p>
 				{{^4.III}}<p>If the player moves 1 or more residents onto an opposing tile, he may build 1 road onto that tile, too (even though he has no settlement there and must fight in <b>Phase 3 G</b>).</p>{{/4.III}}
@@ -792,19 +792,19 @@
 				{{#6.I}}<p>Directly after building a road, the player counts all the new tiles he connected on the majority board (including his capital). This way, each tile may be counted by multiple players!</p>{{/6.I}}
 				{{#6.II}}<p>Directly after building a road, the player counts all the new tiles he connected on the majority board (including his capital{{^7}}, but no deserts{{/7}}). This way, each tile may be counted by multiple players! Each city has demand for the different types of terrain, so the player's goal is to connect one of each of the terrain types for each of the cities he connects with his roads.</p>{{/6.II}}
 				<p>{{#2}}{{^6.III}}If the player changes his capital, he cannot start a new network. {{/6.III}}If the player removes 1 settlement from the map, his roads to that tile turn neutral{{^6.III}}, and he subtracts that tile on the majority board{{/6.III}}. The 1st player, who owns 1 settlement each on both these tiles, exchanges the neutral road with one of his own roads, if it is connected to his other roads and he does not own a road there.{{^6.III}} He counts it on the majority board.{{/6.III}}{{/2}}</p>
-				<p>{{#7.I}}{{^6.III}}If the player changes his capital, he cannot start a new network. {{/6.III}}If the player removes 1 settlement from the map, his roads to that tile turn neutral{{^6.III}}, and he subtracts that tile on the majority board{{/6.III}}. The 1st player, who owns 1 settlement each on both these tiles, exchanges the neutral road with one of his own roads, if it is connected to his other roads and he does not own a road there.{{^6.III}} He counts it on the majority board.{{/6.III}}{{/7.I}}</p>
+				<p>{{^2}}{{#7.I}}{{^6.III}}If the player changes his capital, he cannot start a new network. {{/6.III}}If the player removes 1 settlement from the map, his roads to that tile turn neutral{{^6.III}}, and he subtracts that tile on the majority board{{/6.III}}. The 1st player, who owns 1 settlement each on both these tiles, exchanges the neutral road with one of his own roads, if it is connected to his other roads and he does not own a road there.{{^6.III}} He counts it on the majority board.{{/6.III}}{{/7.I}}{{/2}}</p>
 			{{/4}}
 		{{/6}}
-		{{#7}}
+		{{#7}}{{^6.I}}{{^6.II}}
 			{{^7.II}}
 				<p>Each time the player places 1 settlement on a tile, he counts the matching type of terrain on the majority board (including his capital).</p>
 			{{/7.II}}
 			{{#7.II}}
 				{{#8}}<p>The player counts a land tile, if he builds the plant (if he builds a "fish"-plant, he counts the original terrain). Additionally he counts a city, if he builds his trading house there (including his capital).</p>{{/8}}
-				{{^8}}{{^6}}<p>The player counts a tile, when he places 1 settlement on that tile (including his capital).</p>{{/6}}{{/8}}
+				{{^8}}<p>The player counts a tile, when he places 1 settlement on that tile (including his capital).</p>{{/8}}
 			{{/7.II}}
 			{{#4}}<p>If the player conquers the tile of another player, he counts that tile on the majority board, while the other player subtracts it.</p>{{/4}}
-		{{/7}}
+		{{/6.II}}{{/6.I}}{{/7}}
 		{{#8}}
 			<p><b>Plants:</b> On each land tile the players commonly may build a total of 1 plant. The player needs active residents depending on the terrain, see the table <b>Plant</b>. Afterwards the used residents are exhausted and available again in the next round. The player marks the ownership by placing his settlement on the plant. {{#8.I}}The player places that good face up in front of himself.{{/8.I}} {{#1}}The plant immediately produces 1 goods tile, which is placed on top of the plant for now.{{/1}}</p>
 			{{^8.III}}
