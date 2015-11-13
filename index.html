@@ -261,10 +261,21 @@
 			{{^3.III}}
 				<div class="note col-md-3 col-xs-4">
 					<h2>Calculation of taxes:</h2>
-					<p>To simplify this process, the first player pays $2 taxes for each full $10 of this income, the other players except the last pay $1 taxes for each full $10 of their income. The last pays $0 taxes.</p>
-
-					<h2>Example:</h2>
-					<p>Camille gets an income of $68. Thus, she must pay $12 taxes for the full $60 of her income for being first.</p>
+					<p>To simplify this process, the {{^7.I}}{{^9.I}}first player{{/9.I}}{{/7.I}}{{#7.I}}player with the highest income{{/7.I}}{{#9.I}}company with the highest income{{/9.I}} pays $2 taxes for each full $10 of this income, the other players except the {{^7.I}}{{^9.I}}last player{{/9.I}}{{/7.I}}{{#7.I}}player with the lowest income{{/7.I}}{{#9.I}}company with the lowest income{{/9.I}} pay $1 taxes for each full $10 of their income. The {{^7.I}}{{^9.I}}last player{{/9.I}}{{/7.I}}{{#7.I}}player with the lowest income{{/7.I}}{{#9.I}}company with the lowest income{{/9.I}} pays $0 taxes.</p>
+					{{^7.I}}{{^9.I}}
+						<h2>Example:</h2>
+						<p>Camille gets an income of $68. Thus, she must pay $12 taxes for the full $60 of her income for being first.</p>
+					{{/9.I}}{{/7.I}}
+				</div>
+				<div class="note col-md-3 col-xs-4">
+					{{#7.I}}
+						<h2>Example:</h2>
+						<p>The current player order is John, Camille, Sarah and Harry, and on the previous turn they earned $50, $68, $68 and $50 dollars respectively. Camille and Sarah have equal highest income ($68); as Camille is earlier in the turn she pays $2 for every full $10 income, in this case $12; John and Harry have equal lowest income; as Harry is later in the turn he doesn't pay any tax. Sarah and John pay $6 and $5 respsectively.</p>
+					{{/7.I}}
+					{{#9.I}}
+						<h2>Example:</h2>
+						<p>The current company order is Orange, Blue, White, Green and Purple, and on the previous turn they earned $40, $68, $68, $40 and $50 dollars respectively. Blue and White have equal highest income ($68); as Blue is earlier in the turn she pays $2 for every full $10 income, in this case $12. Orange and Green have equal lowest income; as Green is later in the turn he doesn't pay any tax. White, Purple and Orange pay $6, $5 and $4 respectively. </p>
+					{{/9.I}}
 				</div>
 				<div class="note col-md-3 col-xs-4">
 					<h2>Factory:</h2>
@@ -594,11 +605,11 @@
 	{{/9.III}}{{/9}}
 
 	{{#capture}}
-		{{#3}}{{^3.III}}
+		{{#3}}{{^3.III}}{{^9.I}}{{^7.I}}
 			<p>At game start, all players make a secret bid with their starting money ($0 is a valid bid). Starting with the highest bidder, each player chooses a position in the player order and his capital on the map. In case of a tie, randomly draw lots for the order of choice (the losers get $2 for each lost draw).</p>
 			<p>Starting with the 2nd round, determine the player order according to the income of the former round, from high to low (in case of a tie reverse the player order of the former round for the tied players). According to the new player order the players must pay taxes for their last income: The 1st player pays 20%, the last pays 0%, and all other players pay 10% of their last income, see left for <b>Calculation of taxes</b>. Because of higher taxes the 1st player may get a lower income compared to the 2nd player.</p>
 			{{#3.I}}{{#9.II}}<p>The stock company order for the 1st business round (BR) is determined in reverse order of establishment. If stock companies are only established in later share rounds (SR), just for once they are first in stock company order in the next BR!</p>{{/9.II}}{{/3.I}}
-		{{/3.III}}{{/3}}
+		{{/7.I}}{{/9.I}}{{/3.III}}{{/3}}
 		{{#7.I}}
 			{{^9.II}}
 				<p>At the start of the game the player order is randomly determined and 1 resident of each player is placed on the spaces of the 1st starting card.</p>
@@ -610,6 +621,9 @@
 			<p>As long as the players do not have victory points (VP), simply reverse the player order of the former turn. As soon as the players have VP, the new player order is determined according to VP from few to most. The player with the fewest VP is new starting player, the player with most VP is last. In case of a tie reverse the player order of all concerned players of the former turn.</p>
 			{{#3.II}}<p>Starting with the 2nd round the income is taxed according to the money, but the player order according to VP. In case of a tie for highest income, the player must pay 20%, whose turn is now earlier in player order. In case of a tie for lowest income, the player pays no taxes, whose turn is now later in the player order.</p>{{/3.II}}
 		{{/7.I}}
+		{{#9.III}}{{^3.}}{{^7.I}}
+			<p>At the start of the game the turn order is randomly determined. Starting with the 2nd round determine the player order according to the income of the former round, from low to high. In case of a tie simply reverse the player order of the concerned players.</p>
+		{{/7.I}}{{/3.}}{{/9.III}}
 	{{/capture}}
 	{{#hascapture}}
 		<div class="row section">
@@ -618,20 +632,15 @@
 		</div>
 	{{/hascapture}}
 
-	{{#9}}
+	{{#9}}{{^9.III}}{{^3.I}}{{^7.I}}
 		<div class="row section">
 			<div class="col-md-2 col-xs-2"><h1>Phase 1: Company Order</h1></div>
 			<div class="col-md-10 col-xs-10">
-				{{^9.III}}
-					<p>The order of the stock companies matches the actual share values from high to low. In case of a tie the order of the concerned companies matches the stack of share value markers from top to bottom.</p>
-					{{#9.I}}{{#3.II}}<p>Starting with the 2nd round the income is taxed according to the amount, but the stock company order according to the actual share value.</p>{{/3.II}}{{/9.I}}
-				{{/9.III}}
-				{{#9.III}}
-					<p>At the start of the game the turn order is randomly determined. Starting with the 2nd round determine the player order according to the income of the former round, from low to high. In case of a tie simply reverse the player order of the concerned players.</p>
-				{{/9.III}}
+				<p>The order of the stock companies matches the actual share values from high to low. In case of a tie the order of the concerned companies matches the stack of share value markers from top to bottom.</p>
+				{{#9.I}}{{#3.II}}<p>Starting with the 2nd round the income is taxed according to the companies with most to least income: The company with the highest income from the previous round pays 20% tax, the company with the with the lowest pays 0%, and all other players pay 10% of their last income, see above for <b>Calculation of taxes.</b> In the case of a tie, the company earlier in the turn order pays the higher tax rate. The company turn order continues to be determined according to the actual share value.</p>{{/3.II}}{{/9.I}}
 			</div>
 		</div>
-	{{/9}}
+	{{/7.I}}{{/3.I}}{{/9.III}}{{/9}}
 
 	{{#3}}{{^3.III}}
 		<div class="row section">
@@ -752,26 +761,24 @@
 			<p>Afterwards the player rolls 1 die and places the corresponding map tile on the destination space. See the example <b>Exploring</b>.</p>
 			{{#mapnum.1}}<p>The players may only explore in a distance of 4 spaces around the central city. Thus, following the adjacency rules above the players will not always explore all cities or water tiles.</p>{{/mapnum.1}}
 			{{#5.I}}
+				{{#2.III}}
+					<p>The player counts that tile on the majority board.</p>
+					{{#6.II}}<p>Note: Use another token like a settlement to track exploration. Do not add this to the count of your road network.</p>{{/6.II}}
+					{{#7.II}}<p>Note: Use another token like a road to track exploration. Do not add this to the count of your majorities.</p>{{/7.II}}
+				{{/2.III}}
 				<p>The player immediately gets 1 victory point (VP) for each explored tile, including water. Then, place a stack of 2 "1 VP" tokens on each explored land tile and a stack of 4 "1 VP" tokens on each explored city.</p>
 				<p>During the game the player gets additional victory points (VP) by taking them from the appropriate tiles:</p>
 				<ol>
 					<li>The player gets 1 VP for placing the collectively 1st settlement on the tile.</li>
 					<li>The player gets the last VP from a land tile only, if he exhausts 1 resident for the action harvest on the corresponding tile (On cities the player needs to do this for each of the last three VP tokens). The player does not get this VP, if he exhausts his resident for another action that tile.</li>
 				</ol>
-				{{#2.III}}
-					<p>The player counts that tile on the majority board.</p>
-					{{#6.II}}<p>Note: Use another token like a settlement to track exploration. Do not add this to the count of your road network.</p>{{/6.II}}
-					{{#7.II}}<p>Note: Use another token like a road to track exploration. Do not add this to the count of your majorities.</p>{{/7.II}}
-					{{/2.III}}
+
 			{{/5.I}}
 			{{#5.II}}
 				{{#3.I}}<p>The player may move any number of his active residents from adjacent tiles onto the just explored tile without exhausting them in this way.</p>{{/3.I}}
 				{{#4.I}}<p>Depending on the terrain the player discovers or receives the following. <span class="desert icon"></span> empty, <span class="grass icon"></span> & <span class="forest icon"></span> 1 own settlement, <span class="grain icon"></span> 1 own settlement + 1 own exhausted resident, <span class="mountain icon"></span> 1 militia. For defeating this militia once-only $20. <span class="city icon"></span> 1 barrack and 1 militia. The player does not get income tokens for discovered settlements!</p>{{/4.I}}
 				{{#2.III}}{{#9.I}}<p>The player counts that tile on the majority board.</p>{{/9.I}}{{/2.III}}
 			{{/5.II}}
-			{{#2.III}}
-			
-			{{/2.III}}
 		{{/5}}
 		{{#6}}
 			<p><b>Roads:</b> If the player has 1 settlement each on two adjacent tiles, he may connect both tiles with 1 of his roads. To build a road he needs a the number of active residents equal to the more expensive of the two terrain types, see the table <b>Road</b>. {{^6.III}}He places 1 of his used residents back into his supply and places 1 road. The remaining residents are exhausted from the build and will be available again in the next round. {{/6.III}}{{#6.III}}All of the used residents are exhausted and are available again in the next round.{{/6.III}}</p>
@@ -1487,7 +1494,7 @@
 			'I': {
 				'residents': true,
 				'map': {'priority': 4, 'value': 5},
-				'order': {'priority': 4, 'vp': true},
+				'order': {'priority': 1, 'vp': true},
 				'money': {'priority': 6, 'increasing': true},
 				'parts': {'27': 4, '28': 17, '17': 1, '18': 30},
 			},
