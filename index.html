@@ -761,26 +761,24 @@
 			<p>Afterwards the player rolls 1 die and places the corresponding map tile on the destination space. See the example <b>Exploring</b>.</p>
 			{{#mapnum.1}}<p>The players may only explore in a distance of 4 spaces around the central city. Thus, following the adjacency rules above the players will not always explore all cities or water tiles.</p>{{/mapnum.1}}
 			{{#5.I}}
+				{{#2.III}}
+					<p>The player counts that tile on the majority board.</p>
+					{{#6.II}}<p>Note: Use another token like a settlement to track exploration. Do not add this to the count of your road network.</p>{{/6.II}}
+					{{#7.II}}<p>Note: Use another token like a road to track exploration. Do not add this to the count of your majorities.</p>{{/7.II}}
+				{{/2.III}}
 				<p>The player immediately gets 1 victory point (VP) for each explored tile, including water. Then, place a stack of 2 "1 VP" tokens on each explored land tile and a stack of 4 "1 VP" tokens on each explored city.</p>
 				<p>During the game the player gets additional victory points (VP) by taking them from the appropriate tiles:</p>
 				<ol>
 					<li>The player gets 1 VP for placing the collectively 1st settlement on the tile.</li>
 					<li>The player gets the last VP from a land tile only, if he exhausts 1 resident for the action harvest on the corresponding tile (On cities the player needs to do this for each of the last three VP tokens). The player does not get this VP, if he exhausts his resident for another action that tile.</li>
 				</ol>
-				{{#2.III}}
-					<p>The player counts that tile on the majority board.</p>
-					{{#6.II}}<p>Note: Use another token like a settlement to track exploration. Do not add this to the count of your road network.</p>{{/6.II}}
-					{{#7.II}}<p>Note: Use another token like a road to track exploration. Do not add this to the count of your majorities.</p>{{/7.II}}
-					{{/2.III}}
+
 			{{/5.I}}
 			{{#5.II}}
 				{{#3.I}}<p>The player may move any number of his active residents from adjacent tiles onto the just explored tile without exhausting them in this way.</p>{{/3.I}}
 				{{#4.I}}<p>Depending on the terrain the player discovers or receives the following. <span class="desert icon"></span> empty, <span class="grass icon"></span> & <span class="forest icon"></span> 1 own settlement, <span class="grain icon"></span> 1 own settlement + 1 own exhausted resident, <span class="mountain icon"></span> 1 militia. For defeating this militia once-only $20. <span class="city icon"></span> 1 barrack and 1 militia. The player does not get income tokens for discovered settlements!</p>{{/4.I}}
 				{{#2.III}}{{#9.I}}<p>The player counts that tile on the majority board.</p>{{/9.I}}{{/2.III}}
 			{{/5.II}}
-			{{#2.III}}
-			
-			{{/2.III}}
 		{{/5}}
 		{{#6}}
 			<p><b>Roads:</b> If the player has 1 settlement each on two adjacent tiles, he may connect both tiles with 1 of his roads. To build a road he needs a the number of active residents equal to the more expensive of the two terrain types, see the table <b>Road</b>. {{^6.III}}He places 1 of his used residents back into his supply and places 1 road. The remaining residents are exhausted from the build and will be available again in the next round. {{/6.III}}{{#6.III}}All of the used residents are exhausted and are available again in the next round.{{/6.III}}</p>
