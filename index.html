@@ -606,9 +606,9 @@
 
 	{{#capture}}
 		{{#3}}{{^3.III}}{{^9.I}}{{^7.I}}
-			<p>At game start, all players make a secret bid with their starting money ($0 is a valid bid). Starting with the highest bidder, each player chooses a position in the player order and his capital on the map. In case of a tie, randomly draw lots for the order of choice (the losers get $2 for each lost draw).</p>
+			<p>At game start, all players make a secret bid with their starting money ($0 is a valid bid). {{^9.II}}Starting with the highest bidder, each player chooses a position in the player order and his capital on the map.{{/9.II}}{{#9.II}}{{/9.II}} In case of a tie, randomly draw lots for the order of choice (the losers get $2 for each lost draw).</p>
+			{{#9.II}}<p>The stock company order for the 1st business round (BR) is determined in reverse order of establishment. If stock companies are only established in later share rounds (SR), just for once they are first in stock company order in the next BR!</p>{{/9.II}}
 			<p>Starting with the 2nd round, determine the player order according to the income of the former round, from high to low (in case of a tie reverse the player order of the former round for the tied players). According to the new player order the players must pay taxes for their last income: The 1st player pays 20%, the last pays 0%, and all other players pay 10% of their last income, see left for <b>Calculation of taxes</b>. Because of higher taxes the 1st player may get a lower income compared to the 2nd player.</p>
-			{{#3.I}}{{#9.II}}<p>The stock company order for the 1st business round (BR) is determined in reverse order of establishment. If stock companies are only established in later share rounds (SR), just for once they are first in stock company order in the next BR!</p>{{/9.II}}{{/3.I}}
 		{{/7.I}}{{/9.I}}{{/3.III}}{{/3}}
 		{{#7.I}}
 			{{^9.II}}
@@ -637,7 +637,10 @@
 			<div class="col-md-2 col-xs-2"><h1>Phase 1: Company Order</h1></div>
 			<div class="col-md-10 col-xs-10">
 				<p>The order of the stock companies matches the actual share values from high to low. In case of a tie the order of the concerned companies matches the stack of share value markers from top to bottom.</p>
-				{{#9.I}}{{#3.II}}<p>Starting with the 2nd round the income is taxed according to the companies with most to least income: The company with the highest income from the previous round pays 20% tax, the company with the with the lowest pays 0%, and all other players pay 10% of their last income, see above for <b>Calculation of taxes.</b> In the case of a tie, the company earlier in the turn order pays the higher tax rate. The company turn order continues to be determined according to the actual share value.</p>{{/3.II}}{{/9.I}}
+				{{#3.II}}
+					<p>Starting with the 2nd round the income is taxed according to the companies with most to least income: The company with the highest income from the previous round pays 20% tax, the company with the with the lowest pays 0%, and all other players pay 10% of their last income, see above for <b>Calculation of taxes.</b> In the case of a tie, the company earlier in the turn order pays the higher tax rate. The company turn order continues to be determined according to the actual share value.</p>
+					<p>Note: If a company has insuffiecient money to pay their taxes, then they pay all remaining money in their company assets. (No extra money needs to be made up.)</p>
+				{{/3.II}}
 			</div>
 		</div>
 	{{/7.I}}{{/3.I}}{{/9.III}}{{/9}}
@@ -1027,12 +1030,14 @@
 			<div class="col-md-2 col-xs-2"><h1>Phase 4: Dividends</h1></div>
 			<div class="col-md-10 col-xs-10">
 				{{#9.I}}
+					{{#3.II}}<p>The presidents record their companies' incomes for the round, this figure is used to calculate taxes for the following round.</p>{{/3.II}}
 					<p>The presidents decide if they pay a dividend or keep the income in their company assets.</p>
 					<p><b>Pay a dividend:</b> According to the owned shares the income is divided between players, the bank and the stock company (the stock company keeps the remains). See the <b>Calculation of Dividends</b>. The share value of the company raises by $10.</p>
 					<p><b>Keep the income:</b> Place the whole income into the company assets. The share value remains the same.</p>
 					<p><b>Afterwards pay maintenance costs:</b> $3 each for all settlements and $1 each for all residents of the stock company. The president must pay missing payments with his own money.</p>
 				{{/9.I}}
 				{{#9.II}}
+					{{#3.I}}<p>The presidents record their companies' incomes for the round, this figure is used to calculate taxes for the following round.</p>{{/3.I}}
 					<p>Raise the actual share values of the 2 stock companies with the highest and second highest income by $10. Drop the actual share values of all companies with lowest income by $10. Mark all changes of the actual share values on the share value board in order of the former share values from high to low.</p>
 					<p>All stock companies pay a dividend to players and the bank. The presidents keep the remaining income and place it on the company assets. See the <b>Calculation of Dividends</b>.</p>
 				{{/9.II}}
