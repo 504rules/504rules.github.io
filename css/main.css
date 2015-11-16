@@ -2,22 +2,18 @@
 	font-size: 12px;
 }
 
-@media print {
-	* {
-		font-size: 10px;
-	}
 
-	.container {
-		page-break-after: always;
-	}
+.row.top > div {
+	display:flex;
+	margin:0 auto;
+}
 
-	.row {
-		page-break-inside: avoid;
-	}
+.top {
+	display:flex;
+}
 
-	#editbutton, #randomize {
-		display: none;
-	}
+#target {
+	background-color:#ddd;
 }
 
 #editbutton, #randomize {
@@ -29,11 +25,15 @@
 }
 
 p {
-	margin-bottom: 5px;
+	margin-bottom: 0.75em;
+	border-bottom:1px dashed darkgreen;
+	padding-bottom: 0.75em;
 }
 
 p:last-child {
 	margin-bottom: 0;
+	padding-bottom: 0;
+	border-bottom:none;
 }
 
 .dice {
@@ -123,6 +123,16 @@ table th {
 .factory { background-image: url('../img/factory-bigicon.png'); }
 .water-adjacent { background-image: url('../img/water-adjacent-icon.png'); }
 
+.heading.map1 { background-image: url('../img/map1.png'); background-position:80% 60%; background-repeat:no-repeat; }
+.heading.map2 { background-image: url('../img/map2.png'); background-position:80% 60%; background-repeat:no-repeat; }
+.heading.map3 { background-image: url('../img/map3.png'); background-position:80% 60%; background-repeat:no-repeat; }
+.heading.map4 { background-image: url('../img/map4.png'); background-position:80% 60%; background-repeat:no-repeat; }
+.heading.map5 { background-image: url('../img/map5.png'); background-position:80% 60%; background-repeat:no-repeat; }
+.heading p { border:none; margin:0; padding:0; }
+
+
+
+
 .top h2 {
 	font-size: 1.1em;
 	font-weight: bold;
@@ -140,7 +150,7 @@ table th {
 }
 
 .name .col-md-12, .name .col-xs-12 {
-	background-color: black;
+	background-color: #333;
 	color: white;
 }
 
@@ -155,15 +165,18 @@ table th {
 }
 
 .top .heading {
-	background-color: black;
+	background-color: #333;
 	color: white;
-	height: 75px;
+	height: auto;
 	margin-top: -15px;
 	margin-bottom: 15px;
 	border-radius: 0 0 15px 15px;
 	padding-left: 15px;
 	padding-right: 15px;
 	padding-top: 25px;
+	display: inline-block;
+	width: 100%;
+	padding-bottom: 0.25em;
 }
 
 .section {
@@ -175,7 +188,7 @@ table th {
 }
 
 .section .col-md-2 {
-	background: black;
+	background: darkgreen;
 	border-radius: 0 15px 15px 0;
 	padding: 15px;
 	margin: 0;
@@ -189,13 +202,20 @@ table th {
 }
 
 .section .col-md-10 {
-	border: 1px solid black;
+
+	border: none;
 	margin-left: -15px;
-	padding-left: 30px;
+	padding: 1em 8em 1em 2em;
+	background-color: #fff;
+	border-radius: 1em;
 }
 
 .notes {
 	margin-bottom: 15px;
+	background-color: #fff;
+	padding: 2em;
+	border-radius: 1em;
+	margin-right: 0px;
 }
 
 .note {
@@ -211,13 +231,76 @@ table th {
 
 .note p {
 	margin: 0;
+	border-bottom:none;
 }
 
 .warning  {
-	border: 1px solid black;
-	border-top: 5px solid black;
-	border-bottom: 5px solid black;
+	border: 1px solid darkgreen;
+	border-top: 5px solid darkgreen;
+	border-bottom: 5px solid darkgreen;
 	margin-right: 0;
 	margin-bottom: 15px;
 	padding: 7px;
+	background-color:#fff;
+}
+
+@media print {
+	* {
+		font-size: 10px;
+	}
+
+	.container {
+		page-break-after: always;
+	}
+
+	.row {
+		page-break-inside: avoid;
+	}
+
+	#target {
+		background-color:#FFF;
+	}
+	
+	#editbutton, #randomize {
+		display: none;
+	}
+	p {
+		margin-bottom: 5px;
+		padding-bottom:0;
+		border:none;
+	}
+	.name .col-md-12, .name .col-xs-12 {
+		background-color: black;
+		color: white;
+	}
+	.top .heading {
+		background-color: black;
+		color: white;
+		height: 75px;
+		margin-top: -15px;
+		margin-bottom: 15px;
+		border-radius: 0 0 15px 15px;
+		padding-left: 15px;
+		padding-right: 15px;
+		padding-top: 25px;
+	}
+	.section .col-md-2 {
+		background: black;
+		border-radius: 0 15px 15px 0;
+		padding: 15px;
+		margin: 0;
+	}
+	.section .col-md-2 {
+		background: black;
+		border-radius: 0 15px 15px 0;
+		padding: 15px;
+		margin: 0;
+	}
+
+	.section .col-md-10 {
+		border: 1px solid black;
+		margin-left: -15px;
+		padding-left: 30px;
+	}
+	
 }
