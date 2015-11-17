@@ -59,15 +59,15 @@
 		</div>
 	</div>
 	<div class="row top">
-		<div class="col-md-2 col-xs-2">
-			<div class="heading">
+		<div class="col-md-3 col-xs-3">
+			<div class="heading map{{map.value}}">
 				<h2>Map {{map.value}}</h2>
 					<p>{{#residents}}<img src="img/meeple.png" class="meeple">{{/residents}}
 					{{^residents}}<img src="img/meeple_not.png" class="meeple">{{/residents}}</p>
 
 			</div>
 		</div>
-		<div class="col-md-7 col-xs-7">
+		<div class="col-md-6 col-xs-6">
 			<div class="heading">
 				{{#order.clockwise}}
 					<h2>Clockwise player order</h2>
@@ -695,7 +695,7 @@
 			<p><b>Example:</b> If the player owns 4 plants, he may only buy up to 6 residents.</p>
 		{{/8.III}}
 		{{#residents}}
-			<p>The player may buy residents for 10$ each and place them on the board.<p>
+			<p>The player may buy residents for 10$ each and place them on the board.</p>
 		{{/residents}}
 	{{/capture}}
 	{{#hascapture}}
@@ -803,8 +803,8 @@
 				<p>The player may move his active units any distance along his roads without exhausting them in this way.</p>
 				{{#6.I}}<p>Directly after building a road, the player counts all the new tiles he connected on the majority board (including his capital). This way, each tile may be counted by multiple players!</p>{{/6.I}}
 				{{#6.II}}<p>Directly after building a road, the player counts all the new tiles he connected on the majority board (including his capital{{^7}}, but no deserts{{/7}}). This way, each tile may be counted by multiple players! Each city has demand for the different types of terrain, so the player's goal is to connect one of each of the terrain types for each of the cities he connects with his roads.</p>{{/6.II}}
-				<p>{{#2}}{{^6.III}}If the player changes his capital, he cannot start a new network. {{/6.III}}If the player removes 1 settlement from the map, his roads to that tile turn neutral{{^6.III}}, and he subtracts that tile on the majority board{{/6.III}}. The 1st player, who owns 1 settlement each on both these tiles, exchanges the neutral road with one of his own roads, if it is connected to his other roads and he does not own a road there.{{^6.III}} He counts it on the majority board.{{/6.III}}{{/2}}</p>
-				<p>{{^2}}{{#7.I}}{{^6.III}}If the player changes his capital, he cannot start a new network. {{/6.III}}If the player removes 1 settlement from the map, his roads to that tile turn neutral{{^6.III}}, and he subtracts that tile on the majority board{{/6.III}}. The 1st player, who owns 1 settlement each on both these tiles, exchanges the neutral road with one of his own roads, if it is connected to his other roads and he does not own a road there.{{^6.III}} He counts it on the majority board.{{/6.III}}{{/7.I}}{{/2}}</p>
+				{{#2}}<p>{{^6.III}}If the player changes his capital, he cannot start a new network. {{/6.III}}If the player removes 1 settlement from the map, his roads to that tile turn neutral{{^6.III}}, and he subtracts that tile on the majority board{{/6.III}}. The 1st player, who owns 1 settlement each on both these tiles, exchanges the neutral road with one of his own roads, if it is connected to his other roads and he does not own a road there.{{^6.III}} He counts it on the majority board.{{/6.III}}</p>{{/2}}
+				{{^2}}<p>{{#7.I}}{{^6.III}}If the player changes his capital, he cannot start a new network. {{/6.III}}If the player removes 1 settlement from the map, his roads to that tile turn neutral{{^6.III}}, and he subtracts that tile on the majority board{{/6.III}}. The 1st player, who owns 1 settlement each on both these tiles, exchanges the neutral road with one of his own roads, if it is connected to his other roads and he does not own a road there.{{^6.III}} He counts it on the majority board.{{/6.III}}{{/7.I}}</p>{{/2}}
 			{{/4}}
 		{{/6}}
 		{{#7}}{{^6.I}}{{^6.II}}
@@ -888,7 +888,6 @@
 			<div class="col-md-10 col-xs-10">
 				<p>Each round, the player may buy at max 1 factory on each city, if he has 1 settlement there and pays the matching costs, see left for the table Factory.{{#3.I}} The player immediately gets 5 victory points (VP) for building the factory.{{/3.I}} On a city, the players in common may build a total of 3 factories.
 				<p>The player marks his factory with his settlement. If he owns several factories in the same city, he stacks them below his settlement.</p>
-				
 			</div>
 		</div>
 	{{/3.III}}{{/3}}
