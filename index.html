@@ -267,16 +267,18 @@
 						<p>Camille gets an income of $68. Thus, she must pay $12 taxes for the full $60 of her income for being first.</p>
 					{{/9.I}}{{/7.I}}
 				</div>
-				<div class="note col-md-3 col-xs-4">
-					{{#7.I}}
+				{{#7.I}}
+					<div class="note col-md-3 col-xs-4">			
 						<h2>Example:</h2>
 						<p>The current player order is John, Camille, Sarah and Harry, and on the previous turn they earned $50, $68, $68 and $50 dollars respectively. Camille and Sarah have equal highest income ($68); as Camille is earlier in the turn she pays $2 for every full $10 income, in this case $12; John and Harry have equal lowest income; as Harry is later in the turn he doesn't pay any tax. Sarah and John pay $6 and $5 respsectively.</p>
-					{{/7.I}}
-					{{#9.I}}
+					</div>
+				{{/7.I}}
+				{{#9.I}}
+					<div class="note col-md-3 col-xs-4">
 						<h2>Example:</h2>
 						<p>The current company order is Orange, Blue, White, Green and Purple, and on the previous turn they earned $40, $68, $68, $40 and $50 dollars respectively. Blue and White have equal highest income ($68); as Blue is earlier in the turn she pays $2 for every full $10 income, in this case $12. Orange and Green have equal lowest income; as Green is later in the turn he doesn't pay any tax. White, Purple and Orange pay $6, $5 and $4 respectively. </p>
-					{{/9.I}}
-				</div>
+					</div>
+				{{/9.I}}
 				<div class="note col-md-3 col-xs-4">
 					<h2>Factory:</h2>
 					<p>The players pay the following prices for building a factory on a city.</p>
@@ -606,9 +608,9 @@
 
 	{{#capture}}
 		{{#3}}{{^3.III}}{{^9.I}}{{^7.I}}
-			<p>At game start, all players make a secret bid with their starting money ($0 is a valid bid). Starting with the highest bidder, each player chooses a position in the player order and his capital on the map. In case of a tie, randomly draw lots for the order of choice (the losers get $2 for each lost draw).</p>
-			<p>Starting with the 2nd round, determine the player order according to the income of the former round, from high to low (in case of a tie reverse the player order of the former round for the tied players). According to the new player order the players must pay taxes for their last income: The 1st player pays 20%, the last pays 0%, and all other players pay 10% of their last income, see left for <b>Calculation of taxes</b>. Because of higher taxes the 1st player may get a lower income compared to the 2nd player.</p>
-			{{#3.I}}{{#9.II}}<p>The stock company order for the 1st business round (BR) is determined in reverse order of establishment. If stock companies are only established in later share rounds (SR), just for once they are first in stock company order in the next BR!</p>{{/9.II}}{{/3.I}}
+			<p>At game start, all players make a secret bid with their starting money ($0 is a valid bid). Starting with the highest bidder, each player chooses a position in the player order {{^9.II}}and his capital on the map.{{/9.II}}{{#9.II}}for the first share round (SR).{{/9.II}} In case of a tie, randomly draw lots for the order of choice (the losers get $2 for each lost draw).</p>
+			{{#9.II}}<p>The stock company order for the 1st business round (BR) is determined in reverse order of establishment. If stock companies are only established in later SRs, just for once they are first in stock company order in the next BR!</p>{{/9.II}}
+			<p>Starting with the 2nd round, determine the {{^9.II}}player{{/9.II}}{{#9.II}}company{{/9.II}} order according to the income of the former round, from high to low (in case of a tie reverse the {{^9.II}}player{{/9.II}}{{#9.II}}company{{/9.II}} order of the former round for the tied {{^9.II}}players{{/9.II}}{{#9.II}}companies{{/9.II}}). According to the new {{^9.II}}player{{/9.II}}{{#9.II}}company{{/9.II}} order the {{^9.II}}players{{/9.II}}{{#9.II}}companies{{/9.II}} must pay taxes for their last income: The 1st {{^9.II}}player{{/9.II}}{{#9.II}}company{{/9.II}} pays 20%, the last pays 0%, and all other players pay 10% of their last income, see left for <b>Calculation of taxes</b>. Because of higher taxes the 1st {{^9.II}}player{{/9.II}}{{#9.II}}company{{/9.II}} may get a lower income compared to the 2nd.</p>
 		{{/7.I}}{{/9.I}}{{/3.III}}{{/3}}
 		{{#7.I}}
 			{{^9.II}}
@@ -637,7 +639,10 @@
 			<div class="col-md-2 col-xs-2"><h1>Phase 1: Company Order</h1></div>
 			<div class="col-md-10 col-xs-10">
 				<p>The order of the stock companies matches the actual share values from high to low. In case of a tie the order of the concerned companies matches the stack of share value markers from top to bottom.</p>
-				{{#9.I}}{{#3.II}}<p>Starting with the 2nd round the income is taxed according to the companies with most to least income: The company with the highest income from the previous round pays 20% tax, the company with the with the lowest pays 0%, and all other players pay 10% of their last income, see above for <b>Calculation of taxes.</b> In the case of a tie, the company earlier in the turn order pays the higher tax rate. The company turn order continues to be determined according to the actual share value.</p>{{/3.II}}{{/9.I}}
+				{{#3.II}}
+					<p>Starting with the 2nd round the income is taxed according to the companies with most to least income: The company with the highest income from the previous round pays 20% tax, the company with the with the lowest pays 0%, and all other players pay 10% of their last income, see above for <b>Calculation of taxes.</b> In the case of a tie, the company earlier in the turn order pays the higher tax rate. The company turn order continues to be determined according to the actual share value.</p>
+					<p>Note: If a company has insuffiecient money to pay their taxes, then they pay all remaining money in their company assets. (No extra money needs to be made up.)</p>
+				{{/3.II}}
 			</div>
 		</div>
 	{{/7.I}}{{/3.I}}{{/9.III}}{{/9}}
@@ -798,8 +803,8 @@
 				<p>The player may move his active units any distance along his roads without exhausting them in this way.</p>
 				{{#6.I}}<p>Directly after building a road, the player counts all the new tiles he connected on the majority board (including his capital). This way, each tile may be counted by multiple players!</p>{{/6.I}}
 				{{#6.II}}<p>Directly after building a road, the player counts all the new tiles he connected on the majority board (including his capital{{^7}}, but no deserts{{/7}}). This way, each tile may be counted by multiple players! Each city has demand for the different types of terrain, so the player's goal is to connect one of each of the terrain types for each of the cities he connects with his roads.</p>{{/6.II}}
-				<p>{{#2}}{{^6.III}}If the player changes his capital, he cannot start a new network. {{/6.III}}If the player removes 1 settlement from the map, his roads to that tile turn neutral{{^6.III}}, and he subtracts that tile on the majority board{{/6.III}}. The 1st player, who owns 1 settlement each on both these tiles, exchanges the neutral road with one of his own roads, if it is connected to his other roads and he does not own a road there.{{^6.III}} He counts it on the majority board.{{/6.III}}{{/2}}</p>
-				<p>{{^2}}{{#7.I}}{{^6.III}}If the player changes his capital, he cannot start a new network. {{/6.III}}If the player removes 1 settlement from the map, his roads to that tile turn neutral{{^6.III}}, and he subtracts that tile on the majority board{{/6.III}}. The 1st player, who owns 1 settlement each on both these tiles, exchanges the neutral road with one of his own roads, if it is connected to his other roads and he does not own a road there.{{^6.III}} He counts it on the majority board.{{/6.III}}{{/7.I}}{{/2}}</p>
+				{{#2}}<p>{{^6.III}}If the player changes his capital, he cannot start a new network. {{/6.III}}If the player removes 1 settlement from the map, his roads to that tile turn neutral{{^6.III}}, and he subtracts that tile on the majority board{{/6.III}}. The 1st player, who owns 1 settlement each on both these tiles, exchanges the neutral road with one of his own roads, if it is connected to his other roads and he does not own a road there.{{^6.III}} He counts it on the majority board.{{/6.III}}</p>{{/2}}
+				{{^2}}{{#7.I}}<p>{{^6.III}}If the player changes his capital, he cannot start a new network. {{/6.III}}If the player removes 1 settlement from the map, his roads to that tile turn neutral{{^6.III}}, and he subtracts that tile on the majority board{{/6.III}}. The 1st player, who owns 1 settlement each on both these tiles, exchanges the neutral road with one of his own roads, if it is connected to his other roads and he does not own a road there.{{^6.III}} He counts it on the majority board.{{/6.III}}</p>{{/7.I}}{{/2}}
 			{{/4}}
 		{{/6}}
 		{{#7}}{{^6.I}}{{^6.II}}
@@ -1026,12 +1031,14 @@
 			<div class="col-md-2 col-xs-2"><h1>Phase 4: Dividends</h1></div>
 			<div class="col-md-10 col-xs-10">
 				{{#9.I}}
+					{{#3.II}}<p>The presidents record their companies' incomes for the round, this figure is used to calculate taxes for the following round.</p>{{/3.II}}
 					<p>The presidents decide if they pay a dividend or keep the income in their company assets.</p>
 					<p><b>Pay a dividend:</b> According to the owned shares the income is divided between players, the bank and the stock company (the stock company keeps the remains). See the <b>Calculation of Dividends</b>. The share value of the company raises by $10.</p>
 					<p><b>Keep the income:</b> Place the whole income into the company assets. The share value remains the same.</p>
 					<p><b>Afterwards pay maintenance costs:</b> $3 each for all settlements and $1 each for all residents of the stock company. The president must pay missing payments with his own money.</p>
 				{{/9.I}}
 				{{#9.II}}
+					{{#3.I}}<p>The presidents record their companies' incomes for the round, this figure is used to calculate taxes for the following round.</p>{{/3.I}}
 					<p>Raise the actual share values of the 2 stock companies with the highest and second highest income by $10. Drop the actual share values of all companies with lowest income by $10. Mark all changes of the actual share values on the share value board in order of the former share values from high to low.</p>
 					<p>All stock companies pay a dividend to players and the bank. The presidents keep the remaining income and place it on the company assets. See the <b>Calculation of Dividends</b>.</p>
 				{{/9.II}}
