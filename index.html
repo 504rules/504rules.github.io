@@ -124,7 +124,7 @@
 					{{#residents}}<p>Each transport trolley starts with 1 cargo hold and 3 movement points (MP). Each player places his transport trolley onto his capital and directly loads 1 good from there into his cargo hold.</p>{{/residents}}
 				{{/1.III}}
 				{{^1.III}}
-					<p>Each transport trolley starts with 1 cargo hold and 3 movement points (MP). Each player places his transport trolley onto his capital and directly loads 1 good from there into his cargo hold.</p>
+					<p>Each transport trolley starts with 1 cargo hold and 3 movement points (MP). Each player places his transport trolley onto his capital{{^8}} and directly loads 1 good from there into his cargo hold{{/8}}.</p>
 				{{/1.III}}
 				{{#1.II}}<p>Place 1 each of the goods tiles on space "20" of the goods price board.</p>{{/1.II}}
 			{{/1}}
@@ -804,7 +804,7 @@
 				{{#6.I}}<p>Directly after building a road, the player counts all the new tiles he connected on the majority board (including his capital). This way, each tile may be counted by multiple players!</p>{{/6.I}}
 				{{#6.II}}<p>Directly after building a road, the player counts all the new tiles he connected on the majority board (including his capital{{^7}}, but no deserts{{/7}}). This way, each tile may be counted by multiple players! Each city has demand for the different types of terrain, so the player's goal is to connect one of each of the terrain types for each of the cities he connects with his roads.</p>{{/6.II}}
 				{{#2}}<p>{{^6.III}}If the player changes his capital, he cannot start a new network. {{/6.III}}If the player removes 1 settlement from the map, his roads to that tile turn neutral{{^6.III}}, and he subtracts that tile on the majority board{{/6.III}}. The 1st player, who owns 1 settlement each on both these tiles, exchanges the neutral road with one of his own roads, if it is connected to his other roads and he does not own a road there.{{^6.III}} He counts it on the majority board.{{/6.III}}</p>{{/2}}
-				{{^2}}<p>{{#7.I}}{{^6.III}}If the player changes his capital, he cannot start a new network. {{/6.III}}If the player removes 1 settlement from the map, his roads to that tile turn neutral{{^6.III}}, and he subtracts that tile on the majority board{{/6.III}}. The 1st player, who owns 1 settlement each on both these tiles, exchanges the neutral road with one of his own roads, if it is connected to his other roads and he does not own a road there.{{^6.III}} He counts it on the majority board.{{/6.III}}{{/7.I}}</p>{{/2}}
+				{{^2}}{{#7.I}}<p>{{^6.III}}If the player changes his capital, he cannot start a new network. {{/6.III}}If the player removes 1 settlement from the map, his roads to that tile turn neutral{{^6.III}}, and he subtracts that tile on the majority board{{/6.III}}. The 1st player, who owns 1 settlement each on both these tiles, exchanges the neutral road with one of his own roads, if it is connected to his other roads and he does not own a road there.{{^6.III}} He counts it on the majority board.{{/6.III}}</p>{{/7.I}}{{/2}}
 			{{/4}}
 		{{/6}}
 		{{#7}}{{^6.I}}{{^6.II}}
