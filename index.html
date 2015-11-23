@@ -131,8 +131,8 @@
 			{{#2}}
 				{{^2.III}}
 					<p>Place the 10 city cards face up next to the map.</p>
-					<p>To mark the chosen capitals, place 1 resident of each player onto the matching city cards.</p>
-					{{^residents}}<p>The players place their remaining 9 residents on the 9 cities, which they did not choose as their own capitals.</p>{{/residents}}
+					<p>To mark the chosen capitals, place 1 settlement of each player onto the matching city cards.</p>
+					{{^residents}}<p>The players place their 9 residents on the 9 cities, which they did not choose as their own capitals.</p>{{/residents}}
 				{{/2.III}}
 			{{/2}}
 			{{#3}}
@@ -156,6 +156,9 @@
 			{{#5}}
 				<p>Place all map tiles in separate stacks in a row as follows: city, water, grassland, forest, field, mountain and desert.</p>
 			{{/5}}
+			{{#6}}
+				<p>Each player gets 19 roads in his color. If necessary the players may build more roads and need to use suitable replacement parts for these additional roads.</p>
+			{{/6}}
 			{{^7}}
 				{{#6.I}}
 					<p>Place the majority board next to the game map with the column for deserts showing and place the 6 marking tokens for each player below this board.</p>
@@ -315,24 +318,22 @@
 						<tr><th>victory points (VP)</th><td>5 VP</td><td>9 VP</td><td>12 VP</td><td>14 VP</td><td>15 VP</td></tr>
 					</table>
                                         <p>Additionally, the player gets 2 VP for each set containing all 5 different types of goods.</p>
-
-           
 				</div>
 			{{/1.I}}
 		{{/1}}
 		{{#2.I}}
 			<div class="note col-md-4 col-xs-4">
 				<h2>Final Scoring:</h2>
-				<p>The player gets the following victory points (VP) for their residents on X city cards, whereby X equals the # of cities triggering the game end.</p>
+				<p>The player gets the following victory points (VP) for their population on X city cards, whereby X equals the # of cities triggering the game end.</p>
 				<table>
-					<tr><th># of city cards with residents</th><th>X - 3 and less</th><th>X - 2</th><th>X - 1</th><th>X</th><th>X + 1 and more</th></tr>
+					<tr><th># of city cards with population</th><th>X - 3 and less</th><th>X - 2</th><th>X - 1</th><th>X</th><th>X + 1 and more</th></tr>
 					<tr><th>victory points (VP)</th><td>22 VP</td><td>26 VP</td><td>32 VP</td><td>40 VP</td><td>50 VP</td></tr>
 				</table>
 				{{^residents}}<p>The player gets 1 additional VP for each movement point of his transport trolley he used to move out of the last reached city.</p>{{/residents}}
 			</div>
 			<div class="note col-md-3 col-xs-3">
 				<img src="img/example-2-i.png" style="width: 100%">
-				<p><b>Example Final Scoring:</b> In a game with 3 players Camille triggers the game end, as she placed 8 of her residents on city cards. She gets 40 VP. Paul has only 7 residents on city cards. Thus, Paul gets 32 VP. {{^residents}}Anne moved her transport trolley another 3 MP out of the last reached city. She gets an additional 3 VP.{{/residents}}</p>
+				<p><b>Example Final Scoring:</b> In a game with 3 players Camille triggers the game end, as she placed population on 8 city cards. She gets 40 VP. Paul has only 7 population on city cards. Thus, Paul gets 32 VP. {{^residents}}Anne moved her transport trolley another 3 MP out of the last reached city. She gets an additional 3 VP.{{/residents}}</p>
 			</div>
 		{{/2.I}}
 		{{#4}}
@@ -598,6 +599,10 @@
 					 {{#9.II}}The players may sell all "1"-shares to the bank (only the president's share must remain in the ownership of a player).{{/9.II}}
 				</p>
 				<p>
+					<b>Quit:</b> If the player quits first in the SR, he takes the starting player card and places it with the crossed out side face up in front of himself. He will be the new starting player 
+					in the next SR. After the first player quits, the other players now either must deal shares or quit, too. o. The SR ends, after all players quit, or if all players pass consecutively (in that case, the first passing player gets the starting player card).
+				</p>
+				<p>
 					<b>End of the SR:</b> The share values of the companies raise by $10, 
 					{{#9.II}}whose shares were bought most during this SR <b>AND</b>{{/9.II}}
 					whose shares are now 100% owned by players.
@@ -608,7 +613,7 @@
 
 	{{#capture}}
 		{{#3}}{{^3.III}}{{^9.I}}{{^7.I}}
-			<p>At game start, all players make a secret bid with their starting money ($0 is a valid bid). Starting with the highest bidder, each player chooses a position in the player order {{^9.II}}and his capital on the map.{{/9.II}}{{#9.II}}for the first share round (SR).{{/9.II}} In case of a tie, randomly draw lots for the order of choice (the losers get $2 for each lost draw).</p>
+			<p>At game start, all players make a secret bid with their starting money ($0 is a valid bid). Starting with the highest bidder, each player chooses a position in the player order {{^9.II}}and his capital on the map (ignore this with maps 4 and 5).{{/9.II}}{{#9.II}}for the first share round (SR).{{/9.II}} In case of a tie, randomly draw lots for the order of choice (the losers get $2 for each lost draw).</p>
 			{{#9.II}}<p>The stock company order for the 1st business round (BR) is determined in reverse order of establishment. If stock companies are only established in later SRs, just for once they are first in stock company order in the next BR!</p>{{/9.II}}
 			<p>Starting with the 2nd round, determine the {{^9.II}}player{{/9.II}}{{#9.II}}company{{/9.II}} order according to the income of the former round, from high to low (in case of a tie reverse the {{^9.II}}player{{/9.II}}{{#9.II}}company{{/9.II}} order of the former round for the tied {{^9.II}}players{{/9.II}}{{#9.II}}companies{{/9.II}}). According to the new {{^9.II}}player{{/9.II}}{{#9.II}}company{{/9.II}} order the {{^9.II}}players{{/9.II}}{{#9.II}}companies{{/9.II}} must pay taxes for their last income: The 1st {{^9.II}}player{{/9.II}}{{#9.II}}company{{/9.II}} pays 20%, the last pays 0%, and all other players pay 10% of their last income, see left for <b>Calculation of taxes</b>. Because of higher taxes the 1st {{^9.II}}player{{/9.II}}{{#9.II}}company{{/9.II}} may get a lower income compared to the 2nd.</p>
 		{{/7.I}}{{/9.I}}{{/3.III}}{{/3}}
@@ -641,7 +646,7 @@
 				<p>The order of the stock companies matches the actual share values from high to low. In case of a tie the order of the concerned companies matches the stack of share value markers from top to bottom.</p>
 				{{#3.II}}
 					<p>Starting with the 2nd round the income is taxed according to the companies with most to least income: The company with the highest income from the previous round pays 20% tax, the company with the with the lowest pays 0%, and all other players pay 10% of their last income, see above for <b>Calculation of taxes.</b> In the case of a tie, the company earlier in the turn order pays the higher tax rate. The company turn order continues to be determined according to the actual share value.</p>
-					<p>Note: If a company has insuffiecient money to pay their taxes, then they pay all remaining money in their company assets. (No extra money needs to be made up.)</p>
+					<p>The stock companies pay taxes from their company assets. If they do not have enough money or are dead broke, they pay their remaining money. The presidents do not pay remaining taxes!</p>
 				{{/3.II}}
 			</div>
 		</div>
@@ -652,7 +657,7 @@
 			<div class="col-md-2 col-xs-2"><h1>Phase 2: Privileges</h1></div>
 			<div class="col-md-10 col-xs-10">
 				<p>If there are still unsold privileges from the former round, place the price token to the right of these privileges. The starting bid for these privileges drops to $0. Draw new privileges and place them to the right of the price token, until you either draw 1 new privilege per player or there are a # of privileges in the row of cards depending on the # of players: 4 (2♟), 5 (3♟), 6 (4♟) or 7 privileges (5 stock companies). The starting bid for the new privileges is $20.</p>
-				<p>All privileges are now auctioned from left to right, one at a time. Beginning with the 1st player all players bid clockwise in sitting order around the table, until there is a highest bid. If a player passes he may only bid again for the next privilege. The highest bidder pays the amount to the bank and places the privilege face up in front of him. If the starting bid of the privilege was $0 and all players pass again, remove that privilege from the game!</p>
+				<p>All privileges are now auctioned from left to right, one at a time. Beginning with the 1st player all players bid clockwise in sitting order around the table, until there is a highest bid. If a player passes he may only bid again for the next privilege. The highest bidder pays the amount to the bank and places the privilege face up in front of him. If the starting bid of the privilege was $20, and all players pass, the privilege simply remains in the row of cards. If the starting bid of the privilege was $0 and all players pass again, remove that privilege from the game!</p>
 				<p>The player may only buy each type of privilege once. He may use his privileges immediately after purchase.</p>
 			</div>
 		</div>
@@ -661,7 +666,7 @@
 	{{#capture}}
 		{{#2}}{{#residents}}
 			<p>At the start of his turn, the player may change his capital by exchanging his headquarters with 1 of his own settlements in any other city.</p>
-			<p>If the player does not have enough residents to buy in <b>Phase 3 B</b> or enough settlements to settle a tile in <b>Phase 3 D/3 E/3 G</b> in his storage, he may take back the missing pieces from the game map without substitution and place them directly back on the map. If he takes back 1 settlement, he must take back all residents on the same tile.</p>
+			<p>If the player does not have enough residents to buy in <b>Phase 3 C</b> or enough settlements to settle a tile in <b>Phase 3 D/3 E/3 G</b> in his storage, he may take back the missing pieces from the game map without substitution and place them directly back on the map. If he takes back 1 settlement, he must take back all residents on the same tile.</p>
 		{{/residents}}{{/2}}
 	{{/capture}}
 	{{#hascapture}}
@@ -750,8 +755,8 @@
 		{{/4}}
 		{{#5.I}}<p>The player may explore and adjacent unknown space with 1 active resident. He places that resident back into his storage (except if it explores water, instead it is placed exhausted on the starting tile).</p>{{/5.I}}
 		{{#5.II}}
-			{{#2}}<p>The player may explore any number of adjacent unknown spaces with 1 active resident. He places that resident back into his storage (except if it explores only water, instead it is placed exhausted on the starting tile).</p>{{/2}}
-			{{^2}}{{#4}}<p>The player may explore and adjacent unknown space with 1 active resident. He places that resident back into his storage (except if it explores water, instead it is placed exhausted on the starting tile).</p>{{/4}}{{/2}}
+			{{#2}}<p>The player may explore any number of adjacent unknown spaces with 1 active resident. After exploring he places that resident back into his storage (except if it explores only water, instead it is placed exhausted on the starting tile).</p>{{/2}}
+			{{^2}}{{#4}}<p>The player may explore an adjacent unknown space with 1 active resident. After exploring the tile the player places that resident back into his storage (except if it explores water, instead it is placed exhausted on the starting tile).</p>{{/4}}{{/2}}
 			{{^2}}{{^4}}<p>The player may explore an adjacent unknown space with 1 active resident. Afterwards the resident is exhausted on the starting tile.</p>{{/4}}{{/2}}
 		{{/5.II}}
 		{{#5.III}}<p>The player may explore any number of adjacent unknown spaces with 1 active resident. He places that resident back into his storage (except if it explores only water, instead it is placed exhausted on the starting tile).</p>{{/5.III}}
@@ -820,7 +825,7 @@
 		{{#8}}
 			<p><b>Plants:</b> On each land tile the players commonly may build a total of 1 plant. The player needs active residents depending on the terrain, see the table <b>Plant</b>. Afterwards the used residents are exhausted and available again in the next round. The player marks the ownership by placing his settlement on the plant. {{#8.I}}The player places that good face up in front of himself.{{/8.I}} {{#1}}The plant immediately produces 1 goods tile, which is placed on top of the plant for now.{{/1}}</p>
 			{{^8.III}}
-				<p><b>Trading House:</b> If the player moves residents onto a city and exchanges 1 resident into 1 settlement, it becomes his trading house. The player must pay additional money to build this trading house, see the table <b>Trading House</b>. If the player does not have enough money, he cannot move onto the city.</p>
+				<p><b>Trading House:</b> If the player moves residents onto a city and exchanges 1 resident into 1 settlement, it becomes his trading house. The player must pay additional money to build this trading house, see the table <b>Trading House</b>. If the player does not have enough money, he cannot move onto the city. Each player can only have 1 trading house in each city (the headquarters is a trading house, too).</p>
 				{{#4}}<p>Any number of players may build trading houses on each city (no fights on cities). The players must take the trading houses of the militia into account, so even the first player must pay money to build his trading house!</p>{{/4}}
 			{{/8.III}}
 		{{/8}}
@@ -836,13 +841,13 @@
 		{{#1}}
 			{{^1.III}}<p>The player may transport 1 good of any type or up to 2 of his exhausted residents per cargo hold. He may load and unload his transport trolley any number of times. If he unloads goods on a land tile or a city, which has no demand for these goods{{#8}}{{^8.III}} (or without one of his trading houses){{/8.III}}{{/8}}, the goods remain there until any player loads them again onto his transport trolley.</p>{{/1.III}}
 			{{#1.III}}<p>The player may transport {{#8}}{{^8.III}}1 good of any type or {{/8.III}}{{/8}}up to 2 of his exhausted residents per cargo hold. He may load and unload his transport trolley any number of times.{{#8}}{{^8.III}}If he unloads goods on a land tile or a city, without one of his trading houses, the goods remain there until any player loads them again onto his transport trolley.{{/8.III}}{{/8}}</p>{{/1.III}}
-			<p>The player needs 1 MP to move his transport trolley from tile to tile; but he needs 2 MP for the movement from any tile up on each mountain.{{#residents}} The transport trolley with loaded residents may move through tiles without settlements of the player, which are empty or have opposing settlements and residents. If the player unloads residents on a tile without 1 of his settlements, 1 resident turns into 1 settlement.{{/residents}}</p>
+			<p>The player needs 1 MP to move his transport trolley from tile to tile; but he needs 2 MP for the movement from any tile up on each mountain.{{#residents}}{{^4}} The transport trolley with loaded residents may move through tiles without settlements of the player, which are empty or have opposing settlements and residents. If the player unloads residents on a tile without 1 of his settlements, 1 resident turns into 1 settlement.{{/4}}{{/residents}}</p>
 			{{^residents}}<p>The player may buy additional MP for his transport trolley, see the table <b>Prices for Additional Movement Points (MP)</b>.</p>{{/residents}}
 			{{#6}}<p>The player needs 0.5 MP per road, when moving his transport trolley on his roads.</p>{{/6}}
 			{{#4}}
 				<p>The player may move his transport trolley on all tiles, even on opposing tiles. He gets 1 additional MP, if the transport trolley starts the movement on one of his tiles. If the transport trolley moves onto opposing tiles for the first time during this phase, he needs 1 additional MP for each opponent (if it starts on an opposing tile or continues to move onto more tiles of the same opponent, no further additional MPs are needed).</p>
 				{{#8}}{{^8.III}}<p>The cities are neutral and no player is controlling them. Each player may move onto a city for 1 MP.</p>{{/8.III}}{{/8}}
-				<p>If the transport trolley moves onto an opposing tile with loaded residents, the player must unload them for the fight. The player cannot load exhausted residents on an opposing tile. {{#2}}After the transport trolley finishes its movement, a fight follows immediately.{{/2}}</p>
+				<p> If the transport trolley moves onto a tile without 1 of his settlements, the player must unload at least 1 resident which turns into 1 settlement. If the transport trolley moves onto an opposing tile with loaded residents, the player must unload them for the fight. The player cannot load exhausted residents on an opposing tile. {{#2}}After the transport trolley finishes its movement, a fight follows immediately.{{/2}}</p>
 			{{/4}}
 			{{^residents}}
 				{{#3}}{{^3.III}}<p>The player may place 1 settlement on a city, when he moves there with his transport trolley (This is a voluntary action. Because of the limited number of his settlements the player may pass on this action!).</p>{{/3.III}}{{/3}}
@@ -948,7 +953,7 @@
 		{{#9.I}}<p>Place the income of the stock company separate from the company assets to the side for now</p>{{/9.I}}
 		{{#9.II}}
 			{{#1.I}}
-				<p>The company gets $20 base income for the capital, plus once-only money for each good delivered in <b>Phase 3 E</b>. The company balances accounts separately for each good. It gets the price for the 1st good according to the goods price board and adjusts all prices: the price for the delivered good drops 3 spaces, the prices for all other goods each rise 1 space. Then, the company gets the price for the 2nd good etc.! The price for a type of goods cannot drop below the first "$10" space and cannot rise above $140. Finally, the company places all delivered goods into the general storage.</p>
+				<p>The company gets $20 base income for the capital, plus once-only money for each good delivered in <b>Phase 3 E</b>. The company balances accounts separately for each good. It gets the price for the 1st good according to the goods price board and adjusts all prices: the price for the delivered good drops 3 spaces, the prices for all other goods each rise 1 space. Then, the company gets the price for the 2nd good etc.! The price for a type of goods cannot drop below the first "$10" space and cannot rise above $140. After receiving their income, the company places the delivered goods in front of their company board to score VP for them in the Final Scoring.</p>
 				{{#4}}<p>If the company delivers goods to a city without its settlements, it must pay $1 for each full $10 of this sale to the owner of the city, or in case of a free city, payment goes to the bank.</p>{{/4}}
 			{{/1.I}}
 			{{#2.I}}
@@ -1061,19 +1066,22 @@
 	<div class="row section">
 		<div class="col-md-2 col-xs-2"><h1>Game End</h1></div>
 		<div class="col-md-10 col-xs-10">
-			{{#1.I}}<p>The game ends at the end of the round, after all players commonly delivered at least 23 goods tiles.</p>{{/1.I}}
+			{{#1.I}}
+				{{^9.II}}<p>The game ends at the end of the round, after all players commonly delivered at least 19 (2♟), 21 (3♟) or 23 (4♟) goods tiles.</p>{{/9.II}}
+				{{#9.II}}<p>The game ends at the end of the round, after all companies commonly delivered at least 25 goods tiles.</p>{{/9.II}}
+			{{/1.I}}
 			{{#2.I}}
 				{{^residents}}
-					<p>The game ends at the end of the turn, after at least 1 player placed 9 residents on city cards.</p>
+					<p>The game ends at the end of the turn, after at least 1 player placed 9 population on city cards.</p>
 				{{/residents}}
 				{{#residents}}
 					{{#4}}
-						{{#9.II}}<p>The game ends at the end of the round in which at least 1 stock company had 4 residents on city cards.</p>{{/9.II}}
-						{{^9.II}}<p>Depending on the # of players the game ends at the end of the round, after at least 1 player placed residents on 7 (2♟), 6 (3♟) or 5 (4♟) city cards.</p>{{/9.II}}
+						{{#9.II}}<p>The game ends at the end of the round in which at least 1 stock company had 4 population on city cards.</p>{{/9.II}}
+						{{^9.II}}<p>Depending on the # of players the game ends at the end of the round, after at least 1 player placed population on 7 (2♟), 6 (3♟) or 5 (4♟) city cards.</p>{{/9.II}}
 					{{/4}}
 					{{^4}}
-						{{#9.II}}<p>The game ends at the end of the round in which at least 1 stock company had 6 residents on city cards.</p>{{/9.II}}
-						{{^9.II}}<p>Depending on the # of players the game ends at the end of the round, after at least 1 player placed residents on 9 (2♟), 8 (3♟) or 7 (4♟) city cards.</p>{{/9.II}}
+						{{#9.II}}<p>The game ends at the end of the round in which at least 1 stock company had 6 population on city cards.</p>{{/9.II}}
+						{{^9.II}}<p>Depending on the # of players the game ends at the end of the round, after at least 1 player placed population on 9 (2♟), 8 (3♟) or 7 (4♟) city cards.</p>{{/9.II}}
 					{{/4}}
 				{{/residents}}
 			{{/2.I}}
@@ -1084,9 +1092,9 @@
 				<p>The game ends immediately after the end of the active player's turn, if the active player:</p>
 				<ol>
 					<li>In <b>Phase 3 C</b> buys all his residents from his storage</li>
-					<li>In <b>Phase 3 D</b> places his last settlement from his storage on the map</li>
-					{{^8.II}}{{^2}}<li>In <b>Phase 3 G</b> neutralizes or conquers the capital of another player. If the attacker conquers the capital, he also conquers all other tiles of the defender and exchanges the armies with his own. If he neutralizes the capital, the defender loses all of his tiles without the attacker conquering them.</li>{{/2}}{{/8.II}}
-					{{#2}}<li>In <b>Phase 3 D</b> neutralizes or conquers the last capital of another player.</li>{{/2}}
+					<li>In <b>Phase 3 D/3 G</b> places his last settlement from his storage on the map (if the player attacks opponents on additional tiles, these fights are cancelled)</li>
+					{{^8.II}}{{^2}}<li>In <b>Phase 3 G</b> neutralizes or conquers the capital of another player. If the attacker conquers the capital, he also conquers all other tiles of the defender and exchanges the armies with his own. If the player does not have enough settlements and residents, he chooses the conquered tiles. If he neutralizes the capital, the defender loses all of his tiles without the attacker conquering them.</li>{{/2}}{{/8.II}}
+					{{^8.II}}{{#2}}<li>In <b>Phase 3 D</b> neutralizes or conquers the last capital of another player.</li>{{/2}}{{/8.II}}
 				</ol>
 			{{/4.I}}
 			{{#5.I}}
@@ -1183,7 +1191,7 @@
 				<p>The player with the most VP wins the game! In case of a tie, the tied player having the most goods (1 or 2) in the cargo holds of his transport trolley wins the game. If there is still a tie, the tied player with the highest income in the last game round wins the game.</p>
 			{{/1.I}}
 			{{#2.I}}
-				<p>The players get victory points (VP) for their residents on the city cards, see the table and example for <b>Final Scoring</b>.</p>
+				<p>The players get victory points (VP) for their population on the city cards, see the table and example for <b>Final Scoring</b>.</p>
 				{{#7.III}}
 					<p>The players get additional victory points (VP) for majorities during the final scoring, see table and example of the <b>Final Scoring</b>.</p>
 				{{/7.III}}
@@ -1347,7 +1355,7 @@
 				'parts': {'4': 10},
 				'before_render': function(params, module) {
 					if(!params.residents) {
-						module['parts']['14p'] = 10;
+						module['parts']['14p'] = 9;
 					}
 				},
 			},
@@ -1499,7 +1507,7 @@
 				'map': {'priority': 4, 'value': 5},
 				'order': {'priority': 1, 'vp': true},
 				'money': {'priority': 6, 'increasing': true},
-				'parts': {'27': 4, '28': 17, '17': 1, '18': 30},
+				'parts': {'27': 4, '28': 17, '16': 100, '17': 1, '18': 30},
 			},
 			'II': {
 				'residents': true,
