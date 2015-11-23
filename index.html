@@ -834,46 +834,43 @@
 
 	{{#capture}}
 		{{#1}}
-			{{^1.III}}<p>The player may transport 1 good of any type or up to 2 of his exhausted residents per cargo hold. He may load and unload his transport trolley any number of times. If he unloads goods on a land tile or a city, which has no demand for these goods, the goods remain there until any player loads them again onto his transport trolley.</p>{{/1.III}}
-			{{#1.III}}<p>The player may transport up to 2 of his exhausted residents per cargo hold. He may load and unload his transport trolley any number of times.</p>{{/1.III}}
+			{{^1.III}}<p>The player may transport 1 good of any type or up to 2 of his exhausted residents per cargo hold. He may load and unload his transport trolley any number of times. If he unloads goods on a land tile or a city, which has no demand for these goods{{#8}}{{^8.III}} (or without one of his trading houses){{/8.III}}{{/8}}, the goods remain there until any player loads them again onto his transport trolley.</p>{{/1.III}}
+			{{#1.III}}<p>The player may transport {{#8}}{{^8.III}}1 good of any type or {{/8.III}}{{/8}}up to 2 of his exhausted residents per cargo hold. He may load and unload his transport trolley any number of times.{{#8}}{{^8.III}}If he unloads goods on a land tile or a city, without one of his trading houses, the goods remain there until any player loads them again onto his transport trolley.{{/8.III}}{{/8}}</p>{{/1.III}}
 			<p>The player needs 1 MP to move his transport trolley from tile to tile; but he needs 2 MP for the movement from any tile up on each mountain. The transport trolley with loaded residents may move through tiles without settlements of the player, which are empty or have opposing settlements and residents. If the player unloads residents on a tile without 1 of his settlements, 1 resident turns into 1 settlement.</p>
-			{{^1.III}}<p>
-				The goal of the player is to deliver the goods to a city, which has demand for this type of good. Each city takes only 1 good for each listed goods type.
-				{{#1.I}}The player places the delivered goods face up in front of himself and covers the matching spaces on the cities with covering tokens.{{/1.I}}
-				{{#1.II}}The player places the goods face up below the goods price board in the order he delivered them during his turn and covers the matching spaces on the cities with covering tokens. IF the player delivers 2 goods to the same city, he decides in which order he places them below the goods price board.{{/1.II}}
-			</p>{{/1.III}}
 			{{^residents}}<p>The player may buy additional MP for his transport trolley, see the table <b>Prices for Additional Movement Points (MP)</b>.</p>{{/residents}}
+			{{#6}}<p>The player needs 0.5 MP per road, when moving his transport trolley on his roads.</p>{{/6}}
 			{{#4}}
 				<p>The player may move his transport trolley on all tiles, even on opposing tiles. He gets 1 additional MP, if the transport trolley starts the movement on one of his tiles. If the transport trolley moves onto opposing tiles for the first time during this phase, he needs 1 additional MP for each opponent (if it starts on an opposing tile or continues to move onto more tiles of the same opponent, no further additional MPs are needed).</p>
 				{{#8}}{{^8.III}}<p>The cities are neutral and no player is controlling them. Each player may move onto a city for 1 MP.</p>{{/8.III}}{{/8}}
 				<p>If the transport trolley moves onto an opposing tile with loaded residents, the player must unload them for the fight. The player cannot load exhausted residents on an opposing tile. {{#2}}After the transport trolley finishes its movement, a fight follows immediately.{{/2}}</p>
 			{{/4}}
-			{{#6}}<p>The player needs 0.5 MP per road, when moving his transport trolley on his roads.</p>{{/6}}
-			{{#8}}<p>
-				Directly after the player builds a plant, it produces once-only 1 good. The player places that good for the moment on top of the plant. Only the owner may transport the goods placed on the plants!
-				{{^1.III}}{{^8.III}}Additionally the player must transport the goods to the cities with his trading houses and follow their limited delivery quantities!{{/8.III}}{{/1.III}}
-				{{#1.III}}The goal of the player is to deliver the goods to a city, where he has a trading house. He must also follow the limited delivery quantities of his trading houses (The cities themselves have no specific demand for the goods)! If the player unloads goods on a land tile or cities, where he has no trading houses or already fulfilled their delivery quantities, the goods remain there until any player loads them again onto his transport trolley.{{/1.III}}
-			</p>{{/8}}
+			{{^residents}}
+				{{#3}}{{^3.III}}<p>The player may place 1 settlement on a city, when he moves there with his transport trolley (This is a voluntary action. Because of the limited number of his settlements the player may pass on this action!).</p>{{/3.III}}{{/3}}
+				{{#5.II}}<p>The player may place 1 settlement on a tile, when he arrives there with his transport trolley, see <b>Income</b> (This is a voluntary action. Because of the limited number of his settlements the player may pass on this action!).</p>{{/5.II}}
+				{{#7.III}}<p>The player may place 1 settlement on 1 tile, when he arrives there with his transport trolley. He counts the matching type of terrain on the majority board (This is a voluntary action. Because of the limited number of his settlements the player may pass on this action!)</p>{{/7.III}}
+			{{/residents}}
+			{{#2.I}}{{^residents}}<p>The player reaches cities with his transport trolley. In that case he moves his resident from that city to the matching city card.</p>{{/residents}}{{/2.I}}
+			{{#2.II}}
+				<p>The player reaches a city only with his transport trolley. In that case he places 1 resident from his storage on top of the matching city card.</p>
+				{{^residents}}<p>The player moves his resident from the city to the matching city card. Additionally, the player may place 1 settlement on a tile, when he moves there with his transport trolley, see below for Income (This is a voluntary action. Because of the limited number of his settlements the player may pass on this action!).</p>{{/residents}}
+			{{/2.II}}
+			{{#5}}{{^residents}}<p>
+				{{^5.I}}The transport trolley may explore new tiles. It must move onto the newly explored tile for 1 movement point (MP), it only needs 2 MP for moving onto each mountain. If the player explores 1 water tile, he needs 1 MP but the transport trolley must remain on the starting tile. If the player explores 1 mountain tile with his last MP, the transport trolley must remain on the starting tile, too.{{/5.I}}
+			</p>{{/residents}}{{/5}}
+			{{#6}}{{#1.III}}<p>Once per turn and following the building rules for roads, the player may build 1 road for free from the tile with his transport trolley, if he has 1 settlement each on both affected tiles.</p>{{/1.III}}{{/6}}
+			{{^1.III}}<p>
+				The goal of the player is to deliver the goods to a city, which has demand for this type of good. Each city takes only 1 good for each listed goods type.
+				{{^8.I}}{{^8.II}}
+					{{#1.I}}The player places the delivered goods face up in front of himself and covers the matching spaces on the cities with covering tokens.{{/1.I}}
+					{{#1.II}}The player places the goods face up below the goods price board in the order he delivered them during his turn and covers the matching spaces on the cities with covering tokens. IF the player delivers 2 goods to the same city, he decides in which order he places them below the goods price board.{{/1.II}}
+				{{/8.II}}{{/8.I}}
+			</p>{{/1.III}}
+			{{#8}}
+				<p>Directly after the player builds a plant, it produces once-only 1 good. The player places that good for the moment on top of the plant. Only the owner may transport the goods placed on the plants!</p>
+				{{#1.III}}<p>The goal of the player is to deliver the goods to a city, where he has a trading house. He must also follow the limited delivery quantities of his trading houses (The cities themselves have no specific demand for the goods)! If the player unloads goods on a land tile or cities, where he has no trading houses or already fulfilled their delivery quantities, the goods remain there until any player loads them again onto his transport trolley.</p>{{/1.III}}
+				{{^1.III}}{{^8.III}}<p>The player must transport the goods to his trading houses on the cities. He must follow the limited delivery quantities of his trading houses and additionally he must follow the demand of the cities. He places the delivered goods for the moment on top of the trading house{{#1.II}}, he places matching goods from the supply face up below the goods price board,{{/1.II}} and covers the matching spaces on the cities with covering tokens. {{#8.I}}See below at <b>Final Scoring</b>{{/8.I}}{{#8.II}}See below at <b>Phase 3 H:Income</b>{{/8.II}} for the limited delivery quantities of trading houses.</p>{{/8.III}}{{/1.III}}
+			{{/8}}
 		{{/1}}
-		{{#2.I}}{{^residents}}<p>The player reaches cities with his transport trolley. In that case he moves his resident from that city to the matching city card.</p>{{/residents}}{{/2.I}}
-		{{#2.II}}
-			{{#1}}<p>The player reaches a city only with his transport trolley. In that case he places 1 resident from his storage on top of the matching city card.</p>{{/1}}
-			{{^residents}}<p>The player moves his resident from the city to the matching city card. Additionally, the player may place 1 settlement on a tile, when he moves there with his transport trolley, see below for Income (This is a voluntary action. Because of the limited number of his settlements the player may pass on this action!).</p>{{/residents}}
-		{{/2.II}}
-		{{#2.III}}{{^residents}}<p>The player may place 1 settlement on a tile to fulfill the scoring condition when he moves there with his transport trolley. He counts the matching type of terrain on the majority board (This is a voluntary action. Because of the limited number of his settlements the player may pass on this action!).</p>{{/residents}}{{/2.III}}
-		{{#3}}{{^3.III}}{{^residents}}
-			<p>The player may place 1 settlement on a city, when he moves there with his transport trolley (This is a voluntary action. Because of the limited number of his settlements the player may pass on this action!).</p>
-		{{/residents}}{{/3.III}}{{/3}}
-		{{#5}}{{^residents}}<p>
-			{{^5.I}}The transport trolley may explore new tiles. It must move onto the newly explored tile for 1 movement point (MP), it only needs 2 MP for moving onto each mountain. If the player explores 1 water tile, he needs 1 MP but the transport trolley must remain on the starting tile. If the player explores 1 mountain tile with his last MP, the transport trolley must remain on the starting tile, too.{{/5.I}}
-			{{#5.II}}The player may place 1 settlement on a tile, when he arrives there with his transport trolley, see <b>Income</b> (This is a voluntary action. Because of the limited number of his settlements the player may pass on this action!).{{/5.II}}
-		</p>{{/residents}}{{/5}}
-		{{#6}}{{#1.III}}<p>Once per turn and following the building rules for roads, the player may build 1 road for free from the tile with his transport trolley, if he has 1 settlement each on both affected tiles.</p>{{/1.III}}{{/6}}
-		{{^residents}}{{#7.III}}<p>The player may place 1 settlement on 1 tile, when he arrives there with his transport trolley. He counts the matching type of terrain on the majority board (This is a voluntary action. Because of the limited number of his settlements the player may pass on this action!)</p>{{/7.III}}{{/residents}}
-		{{#1}}{{#8}}
-			{{^8.III}}<p>The player must transport the goods to his trading houses on the cities{{^1.III}}, and additionally he must follow the demand of the cities{{/1.III}}. He places the delivered goods for the moment on top of the trading house. {{#8.I}}See below at <b>Final Scoring</b>{{/8.I}}{{#8.II}}See below at <b>Phase 3 H:Income</b>{{/8.II}} for the limited delivery quantities of trading houses.</p>{{/8.III}}
-			{{#8.III}}<p>The player must transport the goods to the cities. He must follow the demand of the cities, as explained in that module. He places the delivered goods face up in front of himself.</p>{{/8.III}}
-		{{/8}}{{/1}}
 	{{/capture}}
 	{{#hascapture}}
 		<div class="row section">
@@ -911,7 +908,7 @@
 
 	{{#capture}}
 		{{#1.II}}
-			<p>The player gets $20 base income for the capital, plus once-only money for each good delivered in <b>Phase 3 E</b>. The player balances accounts separately for each good. He gets the price for the 1st good according to the goods price board and adjusts all prices: the price for the delivered good drops 3 spaces, the prices for all other goods each rise 1 space. Then, the player gets the price for the 2nd good etc.! The price for a type of goods cannot drop below the first "$10" space and cannot rise above $140. {{^9}}Finally, the player places all delivered goods into the general storage.{{/9}}{{#9}}Afterwards, the goods remain in front of the company card.{{/9}}</p>
+			<p>The player gets $20 base income for the capital, plus once-only money for each good delivered in <b>Phase 3 E</b>. The player balances accounts separately for each good. He gets the price for the 1st good according to the goods price board and adjusts all prices: the price for the delivered good drops 3 spaces, the prices for all other goods each rise 1 space. Then, the player gets the price for the 2nd good etc.! The price for a type of goods cannot drop below the first "$10" space and cannot rise above $140. {{^8.I}}Finally, the player places all delivered goods into the general storage.{{/8.I}}{{#8.I}}Finally, the player returns the additional goods tokens (below the price board) into the general storage; they leave the tokens on the trading houses.{{/8.I}}</p>
 			{{#4}}<p>If the player delivers goods to a city without his settlements, he must pay $1 for each full $10 of this sale to the owner of the city, or in case of a free city, payment goes to the bank.</p>{{/4}}
 		{{/1.II}}
 		{{#2.II}}
