@@ -590,22 +590,31 @@
 		<div class="row section">
 			<div class="col-md-2 col-xs-2"><h1>Share Round</h1></div>
 			<div class="col-md-10 col-xs-10">
-				<p>During the SR, the players can choose the following actions: <b>buy 0-1 shares &amp; sell any number of shares, pass or get out</b>.</p>
-				<p><b>Buying Shares:</b> The price for all shares always matches the actual share value. The company gets the fixed issue price. A single player may only own max 50% of the shares of a single stock company.</p>
-				<p><b>Establishing a stock company:</b> The players buy the "2"-president's share for twice the fixed issue price and become the president of that stock company.</p>
+				<p>During the SR, the players can choose the following actions: <b>deal shares, pass or quit</b>.</p>
+				<p><b>Dealing Shares:</b> When you take this action you buy 1 share &amp;/or sell any number of shares. During the same SR a player can either buy or sell stocks from a given company he cannot do both.</p>
+				<p>
+					<b>Buying Shares:</b> The price for all shares always matches the actual share value to the bank. {{#9.I}}If the company owned the bought stock, the company gets the fixed issue price from the bank.{{/9.I}} 
+					Each player may only own a maximum of 50% of the shares of a single stock company. The player should place the share light side up, to indicate that he cannot sell shares of that company this SR.
+				</p>
+				<p>
+					<b>Establishing a stock company:</b> If the player buys the first share of a stock company, he must buy the "2"-president's share for twice the fixed issue price and become the president of that stock company.
+					The president marks the issue price of that stock company on the share value board (if necessary he places the share value token on top of other tokens). The issue prices are marked
+					with small colored boxes on the share price board. Now, the player directly chooses the capital for his stock company according to the other modules. In the business round (BR) he will make all of its actions.
+				</p>
 				<p>
 					<b>Selling Shares:</b> The sale price always matches the actual share value. Independent of the number of sold shares, the share value of the concerned stock companies drops by $10.
 					 {{#9.I}}The players together may only sell 50% of the shares of a single stock company to the bank.{{/9.I}}
 					 {{#9.II}}The players may sell all "1"-shares to the bank (only the president's share must remain in the ownership of a player).{{/9.II}}
+					 The first time a player sells shares of a company during the SR, he places 1 resident from that company's stocks in front of himself, to indicate that he cannot buy shares of that company this SR.
 				</p>
+				<p><b>Pass:</b> As long as nobody quits, a player may repeatedly pass and during the same SR may later deal shares, when it is his turn in the clockwise order. If all players pass consecutively the SR ends and the first passing player gets the starting player card.</p>
 				<p>
 					<b>Quit:</b> If the player quits first in the SR, he takes the starting player card and places it with the crossed out side face up in front of himself. He will be the new starting player 
-					in the next SR. After the first player quits, the other players now either must deal shares or quit, too. o. The SR ends, after all players quit, or if all players pass consecutively (in that case, the first passing player gets the starting player card).
+					in the next SR. After the first player quits, the other players now either must deal shares or quit, too. The SR ends, after all players quit (or if all players pass consecutively).
 				</p>
 				<p>
-					<b>End of the SR:</b> The share values of the companies raise by $10, 
-					{{#9.II}}whose shares were bought most during this SR <b>AND</b>{{/9.II}}
-					whose shares are now 100% owned by players.
+					<b>End of the SR:</b> The companies whose shares are now 100% owned by players raise their stock price by $10{{#9.II}}, <b>AND</b> the companies whose shares were bought most during this SR also raise their stock price by $10 (stocks can raise from both in one SR){{/9.II}}.
+					Flip all bought shares back to their dark sides and place all residents back to the companies&rsquo; storages.
 				</p>
 			</div>
 		</div>
