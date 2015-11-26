@@ -968,7 +968,10 @@
 			<p>{{^1}}During this phase, the player gets 1 matching good for each of his plants from the general storage.{{/1}}{{#1}}The player may sell goods already delivered to his trading houses.{{/1}} He may sell {{^4}}1 good{{/4}}{{#4}}2 goods{{/4}} to each of his trading houses{{^4}} (up to 2 goods to the headquarters in his capital){{/4}}. {{^1}}Afterwards, he places the sold goods back into the general storage.{{/1}}{{#1}}Afterwards, the goods remain on the trading houses.{{/1}}</p>
 			<p>The player gets $20 base income for his capital and additional income for the sold goods, see the table and example <b>Scoring</b>. {{^1}}The player may exchange goods in a ratio of 2:1 into different goods types, to get a higher income for the sale. He may store any number of goods face up in front of him for a later sale.{{/1}}</p>
 		{{/8.II}}
-		{{#9.I}}<p>Place the income of the stock company separate from the company assets to the side for now</p>{{/9.I}}
+		{{#9.I}}
+			{{#2.III}}<p>The company also gets income from <b>Mid-Term Scorings</b> below.</p>{{/2.III}}
+			<p>Place the income of the stock company separate from the company assets to the side for now</p>
+		{{/9.I}}
 		{{#9.II}}
 			{{#1.I}}
 				<p>The company gets $20 base income for the capital, plus once-only money for each good delivered in <b>Phase 3 E</b>. The company balances accounts separately for each good. It gets the price for the 1st good according to the goods price board and adjusts all prices: the price for the delivered good drops 3 spaces, the prices for all other goods each rise 1 space. Then, the company gets the price for the 2nd good etc.! The price for a type of goods cannot drop below the first "$10" space and cannot rise above $140. After receiving their income, the company places the delivered goods in front of their company board to score VP for them in the Final Scoring.</p>
@@ -1028,15 +1031,16 @@
 			{{#6.I}}<p>Award 5 VP from the stack set aside on the corresponding column of the majority board to the first player to connect one of the 6 terrain types (no water) with his roads a third time.</p>{{/6.I}}
 			{{#7.I}}<p>Award 10 VP to the first player to control 1 of each terrain type (no water). Award 20 VP to the first player to control 2 of each terrain type (no water).</p>{{/7.I}}
 			{{#8.I}}<p>Award 5 VP from the stack set aside for this purpose to the first player owning 3 plants of a good type.</p>{{/8.I}}
-			{{#9.I}}
-				{{#1.II}}<p>Award $50 to the first stock company delivering one of the good types a second time from the stack set aside for this purpose.</p>{{/1.II}}
-				{{#3.II}}<p>Award $100 to the first stock company having at least 1 factory in 3 cities, and to the first stock company having 3 factories in 1 city.</p>{{/3.II}}
-				{{#4.II}}<p>Award money to a stock company when they conquer a free city from the stacks set aside on the majority board ($30 for the first free city, $40 for the second, etc).</p>{{/4.II}}
-				{{#5.II}}<p>Award $50 from the stack set aside on the corresponding column of the majority board to the first stock company to explore one of the 6 terrain types (no water) three times.</p>{{/5.II}}
-				{{#6.II}}<p>Award $50 from the stack set aside on the corresponding column of the majority board to the first stock company to connect one of the 6 terrain types (no water) with his roads a third time.</p>{{/6.II}}
-				{{#7.II}}<p>Award $100 to the first stock company to control 1 of each terrain type (no water). Award $200 to the first stock company to control 2 of each terrain type (no water).</p>{{/7.II}}
-				{{#8.II}}<p>Award $50 from the stack set aside for this purpose to the first stock company owning 3 plants of a good type.</p>{{/8.II}}
-			{{/9.I}}
+			{{#9.I}}<p>
+				{{#1.II}}Award $50 to the first stock company delivering one of the good types a second time from the stack set aside for this purpose.{{/1.II}}
+				{{#3.II}}Award $100 to the first stock company having at least 1 factory in 3 cities, and to the first stock company having 3 factories in 1 city.{{/3.II}}
+				{{#4.II}}Award money to a stock company when they conquer a free city from the stacks set aside on the majority board ($30 for the first free city, $40 for the second, etc).{{/4.II}}
+				{{#5.II}}Award $50 from the stack set aside on the corresponding column of the majority board to the first stock company to explore one of the 6 terrain types (no water) three times.{{/5.II}}
+				{{#6.II}}Award $50 from the stack set aside on the corresponding column of the majority board to the first stock company to connect one of the 6 terrain types (no water) with his roads a third time.{{/6.II}}
+				{{#7.II}}Award $100 to the first stock company to control 1 of each terrain type (no water). Award $200 to the first stock company to control 2 of each terrain type (no water).{{/7.II}}
+				{{#8.II}}Award $50 from the stack set aside for this purpose to the first stock company owning 3 plants of a good type.{{/8.II}}
+				Treat this money as income.
+			</p>{{/9.I}}
 		{{/2.III}}
 	{{/capture}}
 	{{#hascapture}}
