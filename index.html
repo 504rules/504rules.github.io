@@ -143,18 +143,6 @@
 				<p>Place the price token next to the map. Draw 1 privilege per player and place them in a face-up row to the right of the price token, so that the minimal bid for each privilege is $20.</p>
 				{{^3.III}}<p>Depending on the # of players place the matching player order cards and 1 resident of each player next to the map.</p>{{/3.III}}
 			{{/3}}
-			{{#4}}
-				{{#9}}
-					{{^9.III}}<p>The stock companies may choose any capitals at the edge of the map.</p>{{/9.III}}
-					{{#9.III}}<p>Depending on the # of players, choose the following capitals: 2♟: Capitals are across from each other. 3♟: Capitals are equidistant from each other. 4♟: Both unselected capitals are across from each other.</p>{{/9.III}}
-				{{/9}}
-				{{^9}}<p>Depending on the # of players, choose the following capitals: 2♟: Capitals are across from each other. 3♟: Capitals are equidistant from each other. 4♟: Both unselected capitals are across from each other.</p>{{/9}}
-				{{#8}}
-					{{^8.III}}<p>Place 1 barrack on all free cities. These barracks are considered trading houses.</p>{{/8.III}}
-					{{#8.III}}<p>Place 1 barrack and 1 militia on all free cities, which are not chosen as capitals.</p>{{/8.III}}
-				{{/8}}
-				{{^8}}<p>Place 1 barrack and 1 militia on all free cities, which are not chosen as capitals.</p>{{/8}}
-			{{/4}}
 			{{#5}}
 				<p>Place all map tiles in separate stacks in a row as follows: city, water, grassland, forest, field, mountain and desert.</p>
 			{{/5}}
@@ -241,6 +229,33 @@
 			{{#9}}{{^9.III}}
 				<p>Lay out the {{#9.II}}{{#7.I}}scoring{{/7.I}}{{^7.I}}player order{{/7.I}}{{/9.II}}{{^9.II}}player order{{/9.II}} cards for 5 companies for the business rounds (BR) and place 1 resident of each company next to these cards. 1 player gets the starting player card for the 1st share round (SR).</p>
 			{{/9.III}}{{/9}}
+			{{#order.clockwise}}<p>
+				Players choose a start player, turns will proceed clockwise. {{^mapnum.1}}{{^mapnum.2}}{{^mapnum.3}}Players all place their capitals in the central city.{{/mapnum.3}}{{/mapnum.2}}{{/mapnum.1}}{{^mapnum.4}}{{^mapnum.5}}In reverse turn order players choose their capitals.{{/mapnum.5}}{{/mapnum.4}}
+			</p>{{/order.clockwise}}
+			{{^order.clockwise}}<p>
+				{{#order.shares}}<p>
+					Players choose a start player for the first SR. Capitals are placed when companies are established.
+				</p>{{/order.shares}}
+				{{^order.shares}}<p>
+					Round based player order as shown in Phase 1. {{^9.II}}Capitals are placed in Phase 1 of the first round.{{^9.II}}{{^9.II}}Capitals are placed when companies are established.{{^9.II}}
+				</p>{{/order.shares}}
+			</p>{{/order.clockwise}}
+			{{#1}}{{^1.III}}
+					<p>When placing capitals players must choose cities that offer different types of goods.</p>
+			{{/1.III}}{{/1}}
+			{{#4}}
+				{{#9}}
+					{{^9.III}}<p>The stock companies may choose any capitals at the edge of the map.</p>{{/9.III}}
+					{{#9.III}}<p>Depending on the # of players, choose the following capitals: 2♟: Capitals are across from each other. 3♟: Capitals are equidistant from each other. 4♟: Both unselected capitals are across from each other.</p>{{/9.III}}
+				{{/9}}
+				{{^9}}<p>Depending on the # of players, choose the following capitals: 2♟: Capitals are across from each other. 3♟: Capitals are equidistant from each other. 4♟: Both unselected capitals are across from each other.</p>{{/9}}
+				{{#1}}{{^1.III}}{{^9.I}}{{^9.II}}<p>When playing with 2♟/4♟ Players cannot choose cities 5 or 10 for their capital. (This allows all players to comply with both rules for capital placement.)</p>{{/9.II}}{{/9.I}}{{/1.III}}{{/1}}
+				{{#8}}
+					{{^8.III}}<p>Place 1 barrack on all free cities. These barracks are considered trading houses.</p>{{/8.III}}
+					{{#8.III}}<p>Place 1 barrack and 1 militia on all free cities, which are not chosen as capitals.</p>{{/8.III}}
+				{{/8}}
+				{{^8}}<p>Place 1 barrack and 1 militia on all free cities, which are not chosen as capitals.</p>{{/8}}
+			{{/4}}
 		</div>
 	</div>
 	{{#capture}}
@@ -600,7 +615,7 @@
 				</p>
 				<p>
 					<b>Establishing a stock company:</b> If the player buys the first share of a stock company, he must buy the "2"-president's share for twice the fixed issue price and become the president of that stock company.
-					The president marks the issue price of that stock company on the share value board (if necessary he places the share value token on top of other tokens). {{^mapnum.1}}{{^mapnum.2}}{{^mapnum.3}}During the first SR all capitals are placed in the central city.{{/mapnum.3}}{{/mapnum.2}}{{/mapnum.1}}{{^mapnum.4}}{{^mapnum.5}}The president then chooses his companies' capital.{{/mapnum.5}}{{/mapnum.4}} In the business round (BR) he will make all of its actions.
+					The president marks the issue price of that stock company on the share value board (if necessary he places the share value token on top of other tokens). {{^mapnum.1}}{{^mapnum.2}}{{^mapnum.3}}During the first SR all capitals are placed in the central city.{{/mapnum.3}}{{/mapnum.2}}{{/mapnum.1}}{{^mapnum.4}}{{^mapnum.5}}The president then chooses his company's capital.{{/mapnum.5}}{{/mapnum.4}} In the business round (BR) he will make all of its actions.
 				</p>
 				{{#4}}{{^8.I}}{{^8.II}}<p><b>"Puppy Licence" provision:</b> An opposing stock company may only be attacked after it finishes its first BR. In other words, it is safe after establishing, as long as it only has a marked capital.</p>{{/8.II}}{{/8.I}}{{/4}} 
 				<p>
@@ -633,13 +648,13 @@
 
 	{{#capture}}
 		{{#3}}{{^3.III}}{{^9.I}}{{^7.I}}
-			<p>At game start, all players make a secret bid with their starting money ($0 is a valid bid). Starting with the highest bidder, each player chooses a position in the player order {{^9.II}}{{^mapnum.1}}{{^mapnum.2}}{{^mapnum.3}}all capitals are placed in the central city.{{/mapnum.3}}{{/mapnum.2}}{{/mapnum.1}}{{^mapnum.4}}{{^mapnum.5}}and his capital on the map.{{/mapnum.5}}{{/mapnum.4}}{{/9.II}}{{#9.II}}for the first share round (SR).{{/9.II}} In case of a tie, randomly draw lots for the order of choice (the losers get $2 for each lost draw).</p>
+			<p>At game start, all players make a secret bid with their starting money ($0 is a valid bid). Starting with the highest bidder, each player chooses a position in the player order{{^9.II}}{{^mapnum.1}}{{^mapnum.2}}{{^mapnum.3}}, all capitals are placed in the central city.{{/mapnum.3}}{{/mapnum.2}}{{/mapnum.1}}{{^mapnum.4}}{{^mapnum.5}} and his capital on the map.{{/mapnum.5}}{{/mapnum.4}}{{/9.II}}{{#9.II}} for the first share round (SR).{{/9.II}} In case of a tie, randomly draw lots for the order of choice (the losers get $2 for each lost draw).</p>
 			{{#9.II}}<p>The stock company order for the 1st business round (BR) is determined in reverse order of establishment. If stock companies are only established in later SRs, just for once they are first in stock company order in the next BR!</p>{{/9.II}}
 			<p>Starting with the 2nd round, determine the {{^9.II}}player{{/9.II}}{{#9.II}}company{{/9.II}} order according to the income of the former round, from high to low (in case of a tie reverse the {{^9.II}}player{{/9.II}}{{#9.II}}company{{/9.II}} order of the former round for the tied {{^9.II}}players{{/9.II}}{{#9.II}}companies{{/9.II}}). According to the new {{^9.II}}player{{/9.II}}{{#9.II}}company{{/9.II}} order the {{^9.II}}players{{/9.II}}{{#9.II}}companies{{/9.II}} must pay taxes for their last income: The 1st {{^9.II}}player{{/9.II}}{{#9.II}}company{{/9.II}} pays 20%, the last pays 0%, and all other players pay 10% of their last income, see left for <b>Calculation of taxes</b>. Because of higher taxes the 1st {{^9.II}}player{{/9.II}}{{#9.II}}company{{/9.II}} may get a lower income compared to the 2nd.</p>
 		{{/7.I}}{{/9.I}}{{/3.III}}{{/3}}
 		{{#7.I}}
 			{{^9.II}}
-				<p>At the start of the game the player order is randomly determined and 1 resident of each player is placed on the spaces of the 1st starting card.{{^mapnum.1}}{{^mapnum.2}}{{^mapnum.3}}All capitals are placed in the central city.{{/mapnum.3}}{{/mapnum.2}}{{/mapnum.1}}{{^mapnum.4}}{{^mapnum.5}}Players choose capitals in reverse turn order.{{/mapnum.5}}{{/mapnum.4}}</p>
+				<p>At the start of the game the player order is randomly determined and 1 resident of each player is placed on the spaces of the 1st starting card. {{^mapnum.1}}{{^mapnum.2}}{{^mapnum.3}}All capitals are placed in the central city.{{/mapnum.3}}{{/mapnum.2}}{{/mapnum.1}}{{^mapnum.4}}{{^mapnum.5}}Players choose capitals in reverse turn order.{{/mapnum.5}}{{/mapnum.4}}</p>
 			{{/9.II}}
 			{{#9.II}}
 				<p>The stock company order for the 1st business round (BR) is determined in <b>reverse</b> order of establishment. If stock companies are only established in later share rounds (SR), just for once they are first in stock company order in the next BR, if necessary in reverse order of establishment!</p>
