@@ -232,14 +232,14 @@
 			{{#order.clockwise}}<p>
 				Players choose a start player, turns will proceed clockwise. {{^mapnum.1}}{{^mapnum.2}}{{^mapnum.3}}Players all place their capitals in the central city.{{/mapnum.3}}{{/mapnum.2}}{{/mapnum.1}}{{^mapnum.4}}{{^mapnum.5}}In reverse turn order players choose their capitals.{{/mapnum.5}}{{/mapnum.4}}
 			</p>{{/order.clockwise}}
-			{{^order.clockwise}}<p>
+			{{^order.clockwise}}
 				{{#order.shares}}<p>
 					Players choose a start player for the first SR. Capitals are placed when companies are established.
 				</p>{{/order.shares}}
 				{{^order.shares}}<p>
 					Round based player order as shown in Phase 1. {{^9.II}}Capitals are placed in Phase 1 of the first round.{{/9.II}}{{#9.II}}Capitals are placed when companies are established.{{/9.II}}
 				</p>{{/order.shares}}
-			</p>{{/order.clockwise}}
+			{{/order.clockwise}}
 			{{#1}}{{^1.III}}
 					<p>When placing capitals players must choose cities that offer different types of goods.</p>
 			{{/1.III}}{{/1}}
