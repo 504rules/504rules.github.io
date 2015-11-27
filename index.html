@@ -237,7 +237,7 @@
 					Players choose a start player for the first SR. Capitals are placed when companies are established.
 				</p>{{/order.shares}}
 				{{^order.shares}}<p>
-					Round based player order as shown in Phase 1. {{^9.II}}Capitals are placed in Phase 1 of the first round.{{^9.II}}{{^9.II}}Capitals are placed when companies are established.{{^9.II}}
+					Round based player order as shown in Phase 1. {{^9.II}}Capitals are placed in Phase 1 of the first round.{{/9.II}}{{#9.II}}Capitals are placed when companies are established.{{/9.II}}
 				</p>{{/order.shares}}
 			</p>{{/order.clockwise}}
 			{{#1}}{{^1.III}}
