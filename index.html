@@ -71,6 +71,8 @@
 			<div class="heading">
 				{{#order.clockwise}}
 					<h2>Clockwise player order</h2>
+					{{^mapnum.1}}{{^mapnum.2}}{{^mapnum.3}}<p>Common capital in center of map</p>{{/mapnum.3}}{{/mapnum.2}}{{/mapnum.1}}
+					{{^mapnum.4}}{{^mapnum.5}}<p>Capitals chosen counter clockwise from last player to first</p>{{/mapnum.5}}{{/mapnum.4}}
 				{{/order.clockwise}}
 				{{#order.income}}
 					<h2>Round-based player order</h2>
@@ -141,18 +143,6 @@
 				<p>Place the price token next to the map. Draw 1 privilege per player and place them in a face-up row to the right of the price token, so that the minimal bid for each privilege is $20.</p>
 				{{^3.III}}<p>Depending on the # of players place the matching player order cards and 1 resident of each player next to the map.</p>{{/3.III}}
 			{{/3}}
-			{{#4}}
-				{{#9}}
-					{{^9.III}}<p>The stock companies may choose any capitals at the edge of the map.</p>{{/9.III}}
-					{{#9.III}}<p>Depending on the # of players, choose the following capitals: 2♟: Capitals are across from each other. 3♟: Capitals are equidistant from each other. 4♟: Both unselected capitals are across from each other.</p>{{/9.III}}
-				{{/9}}
-				{{^9}}<p>Depending on the # of players, choose the following capitals: 2♟: Capitals are across from each other. 3♟: Capitals are equidistant from each other. 4♟: Both unselected capitals are across from each other.</p>{{/9}}
-				{{#8}}
-					{{^8.III}}<p>Place 1 barrack on all free cities. These barracks are considered trading houses.</p>{{/8.III}}
-					{{#8.III}}<p>Place 1 barrack and 1 militia on all free cities, which are not chosen as capitals.</p>{{/8.III}}
-				{{/8}}
-				{{^8}}<p>Place 1 barrack and 1 militia on all free cities, which are not chosen as capitals.</p>{{/8}}
-			{{/4}}
 			{{#5}}
 				<p>Place all map tiles in separate stacks in a row as follows: city, water, grassland, forest, field, mountain and desert.</p>
 			{{/5}}
@@ -239,6 +229,29 @@
 			{{#9}}{{^9.III}}
 				<p>Lay out the {{#9.II}}{{#7.I}}scoring{{/7.I}}{{^7.I}}player order{{/7.I}}{{/9.II}}{{^9.II}}player order{{/9.II}} cards for 5 companies for the business rounds (BR) and place 1 resident of each company next to these cards. 1 player gets the starting player card for the 1st share round (SR).</p>
 			{{/9.III}}{{/9}}
+			<p>
+				{{#order.clockwise}}Players choose a start player, turns will proceed clockwise. {{^mapnum.1}}{{^mapnum.2}}{{^mapnum.3}}Players all place their capitals in the central city.{{/mapnum.3}}{{/mapnum.2}}{{/mapnum.1}}{{^mapnum.4}}{{^mapnum.5}}In reverse turn order players choose their capitals.{{/mapnum.5}}{{/mapnum.4}}{{/order.clockwise}}
+				{{^order.clockwise}}
+					{{#order.shares}}Players choose a start player for the first SR. Capitals are placed when companies are established.{{/order.shares}}
+					{{^order.shares}}Round based player order as shown in Phase 1. {{^9.II}}Capitals are placed in Phase 1 of the first round.{{/9.II}}{{#9.II}}Capitals are placed when companies are established.{{/9.II}}{{/order.shares}}
+				{{/order.clockwise}}
+			</p>
+			{{#1}}{{^1.III}}
+					<p>When placing capitals players must choose cities that offer different types of goods.</p>
+			{{/1.III}}{{/1}}
+			{{#4}}
+				{{#9}}
+					{{^9.III}}<p>The stock companies may choose any capitals at the edge of the map.</p>{{/9.III}}
+					{{#9.III}}<p>Depending on the # of players, choose the following capitals: 2♟: Capitals are across from each other. 3♟: Capitals are equidistant from each other. 4♟: Both unselected capitals are across from each other.</p>{{/9.III}}
+				{{/9}}
+				{{^9}}<p>Depending on the # of players, choose the following capitals: 2♟: Capitals are across from each other. 3♟: Capitals are equidistant from each other. 4♟: Both unselected capitals are across from each other.</p>{{/9}}
+				{{#1}}{{^1.III}}{{^9.I}}{{^9.II}}<p>When playing with 2♟/4♟ Players cannot choose cities 5 or 10 for their capital. (This allows all players to comply with both rules for capital placement.)</p>{{/9.II}}{{/9.I}}{{/1.III}}{{/1}}
+				{{#8}}
+					{{^8.III}}<p>Place 1 barrack on all free cities. These barracks are considered trading houses.</p>{{/8.III}}
+					{{#8.III}}<p>Place 1 barrack and 1 militia on all free cities, which are not chosen as capitals.</p>{{/8.III}}
+				{{/8}}
+				{{^8}}<p>Place 1 barrack and 1 militia on all free cities, which are not chosen as capitals.</p>{{/8}}
+			{{/4}}
 		</div>
 	</div>
 	{{#capture}}
@@ -438,7 +451,7 @@
 					<tr><td>max. $50</td><td>max. $50</td><td>max. $45</td><td>max. $40</td><td>max. $35</td><td>max. $30</td></tr>
 				</table>
 				<p>In case of a tie all concerned players get the calculated income up to the stated maximum.</p>
-				<p><b>Example Income:</b> Camille has majorities for grasslands (2 tiles) and fields (% tiles). She gets a total of $80 = $20 (base income for the capital) + $20 (for 2 grasslands) + $40 (maximum for 4 fields). The additional field only secures her majority, but does not increase her income!</p>
+				<p><b>Example Income:</b> Camille has majorities for grasslands (2 tiles) and fields (5 tiles). She gets a total of $80 = $20 (base income for the capital) + $20 (for 2 grasslands) + $40 (maximum for 4 fields). The additional field only secures her majority, but does not increase her income!</p>
 			</div>
 		{{/7.II}}
 		{{#7.III}}
@@ -590,22 +603,40 @@
 		<div class="row section">
 			<div class="col-md-2 col-xs-2"><h1>Share Round</h1></div>
 			<div class="col-md-10 col-xs-10">
-				<p>During the SR, the players can choose the following actions: <b>buy 0-1 shares &amp; sell any number of shares, pass or get out</b>.</p>
-				<p><b>Buying Shares:</b> The price for all shares always matches the actual share value. The company gets the fixed issue price. A single player may only own max 50% of the shares of a single stock company.</p>
-				<p><b>Establishing a stock company:</b> The players buy the "2"-president's share for twice the fixed issue price and become the president of that stock company.</p>
+				<p>During the SR, the players can choose the following actions: <b>deal shares, pass or quit</b>.</p>
+				<p><b>Dealing Shares:</b> When you take this action you buy 1 share &amp;/or sell any number of shares. During the same SR a player can either buy or sell stocks from a given company; he cannot do both.</p>
 				<p>
-					<b>Selling Shares:</b> The sale price always matches the actual share value. Independent of the number of sold shares, the share value of the concerned stock companies drops by $10.
-					 {{#9.I}}The players together may only sell 50% of the shares of a single stock company to the bank.{{/9.I}}
-					 {{#9.II}}The players may sell all "1"-shares to the bank (only the president's share must remain in the ownership of a player).{{/9.II}}
+					<b>Buying Shares:</b> The player pays the share value to the bank. {{#9.I}}If the company owns any shares, the player takes a share from the company and the company gets the fixed issue price (starting price) from the bank. Otherwise, t{{/9.I}}{{^9.I}}T{{/9.I}}he player takes a share from the bank. 
+					The player should place the share light side up in front of himself, to indicate that he cannot sell shares of that company this SR. Each player may only own a maximum of 50% of the shares of a single stock company. 
 				</p>
+				<p>
+					<b>Establishing a stock company:</b> If the player buys the first share of a stock company, he must buy the "2"-president's share for twice the fixed issue price and become the president of that stock company.
+					The president marks the issue price of that stock company on the share value board (if necessary he places the share value token on top of other tokens). {{^mapnum.1}}{{^mapnum.2}}{{^mapnum.3}}During the first SR all capitals are placed in the central city.{{/mapnum.3}}{{/mapnum.2}}{{/mapnum.1}}{{^mapnum.4}}{{^mapnum.5}}The president then chooses his company's capital.{{/mapnum.5}}{{/mapnum.4}} In the business round (BR) he will make all of its actions.
+				</p>
+				{{#4}}{{^8.I}}{{^8.II}}<p><b>"Puppy Licence" provision:</b> An opposing stock company may only be attacked after it finishes its first BR. In other words, it is safe after establishing, as long as it only has a marked capital.</p>{{/8.II}}{{/8.I}}{{/4}} 
+				<p>
+					<b>Establishing in later SR:</b> If Stock Companies are established in later rounds they may place their capital {{^mapnum.1}}{{^mapnum.2}}{{^mapnum.3}}on any city, which already has 1 settlement of at least one other company{{/mapnum.3}}{{/mapnum.2}}{{/mapnum.1}}{{^mapnum.4}}{{^mapnum.5}}in any city, which is not already marked as a capital of another company{{/mapnum.5}}{{/mapnum.4}}. 
+					{{#4}}{{^8.I}}{{^8.II}}If the president chooses a city containing armies of another stock company as the capital, he destroys all these opposing armies and removes them from the map!{{/8.II}}{{/8.I}}{{/4}}
+				</p>
+				<p>
+					<b>Being President:</b> A player remains as president of a company as long as they have the most shares of a company (equal most counts). If the president ever has fewer shares in their company than another player, 
+					the player with the most shares in that company becomes the new president, he must exchange 2 of his "1" shares for the president's "2" share. If there is a tie, it is broken in favour of the next player clockwise from the previous president.
+				</p>
+				<p>
+					<b>Selling Shares:</b> The sale price always matches the actual share value. Independent of the number of sold shares, the share value of the concerned stock companies drops by $10. 
+					The president cannot sell the President's "2" share, however they can exchange their "2" share for two "1" shares with the next player who could become president during their sell shares action. 
+					{{#9.I}}The players together may only sell 50% of the shares of a single stock company to the bank. {{/9.I}}
+					{{#9.II}}The players may sell all "1"-shares to the bank (only the president's share must remain in the ownership of a player). {{/9.II}}
+					The first time a player sells shares of a company during the SR, he places 1 resident from that company's stocks in front of himself, to indicate that he cannot buy shares of that company this SR.
+				</p>
+				<p><b>Pass:</b> As long as nobody quits, a player may repeatedly pass and during the same SR may later deal shares, when it is his turn in the clockwise order. If all players pass consecutively the SR ends and the first passing player gets the starting player card.</p>
 				<p>
 					<b>Quit:</b> If the player quits first in the SR, he takes the starting player card and places it with the crossed out side face up in front of himself. He will be the new starting player 
-					in the next SR. After the first player quits, the other players now either must deal shares or quit, too. o. The SR ends, after all players quit, or if all players pass consecutively (in that case, the first passing player gets the starting player card).
+					in the next SR. After the first player quits, the other players now either must deal shares or quit, too. The SR ends, after all players quit (or if all players pass consecutively).
 				</p>
 				<p>
-					<b>End of the SR:</b> The share values of the companies raise by $10, 
-					{{#9.II}}whose shares were bought most during this SR <b>AND</b>{{/9.II}}
-					whose shares are now 100% owned by players.
+					<b>End of the SR:</b> The companies whose shares are now 100% owned by players raise their stock price by $10{{#9.II}}, <b>AND</b> the companies whose shares were bought most during this SR also raise their stock price by $10 (stocks can raise from both in one SR){{/9.II}}.
+					Players flip all bought shares back to their dark sides and return residents back to the companies&rsquo; storages.
 				</p>
 			</div>
 		</div>
@@ -613,13 +644,13 @@
 
 	{{#capture}}
 		{{#3}}{{^3.III}}{{^9.I}}{{^7.I}}
-			<p>At game start, all players make a secret bid with their starting money ($0 is a valid bid). Starting with the highest bidder, each player chooses a position in the player order {{^9.II}}and his capital on the map (ignore this with maps 4 and 5).{{/9.II}}{{#9.II}}for the first share round (SR).{{/9.II}} In case of a tie, randomly draw lots for the order of choice (the losers get $2 for each lost draw).</p>
+			<p>At game start, all players make a secret bid with their starting money ($0 is a valid bid). Starting with the highest bidder, each player chooses a position in the player order{{^9.II}}{{^mapnum.1}}{{^mapnum.2}}{{^mapnum.3}}, all capitals are placed in the central city.{{/mapnum.3}}{{/mapnum.2}}{{/mapnum.1}}{{^mapnum.4}}{{^mapnum.5}} and his capital on the map.{{/mapnum.5}}{{/mapnum.4}}{{/9.II}}{{#9.II}} for the first share round (SR).{{/9.II}} In case of a tie, randomly draw lots for the order of choice (the losers get $2 for each lost draw).</p>
 			{{#9.II}}<p>The stock company order for the 1st business round (BR) is determined in reverse order of establishment. If stock companies are only established in later SRs, just for once they are first in stock company order in the next BR!</p>{{/9.II}}
 			<p>Starting with the 2nd round, determine the {{^9.II}}player{{/9.II}}{{#9.II}}company{{/9.II}} order according to the income of the former round, from high to low (in case of a tie reverse the {{^9.II}}player{{/9.II}}{{#9.II}}company{{/9.II}} order of the former round for the tied {{^9.II}}players{{/9.II}}{{#9.II}}companies{{/9.II}}). According to the new {{^9.II}}player{{/9.II}}{{#9.II}}company{{/9.II}} order the {{^9.II}}players{{/9.II}}{{#9.II}}companies{{/9.II}} must pay taxes for their last income: The 1st {{^9.II}}player{{/9.II}}{{#9.II}}company{{/9.II}} pays 20%, the last pays 0%, and all other players pay 10% of their last income, see left for <b>Calculation of taxes</b>. Because of higher taxes the 1st {{^9.II}}player{{/9.II}}{{#9.II}}company{{/9.II}} may get a lower income compared to the 2nd.</p>
 		{{/7.I}}{{/9.I}}{{/3.III}}{{/3}}
 		{{#7.I}}
 			{{^9.II}}
-				<p>At the start of the game the player order is randomly determined and 1 resident of each player is placed on the spaces of the 1st starting card.</p>
+				<p>At the start of the game the player order is randomly determined and 1 resident of each player is placed on the spaces of the 1st starting card. {{^mapnum.1}}{{^mapnum.2}}{{^mapnum.3}}All capitals are placed in the central city.{{/mapnum.3}}{{/mapnum.2}}{{/mapnum.1}}{{^mapnum.4}}{{^mapnum.5}}Players choose capitals in reverse turn order.{{/mapnum.5}}{{/mapnum.4}}</p>
 			{{/9.II}}
 			{{#9.II}}
 				<p>The stock company order for the 1st business round (BR) is determined in <b>reverse</b> order of establishment. If stock companies are only established in later share rounds (SR), just for once they are first in stock company order in the next BR, if necessary in reverse order of establishment!</p>
@@ -628,9 +659,12 @@
 			<p>As long as the players do not have victory points (VP), simply reverse the player order of the former turn. As soon as the players have VP, the new player order is determined according to VP from few to most. The player with the fewest VP is new starting player, the player with most VP is last. In case of a tie reverse the player order of all concerned players of the former turn.</p>
 			{{#3.II}}<p>Starting with the 2nd round the income is taxed according to the money, but the player order according to VP. In case of a tie for highest income, the player must pay 20%, whose turn is now earlier in player order. In case of a tie for lowest income, the player pays no taxes, whose turn is now later in the player order.</p>{{/3.II}}
 		{{/7.I}}
-		{{#9.III}}{{^3.}}{{^7.I}}
-			<p>At the start of the game the turn order is randomly determined. Starting with the 2nd round determine the player order according to the income of the former round, from low to high. In case of a tie simply reverse the player order of the concerned players.</p>
-		{{/7.I}}{{/3.}}{{/9.III}}
+		{{#9.III}}{{^3}}{{^7.I}}
+			<p>
+				At the start of the game the turn order is randomly determined. {{^mapnum.1}}{{^mapnum.2}}{{^mapnum.3}}All capitals are placed in the central city.{{/mapnum.3}}{{/mapnum.2}}{{/mapnum.1}}{{^mapnum.4}}{{^mapnum.5}}Players choose capitals in reverse turn order.{{/mapnum.5}}{{/mapnum.4}} 
+				Starting with the 2nd round determine the player order according to the income of the former round, from low to high. In case of a tie simply reverse the player order of the concerned players.
+			</p>
+		{{/7.I}}{{/3}}{{/9.III}}
 	{{/capture}}
 	{{#hascapture}}
 		<div class="row section">
@@ -950,7 +984,10 @@
 			<p>{{^1}}During this phase, the player gets 1 matching good for each of his plants from the general storage.{{/1}}{{#1}}The player may sell goods already delivered to his trading houses.{{/1}} He may sell {{^4}}1 good{{/4}}{{#4}}2 goods{{/4}} to each of his trading houses{{^4}} (up to 2 goods to the headquarters in his capital){{/4}}. {{^1}}Afterwards, he places the sold goods back into the general storage.{{/1}}{{#1}}Afterwards, the goods remain on the trading houses.{{/1}}</p>
 			<p>The player gets $20 base income for his capital and additional income for the sold goods, see the table and example <b>Scoring</b>. {{^1}}The player may exchange goods in a ratio of 2:1 into different goods types, to get a higher income for the sale. He may store any number of goods face up in front of him for a later sale.{{/1}}</p>
 		{{/8.II}}
-		{{#9.I}}<p>Place the income of the stock company separate from the company assets to the side for now</p>{{/9.I}}
+		{{#9.I}}
+			{{#2.III}}<p>The company also gets income from <b>Mid-Term Scorings</b> below.</p>{{/2.III}}
+			<p>Place the income of the stock company separate from the company assets to the side for now</p>
+		{{/9.I}}
 		{{#9.II}}
 			{{#1.I}}
 				<p>The company gets $20 base income for the capital, plus once-only money for each good delivered in <b>Phase 3 E</b>. The company balances accounts separately for each good. It gets the price for the 1st good according to the goods price board and adjusts all prices: the price for the delivered good drops 3 spaces, the prices for all other goods each rise 1 space. Then, the company gets the price for the 2nd good etc.! The price for a type of goods cannot drop below the first "$10" space and cannot rise above $140. After receiving their income, the company places the delivered goods in front of their company board to score VP for them in the Final Scoring.</p>
@@ -1010,15 +1047,16 @@
 			{{#6.I}}<p>Award 5 VP from the stack set aside on the corresponding column of the majority board to the first player to connect one of the 6 terrain types (no water) with his roads a third time.</p>{{/6.I}}
 			{{#7.I}}<p>Award 10 VP to the first player to control 1 of each terrain type (no water). Award 20 VP to the first player to control 2 of each terrain type (no water).</p>{{/7.I}}
 			{{#8.I}}<p>Award 5 VP from the stack set aside for this purpose to the first player owning 3 plants of a good type.</p>{{/8.I}}
-			{{#9.I}}
-				{{#1.II}}<p>Award $50 to the first stock company delivering one of the good types a second time from the stack set aside for this purpose.</p>{{/1.II}}
-				{{#3.II}}<p>Award $100 to the first stock company having at least 1 factory in 3 cities, and to the first stock company having 3 factories in 1 city.</p>{{/3.II}}
-				{{#4.II}}<p>Award money to a stock company when they conquer a free city from the stacks set aside on the majority board ($30 for the first free city, $40 for the second, etc).</p>{{/4.II}}
-				{{#5.II}}<p>Award $50 from the stack set aside on the corresponding column of the majority board to the first stock company to explore one of the 6 terrain types (no water) three times.</p>{{/5.II}}
-				{{#6.II}}<p>Award $50 from the stack set aside on the corresponding column of the majority board to the first stock company to connect one of the 6 terrain types (no water) with his roads a third time.</p>{{/6.II}}
-				{{#7.II}}<p>Award $100 to the first stock company to control 1 of each terrain type (no water). Award $200 to the first stock company to control 2 of each terrain type (no water).</p>{{/7.II}}
-				{{#8.II}}<p>Award $50 from the stack set aside for this purpose to the first stock company owning 3 plants of a good type.</p>{{/8.II}}
-			{{/9.I}}
+			{{#9.I}}<p>
+				{{#1.II}}Award $50 to the first stock company delivering one of the good types a second time from the stack set aside for this purpose.{{/1.II}}
+				{{#3.II}}Award $100 to the first stock company having at least 1 factory in 3 cities, and to the first stock company having 3 factories in 1 city.{{/3.II}}
+				{{#4.II}}Award money to a stock company when they conquer a free city from the stacks set aside on the majority board ($30 for the first free city, $40 for the second, etc).{{/4.II}}
+				{{#5.II}}Award $50 from the stack set aside on the corresponding column of the majority board to the first stock company to explore one of the 6 terrain types (no water) three times.{{/5.II}}
+				{{#6.II}}Award $50 from the stack set aside on the corresponding column of the majority board to the first stock company to connect one of the 6 terrain types (no water) with his roads a third time.{{/6.II}}
+				{{#7.II}}Award $100 to the first stock company to control 1 of each terrain type (no water). Award $200 to the first stock company to control 2 of each terrain type (no water).{{/7.II}}
+				{{#8.II}}Award $50 from the stack set aside for this purpose to the first stock company owning 3 plants of a good type.{{/8.II}}
+				Treat this money as income.
+			</p>{{/9.I}}
 		{{/2.III}}
 	{{/capture}}
 	{{#hascapture}}
