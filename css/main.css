@@ -26,7 +26,7 @@
 
 p {
 	margin-bottom: 0.75em;
-	border-bottom:1px dashed darkgreen;
+	border-bottom:1px dashed rgba(0,100,0,0.5);
 	padding-bottom: 0.75em;
 }
 
@@ -202,10 +202,9 @@ table th {
 }
 
 .section .col-md-10 {
-
 	border: none;
 	margin-left: -15px;
-	padding: 1em 8em 1em 2em;
+	padding: 1em 4em 1em 2em;
 	background-color: #fff;
 	border-radius: 1em;
 }
@@ -290,17 +289,12 @@ table th {
 		padding: 15px;
 		margin: 0;
 	}
-	.section .col-md-2 {
-		background: black;
-		border-radius: 0 15px 15px 0;
-		padding: 15px;
-		margin: 0;
-	}
-
 	.section .col-md-10 {
 		border: 1px solid black;
 		margin-left: -15px;
 		padding-left: 30px;
+		padding-top:0;
+		padding-bottom:0;
 	}
 	
 }
