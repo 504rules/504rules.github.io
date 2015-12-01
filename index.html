@@ -1700,6 +1700,17 @@
 			'mapnum': {},
 			'order': priority_match([modules['I']['order'], modules['II']['order'], modules['III']['order']]),
 			'money': priority_match([modules['I']['money'], modules['II']['money'], modules['III']['money']]),
+						//Variables for agent, owner, owners and holdings
+		//	'entity': function() {
+		//		if(world.indexOf('9') == -1) {
+		//			return 'entity': {'agent': 'player', 'ent': 'player', 'ownsf': 'his', 'owns': 'his'};
+		//		}
+		//		return 'entity': {'agent': 'president', 'ent': 'company', 'ownsf': 'the company\'s', 'owns': 'its'};
+		//	},
+		//	'agent': entity.agent,
+		//	'ent': entity['ent'],
+		//	'ownsf': entity['ownsf'],
+		//	'owns': entity['owns'],
 		};
 		params[world[0]] = {'I': true};
 		params[world[1]] = {'II': true};
