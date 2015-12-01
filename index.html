@@ -1703,11 +1703,27 @@
 						//Variables for agent, owner, owners and holdings
 			'agent': function() {
 				if(world.indexOf('9') == -1) {
-					params.push('ent': 'player', 'ownsf': 'his', 'owns': 'his'),
 					return 'player';
 				}
-				params.push('ent': 'company', 'ownsf': 'the company\'s', 'owns': 'its'),
 				return 'president';
+			},
+			'entity': function() {
+				if(world.indexOf('9') == -1) {
+					return 'player';
+				}
+				return 'company';
+			},
+			'fowns': function() {
+				if(world.indexOf('9') == -1) {
+					return 'his';
+				}
+				return 'the company\'s';
+			},
+			'owns': function() {
+				if(world.indexOf('9') == -1) {
+					return 'his';
+				}
+				return 'its';
 			},
 		};
 		params[world[0]] = {'I': true};
