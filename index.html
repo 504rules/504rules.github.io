@@ -1701,12 +1701,14 @@
 			'order': priority_match([modules['I']['order'], modules['II']['order'], modules['III']['order']]),
 			'money': priority_match([modules['I']['money'], modules['II']['money'], modules['III']['money']]),
 						//Variables for agent, owner, owners and holdings
-		//	'entity': function() {
-		//		if(world.indexOf('9') == -1) {
-		//			return 'entity': {'agent': 'player', 'ent': 'player', 'ownsf': 'his', 'owns': 'his'};
-		//		}
-		//		return 'entity': {'agent': 'president', 'ent': 'company', 'ownsf': 'the company\'s', 'owns': 'its'};
-		//	},
+			'agent': function() {
+				if(world.indexOf('9') == -1) {
+		//			{'agent': 'player', 'ent': 'player', 'ownsf': 'his', 'owns': 'his'}
+					return 'player';
+				}
+		//		{'agent': 'president', 'ent': 'company', 'ownsf': 'the company\'s', 'owns': 'its'}
+				return 'president';
+			},
 		//	'agent': entity.agent,
 		//	'ent': entity['ent'],
 		//	'ownsf': entity['ownsf'],
