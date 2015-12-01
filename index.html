@@ -126,7 +126,7 @@
 					{{#residents}}<p>Each transport trolley starts with 1 cargo hold and 3 movement points (MP). Each player places his transport trolley onto his capital and directly loads 1 good from there into his cargo hold.</p>{{/residents}}
 				{{/1.III}}
 				{{^1.III}}
-					<p>Each transport trolley starts with 1 cargo hold and 3 movement points (MP).{{^ent}}test{{/ent}} Each {{agent}} places {{ownsf}} transport trolley onto {{owns}} capital{{^8}} and directly loads 1 good from there into his cargo hold{{/8}}.</p>
+					<p>Each transport trolley starts with 1 cargo hold and 3 movement points (MP).{{entity}} Each {{agent}} places {{fowns}} transport trolley onto {{owns}} capital{{^8}} and directly loads 1 good from there into his cargo hold{{/8}}.</p>
 				{{/1.III}}
 				{{#1.II}}<p>Place 1 each of the goods tiles on space "20" of the goods price board.</p>{{/1.II}}
 			{{/1}}
@@ -1702,25 +1702,25 @@
 			'money': priority_match([modules['I']['money'], modules['II']['money'], modules['III']['money']]),
 						//Variables for agent, owner, owners and holdings
 			'agent': function() {
-				if(world.indexOf('9') == -1) {
+				if(world.indexOf('9') == -1 ||world.indexOf('9') == 2) {
 					return 'player';
 				}
 				return 'president';
 			},
 			'entity': function() {
-				if(world.indexOf('9') == -1) {
+				if(world.indexOf('9') == -1 ||world.indexOf('9') == 2) {
 					return 'player';
 				}
 				return 'company';
 			},
 			'fowns': function() {
-				if(world.indexOf('9') == -1) {
+				if(world.indexOf('9') == -1 ||world.indexOf('9') == 2) {
 					return 'his';
 				}
 				return 'the company\'s';
 			},
 			'owns': function() {
-				if(world.indexOf('9') == -1) {
+				if(world.indexOf('9') == -1 ||world.indexOf('9') == 2) {
 					return 'his';
 				}
 				return 'its';
