@@ -1706,28 +1706,28 @@
 			'money': priority_match([modules['I']['money'], modules['II']['money'], modules['III']['money']]),
 						//Variables for agent, owner, owners and holdings
 			'agent': function() {
-				if(world.indexOf('9') == -1 ||world.indexOf('9') == 2) {
-					return 'player';
+				if(isCompanyGame()) {
+					return 'president';
 				}
-				return 'president';
+				return 'player';
 			},
 			'entity': function() {
-				if(world.indexOf('9') == -1 ||world.indexOf('9') == 2) {
-					return 'player';
+				if(isCompanyGame()) {
+					return 'company';
 				}
-				return 'company';
+				return 'player';
 			},
 			'fowns': function() {
-				if(world.indexOf('9') == -1 ||world.indexOf('9') == 2) {
-					return 'his';
+				if(isCompanyGame()) {
+					return 'the company\'s';
 				}
-				return 'the company\'s';
+				return 'his';
 			},
 			'owns': function() {
-				if(world.indexOf('9') == -1 ||world.indexOf('9') == 2) {
-					return 'his';
+				if(isCompanyGame()) {
+					return 'its';
 				}
-				return 'its';
+				return 'his';
 			},
 		};
 		params[world[0]] = {'I': true};
