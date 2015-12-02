@@ -1658,6 +1658,10 @@
 			arr[j] = temp;
 		}
 	}
+	
+	function isCompanyGame() {
+		return world.indexOf('9') == 1 ||world.indexOf('9') == 0;
+	}
 
 	function load() {
 		var world = validate_world(window.location.hash.substr(1)) || ['1', '2', '3'];
