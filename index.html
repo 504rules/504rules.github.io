@@ -1664,9 +1664,9 @@
 	}
 	function namesCompanyGame(num) {
 		if(world.indexOf('9') == 1 ||world.indexOf('9') == 0) {
-			var nametokens = {'president', 'company', 'the company\'s', 'its'},
+			var nametokens = ['president', 'company', 'the company\'s', 'its'],
 		} else {
-			var nametokens = {'player', 'player', 'his', 'his'},
+			var nametokens = ['player', 'player', 'his', 'his'],
 		}
 		return nametokens[num];
 	}
