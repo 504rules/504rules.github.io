@@ -1662,13 +1662,13 @@
 	function isCompanyGame() {
 		return world.indexOf('9') == 1 ||world.indexOf('9') == 0;
 	}
-	function namesCompanyGame(num) {
+	function namesCompanyGame(ent) {
 		if(world.indexOf('9') == 1 ||world.indexOf('9') == 0) {
-			var nametokens = ['president', 'company', 'the company\'s', 'its'],
+			var nametokens = {'agent': 'president', 'ent': 'company', 'ownsf': 'the company\'s', 'owns': 'its'},
 		} else {
-			var nametokens = ['player', 'player', 'his', 'his'],
+			var nametokens = {'agent': 'player', 'ent': 'player', 'ownsf': 'his', 'owns': 'his'},
 		}
-		return ""; //nametokens[num];
+		return ""; //nametokens[ent];
 	}
 
 	function load() {
