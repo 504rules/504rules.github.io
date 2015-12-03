@@ -1,15 +1,16 @@
-<html>
+<html manifest="manifest.appcache">
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  	<title>504</title>
-  	<script src="js/jquery-1.11.3.min.js"></script>
-  	<script src="js/mustache.min.js"></script>
-  	<script src="js/bootstrap.min.js"></script>
-  	<link rel="stylesheet" href="css/bootstrap.css">
-  	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
-  	<link rel="stylesheet" href="css/main.css" media="all">
-  	<style type="text/css">
-  	</style>
+	<title>504</title>
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<script src="js/mustache.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="css/main.css" media="all">
+	<link rel="apple-touch-icon" href="img/apple-touch-icon-180x180.png"/>
+	<style type="text/css">
+	</style>
 </head>
 <body>
 <div id="target">Loading...</div>
@@ -330,7 +331,7 @@
 						<tr><th># of delivered goods of a single type</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5+</th></tr>
 						<tr><th>victory points (VP)</th><td>5 VP</td><td>9 VP</td><td>12 VP</td><td>14 VP</td><td>15 VP</td></tr>
 					</table>
-                                        <p>Additionally, the player gets 2 VP for each set containing all 5 different types of goods.</p>
+					<p>Additionally, the player gets 2 VP for each set containing all 5 different types of goods.</p>
 				</div>
 			{{/1.I}}
 		{{/1}}
@@ -1744,8 +1745,8 @@
 			var entry = $("#worldno-entry");
 			if(entry.is(":visible")) {
 				entry.val(window.location.hash.substr(1))
-				     .focus()
-				     .select();
+					.focus()
+					.select();
 			} else {
 				update_world($("#worldno-entry").val());
 			}
@@ -1770,5 +1771,26 @@
 	$(document).ready(load);
 	$(window).bind('hashchange', load);
 </script>
+<script>
+	// Via http://stackoverflow.com/questions/12556593/determining-a-page-is-outdated-on-github-pages
+	// Check if a new cache is available on page load.
+	window.addEventListener('load', function(e) {
+		var appCache = window.applicationCache;
+
+		if ( !appCache ) {
+			return;
+		}
+
+		appCache.addEventListener('updateready', function(e) {
+			if (appCache.status === appCache.UPDATEREADY) {
+				// Browser downloaded a new app cache.
+				// Swap it in and reload the page to get the new hotness.
+				appCache.swapCache();
+				window.location.reload();
+			}
+		}, false);
+	}, false);
+</script>
+
 </body>
 </html>
