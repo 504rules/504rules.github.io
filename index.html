@@ -1659,9 +1659,9 @@
 		}
 	}
 	
-	function isCompanyGame() {
-		return world.indexOf('9') == 1 ||world.indexOf('9') == 0;
-	}
+//	function isCompanyGame() {
+//		return world.indexOf('9') == 1 ||world.indexOf('9') == 0;
+//	}
 	function namesCompanyGame(ent) {
 		if(world.indexOf('9') == 1 ||world.indexOf('9') == 0) {
 			var nametokens = {'agent': 'president', 'ent': 'company', 'ownsf': 'the company\'s', 'owns': 'its'};
@@ -1713,30 +1713,30 @@
 			'order': priority_match([modules['I']['order'], modules['II']['order'], modules['III']['order']]),
 			'money': priority_match([modules['I']['money'], modules['II']['money'], modules['III']['money']]),
 						//Variables for agent, owner, owners and holdings
-			'agent': function() {
-				if(isCompanyGame()) {
-					return 'president';
-				}
-				return 'player';
-			},
-			'entity': function() {
-				if(isCompanyGame()) {
-					return 'company';
-				}
-				return 'player';
-			},
-			'fowns': function() {
-				if(isCompanyGame()) {
-					return 'the company\'s';
-				}
-				return 'his';
-			},
-			'owns': function() {
-				if(isCompanyGame()) {
-					return 'its';
-				}
-				return 'his';
-			},
+		//	'agent': function() {
+		//		if(isCompanyGame()) {
+		//			return 'president';
+		//		}
+		//		return 'player';
+		//	},
+		//	'entity': function() {
+		//		if(isCompanyGame()) {
+		//			return 'company';
+		//		}
+		//		return 'player';
+		//	},
+		//	'fowns': function() {
+		//		if(isCompanyGame()) {
+		//			return 'the company\'s';
+		//		}
+		//		return 'his';
+		//	},
+		//	'owns': function() {
+		//		if(isCompanyGame()) {
+		//			return 'its';
+		//		}
+		//		return 'his';
+		//	},
 		};
 		params[world[0]] = {'I': true};
 		params[world[1]] = {'II': true};
