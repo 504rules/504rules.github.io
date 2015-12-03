@@ -127,7 +127,7 @@
 					{{#residents}}<p>Each transport trolley starts with 1 cargo hold and 3 movement points (MP). Each player places his transport trolley onto his capital and directly loads 1 good from there into his cargo hold.</p>{{/residents}}
 				{{/1.III}}
 				{{^1.III}}
-					<p>Each transport trolley starts with 1 cargo hold and 3 movement points (MP). Each player places his transport trolley onto his capital{{^8}} and directly loads 1 good from there into his cargo hold{{/8}}.</p>
+					<p>Each transport trolley starts with 1 cargo hold and 3 movement points (MP). Each {{agent}} places {{fowns}} transport trolley onto {{owns}} capital{{^8}} and directly loads 1 good from there into {{owns}} cargo hold{{/8}}.</p>
 				{{/1.III}}
 				{{#1.II}}<p>Place 1 each of the goods tiles on space "20" of the goods price board.</p>{{/1.II}}
 			{{/1}}
@@ -1659,6 +1659,18 @@
 			arr[j] = temp;
 		}
 	}
+	
+//	function isCompanyGame() {
+//		return world.indexOf('9') == 1 ||world.indexOf('9') == 0;
+//	}
+	function namesCompanyGame(ent) {
+		if(world.indexOf('9') == 1 ||world.indexOf('9') == 0) {
+			var nametokens = {'agent': 'president', 'ent': 'company', 'ownsf': 'the company\'s', 'owns': 'its'};
+		} else {
+			var nametokens = {'agent': 'player', 'ent': 'player', 'ownsf': 'his', 'owns': 'his'};
+		}
+		return ""; //nametokens[ent];
+	}
 
 	function load() {
 		var world = validate_world(window.location.hash.substr(1)) || ['1', '2', '3'];
@@ -1701,6 +1713,31 @@
 			'mapnum': {},
 			'order': priority_match([modules['I']['order'], modules['II']['order'], modules['III']['order']]),
 			'money': priority_match([modules['I']['money'], modules['II']['money'], modules['III']['money']]),
+						//Variables for agent, owner, owners and holdings
+		//	'agent': function() {
+		//		if(isCompanyGame()) {
+		//			return 'president';
+		//		}
+		//		return 'player';
+		//	},
+		//	'entity': function() {
+		//		if(isCompanyGame()) {
+		//			return 'company';
+		//		}
+		//		return 'player';
+		//	},
+		//	'fowns': function() {
+		//		if(isCompanyGame()) {
+		//			return 'the company\'s';
+		//		}
+		//		return 'his';
+		//	},
+		//	'owns': function() {
+		//		if(isCompanyGame()) {
+		//			return 'its';
+		//		}
+		//		return 'his';
+		//	},
 		};
 		params[world[0]] = {'I': true};
 		params[world[1]] = {'II': true};
