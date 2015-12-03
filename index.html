@@ -1,4 +1,4 @@
-<html>
+<html manifest="manifest.appcache">
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 	<title>504</title>
@@ -1770,5 +1770,26 @@
 	$(document).ready(load);
 	$(window).bind('hashchange', load);
 </script>
+<script>
+	// Via http://stackoverflow.com/questions/12556593/determining-a-page-is-outdated-on-github-pages
+	// Check if a new cache is available on page load.
+	window.addEventListener('load', function(e) {
+		var appCache = window.applicationCache;
+
+		if ( !appCache ) {
+			return;
+		}
+
+		appCache.addEventListener('updateready', function(e) {
+			if (appCache.status === appCache.UPDATEREADY) {
+				// Browser downloaded a new app cache.
+				// Swap it in and reload the page to get the new hotness.
+				appCache.swapCache();
+				window.location.reload();
+			}
+		}, false);
+	}, false);
+</script>
+
 </body>
 </html>
