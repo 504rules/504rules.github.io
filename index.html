@@ -755,10 +755,10 @@
 		{{/2}}
 		{{#4}}
 			<p>
-				All residents and settlements (including the headquarters in the capital) count as armies. The player attacks opponents with his residents, but defends his tiles with all his armies he has there.
-				{{#4.I}}If the capital is attacked, the headquarters defends itself last and counts as 3 armies. The free cities defend themselves with their barracks and militia.{{/4.I}}
-				{{^4.I}}{{#2}}If the capital is attacked, the headquarters defends itself last and counts as 3 armies. The free cities defend themselves with their barracks and militia.{{/2}}{{/4.I}}
-				{{^4.I}}{{^2}}{{#9.I}}If the capital is attacked, the headquarters defends itself last and counts as 3 armies. The free cities defend themselves with their barracks and militia.{{/9.I}}{{/2}}{{/4.I}}
+				All residents and settlements (including the headquarters in the capital) count as armies. The player attacks opponents with his residents, but defends his tiles with all his armies he has there. The free cities defend themselves with their barracks and militia.
+				{{#4.I}}If the capital is attacked, the headquarters defends itself last and counts as 3 armies. {{/4.I}}
+				{{^4.I}}{{#2}}If the capital is attacked, the headquarters defends itself last and counts as 3 armies.{{/2}}{{/4.I}}
+				{{^4.I}}{{^2}}{{#9.I}}If the capital is attacked, the headquarters defends itself last and counts as 3 armies.{{/9.I}}{{/2}}{{/4.I}}
 				{{^2}}{{^9.I}}{{#4.III}}The capital of another player cannot be attacked.{{/4.III}}{{/9.I}}{{/2}}
 				{{#4.II}}{{^2}}{{^9.I}}The capital of another player cannot be attacked.{{/9.I}}{{/2}}{{/4.II}}
 			</p>
