@@ -1658,7 +1658,18 @@
 			arr[j] = temp;
 		}
 	}
-
+	
+	function getNameTokens() {
+		var tokens;
+	//	if(this.world.indexOf('9') == 1 ||this.world.indexOf('9') == 0) {
+		if(1 == 0) {
+			tokens = {agent: 'president', ent: 'company', ownsf: 'the company\'s', owns: 'its'};
+		} else {
+			tokens = {agent: 'player', ent: 'player', ownsf: 'his', owns: 'his'};
+		}
+		return tokens;
+	}
+	
 	function load() {
 		var world = validate_world(window.location.hash.substr(1)) || ['1', '2', '3'];
 
@@ -1700,6 +1711,9 @@
 			'mapnum': {},
 			'order': priority_match([modules['I']['order'], modules['II']['order'], modules['III']['order']]),
 			'money': priority_match([modules['I']['money'], modules['II']['money'], modules['III']['money']]),
+			// create tokens
+			getNameTokens: getNameTokens,
+			'tokenNames': getNameTokens(),
 		};
 		params[world[0]] = {'I': true};
 		params[world[1]] = {'II': true};
