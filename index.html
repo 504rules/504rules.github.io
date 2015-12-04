@@ -1,15 +1,16 @@
-<html>
+<html manifest="manifest.appcache">
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  	<title>504</title>
-  	<script src="js/jquery-1.11.3.min.js"></script>
-  	<script src="js/mustache.min.js"></script>
-  	<script src="js/bootstrap.min.js"></script>
-  	<link rel="stylesheet" href="css/bootstrap.css">
-  	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
-  	<link rel="stylesheet" href="css/main.css" media="all">
-  	<style type="text/css">
-  	</style>
+	<title>504</title>
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<script src="js/mustache.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="css/main.css" media="all">
+	<link rel="apple-touch-icon" href="img/apple-touch-icon-180x180.png"/>
+	<style type="text/css">
+	</style>
 </head>
 <body>
 <div id="target">Loading...</div>
@@ -35,7 +36,7 @@
 	{{#9.II}}Stock Companies{{/9.II}}
 
 	{{#1.III}}on Journeys.{{/1.III}}
-	{{#2.III}}pressed for time.{{/2.III}}
+	{{#2.III}}Pressed for Time.{{/2.III}}
 	{{#3.III}}with a Bias to Individualism.{{/3.III}}
 	{{#4.III}}with Potential for Violence.{{/4.III}}
 	{{#5.III}}on the Way to the Unknown.{{/5.III}}
@@ -270,7 +271,7 @@
 			<div class="note col-md-4 col-xs-4">
 				<img src="img/example-2-ii.png" style="width: 100%">
 				<h2>Example Income:</h2>
-				<p>During his turn Paul placed first settlements on 1 field, 1 forest and city "5", additionally 1 settlement on city "1" where Rachel already has her settlement. He placed 1 resident each on top of both city cards. Now, he gets $90. $20 (base income for his capital) + $20 (1st settlements on field, forest and on city "5") + $50 (for his overall 2nd and 3rd resident on the city cards). Afterwards, he moves both residents to the bottom of the city cards.</p>
+				<p>During his turn Paul placed first settlements on 1 field, 1 forest and city "4", additionally 1 settlement on city "1" where Rachel already has her settlement. He placed 1 resident each on top of both city cards. Now, he gets $90. $20 (base income for his capital) + $20 (1st settlements on field, forest and on city "4") + $50 (for his overall 2nd and 3rd resident on the city cards). Afterwards, he moves both residents to the bottom of the city cards.</p>
 			</div>
 		{{/2.II}}
 		{{#3}}
@@ -330,7 +331,7 @@
 						<tr><th># of delivered goods of a single type</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5+</th></tr>
 						<tr><th>victory points (VP)</th><td>5 VP</td><td>9 VP</td><td>12 VP</td><td>14 VP</td><td>15 VP</td></tr>
 					</table>
-                                        <p>Additionally, the player gets 2 VP for each set containing all 5 different types of goods.</p>
+					<p>Additionally, the player gets 2 VP for each set containing all 5 different types of goods.</p>
 				</div>
 			{{/1.I}}
 		{{/1}}
@@ -753,14 +754,7 @@
 			{{/2.III}}
 		{{/2}}
 		{{#4}}
-			<p>
-				All residents and settlements (including the headquarters in the capital) count as armies. The player attacks opponents with his residents, but defends his tiles with all his armies he has there.
-				{{#4.I}}If the capital is attacked, the headquarters defends itself last and counts as 3 armies. The free cities defend themselves with their barracks and militia.{{/4.I}}
-				{{^4.I}}{{#2}}If the capital is attacked, the headquarters defends itself last and counts as 3 armies. The free cities defend themselves with their barracks and militia.{{/2}}{{/4.I}}
-				{{^4.I}}{{^2}}{{#9.I}}If the capital is attacked, the headquarters defends itself last and counts as 3 armies. The free cities defend themselves with their barracks and militia.{{/9.I}}{{/2}}{{/4.I}}
-				{{^2}}{{^9.I}}{{#4.III}}The capital of another player cannot be attacked.{{/4.III}}{{/9.I}}{{/2}}
-				{{#4.II}}{{^2}}{{^9.I}}The capital of another player cannot be attacked.{{/9.I}}{{/2}}{{/4.II}}
-			</p>
+			<p>All residents and settlements (including the headquarters in the capital) count as armies. The player attacks opponents with his residents, but defends his tiles with all his armies he has there.</p>
 			<p>
 				Only 1 player may have a settlement on a tile.
 				{{^4.III}}
@@ -770,22 +764,31 @@
 					{{/2}}
 				{{/4.III}}
 				{{#4.III}}As soon as the player moves a resident onto an opposing tile, a fight follows immediately, see <b>Fight Sequence</b>.{{/4.III}}
-				{{#2}}
-					If the capital of the defender is neutralized or conquered, the defender immediately chooses a new capital by replacing his settlement on one of his cities with his headquarters.
+			</p>
+			{{#8}}<p>There are no fights in cities, so any number of players may have their own trading houses there. The trading houses of free cities also count. If the player conquers a land tile, he also conquers an existing plant. If the land tile is neutralized, the plant remains abandoned for now.</p>{{/8}}
+			{{^8}}
+				{{^4.III}}{{#2}}
+					{{#3}}<p>If the attacker neutralizes an opposing city, 1 existing factory there is destroyed. If the attacker later conquers the city with 1 additional resident, he gets the remaining factories there.</p>{{/3}}
+					{{#4.II}}{{#9}}<p>If the attacking stock company conquers an opposing capital by immediately moving 1 additional active resident onto the neutralized city, it also conquers all other tiles of the defender by exchanging the armies with its own.{{#2.III}} If the attacking stock company neutralizes the last capital of the defender, it may conquer that capital immediately after the fight by moving 1 additional active resident onto the neutralized city.{{/2.III}} If the attacker only neutralizes the capital, the defender loses all of his tiles without the attacker conquering them. Afterwards the players lose all shares of the defeated stock company without substitution. The stock company starts anew and may be established again by the players in the next share round (SR).{{#1.1}} Place all delivered goods of that company separately next to the map, as they still count for the game end!{{/1.1}}</p>{{/9}}{{/4.II}}
+				{{/2}}{{/4.III}}
+				{{#4.III}}
+					{{#3}}<p>If the attacker neutralizes an opposing city, 1 existing factory there is destroyed. IF the attacker later conquers the city with 1 additional resident, he gets the remaining factories there.</p>{{/3}}
+					{{#9}}<p>If the attacking stock company conquers an opposing capital by immediately moving 1 additional active resident onto the neutralized city, it also conquers all other tiles of the defender by exchanging the armies with its own. If the attacker only neutralizes the capital, the defender loses all of his tiles without the attacker conquering them. Afterwards the players lose all shares of the defeated stock company without substitution. The stock company starts anew and may be established again by the players in the next share round (SR).{{#1.1}} Place all delivered goods of that company separately next to the map, as they still count for the game end!{{/1.1}}</p>{{/9}}
+				{{/4.III}}
+				<p>
+					{{#4.I}}If the capital is attacked, the headquarters defends itself last and counts as 3 armies. {{/4.I}}
+					{{^4.I}}{{#2}}If the capital is attacked, the headquarters defends itself last and counts as 3 armies.{{/2}}{{/4.I}}
+					{{^4.I}}{{^2}}{{#9.I}}If the capital is attacked, the headquarters defends itself last and counts as 3 armies.{{/9.I}}{{/2}}{{/4.I}}
+					{{^2}}{{^9.I}}{{#4.III}}The capital of another player cannot be attacked.{{/4.III}}{{/9.I}}{{/2}}
+					{{#4.II}}{{^2}}{{^9.I}}The capital of another player cannot be attacked.{{/9.I}}{{/2}}{{/4.II}}
+					{{#2}}
+						If the capital of the defender is neutralized or conquered, the defender immediately chooses a new capital by replacing his settlement on one of his cities with his headquarters.
 						{{#4.I}}If the defender does not control another city, the game ends, see <b>Game End</b>.{{/4.I}}
 						{{^4.I}}If the defender only controls the capital (and possibly additional land tiles), his capital cannot be attacked{{#9.I}} (exception, see below){{/9.I}}.{{/4.I}}
-				{{/2}}
-			</p>
-			{{^4.III}}{{#2}}
-				{{#3}}<p>If the attacker neutralizes an opposing city, 1 existing factory there is destroyed. If the attacker later conquers the city with 1 additional resident, he gets the remaining factories there.</p>{{/3}}
-				{{#8}}<p>There are no fights in cities, so any number of players may have their own trading houses there. If the player conquers a land tile, he also conquers an existing plant. If the land tile is neutralized, the plant remains abandoned for now.</p>{{/8}}
-				{{#4.II}}{{#9}}<p>If the attacking stock company conquers an opposing capital by immediately moving 1 additional active resident onto the neutralized city, it also conquers all other tiles of the defender by exchanging the armies with its own.{{#2.III}} If the attacking stock company neutralizes the last capital of the defender, it may conquer that capital immediately after the fight by moving 1 additional active resident onto the neutralized city.{{/2.III}} If the attacker only neutralizes the capital, the defender loses all of his tiles without the attacker conquering them. Afterwards the players lose all shares of the defeated stock company without substitution. The stock company starts anew and may be established again by the players in the next share round (SR).{{#1.1}} Place all delivered goods of that company separately next to the map, as they still count for the game end!{{/1.1}}</p>{{/9}}{{/4.II}}
-			{{/2}}{{/4.III}}
-			{{#4.III}}
-				{{#3}}<p>If the attacker neutralizes an opposing city, 1 existing factory there is destroyed. IF the attacker later conquers the city with 1 additional resident, he gets the remaining factories there.</p>{{/3}}
-				{{#8}}<p>There are no fights in cities, so any number of players may have their own trading houses there. If the player conquers a land tile, he also conquers an existing plant. If the land tile is neutralized, the plant remains abandoned for now.</p>{{/8}}
-				{{#9}}<p>If the attacking stock company conquers an opposing capital by immediately moving 1 additional active resident onto the neutralized city, it also conquers all other tiles of the defender by exchanging the armies with its own. If the attacker only neutralizes the capital, the defender loses all of his tiles without the attacker conquering them. Afterwards the players lose all shares of the defeated stock company without substitution. The stock company starts anew and may be established again by the players in the next share round (SR).{{#1.1}} Place all delivered goods of that company separately next to the map, as they still count for the game end!{{/1.1}}</p>{{/9}}
-			{{/4.III}}
+					{{/2}}
+					The free cities defend themselves with their barracks and militia.
+				</p>
+			{{/8}}
 		{{/4}}
 		{{#5.I}}<p>The player may explore and adjacent unknown space with 1 active resident. He places that resident back into his storage (except if it explores water, instead it is placed exhausted on the starting tile).</p>{{/5.I}}
 		{{#5.II}}
@@ -875,7 +878,7 @@
 		{{#1}}
 			{{^1.III}}<p>The player may transport 1 good of any type or up to 2 of his exhausted residents per cargo hold. He may load and unload his transport trolley any number of times. If he unloads goods on a land tile or a city, which has no demand for these goods{{#8}}{{^8.III}} (or without one of his trading houses){{/8.III}}{{/8}}, the goods remain there until any player loads them again onto his transport trolley.</p>{{/1.III}}
 			{{#1.III}}<p>The player may transport {{#8}}{{^8.III}}1 good of any type or {{/8.III}}{{/8}}up to 2 of his exhausted residents per cargo hold. He may load and unload his transport trolley any number of times.{{#8}}{{^8.III}}If he unloads goods on a land tile or a city, without one of his trading houses, the goods remain there until any player loads them again onto his transport trolley.{{/8.III}}{{/8}}</p>{{/1.III}}
-			<p>The player needs 1 MP to move his transport trolley from tile to tile; but he needs 2 MP for the movement from any tile up on each mountain.{{#residents}}{{^4}} The transport trolley with loaded residents may move through tiles without settlements of the player, which are empty or have opposing settlements and residents. If the player unloads residents on a tile without 1 of his settlements, 1 resident turns into 1 settlement.{{/4}}{{/residents}}</p>
+			<p>The player needs 1 MP to move his transport trolley from tile to tile; but he needs 2 MP for the movement from any tile up on each mountain.{{#residents}}{{^4}} The transport trolley with loaded residents may move through tiles without settlements of the player, which are empty or have opposing settlements and residents.{{/4}} If the player unloads residents on a tile without 1 of his settlements, 1 resident turns into 1 settlement.{{/residents}}</p>
 			{{^residents}}<p>The player may buy additional MP for his transport trolley, see the table <b>Prices for Additional Movement Points (MP)</b>.</p>{{/residents}}
 			{{#6}}<p>The player needs 0.5 MP per road, when moving his transport trolley on his roads.</p>{{/6}}
 			{{#4}}
@@ -888,7 +891,7 @@
 				{{#5.II}}<p>The player may place 1 settlement on a tile, when he arrives there with his transport trolley, see <b>Income</b> (This is a voluntary action. Because of the limited number of his settlements the player may pass on this action!).</p>{{/5.II}}
 				{{#7.III}}<p>The player may place 1 settlement on 1 tile, when he arrives there with his transport trolley. He counts the matching type of terrain on the majority board (This is a voluntary action. Because of the limited number of his settlements the player may pass on this action!)</p>{{/7.III}}
 			{{/residents}}
-			{{#2.I}}{{^residents}}<p>The player reaches cities with his transport trolley. In that case he moves his resident from that city to the matching city card.</p>{{/residents}}{{/2.I}}
+			{{#2.I}}{{^residents}}<p>The player reaches cities with his transport trolley. In that case he moves his resident from that city to the matching city card.{{#9.II}} Additionally, the player may place 1 settlement on a tile, when he moves there with his transport trolley, see below for Income (This is a voluntary action. Because of the limited number of his settlements the player may pass on this action!){{/9.II}}</p>{{/residents}}{{/2.I}}
 			{{#2.II}}
 				<p>The player reaches a city only with his transport trolley. In that case he places 1 resident from his storage on top of the matching city card.</p>
 				{{^residents}}<p>The player moves his resident from the city to the matching city card. Additionally, the player may place 1 settlement on a tile, when he moves there with his transport trolley, see below for Income (This is a voluntary action. Because of the limited number of his settlements the player may pass on this action!).</p>{{/residents}}
@@ -1762,8 +1765,8 @@
 			var entry = $("#worldno-entry");
 			if(entry.is(":visible")) {
 				entry.val(window.location.hash.substr(1))
-				     .focus()
-				     .select();
+					.focus()
+					.select();
 			} else {
 				update_world($("#worldno-entry").val());
 			}
@@ -1788,5 +1791,26 @@
 	$(document).ready(load);
 	$(window).bind('hashchange', load);
 </script>
+<script>
+	// Via http://stackoverflow.com/questions/12556593/determining-a-page-is-outdated-on-github-pages
+	// Check if a new cache is available on page load.
+	window.addEventListener('load', function(e) {
+		var appCache = window.applicationCache;
+
+		if ( !appCache ) {
+			return;
+		}
+
+		appCache.addEventListener('updateready', function(e) {
+			if (appCache.status === appCache.UPDATEREADY) {
+				// Browser downloaded a new app cache.
+				// Swap it in and reload the page to get the new hotness.
+				appCache.swapCache();
+				window.location.reload();
+			}
+		}, false);
+	}, false);
+</script>
+
 </body>
 </html>
