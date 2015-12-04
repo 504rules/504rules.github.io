@@ -1659,13 +1659,12 @@
 		}
 	}
 	
-	function getNameTokens() {
+	function getNameTokens(world) {
 		var tokens;
-	//	if(this.world.indexOf('9') == 1 ||this.world.indexOf('9') == 0) {
-		if(1 == 0) {
-			tokens = {agent: 'president', ent: 'company', fowns: 'the company\'s', owns: 'its'};
+		if(world.indexOf('9') == 1 ||world.indexOf('9') == 0) {
+			tokens = {'agent': 'president', 'ent': 'company', 'fowns': 'the company\'s', 'owns': 'its'};
 		} else {
-			tokens = {agent: 'player', ent: 'player', fowns: 'his', owns: 'his'};
+			tokens = {'agent': 'player', 'ent': 'player', 'fowns': 'his', 'owns': 'his'};
 		}
 		return tokens;
 	}
@@ -1713,11 +1712,11 @@
 			'money': priority_match([modules['I']['money'], modules['II']['money'], modules['III']['money']]),
 			// create tokens
 			getNameTokens: getNameTokens,
-			'tokenNames': getNameTokens(),
-			'agent': tokenNames.agent,
-			'ent': tokenNames.ent,
-			'fowns': tokenNames.fowns,
-			'owns': tokenNames.owns
+			'tokenNames': getNameTokens(world),
+			'agent': 'tokenNames'['agent'],
+		//	'ent': tokenNames.ent,
+		//	'fowns': tokenNames.fowns,
+		//	'owns': tokenNames.owns
 		};
 		params[world[0]] = {'I': true};
 		params[world[1]] = {'II': true};
