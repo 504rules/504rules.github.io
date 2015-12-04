@@ -754,14 +754,7 @@
 			{{/2.III}}
 		{{/2}}
 		{{#4}}
-			<p>
-				All residents and settlements (including the headquarters in the capital) count as armies. The player attacks opponents with his residents, but defends his tiles with all his armies he has there. The free cities defend themselves with their barracks and militia.
-				{{#4.I}}If the capital is attacked, the headquarters defends itself last and counts as 3 armies. {{/4.I}}
-				{{^4.I}}{{#2}}If the capital is attacked, the headquarters defends itself last and counts as 3 armies.{{/2}}{{/4.I}}
-				{{^4.I}}{{^2}}{{#9.I}}If the capital is attacked, the headquarters defends itself last and counts as 3 armies.{{/9.I}}{{/2}}{{/4.I}}
-				{{^2}}{{^9.I}}{{#4.III}}The capital of another player cannot be attacked.{{/4.III}}{{/9.I}}{{/2}}
-				{{#4.II}}{{^2}}{{^9.I}}The capital of another player cannot be attacked.{{/9.I}}{{/2}}{{/4.II}}
-			</p>
+			<p>All residents and settlements (including the headquarters in the capital) count as armies. The player attacks opponents with his residents, but defends his tiles with all his armies he has there.</p>
 			<p>
 				Only 1 player may have a settlement on a tile.
 				{{^4.III}}
@@ -771,22 +764,31 @@
 					{{/2}}
 				{{/4.III}}
 				{{#4.III}}As soon as the player moves a resident onto an opposing tile, a fight follows immediately, see <b>Fight Sequence</b>.{{/4.III}}
-				{{#2}}
-					If the capital of the defender is neutralized or conquered, the defender immediately chooses a new capital by replacing his settlement on one of his cities with his headquarters.
+			</p>
+			{{#8}}<p>There are no fights in cities, so any number of players may have their own trading houses there. The trading houses of free cities also count. If the player conquers a land tile, he also conquers an existing plant. If the land tile is neutralized, the plant remains abandoned for now.</p>{{/8}}
+			{{^8}}
+				{{^4.III}}{{#2}}
+					{{#3}}<p>If the attacker neutralizes an opposing city, 1 existing factory there is destroyed. If the attacker later conquers the city with 1 additional resident, he gets the remaining factories there.</p>{{/3}}
+					{{#4.II}}{{#9}}<p>If the attacking stock company conquers an opposing capital by immediately moving 1 additional active resident onto the neutralized city, it also conquers all other tiles of the defender by exchanging the armies with its own.{{#2.III}} If the attacking stock company neutralizes the last capital of the defender, it may conquer that capital immediately after the fight by moving 1 additional active resident onto the neutralized city.{{/2.III}} If the attacker only neutralizes the capital, the defender loses all of his tiles without the attacker conquering them. Afterwards the players lose all shares of the defeated stock company without substitution. The stock company starts anew and may be established again by the players in the next share round (SR).{{#1.1}} Place all delivered goods of that company separately next to the map, as they still count for the game end!{{/1.1}}</p>{{/9}}{{/4.II}}
+				{{/2}}{{/4.III}}
+				{{#4.III}}
+					{{#3}}<p>If the attacker neutralizes an opposing city, 1 existing factory there is destroyed. IF the attacker later conquers the city with 1 additional resident, he gets the remaining factories there.</p>{{/3}}
+					{{#9}}<p>If the attacking stock company conquers an opposing capital by immediately moving 1 additional active resident onto the neutralized city, it also conquers all other tiles of the defender by exchanging the armies with its own. If the attacker only neutralizes the capital, the defender loses all of his tiles without the attacker conquering them. Afterwards the players lose all shares of the defeated stock company without substitution. The stock company starts anew and may be established again by the players in the next share round (SR).{{#1.1}} Place all delivered goods of that company separately next to the map, as they still count for the game end!{{/1.1}}</p>{{/9}}
+				{{/4.III}}
+				<p>
+					{{#4.I}}If the capital is attacked, the headquarters defends itself last and counts as 3 armies. {{/4.I}}
+					{{^4.I}}{{#2}}If the capital is attacked, the headquarters defends itself last and counts as 3 armies.{{/2}}{{/4.I}}
+					{{^4.I}}{{^2}}{{#9.I}}If the capital is attacked, the headquarters defends itself last and counts as 3 armies.{{/9.I}}{{/2}}{{/4.I}}
+					{{^2}}{{^9.I}}{{#4.III}}The capital of another player cannot be attacked.{{/4.III}}{{/9.I}}{{/2}}
+					{{#4.II}}{{^2}}{{^9.I}}The capital of another player cannot be attacked.{{/9.I}}{{/2}}{{/4.II}}
+					{{#2}}
+						If the capital of the defender is neutralized or conquered, the defender immediately chooses a new capital by replacing his settlement on one of his cities with his headquarters.
 						{{#4.I}}If the defender does not control another city, the game ends, see <b>Game End</b>.{{/4.I}}
 						{{^4.I}}If the defender only controls the capital (and possibly additional land tiles), his capital cannot be attacked{{#9.I}} (exception, see below){{/9.I}}.{{/4.I}}
-				{{/2}}
-			</p>
-			{{^4.III}}{{#2}}
-				{{#3}}<p>If the attacker neutralizes an opposing city, 1 existing factory there is destroyed. If the attacker later conquers the city with 1 additional resident, he gets the remaining factories there.</p>{{/3}}
-				{{#8}}<p>There are no fights in cities, so any number of players may have their own trading houses there. If the player conquers a land tile, he also conquers an existing plant. If the land tile is neutralized, the plant remains abandoned for now.</p>{{/8}}
-				{{#4.II}}{{#9}}<p>If the attacking stock company conquers an opposing capital by immediately moving 1 additional active resident onto the neutralized city, it also conquers all other tiles of the defender by exchanging the armies with its own.{{#2.III}} If the attacking stock company neutralizes the last capital of the defender, it may conquer that capital immediately after the fight by moving 1 additional active resident onto the neutralized city.{{/2.III}} If the attacker only neutralizes the capital, the defender loses all of his tiles without the attacker conquering them. Afterwards the players lose all shares of the defeated stock company without substitution. The stock company starts anew and may be established again by the players in the next share round (SR).{{#1.1}} Place all delivered goods of that company separately next to the map, as they still count for the game end!{{/1.1}}</p>{{/9}}{{/4.II}}
-			{{/2}}{{/4.III}}
-			{{#4.III}}
-				{{#3}}<p>If the attacker neutralizes an opposing city, 1 existing factory there is destroyed. IF the attacker later conquers the city with 1 additional resident, he gets the remaining factories there.</p>{{/3}}
-				{{#8}}<p>There are no fights in cities, so any number of players may have their own trading houses there. If the player conquers a land tile, he also conquers an existing plant. If the land tile is neutralized, the plant remains abandoned for now.</p>{{/8}}
-				{{#9}}<p>If the attacking stock company conquers an opposing capital by immediately moving 1 additional active resident onto the neutralized city, it also conquers all other tiles of the defender by exchanging the armies with its own. If the attacker only neutralizes the capital, the defender loses all of his tiles without the attacker conquering them. Afterwards the players lose all shares of the defeated stock company without substitution. The stock company starts anew and may be established again by the players in the next share round (SR).{{#1.1}} Place all delivered goods of that company separately next to the map, as they still count for the game end!{{/1.1}}</p>{{/9}}
-			{{/4.III}}
+					{{/2}}
+					The free cities defend themselves with their barracks and militia.
+				</p>
+			{{/8}}
 		{{/4}}
 		{{#5.I}}<p>The player may explore and adjacent unknown space with 1 active resident. He places that resident back into his storage (except if it explores water, instead it is placed exhausted on the starting tile).</p>{{/5.I}}
 		{{#5.II}}
