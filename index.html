@@ -117,7 +117,6 @@
 	<div class="row section">
 		<div class="col-md-2 col-xs-2"><h1>Game Preparation</h1></div>
 		<div class="col-md-10 col-xs-10">
-			<p>Test {{agent}} {{ent}} {{fowns}} {{owns}}</p>
 			{{#1}}
 				{{^1.III}}
 					<p>Display cities with their goods side atop. {{^8}}Place 4 goods onto each city, matching the small circular symbol.{{/8}}{{#8}}The cities remain empty.{{/8}}</p>
@@ -1662,17 +1661,7 @@
 			arr[j] = temp;
 		}
 	}
-	
-	function getNameTokens(world) {
-		var tokens;
-		if(world.indexOf('9') == 1 ||world.indexOf('9') == 0) {
-			tokens = {'agent': 'president', 'ent': 'company', 'fowns': 'the company\'s', 'owns': 'its'};
-		} else {
-			tokens = {'agent': 'player', 'ent': 'player', 'fowns': 'his', 'owns': 'his'};
-		}
-		return tokens;
-	}
-	
+
 	function load() {
 		var world = validate_world(window.location.hash.substr(1)) || ['1', '2', '3'];
 
@@ -1714,13 +1703,6 @@
 			'mapnum': {},
 			'order': priority_match([modules['I']['order'], modules['II']['order'], modules['III']['order']]),
 			'money': priority_match([modules['I']['money'], modules['II']['money'], modules['III']['money']]),
-			// create tokens
-			getNameTokens: getNameTokens,
-			'tokenNames': getNameTokens(world),
-			'agent': 'tokenNames'['agent'],
-			'ent': 'tokenNames'['ent'],
-			'fowns': 'tokenNames'['fowns'],
-			'owns': 'tokenNames'['owns']
 		};
 		params[world[0]] = {'I': true};
 		params[world[1]] = {'II': true};
