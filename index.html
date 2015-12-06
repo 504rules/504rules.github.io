@@ -118,7 +118,6 @@
 	<div class="row section">
 		<div class="col-md-2 col-xs-2"><h1>Game Preparation</h1></div>
 		<div class="col-md-10 col-xs-10">
-			//map setup
 			<p>
 				{{#5}}Place all map tiles in separate stacks in a row as follows: city, water, grassland, forest, field, mountain and desert. {{^1.III}}Lay out the cities in a numerical ascending stack - lowest numbered city on top, city "10" on bottom.{{^8}} Place 4 goods onto each city, matching the small circular symbol.{{/8}}{{/1.III}}{{/5}}
 				Lay out the map {{map.value}}.
@@ -134,7 +133,6 @@
 					{{/1}}{{/8.III}}
 				{{/8}}
 			</p>
-			//other central setup
 			{{^7}}
 				{{#6.I}}
 					<p>Place the majority board next to the game map with the column for deserts showing and place the 6 marking tokens for each player below this board.</p>
@@ -214,7 +212,6 @@
 			{{#2}}{{^2.III}}
 					<p>Place the 10 city cards face up next to the map.</p>
 			{{/2.III}}{{/2}}
-			// player setup
 			{{#6}}
 				<p>Each {{owner}} gets 19 roads in his color. If necessary the {{agent}}s may build more roads and need to use suitable replacement parts for these additional roads.</p>
 			{{/6}}
@@ -245,11 +242,8 @@
 				{{^8}}<p>Place 1 barrack and 1 militia on all free cities, which are not chosen as capitals.</p>{{/8}}
 			{{/4}}
 			{{#2}}{{^2.III}}
-					<p>To mark the chosen capitals, place 1 settlement of each player onto the matching city cards.</p>
-					{{^residents}}<p>The players place their 9 residents on the 9 cities, which they did not choose as their own capitals.</p>{{/residents}}
-			{{/2.III}}{{/2}}			{{#2}}{{^2.III}}
-					<p>To mark the chosen capitals, place 1 settlement of each player onto the matching city cards.</p>
-					{{^residents}}<p>The players place their 9 residents on the 9 cities, which they did not choose as their own capitals.</p>{{/residents}}
+					<p>To mark the chosen capitals, place 1 settlement of each {{owner}} onto the matching city cards.</p>
+					{{^residents}}<p>The {{agent}}s place their{{#9}}{{^9.III}} companies'{{/9.III}}{{/9}} 9 residents on the 9 cities, which they did not choose as their capitals.</p>{{/residents}}
 			{{/2.III}}{{/2}}
 			{{#1}}
 				{{#1.III}}
