@@ -117,6 +117,7 @@
 	<div class="row section">
 		<div class="col-md-2 col-xs-2"><h1>Game Preparation</h1></div>
 		<div class="col-md-10 col-xs-10">
+			<p>Test {{agent}} {{ent}} {{fowns}} {{owns}}</p>
 			{{#1}}
 				{{^1.III}}
 					<p>Display cities with their goods side atop. {{^8}}Place 4 goods onto each city, matching the small circular symbol.{{/8}}{{#8}}The cities remain empty.{{/8}}</p>
@@ -1662,10 +1663,9 @@
 		}
 	}
 	
-	function getNameTokens() {
+	function getNameTokens(world) {
 		var tokens;
-	//	if(this.world.indexOf('9') == 1 ||this.world.indexOf('9') == 0) {
-		if(1 == 0) {
+		if(world.indexOf('9') == 1 ||world.indexOf('9') == 0) {
 			tokens = {agent: 'president', ent: 'company', fowns: 'the company\'s', owns: 'its'};
 		} else {
 			tokens = {agent: 'player', ent: 'player', fowns: 'his', owns: 'his'};
@@ -1716,17 +1716,16 @@
 			'money': priority_match([modules['I']['money'], modules['II']['money'], modules['III']['money']]),
 			// create tokens
 			getNameTokens: getNameTokens,
-			'tokenNames': getNameTokens(),
-			'agent': tokenNames.agent,
-			'ent': tokenNames.ent,
-			'fowns': tokenNames.fowns,
-			'owns': tokenNames.owns
+			'tokenNames': getNameTokens(world)
 		};
 		params[world[0]] = {'I': true};
 		params[world[1]] = {'II': true};
 		params[world[2]] = {'III': true};
 		params['mapnum'][params.map.value] = true;
-
+		params['agent'] = params.tokenNames['agent'];
+		params['ent'] = params.tokenNames['ent'];
+		params['fowns'] = params.tokenNames['fowns'];
+		params['owns'] = params.tokenNames['owns'];
 		// Run pre-render hooks and assemble the list of parts
 		var game_parts = {};
 		$.map(['I', 'II', 'III'], function(i) {
