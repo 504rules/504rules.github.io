@@ -117,39 +117,23 @@
 	<div class="row section">
 		<div class="col-md-2 col-xs-2"><h1>Game Preparation</h1></div>
 		<div class="col-md-10 col-xs-10">
-			{{#1}}
-				{{^1.III}}
-					<p>Display cities with their goods side atop. {{^8}}Place 4 goods onto each city, matching the small circular symbol.{{/8}}{{#8}}The cities remain empty.{{/8}}</p>
-					{{#5}}<p>Lay out the cities in a numerical ascending stack - lowest numbered city on top, city "10" on bottom. Place 4 goods onto each newly discovered city, matching the small circular symbol.</p>{{/5}}
-				{{/1.III}}
-				{{#1.III}}
-					{{^residents}}<p>Each transport trolley starts with 3 movement points (MP). Each player places his transport trolley onto this capital.</p>{{/residents}}
-					{{#residents}}<p>Each transport trolley starts with 1 cargo hold and 3 movement points (MP). Each player places his transport trolley onto his capital and directly loads 1 good from there into his cargo hold.</p>{{/residents}}
-				{{/1.III}}
-				{{^1.III}}
-					<p>Each transport trolley starts with 1 cargo hold and 3 movement points (MP). Each player places his transport trolley onto his capital{{^8}} and directly loads 1 good from there into his cargo hold{{/8}}.</p>
-				{{/1.III}}
-				{{#1.II}}<p>Place 1 each of the goods tiles on space "20" of the goods price board.</p>{{/1.II}}
-			{{/1}}
-			{{#2}}
-				{{^2.III}}
-					<p>Place the 10 city cards face up next to the map.</p>
-					<p>To mark the chosen capitals, place 1 settlement of each player onto the matching city cards.</p>
-					{{^residents}}<p>The players place their 9 residents on the 9 cities, which they did not choose as their own capitals.</p>{{/residents}}
-				{{/2.III}}
-			{{/2}}
-			{{#3}}
-				<p>Depending on the 3 modules take the appropriate privileges. 4♟ or 5 stock companies: Take 2 cards of each privilege. 3♟: First take 1 card of each privilege, shuffle them and remove half of them from the game. Then, add 1 card of each privilege to the remaining half. 2♟: Take 1 card of each privilege.</p>
-				<p>Shuffle the privileges separated by card backs I, II, III and place them in a single stack, so that the cards with the back I are on top, the cards with the back III are at the bottom.</p>
-				<p>Place the price token next to the map. Draw 1 privilege per player and place them in a face-up row to the right of the price token, so that the minimal bid for each privilege is $20.</p>
-				{{^3.III}}<p>Depending on the # of players place the matching player order cards and 1 resident of each player next to the map.</p>{{/3.III}}
-			{{/3}}
-			{{#5}}
-				<p>Place all map tiles in separate stacks in a row as follows: city, water, grassland, forest, field, mountain and desert.</p>
-			{{/5}}
-			{{#6}}
-				<p>Each player gets 19 roads in his color. If necessary the players may build more roads and need to use suitable replacement parts for these additional roads.</p>
-			{{/6}}
+			//map setup
+			<p>
+				{{#5}}Place all map tiles in separate stacks in a row as follows: city, water, grassland, forest, field, mountain and desert. {{^1.III}}Lay out the cities in a numerical ascending stack - lowest numbered city on top, city "10" on bottom.{{^8}} Place 4 goods onto each city, matching the small circular symbol.{{/8}}{{/1.III}}{{/5}}
+				Lay out the map {{map.value}}.
+				{{^1.III}}Display cities with their goods side atop. {{#8}}The cities remain empty of goods.{{/8}}{{/1.III}}
+				{{#8}}
+					{{^8.III}}
+						<p>Display land and water tiles with the goods side atop.</p>
+						<p>Deserts do not produce goods themselves (but see <span class="water-adjacent icon"></span>).</p>
+					{{/8.III}}
+					{{#8.III}}{{#1}}
+						<p>Display land and water tiles with the goods side atop.</p>
+						<p>Deserts do not produce goods themselves (but see <span class="water-adjacent icon"></span>).</p>
+					{{/1}}{{/8.III}}
+				{{/8}}
+			</p>
+			//other central setup
 			{{^7}}
 				{{#6.I}}
 					<p>Place the majority board next to the game map with the column for deserts showing and place the 6 marking tokens for each player below this board.</p>
@@ -174,6 +158,24 @@
 				{{/7.I}}
 				<p>Place the majority board next to the game map with the column for deserts showing and place the 6 marking tokens for each player below this board.</p>
 			{{/7}}
+			{{#1.II}}<p>Place the goods price board next to the game map and place 1 each of the goods tiles on space "20" of it.</p>{{/1.II}}
+			{{#9}}<p>
+				{{^9.III}}Prepare the game for 5 stock companies. {{/9.III}}
+				{{^1.II}}Place the share value board next to the game map. {{/1.II}}
+				{{#1.II}}The goods price board is used to track the prices of shares in addition to goods. {{/1.II}}
+				{{#9.II}}
+					The stock companies each get the following money for their company assets: blue & orange each get $100, white & purple each get $150, green gets $200.
+				{{/9.II}}
+				{{#9.III}}
+					Each player is CEO of a small private stock company and takes the president's share as his title deed. He places the remaining 8 shares with the dark side in front of himself. Mark the share values of all players at $20 on the share value{{#1.II}}/goods price{{/1.II}} board. {{^3}}{{^7.I}}Depending on the # of players lay out the matching player order cards and place 1 resident of each player next to these cards.{{/7.I}}{{/3}}
+				{{/9.III}}
+			</p>{{/9}}
+			{{#3}}
+				<p>Depending on the 3 modules take the appropriate privileges. 4♟ or 5 stock companies: Take 2 cards of each privilege. 3♟: First take 1 card of each privilege, shuffle them and remove half of them from the game. Then, add 1 card of each privilege to the remaining half. 2♟: Take 1 card of each privilege.</p>
+				<p>Shuffle the privileges separated by card backs I, II, III and place them in a single stack, so that the cards with the back I are on top, the cards with the back III are at the bottom.</p>
+				<p>Place the price token next to the map. Draw 1 privilege per player and place them in a face-up row to the right of the price token, so that the minimal bid for each privilege is $20.</p>
+				{{^3.III}}<p>Depending on the # of players place the matching player order cards and 1 resident of each player next to the map.</p>{{/3.III}}
+			{{/3}}
 			{{#2.III}}
 				{{^5.I}}{{^6}}{{^7}}
 					{{^9.I}}<p>Majority {{^4.I}}board and {{/4.I}}markers not needed in this combination.</p>{{/9.I}}
@@ -208,25 +210,13 @@
 					{{#8.II}}<p>Place 1 good of each type with $50 on it next to the map.</p>{{/8.II}}
 				{{/9.I}}
 			{{/2.III}}
-			{{#8}}
-				{{^8.III}}
-					<p>Display land and water tiles with the goods side atop.</p>
-					<p>Deserts do not produce goods themselves (but see <span class="water-adjacent icon"></span>).</p>
-				{{/8.III}}
-				{{#8.III}}{{#1}}
-					<p>Display land and water tiles with the goods side atop.</p>
-					<p>Deserts do not produce goods themselves (but see <span class="water-adjacent icon"></span>).</p>
-				{{/1}}{{/8.III}}
-			{{/8}}
-			{{#9.I}}
-				<p>Prepare the game for 5 stock companies.</p>
-			{{/9.I}}
-			{{#9.II}}
-				<p>Prepare the game for 5 stock companies. The stock companies each get the following money for their company assets: blue & orange each get $100, white & purple each get $150, green gets $200.</p>
-			{{/9.II}}
-			{{#9.III}}
-				<p>Each player is CEO of a small private stock company and takes the president's share as his title deed. He places the remaining 8 shares with the dark side in front of himself. Mark the share values of all players at $20 on the share value board. Depending on the # of players lay out the matching player order cards and place 1 resident of each player next to these cards.</p>
-			{{/9.III}}
+			{{#2}}{{^2.III}}
+					<p>Place the 10 city cards face up next to the map.</p>
+			{{/2.III}}{{/2}}
+			// player setup
+			{{#6}}
+				<p>Each {{owner}} gets 19 roads in his color. If necessary the {{agent}}s may build more roads and need to use suitable replacement parts for these additional roads.</p>
+			{{/6}}
 			{{#9}}{{^9.III}}
 				<p>Lay out the {{#9.II}}{{#7.I}}scoring{{/7.I}}{{^7.I}}player order{{/7.I}}{{/9.II}}{{^9.II}}player order{{/9.II}} cards for 5 companies for the business rounds (BR) and place 1 resident of each company next to these cards. 1 player gets the starting player card for the 1st share round (SR).</p>
 			{{/9.III}}{{/9}}
@@ -238,7 +228,7 @@
 				{{/order.clockwise}}
 			</p>
 			{{#1}}{{^1.III}}
-					<p>When placing capitals players must choose cities that offer different types of goods.</p>
+				<p>When placing capitals {{agent}}s must choose cities that offer different types of goods.</p>
 			{{/1.III}}{{/1}}
 			{{#4}}
 				{{#9}}
@@ -253,6 +243,22 @@
 				{{/8}}
 				{{^8}}<p>Place 1 barrack and 1 militia on all free cities, which are not chosen as capitals.</p>{{/8}}
 			{{/4}}
+			{{#2}}{{^2.III}}
+					<p>To mark the chosen capitals, place 1 settlement of each player onto the matching city cards.</p>
+					{{^residents}}<p>The players place their 9 residents on the 9 cities, which they did not choose as their own capitals.</p>{{/residents}}
+			{{/2.III}}{{/2}}			{{#2}}{{^2.III}}
+					<p>To mark the chosen capitals, place 1 settlement of each player onto the matching city cards.</p>
+					{{^residents}}<p>The players place their 9 residents on the 9 cities, which they did not choose as their own capitals.</p>{{/residents}}
+			{{/2.III}}{{/2}}
+			{{#1}}
+				{{#1.III}}
+					{{^residents}}<p>Each transport trolley starts with 3 movement points (MP). Each {{agent}} places {{fowns}} transport trolley onto {{owns}} capital.</p>{{/residents}}
+					{{#residents}}<p>Each transport trolley starts with 1 cargo hold and 3 movement points (MP). Each {{agent}} places {{fowns}} transport trolley onto {{owns}} capital and directly loads 1 good from there into {{owns}} cargo hold.</p>{{/residents}}
+				{{/1.III}}
+				{{^1.III}}
+					<p>Each transport trolley starts with 1 cargo hold and 3 movement points (MP). Each {{agent}} places {{fowns}} transport trolley onto {{owns}} capital{{^8}} and directly loads 1 good from there into {{owns}} cargo hold{{/8}}.</p>
+				{{/1.III}}	
+			{{/1}}	
 		</div>
 	</div>
 	{{#capture}}
@@ -1661,7 +1667,17 @@
 			arr[j] = temp;
 		}
 	}
-
+	
+	function getNameTokens(world) {
+		var tokens;
+		if(world.indexOf('9') == 1 ||world.indexOf('9') == 0) {
+			tokens = {agent: 'president', owner: 'company', fowns: 'the company\'s', owns: 'its'};
+		} else {
+			tokens = {agent: 'player', owner: 'player', fowns: 'his', owns: 'his'};
+		}
+		return tokens;
+	}
+	
 	function load() {
 		var world = validate_world(window.location.hash.substr(1)) || ['1', '2', '3'];
 
@@ -1703,12 +1719,18 @@
 			'mapnum': {},
 			'order': priority_match([modules['I']['order'], modules['II']['order'], modules['III']['order']]),
 			'money': priority_match([modules['I']['money'], modules['II']['money'], modules['III']['money']]),
+			// create tokens
+			getNameTokens: getNameTokens,
+			'tokenNames': getNameTokens(world)
 		};
 		params[world[0]] = {'I': true};
 		params[world[1]] = {'II': true};
 		params[world[2]] = {'III': true};
 		params['mapnum'][params.map.value] = true;
-
+		params['agent'] = params.tokenNames['agent'];
+		params['owner'] = params.tokenNames['owner'];
+		params['fowns'] = params.tokenNames['fowns'];
+		params['owns'] = params.tokenNames['owns'];
 		// Run pre-render hooks and assemble the list of parts
 		var game_parts = {};
 		$.map(['I', 'II', 'III'], function(i) {
