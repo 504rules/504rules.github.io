@@ -1661,7 +1661,17 @@
 			arr[j] = temp;
 		}
 	}
-
+	
+	function getNameTokens(world) {
+		var tokens;
+		if(world.indexOf('9') == 1 ||world.indexOf('9') == 0) {
+			tokens = {agent: 'president', ent: 'company', fowns: 'the company\'s', owns: 'its'};
+		} else {
+			tokens = {agent: 'player', ent: 'player', fowns: 'his', owns: 'his'};
+		}
+		return tokens;
+	}
+	
 	function load() {
 		var world = validate_world(window.location.hash.substr(1)) || ['1', '2', '3'];
 
@@ -1703,12 +1713,18 @@
 			'mapnum': {},
 			'order': priority_match([modules['I']['order'], modules['II']['order'], modules['III']['order']]),
 			'money': priority_match([modules['I']['money'], modules['II']['money'], modules['III']['money']]),
+			// create tokens
+			getNameTokens: getNameTokens,
+			'tokenNames': getNameTokens(world)
 		};
 		params[world[0]] = {'I': true};
 		params[world[1]] = {'II': true};
 		params[world[2]] = {'III': true};
 		params['mapnum'][params.map.value] = true;
-
+		params['agent'] = params.tokenNames['agent'];
+		params['ent'] = params.tokenNames['ent'];
+		params['fowns'] = params.tokenNames['fowns'];
+		params['owns'] = params.tokenNames['owns'];
 		// Run pre-render hooks and assemble the list of parts
 		var game_parts = {};
 		$.map(['I', 'II', 'III'], function(i) {
