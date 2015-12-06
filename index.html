@@ -13,7 +13,8 @@
 	</style>
 </head>
 <body>
-<div id="target">Loading...</div>
+<div id="target_head">Loading Head...</div>
+<div id="target_main">Loading Main...</div>
 <script id="name-template" type="x-tmpl-mustache">
 	{{#1.I}}The World of Traveling{{/1.I}}
 	{{#2.I}}The World of Restless{{/2.I}}
@@ -45,7 +46,7 @@
 	{{#8.III}}with Production Needs.{{/8.III}}
 	{{#9.III}}by External Financing.{{/9.III}}
 </script>
-<script id="template" type="x-tmpl-mustache">
+<script id="template_head" type="x-tmpl-mustache">
 	<div class="container">
 	<div class="row name">
 		<div class="col-md-12 col-xs-12">
@@ -604,6 +605,8 @@
 		{{/9.III}}
 	</div>
 	</div>
+</script>
+<script id="template_main" type="x-tmpl-mustache">
 	<div class="container">
 
 	{{#9}}{{^9.III}}
@@ -1681,7 +1684,7 @@
 	function load() {
 		var world = validate_world(window.location.hash.substr(1)) || ['1', '2', '3'];
 
-		var template = $('#template').html();
+		var template = $('#template_head').html();
 		
 		var modules = {
 			'I': $.extend(true, {}, module_defs[world[0]]['I']),
@@ -1761,7 +1764,83 @@
 		$("title").text(params['long_name'])
 
 		var rendered = Mustache.render(template, params);
-		$("#target").html(rendered);
+		$("#target_head").html(rendered);
+		
+		// Render Main
+		
+		template = $('#template_main').html();
+		
+		capture_stack = [];
+		params = {
+			'capture': function() {
+				return function(template, render) {
+					var rendered = render(template).trim();
+					if(rendered.length > 0)
+						capture_stack.push(rendered);
+					return '';
+				};
+			},
+			'hascapture': function() {
+				return function(template, render) {
+					if(capture_stack.length > 0) {
+						return render(template);
+					} else {
+						return '';
+					}
+				};
+			},
+			'captured': function() {
+				return capture_stack.pop();
+			},
+			'world': world,
+			'module': modules,
+			'residents': modules['I']['residents'] || modules['II']['residents'] || modules['III']['residents'] || world.indexOf('1') == -1,
+			'hurry': world.indexOf('2') != -1 || world.indexOf('8') != -1,
+			'map': priority_match([modules['I']['map'], modules['II']['map'], modules['III']['map']]),
+			'mapnum': {},
+			'order': priority_match([modules['I']['order'], modules['II']['order'], modules['III']['order']]),
+			'money': priority_match([modules['I']['money'], modules['II']['money'], modules['III']['money']]),
+			// create tokens
+			getNameTokens: getNameTokens,
+			'tokenNames': getNameTokens(world)
+		};
+		params[world[0]] = {'I': true};
+		params[world[1]] = {'II': true};
+		params[world[2]] = {'III': true};
+		params['mapnum'][params.map.value] = true;
+		params['agent'] = params.tokenNames['agent'];
+		params['owner'] = params.tokenNames['owner'];
+		params['fowns'] = params.tokenNames['fowns'];
+		params['owns'] = params.tokenNames['owns'];
+		// Run pre-render hooks and assemble the list of parts
+		game_parts = {};
+		$.map(['I', 'II', 'III'], function(i) {
+			if(modules[i]['before_render'] != undefined)
+				modules[i]['before_render'](params, modules[i]);
+
+			$.map(modules[i]['parts'], function(value, key) {
+				game_parts[key] = Math.min(
+					(game_parts[key] || 0) + value,
+					parts[key]['max']);
+			});
+		});
+		part_list = [];
+		$.map(game_parts, function(value, key) {
+			var partinfo = parts[key];
+			part_list.push({
+				'name': partinfo.name,
+				'id': partinfo.id==undefined?key:partinfo.id,
+				'count': value,
+			});
+		});
+		part_list.sort(function(a, b) {
+			return a['id'] - b['id'];
+		});
+		params['parts'] = part_list;
+
+		rendered = Mustache.render(template, params);
+		$("#target_main").html(rendered);
+		
 
 		$("#editbutton").click(function() {
 			$("#worldno-entry, #worldno").toggle();
