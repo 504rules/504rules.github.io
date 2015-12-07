@@ -172,19 +172,6 @@
 				{{/6.II}}
 			{{/7}}
 			{{#7}}
-				{{#7.I}}
-					{{^9.II}}
-						<p>2♟, 3♟, 4♟: Depending on the # of players, take the corresponding starting and scoring cards. Place the 2 starting cards next to the map. Then shuffle the corresponding scoring cards separated by their backs of I, II, III and place them in 3 face down rows next to the starting cards.</p>
-					{{/9.II}}
-					{{#9.II}}
-						<p>Possibly, not all 5 stock companies are always active. Thus, the players take the following cards for each business round (BR):</p>
-						<ul>
-							<li>1. & 2. BR: Choose the starting card matching the number of active stock companies.</li>
-							<li>3. BR: Take the scoring cards with back I. Shuffle the card "1st scoring" with a # of <span class="glyphicon glyphicon-ok"></span> cards, so there is a face down card for each active stock company.</li>
-							<li>4. & 5. BR: Accordingly use the scoring cards with the back II or III.</li>
-						</ul>
-					{{/9.II}}
-				{{/7.I}}
 				<p>Place the majority board next to the game map with the column for deserts showing and place the 6 marking tokens for each {{owner}} below this board.</p>
 			{{/7}}
 			{{#1.II}}<p>Place the goods price board next to the game map and place 1 each of the goods tiles on space "20" of it.</p>{{/1.II}}
@@ -202,8 +189,7 @@
 			{{#3}}
 				<p>Depending on the 3 modules take the appropriate privileges. 4♟ or 5 stock companies: Take 2 cards of each privilege. 3♟: First take 1 card of each privilege, shuffle them and remove half of them from the game. Then, add 1 card of each privilege to the remaining half. 2♟: Take 1 card of each privilege.</p>
 				<p>Shuffle the privileges separated by card backs I, II, III and place them in a single stack, so that the cards with the back I are on top, the cards with the back III are at the bottom.</p>
-				<p>Place the price token next to the map. Draw 1 privilege per player and place them in a face-up row to the right of the price token, so that the minimal bid for each privilege is $20.</p>
-				{{^3.III}}<p>Depending on the # of players place the matching player order cards and 1 resident of each player next to the map.</p>{{/3.III}}
+				<p>Place the price token next to the map. Draw 1 privilege per {{owner}} and place them in a face-up row to the right of the price token, so that the minimal bid for each privilege is $20.</p>
 			{{/3}}
 			{{#2.III}}
 				{{^5.I}}{{^6}}{{^7}}
@@ -252,7 +238,23 @@
 				{{#order.clockwise}}Players choose a start player, turns will proceed clockwise. {{^mapnum.1}}{{^mapnum.2}}{{^mapnum.3}}Players all place their capitals in the central city.{{/mapnum.3}}{{/mapnum.2}}{{/mapnum.1}}{{^mapnum.4}}{{^mapnum.5}}In reverse turn order players choose their capitals.{{/mapnum.5}}{{/mapnum.4}}{{/order.clockwise}}
 				{{^order.clockwise}}
 					{{#order.shares}}Players choose a start player for the first SR. Capitals are placed when companies are established.{{/order.shares}}
-					{{^order.shares}}Round based {{owner}} order as shown in Phase 1. {{^9.II}}Capitals are placed in Phase 1 of the first round.{{/9.II}}{{#9.II}}Capitals are placed when companies are established.{{/9.II}}{{/order.shares}}
+					{{^order.shares}}
+						Round based {{owner}} order as shown in Phase 1. {{^9.II}}Capitals are placed in Phase 1 of the first round.{{/9.II}}{{#9.II}}Capitals are placed when companies are established.{{/9.II}}
+						{{#order.income}}Depending on the # of players place the matching player order cards and 1 resident of each player next to the map.{{/order.income}}
+						{{#order.vp}}
+							{{^9.II}}
+								<p>2♟, 3♟, 4♟: Depending on the # of players, take the corresponding starting and scoring cards. Place the 2 starting cards next to the map. Then shuffle the corresponding scoring cards separated by their backs of I, II, III and place them in 3 face down rows next to the starting cards.</p>
+							{{/9.II}}
+							{{#9.II}}
+								<p>Possibly, not all 5 stock companies are always active. Thus, the players take the following cards for each business round (BR):</p>
+								<ul>
+									<li>1. & 2. BR: Choose the starting card matching the number of active stock companies.</li>
+									<li>3. BR: Take the scoring cards with back I. Shuffle the card "1st scoring" with a # of <span class="glyphicon glyphicon-ok"></span> cards, so there is a face down card for each active stock company.</li>
+									<li>4. & 5. BR: Accordingly use the scoring cards with the back II or III.</li>
+								</ul>
+							{{/9.II}}
+						{{/order.vp}}
+					{{/order.shares}}
 				{{/order.clockwise}}
 			</p>
 			{{#1}}{{^1.III}}
