@@ -1843,6 +1843,8 @@
 			update_world($("#worldno-entry").val());
 			$("#worldno-entry, #worldno").toggle();
 		});
+		
+		$('#randomize').on('click', function (e) { $("#menu").slideDown(100); });
 
 	}
 	
@@ -1854,7 +1856,6 @@
 			checkThree($("input[name='world\[\]']:checkbox:checked").map(function() { return this.value; }).get());
 		});
 		$('#menuclose').on('click', function (e) { $("#menu").slideUp(100); });
-		$('#randomize').on('click', function (e) { $("#menu").slideDown(100); });
 	});
 
 	
