@@ -315,7 +315,8 @@ table th {
 		page-break-inside: avoid;
 	}
 
-	#target {
+	#target_head,
+	#target_main {
 		background-color:#FFF;
 	}
 	
@@ -356,6 +357,8 @@ table th {
 		padding-bottom:0;
 	}
 	
-	#menu { display:none; }
+	#menu { 
+		display:none; 
+	}
 	
 }
