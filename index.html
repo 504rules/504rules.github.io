@@ -650,7 +650,7 @@
 		{{#3}}{{^3.III}}{{^9.I}}{{^7.I}}
 			<p>At game start, all players make a secret bid with their starting money ($0 is a valid bid). Starting with the highest bidder, each player chooses a position in the player order{{^9.II}}{{^mapnum.1}}{{^mapnum.2}}{{^mapnum.3}}, all capitals are placed in the central city.{{/mapnum.3}}{{/mapnum.2}}{{/mapnum.1}}{{^mapnum.4}}{{^mapnum.5}} and his capital on the map.{{/mapnum.5}}{{/mapnum.4}}{{/9.II}}{{#9.II}} for the first share round (SR).{{/9.II}} In case of a tie, randomly draw lots for the order of choice (the losers get $2 for each lost draw).</p>
 			{{#9.II}}<p>The stock company order for the 1st business round (BR) is determined in reverse order of establishment. If stock companies are only established in later SRs, just for once they are first in stock company order in the next BR!</p>{{/9.II}}
-			<p>Starting with the 2nd round, determine the {{^9.II}}player{{/9.II}}{{#9.II}}company{{/9.II}} order according to the income of the former round, from high to low (in case of a tie reverse the {{^9.II}}player{{/9.II}}{{#9.II}}company{{/9.II}} order of the former round for the tied {{^9.II}}players{{/9.II}}{{#9.II}}companies{{/9.II}}). According to the new {{^9.II}}player{{/9.II}}{{#9.II}}company{{/9.II}} order the {{^9.II}}players{{/9.II}}{{#9.II}}companies{{/9.II}} must pay taxes for their last income: The 1st {{^9.II}}player{{/9.II}}{{#9.II}}company{{/9.II}} pays 20%, the last pays 0%, and all other players pay 10% of their last income, see left for <b>Calculation of taxes</b>. Because of higher taxes the 1st {{^9.II}}player{{/9.II}}{{#9.II}}company{{/9.II}} may get a lower income compared to the 2nd.</p>
+			<p>Starting with the 2nd round, determine the {{owner}} order according to the income of the former round, from high to low (in case of a tie reverse the {{owner}} order of the former round for the tied {{owners}}). According to the new {{owner}} order the {{owners}} must pay taxes for their last income: The 1st {{owner}} pays 20%, the last pays 0%, and all other players pay 10% of their last income, see left for <b>Calculation of taxes</b>. Because of higher taxes the 1st {{owner}} may get a lower income compared to the 2nd.</p>
 		{{/7.I}}{{/9.I}}{{/3.III}}{{/3}}
 		{{#7.I}}
 			{{^9.II}}
@@ -659,8 +659,8 @@
 			{{#9.II}}
 				<p>The stock company order for the 1st business round (BR) is determined in <b>reverse</b> order of establishment. If stock companies are only established in later share rounds (SR), just for once they are first in stock company order in the next BR, if necessary in reverse order of establishment!</p>
 			{{/9.II}}
-			<p>After all players have taken one complete turn, the player order is readjusted. For the 2nd turn set the new player order by placing the residents on the spaces of the 2nd starting card and starting with the 3rd round separately on the face down scoring cards.</p>
-			<p>As long as the players do not have victory points (VP), simply reverse the player order of the former turn. As soon as the players have VP, the new player order is determined according to VP from few to most. The player with the fewest VP is new starting player, the player with most VP is last. In case of a tie reverse the player order of all concerned players of the former turn.</p>
+			<p>After all {{owners}} have taken one complete turn, the player order is readjusted. For the 2nd turn set the new {{owner}} order by placing the residents on the spaces of the 2nd starting card and starting with the 3rd round separately on the face down scoring cards.</p>
+			<p>As long as the {{owners}} do not have victory points (VP), simply reverse the {{owner}} order of the former turn. As soon as the {{owners}} have VP, the new {{owner}} order is determined according to VP from few to most. The {{owner}} with the fewest VP is new starting {{owner}}, the {{owner}} with most VP is last. In case of a tie reverse the {{owner}} order of all concerned {{owners}} of the former turn.</p>
 			{{#3.II}}<p>Starting with the 2nd round the income is taxed according to the money, but the player order according to VP. In case of a tie for highest income, the player must pay 20%, whose turn is now earlier in player order. In case of a tie for lowest income, the player pays no taxes, whose turn is now later in the player order.</p>{{/3.II}}
 		{{/7.I}}
 		{{#9.III}}{{^3}}{{^7.I}}
@@ -669,26 +669,20 @@
 				Starting with the 2nd round determine the player order according to the income of the former round, from low to high. In case of a tie simply reverse the player order of the concerned players.
 			</p>
 		{{/7.I}}{{/3}}{{/9.III}}
+		{{#company}}{{^3.I}}{{^7.I}}
+			<p>The order of the stock companies matches the actual share values from high to low. In case of a tie the order of the concerned companies matches the stack of share value markers from top to bottom.</p>
+			{{#3.II}}
+				<p>Starting with the 2nd round the income is taxed according to the companies with most to least income: The company with the highest income from the previous round pays 20% tax, the company with the with the lowest pays 0%, and all other players pay 10% of their last income, see above for <b>Calculation of taxes.</b> In the case of a tie, the company earlier in the turn order pays the higher tax rate. The company turn order continues to be determined according to the actual share value.</p>
+				<p>The stock companies pay taxes from their company assets. If they do not have enough money or are dead broke, they pay their remaining money. The presidents do not pay remaining taxes!</p>
+			{{/3.II}}
+		{{/7.I}}{{/3.I}}{{/company}}
 	{{/capture}}
 	{{#hascapture}}
 		<div class="row section">
-			<div class="col-md-2 col-xs-2"><h1>Phase 1: Player Order</h1></div>
+			<div class="col-md-2 col-xs-2"><h1>Phase 1: {{^company}}Player{{/company}}{{#company}}Company{{/company}} Order</h1></div>
 			<div class="col-md-10 col-xs-10">{{{captured}}}</div>
 		</div>
 	{{/hascapture}}
-
-	{{#company}}{{^3.I}}{{^7.I}}
-		<div class="row section">
-			<div class="col-md-2 col-xs-2"><h1>Phase 1: Company Order</h1></div>
-			<div class="col-md-10 col-xs-10">
-				<p>The order of the stock companies matches the actual share values from high to low. In case of a tie the order of the concerned companies matches the stack of share value markers from top to bottom.</p>
-				{{#3.II}}
-					<p>Starting with the 2nd round the income is taxed according to the companies with most to least income: The company with the highest income from the previous round pays 20% tax, the company with the with the lowest pays 0%, and all other players pay 10% of their last income, see above for <b>Calculation of taxes.</b> In the case of a tie, the company earlier in the turn order pays the higher tax rate. The company turn order continues to be determined according to the actual share value.</p>
-					<p>The stock companies pay taxes from their company assets. If they do not have enough money or are dead broke, they pay their remaining money. The presidents do not pay remaining taxes!</p>
-				{{/3.II}}
-			</div>
-		</div>
-	{{/7.I}}{{/3.I}}{{/company}}
 
 	{{#3}}{{^3.III}}
 		<div class="row section">
@@ -1668,9 +1662,9 @@
 	function getNameTokens(world) {
 		var tokens;
 		if(world.indexOf('9') == 1 ||world.indexOf('9') == 0) {
-			tokens = {agent: 'president', owner: 'company', fowns: 'the company\'s', owns: 'its', company: true};
+			tokens = {agent: 'president', owner: 'company', owners: 'companies', fowns: 'the company\'s', owns: 'its', company: true};
 		} else {
-			tokens = {agent: 'player', owner: 'player', fowns: 'his', owns: 'his', company: false};
+			tokens = {agent: 'player', owner: 'player', owners: 'players', fowns: 'his', owns: 'his', company: false};
 		}
 		return tokens;
 	}
@@ -1726,8 +1720,10 @@
 		params['mapnum'][params.map.value] = true;
 		params['agent'] = params.tokenNames['agent'];
 		params['owner'] = params.tokenNames['owner'];
+		params['owners'] = params.tokenNames['owners'];
 		params['fowns'] = params.tokenNames['fowns'];
 		params['owns'] = params.tokenNames['owns'];
+		params['company'] = params.tokenNames['company'];
 		// Run pre-render hooks and assemble the list of parts
 		var game_parts = {};
 		$.map(['I', 'II', 'III'], function(i) {
@@ -1802,6 +1798,7 @@
 		params['mapnum'][params.map.value] = true;
 		params['agent'] = params.tokenNames['agent'];
 		params['owner'] = params.tokenNames['owner'];
+		params['owners'] = params.tokenNames['owners'];
 		params['fowns'] = params.tokenNames['fowns'];
 		params['owns'] = params.tokenNames['owns'];
 		params['company'] = params.tokenNames['company'];
