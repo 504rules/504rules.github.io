@@ -1378,8 +1378,8 @@
 	}
 	
 	var shares_defs = {
-		"company": {agent: 'president', owner: 'company', fowns: 'the company\'s', owns: 'its'},
-		"player": {agent: 'player', owner: 'player', fowns: 'his', owns: 'his'}
+		"company": {agent: 'president', owner: 'company', owners:'companies' , fowns: 'the company\'s', owns: 'its', company: true},
+		"player": {agent: 'player', owner: 'player', owners:'players',  fowns: 'his', owns: 'his', company: false}
 	}
 
 	var module_defs = {
@@ -1716,7 +1716,7 @@
 	}
 	
 	function getNameTokens(world) {
-		if(world.indexOf('9') == 1) {
+		if(world.indexOf('9') == 1||world.indexOf('9') == 0) {
 			return "company";
 		}
 		return "player";
@@ -1764,8 +1764,10 @@
 			'money': priority_match([modules['I']['money'], modules['II']['money'], modules['III']['money']]),
 			'agent': shares_defs[getNameTokens(world)]['agent'],
 			'owner':shares_defs[getNameTokens(world)]['owner'],
+			'owners':shares_defs[getNameTokens(world)]['owners'],
 			'fowns':shares_defs[getNameTokens(world)]['fowns'],
 			'owns':shares_defs[getNameTokens(world)]['owns'],
+			'company':shares_defs[getNameTokens(world)]['company'],
 		};
 		
 		params[world[0]] = {'I': true};
