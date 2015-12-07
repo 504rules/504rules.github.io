@@ -1668,9 +1668,9 @@
 	function getNameTokens(world) {
 		var tokens;
 		if(world.indexOf('9') == 1 ||world.indexOf('9') == 0) {
-			tokens = {agent: 'president', owner: 'company', fowns: 'the company\'s', owns: 'its'};
+			tokens = {agent: 'president', owner: 'company', fowns: 'the company\'s', owns: 'its', company: true};
 		} else {
-			tokens = {agent: 'player', owner: 'player', fowns: 'his', owns: 'his'};
+			tokens = {agent: 'player', owner: 'player', fowns: 'his', owns: 'his', company: false};
 		}
 		return tokens;
 	}
@@ -1794,8 +1794,6 @@
 			'mapnum': {},
 			'order': priority_match([modules['I']['order'], modules['II']['order'], modules['III']['order']]),
 			'money': priority_match([modules['I']['money'], modules['II']['money'], modules['III']['money']]),
-			// create tokens
-			getNameTokens: getNameTokens,
 			'tokenNames': getNameTokens(world)
 		};
 		params[world[0]] = {'I': true};
@@ -1806,6 +1804,7 @@
 		params['owner'] = params.tokenNames['owner'];
 		params['fowns'] = params.tokenNames['fowns'];
 		params['owns'] = params.tokenNames['owns'];
+		params['company'] = params.tokenNames['company'];
 		// Run pre-render hooks and assemble the list of parts
 		game_parts = {};
 		$.map(['I', 'II', 'III'], function(i) {
