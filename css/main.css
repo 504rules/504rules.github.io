@@ -12,7 +12,8 @@
 	display:flex;
 }
 
-#target {
+#target_main,
+#target_head {
 	background-color:#ddd;
 }
 
