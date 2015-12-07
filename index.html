@@ -9,10 +9,40 @@
 	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
 	<link rel="stylesheet" href="css/main.css" media="all">
 	<link rel="apple-touch-icon" href="img/apple-touch-icon-180x180.png"/>
-	<style type="text/css">
-	</style>
+	<style type="text/css"></style>
 </head>
 <body>
+<div id="menu">
+	<form id="ModulesForm">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-9 col-xs-9">
+					<div class="row">
+						<div class="col-md-12 col-xs-12">
+							<p>Please pick your preferred modules:</p>
+						</div>
+					</div>
+					<div class="row modules">
+						<div class="col-md-4 col-xs-4 mod1"><label><input type="checkbox" name="world[]" value="1" checked />(1) Pick up & Deliver</label></div>
+						<div class="col-md-4 col-xs-4 mod2"><label><input type="checkbox" name="world[]" value="2" checked />(2) Race</label></div>
+						<div class="col-md-4 col-xs-4 mod3"><label><input type="checkbox" name="world[]" value="3" checked />(3) Privileges</label></div>
+						<div class="col-md-4 col-xs-4 mod4"><label><input type="checkbox" name="world[]" value="4" checked />(4) Military</label></div>
+						<div class="col-md-4 col-xs-4 mod5"><label><input type="checkbox" name="world[]" value="5" checked />(5) Exploring</label></div>
+						<div class="col-md-4 col-xs-4 mod6"><label><input type="checkbox" name="world[]" value="6" checked />(6) Roads</label></div>
+						<div class="col-md-4 col-xs-4 mod7"><label><input type="checkbox" name="world[]" value="7" checked />(7) Majorities</label></div>
+						<div class="col-md-4 col-xs-4 mod8"><label><input type="checkbox" name="world[]" value="8" checked />(8) Production</label></div>
+						<div class="col-md-4 col-xs-4 mod9"><label><input type="checkbox" name="world[]" value="9" checked />(9) Shares</label></div>
+					</div>
+					<div class="row">
+						<div class="col-md-12 col-xs-12">
+							<button type="button" id="selectnone">deselect all</button> <button type="button" id="selectall">select all</button> <button type="button" id="randomizer">randomize</button> <button type="button" id="menuclose">close</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
 <div id="target_head">Loading Head...</div>
 <div id="target_main">Loading Main...</div>
 <script id="name-template" type="x-tmpl-mustache">
@@ -729,7 +759,7 @@
 			<p>The player may only buy each type of privilege once. He may use his privileges immediately after purchase.</p>
 		{{/3.III}}
 		{{#1}}
-			<p>The player may buy exactly 1 upgrade for his transport trolley per turn, either a bigger cargo hold or more movement points, see table <b>Prices for Upgrades</b>.</p>
+			<p>The {{owner}} may buy exactly 1 upgrade for his transport trolley per turn, either a bigger cargo hold or more movement points, see table <b>Prices for Upgrades</b>.</p>
 		{{/1}}
 		{{#8.III}}
 			<p>Starting with the 2nd round the player may buy only at max 2 more residents than the # of plants he owns in each turn.</p>
@@ -1298,6 +1328,18 @@
 		return {'value': 4};
 	}
 
+	function randomizeWorlds (values) {
+		shuffle(values, 3);
+		update_world(values[0] + values[1] + values[2]);
+	}
+	function checkThree(values) {
+		if(values.length>=3) {
+			$('#randomizer').prop('disabled', false).css("opacity", "1");;
+		} else {
+			$('#randomizer').prop('disabled', true).css("opacity", "0.2");;
+		}
+	}
+	
 	var parts = {
 		'2': {'name': 'goods', 'max': 48},
 		'3': {'name': 'covering tokens', 'max': 30},
@@ -1658,14 +1700,27 @@
 	}
 
 	function shuffle(arr, num) {
-		if(num == undefined)
-			num = arr.length;
+		if(num == undefined) num = arr.length;
+		
+	/*
 		for(var i = 0; i < num; i++) {
 			var j = Math.floor(Math.random() * (arr.length - i - 1)) + i + 1;
 			var temp = arr[i];
 			arr[i] = arr[j];
 			arr[j] = temp;
 		}
+		*/
+		for (var i = arr.length - 1; i > 0; i--) {
+			var j = Math.floor(Math.random() * (i + 1));
+			var temp = arr[i];
+			arr[i] = arr[j];
+			arr[j] = temp;
+		}
+		
+		arr.slice(0,3);
+		
+		return arr;
+		
 	}
 	
 	function getNameTokens(world) {
@@ -1789,11 +1844,15 @@
 			$("#worldno-entry, #worldno").toggle();
 		});
 
-		$("#randomize").click(function() {
-			modules = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
-			shuffle(modules, 3);
-			update_world(modules[0] + modules[1] + modules[2])
-		})
+		$('#randomizer').on('click', function (e) { randomizeWorlds($("input[name='world\[\]']:checkbox:checked").map(function() { return this.value; }).get()); });
+		$('#selectall').on('click', function (e) { $("input[name='world\[\]']:checkbox").prop('checked', true); $('#randomizer').prop('disabled', false).css("opacity", "1"); });
+		$('#selectnone').on('click', function (e) { $("input[name='world\[\]']:checkbox:checked").prop('checked', false); $('#randomizer').prop('disabled', true).css("opacity", "0.2"); });
+		$("input[name='world\[\]']:checkbox").on('click', function (e) {
+			checkThree($("input[name='world\[\]']:checkbox:checked").map(function() { return this.value; }).get());
+		});
+		$('#menuclose').on('click', function (e) { $("#menu").slideUp(100); });
+		$('#randomize').on('click', function (e) { $("#menu").slideDown(100); });
+		
 	}
 	$(document).ready(load);
 	$(window).bind('hashchange', load);
