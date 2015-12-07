@@ -107,11 +107,11 @@
 					{{^mapnum.4}}{{^mapnum.5}}<p>Capitals chosen counter clockwise from last player to first</p>{{/mapnum.5}}{{/mapnum.4}}
 				{{/order.clockwise}}
 				{{#order.income}}
-					<h2>Round-based player order</h2>
+					<h2>Round-based {{owner}} order</h2>
 					<p>(according to income from high to low)</p>
 				{{/order.income}}
 				{{#order.vp}}
-					<h2>Round-based player order</h2>
+					<h2>Round-based {{owner}} order</h2>
 					<p>(according to victory points from fewest to most)</p>
 				{{/order.vp}}
 				{{#order.shares}}
@@ -140,50 +140,39 @@
 			</ul>
 		</div>
 	</div>
-	{{#9}}{{^9.III}}<div class="row warning">
+	{{#company}}<div class="row warning">
 		<div class="col-md-12 col-xs-12">
 			<p>IMPORTANT: Because of the complexity of the game rules you only find a summary of the most important details. The complete rules are in the rules booklet!</p>
 		</div>
-	</div>{{/9.III}}{{/9}}
+	</div>{{/company}}
 	<div class="row section">
 		<div class="col-md-2 col-xs-2"><h1>Game Preparation</h1></div>
 		<div class="col-md-10 col-xs-10">
-				{{#5}}<p>Place all map tiles in separate stacks in a row as follows: city, water, grassland, forest, field, mountain and desert. {{^1.III}}Lay out the cities in a numerical ascending stack - lowest numbered city on top, city "10" on bottom.{{^8}} Place 4 goods onto each city, matching the small circular symbol.{{/8}}{{/1.III}}</p>{{/5}}
+			{{#5}}Place all map tiles in separate stacks in a row as follows: city, water, grassland, forest, field, mountain and desert. {{^1.III}}Lay out the cities in a numerical ascending stack - lowest numbered city on top, city "10" on bottom.{{^8}} Place 4 goods onto each city, matching the small circular symbol.{{/8}}{{/1.III}}{{/5}}
+			<p>
 				Lay out the map {{map.value}}.
 				{{^1.III}}Display cities with their goods side atop. {{#8}}The cities remain empty of goods.{{/8}}{{/1.III}}
 				{{#8}}
 					{{^8.III}}
-						<p>Display land and water tiles with the goods side atop.</p>
-						<p>Deserts do not produce goods themselves (but see <span class="water-adjacent icon"></span>).</p>
+						Display land and water tiles with the goods side atop.
+						Deserts do not produce goods themselves (but see <span class="water-adjacent icon"></span>).
 					{{/8.III}}
 					{{#8.III}}{{#1}}
-						<p>Display land and water tiles with the goods side atop.</p>
-						<p>Deserts do not produce goods themselves (but see <span class="water-adjacent icon"></span>).</p>
+						Display land and water tiles with the goods side atop.
+						Deserts do not produce goods themselves (but see <span class="water-adjacent icon"></span>).
 					{{/1}}{{/8.III}}
 				{{/8}}
+			</p>
 			{{^7}}
 				{{#6.I}}
-					<p>Place the majority board next to the game map with the column for deserts showing and place the 6 marking tokens for each player below this board.</p>
+					<p>Place the majority board next to the game map with the column for deserts showing and place the 6 marking tokens for each {{owner}}}} below this board.</p>
 				{{/6.I}}
 				{{#6.II}}
-					<p>Place the majority board next to the game map with{{^2.III}}out{{/2.III}}{{#2.III}}{{^9.I}}{{^5.I}}out{{/5.I}}{{/9.I}}{{/2.III}} the column for deserts showing and place {{^2.III}}5 of the{{/2.III}}{{#2.III}}{{^9.I}}5 of the{{/9.I}}{{#9.I}}the 6{{/9.I}}{{/2.III}} marking tokens for each player below this board.</p>
+					<p>Place the majority board next to the game map with{{^2.III}}out{{/2.III}}{{#2.III}}{{^9.I}}{{^5.I}}out{{/5.I}}{{/9.I}}{{/2.III}} the column for deserts showing and place {{^2.III}}5 of the{{/2.III}}{{#2.III}}{{^9.I}}5 of the{{/9.I}}{{#9.I}}the 6{{/9.I}}{{/2.III}} marking tokens for each {{owner}} below this board.</p>
 				{{/6.II}}
 			{{/7}}
 			{{#7}}
-				{{#7.I}}
-					{{^9.II}}
-						<p>2♟, 3♟, 4♟: Depending on the # of players, take the corresponding starting and scoring cards. Place the 2 starting cards next to the map. Then shuffle the corresponding scoring cards separated by their backs of I, II, III and place them in 3 face down rows next to the starting cards.</p>
-					{{/9.II}}
-					{{#9.II}}
-						<p>Possibly, not all 5 stock companies are always active. Thus, the players take the following cards for each business round (BR):</p>
-						<ul>
-							<li>1. & 2. BR: Choose the starting card matching the number of active stock companies.</li>
-							<li>3. BR: Take the scoring cards with back I. Shuffle the card "1st scoring" with a # of <span class="glyphicon glyphicon-ok"></span> cards, so there is a face down card for each active stock company.</li>
-							<li>4. & 5. BR: Accordingly use the scoring cards with the back II or III.</li>
-						</ul>
-					{{/9.II}}
-				{{/7.I}}
-				<p>Place the majority board next to the game map with the column for deserts showing and place the 6 marking tokens for each player below this board.</p>
+				<p>Place the majority board next to the game map with the column for deserts showing and place the 6 marking tokens for each {{owner}} below this board.</p>
 			{{/7}}
 			{{#1.II}}<p>Place the goods price board next to the game map and place 1 each of the goods tiles on space "20" of it.</p>{{/1.II}}
 			{{#9}}<p>
@@ -200,8 +189,7 @@
 			{{#3}}
 				<p>Depending on the 3 modules take the appropriate privileges. 4♟ or 5 stock companies: Take 2 cards of each privilege. 3♟: First take 1 card of each privilege, shuffle them and remove half of them from the game. Then, add 1 card of each privilege to the remaining half. 2♟: Take 1 card of each privilege.</p>
 				<p>Shuffle the privileges separated by card backs I, II, III and place them in a single stack, so that the cards with the back I are on top, the cards with the back III are at the bottom.</p>
-				<p>Place the price token next to the map. Draw 1 privilege per player and place them in a face-up row to the right of the price token, so that the minimal bid for each privilege is $20.</p>
-				{{^3.III}}<p>Depending on the # of players place the matching player order cards and 1 resident of each player next to the map.</p>{{/3.III}}
+				<p>Place the price token next to the map. Draw 1 privilege per {{owner}} and place them in a face-up row to the right of the price token, so that the minimal bid for each privilege is $20.</p>
 			{{/3}}
 			{{#2.III}}
 				{{^5.I}}{{^6}}{{^7}}
@@ -215,8 +203,8 @@
 					<p>Place 3 VP next to the first city space of the majority board, 4 VP next to the second space, and so forth.</p>
 				{{/4.I}}
 				{{#5.I}}
-					{{^6}}{{^7}}<p>Place the majority board next to the game map with the column for deserts showing and place the 6 marking tokens for each player below this board.</p>{{/7}}{{/6}}
-					<p>Place 5 VP below each terrain column of the majority board. {{#6}}Place 6 other tokens, such as settlements, per player below the majority board to track exploration.{{/6}}{{#7}}Place 6 other tokens, such as roads, per player below the majority board to track exploration.{{/7}}</p>
+					{{^6}}{{^7}}<p>Place the majority board next to the game map with the column for deserts showing and place the 6 marking tokens for each {{owner}} below this board.</p>{{/7}}{{/6}}
+					<p>Place 5 VP below each terrain column of the majority board. {{#6}}Place 6 other tokens, such as settlements, per {{owner}} below the majority board to track exploration.{{/6}}{{#7}}Place 6 other tokens, such as roads, per player below the majority board to track exploration.{{/7}}</p>
 				{{/5.I}}
 				{{#6.I}}<p>Place 5 VP below each terrain column of the majority board.</p>{{/6.I}}
 				{{#7.I}}<p>Place 10 VP next to the first row of the majority board, and 20 VP next to the second row of the majority board.</p>{{/7.I}}
@@ -243,14 +231,30 @@
 			{{#6}}
 				<p>Each {{owner}} gets 19 roads in his color. If necessary the {{agent}}s may build more roads and need to use suitable replacement parts for these additional roads.</p>
 			{{/6}}
-			{{#9}}{{^9.III}}
-				<p>Lay out the {{#9.II}}{{#7.I}}scoring{{/7.I}}{{^7.I}}player order{{/7.I}}{{/9.II}}{{^9.II}}player order{{/9.II}} cards for 5 companies for the business rounds (BR) and place 1 resident of each company next to these cards. 1 player gets the starting player card for the 1st share round (SR).</p>
-			{{/9.III}}{{/9}}
+			{{#company}}
+				<p>Lay out the {{#9.II}}{{#7.I}}scoring{{/7.I}}{{^7.I}}company order{{/7.I}}{{/9.II}}{{^9.II}}player order{{/9.II}} cards for 5 companies for the business rounds (BR) and place 1 resident of each company next to these cards. 1 player gets the starting player card for the 1st share round (SR).</p>
+			{{/company}}
 			<p>
 				{{#order.clockwise}}Players choose a start player, turns will proceed clockwise. {{^mapnum.1}}{{^mapnum.2}}{{^mapnum.3}}Players all place their capitals in the central city.{{/mapnum.3}}{{/mapnum.2}}{{/mapnum.1}}{{^mapnum.4}}{{^mapnum.5}}In reverse turn order players choose their capitals.{{/mapnum.5}}{{/mapnum.4}}{{/order.clockwise}}
 				{{^order.clockwise}}
 					{{#order.shares}}Players choose a start player for the first SR. Capitals are placed when companies are established.{{/order.shares}}
-					{{^order.shares}}Round based player order as shown in Phase 1. {{^9.II}}Capitals are placed in Phase 1 of the first round.{{/9.II}}{{#9.II}}Capitals are placed when companies are established.{{/9.II}}{{/order.shares}}
+					{{^order.shares}}
+						Round based {{owner}} order as shown in Phase 1. {{^9.II}}Capitals are placed in Phase 1 of the first round.{{/9.II}}{{#9.II}}Capitals are placed when companies are established.{{/9.II}}
+						{{#order.income}}Depending on the # of players place the matching player order cards and 1 resident of each player next to the map.{{/order.income}}
+						{{#order.vp}}
+							{{^9.II}}
+								<p>2♟, 3♟, 4♟: Depending on the # of players, take the corresponding starting and scoring cards. Place the 2 starting cards next to the map. Then shuffle the corresponding scoring cards separated by their backs of I, II, III and place them in 3 face down rows next to the starting cards.</p>
+							{{/9.II}}
+							{{#9.II}}
+								<p>Possibly, not all 5 stock companies are always active. Thus, the players take the following cards for each business round (BR):</p>
+								<ul>
+									<li>1. & 2. BR: Choose the starting card matching the number of active stock companies.</li>
+									<li>3. BR: Take the scoring cards with back I. Shuffle the card "1st scoring" with a # of <span class="glyphicon glyphicon-ok"></span> cards, so there is a face down card for each active stock company.</li>
+									<li>4. & 5. BR: Accordingly use the scoring cards with the back II or III.</li>
+								</ul>
+							{{/9.II}}
+						{{/order.vp}}
+					{{/order.shares}}
 				{{/order.clockwise}}
 			</p>
 			{{#1}}{{^1.III}}
@@ -262,7 +266,7 @@
 					{{#9.III}}<p>Depending on the # of players, choose the following capitals: 2♟: Capitals are across from each other. 3♟: Capitals are equidistant from each other. 4♟: Both unselected capitals are across from each other.</p>{{/9.III}}
 				{{/9}}
 				{{^9}}<p>Depending on the # of players, choose the following capitals: 2♟: Capitals are across from each other. 3♟: Capitals are equidistant from each other. 4♟: Both unselected capitals are across from each other.</p>{{/9}}
-				{{#1}}{{^1.III}}{{^9.I}}{{^9.II}}<p>When playing with 2♟/4♟ Players cannot choose cities 5 or 10 for their capital. (This allows all players to comply with both rules for capital placement.)</p>{{/9.II}}{{/9.I}}{{/1.III}}{{/1}}
+				{{#1}}{{^1.III}}{{^company}}<p>When playing with 2♟/4♟ Players cannot choose cities 5 or 10 for their capital. (This allows all players to comply with both rules for capital placement.)</p>{{/company}}{{/1.III}}{{/1}}
 				{{#8}}
 					{{^8.III}}<p>Place 1 barrack on all free cities. These barracks are considered trading houses.</p>{{/8.III}}
 					{{#8.III}}<p>Place 1 barrack and 1 militia on all free cities, which are not chosen as capitals.</p>{{/8.III}}
@@ -271,7 +275,7 @@
 			{{/4}}
 			{{#2}}{{^2.III}}
 					<p>To mark the chosen capitals, place 1 settlement of each {{owner}} onto the matching city cards.</p>
-					{{^residents}}<p>The {{agent}}s place their{{#9}}{{^9.III}} companies'{{/9.III}}{{/9}} 9 residents on the 9 cities, which they did not choose as their capitals.</p>{{/residents}}
+					{{^residents}}<p>The {{agent}}s place their{{#company}} companies'{{/company}} 9 residents on the 9 cities, which they did not choose as their capitals.</p>{{/residents}}
 			{{/2.III}}{{/2}}
 			{{#1}}
 				{{#1.III}}
@@ -307,7 +311,7 @@
 			{{^3.III}}
 				<div class="note col-md-3 col-xs-4">
 					<h2>Calculation of taxes:</h2>
-					<p>To simplify this process, the {{^7.I}}{{^9.I}}first player{{/9.I}}{{/7.I}}{{#7.I}}player with the highest income{{/7.I}}{{#9.I}}company with the highest income{{/9.I}} pays $2 taxes for each full $10 of this income, the other players except the {{^7.I}}{{^9.I}}last player{{/9.I}}{{/7.I}}{{#7.I}}player with the lowest income{{/7.I}}{{#9.I}}company with the lowest income{{/9.I}} pay $1 taxes for each full $10 of their income. The {{^7.I}}{{^9.I}}last player{{/9.I}}{{/7.I}}{{#7.I}}player with the lowest income{{/7.I}}{{#9.I}}company with the lowest income{{/9.I}} pays $0 taxes.</p>
+					<p>To simplify this process, the {{^7.I}}{{^9.I}}first {{owner}}{{/9.I}}{{/7.I}}{{#7.I}}player with the highest income{{/7.I}}{{#9.I}}company with the highest income{{/9.I}} pays $2 taxes for each full $10 of this income, the other players except the {{^7.I}}{{^9.I}}last player{{/9.I}}{{/7.I}}{{#7.I}}player with the lowest income{{/7.I}}{{#9.I}}company with the lowest income{{/9.I}} pay $1 taxes for each full $10 of their income. The {{^7.I}}{{^9.I}}last {{owner}}{{/9.I}}{{/7.I}}{{#7.I}}player with the lowest income{{/7.I}}{{#9.I}}company with the lowest income{{/9.I}} pays $0 taxes.</p>
 					{{^7.I}}{{^9.I}}
 						<h2>Example:</h2>
 						<p>Camille gets an income of $68. Thus, she must pay $12 taxes for the full $60 of her income for being first.</p>
@@ -631,7 +635,7 @@
 <script id="template_main" type="x-tmpl-mustache">
 	<div class="container">
 
-	{{#9}}{{^9.III}}
+	{{#company}}
 		<div class="row section">
 			<div class="col-md-2 col-xs-2"><h1>Share Round</h1></div>
 			<div class="col-md-10 col-xs-10">
@@ -672,7 +676,7 @@
 				</p>
 			</div>
 		</div>
-	{{/9.III}}{{/9}}
+	{{/compamy}}
 
 	{{#capture}}
 		{{#3}}{{^3.III}}{{^9.I}}{{^7.I}}
@@ -697,26 +701,21 @@
 				Starting with the 2nd round determine the player order according to the income of the former round, from low to high. In case of a tie simply reverse the player order of the concerned players.
 			</p>
 		{{/7.I}}{{/3}}{{/9.III}}
+		{{#company}}{{^3.I}}{{^7.I}}
+			<p>The order of the stock companies matches the actual share values from high to low. In case of a tie the order of the concerned companies matches the stack of share value markers from top to bottom.</p>
+			{{#3.II}}
+				<p>Starting with the 2nd round the income is taxed according to the companies with most to least income: The company with the highest income from the previous round pays 20% tax, the company with the with the lowest pays 0%, and all other players pay 10% of their last income, see above for <b>Calculation of taxes.</b> In the case of a tie, the company earlier in the turn order pays the higher tax rate. The company turn order continues to be determined according to the actual share value.</p>
+				<p>The stock companies pay taxes from their company assets. If they do not have enough money or are dead broke, they pay their remaining money. The presidents do not pay remaining taxes!</p>
+			{{/3.II}}			
+		{{/7.I}}{{/3.I}}{{/company}}
 	{{/capture}}
 	{{#hascapture}}
 		<div class="row section">
-			<div class="col-md-2 col-xs-2"><h1>Phase 1: Player Order</h1></div>
+			<div class="col-md-2 col-xs-2"><h1>Phase 1: {{^company}}Player{{/company}}{{#company}}Company{{/company}} Order</h1></div>
 			<div class="col-md-10 col-xs-10">{{{captured}}}</div>
 		</div>
 	{{/hascapture}}
 
-	{{#9}}{{^9.III}}{{^3.I}}{{^7.I}}
-		<div class="row section">
-			<div class="col-md-2 col-xs-2"><h1>Phase 1: Company Order</h1></div>
-			<div class="col-md-10 col-xs-10">
-				<p>The order of the stock companies matches the actual share values from high to low. In case of a tie the order of the concerned companies matches the stack of share value markers from top to bottom.</p>
-				{{#3.II}}
-					<p>Starting with the 2nd round the income is taxed according to the companies with most to least income: The company with the highest income from the previous round pays 20% tax, the company with the with the lowest pays 0%, and all other players pay 10% of their last income, see above for <b>Calculation of taxes.</b> In the case of a tie, the company earlier in the turn order pays the higher tax rate. The company turn order continues to be determined according to the actual share value.</p>
-					<p>The stock companies pay taxes from their company assets. If they do not have enough money or are dead broke, they pay their remaining money. The presidents do not pay remaining taxes!</p>
-				{{/3.II}}
-			</div>
-		</div>
-	{{/7.I}}{{/3.I}}{{/9.III}}{{/9}}
 
 	{{#3}}{{^3.III}}
 		<div class="row section">
@@ -1100,7 +1099,7 @@
 		</div>
 	{{/hascapture}}
 
-	{{#9}}{{^9.III}}
+	{{#company}}
 		<div class="row section">
 			<div class="col-md-2 col-xs-2"><h1>Phase 4: Dividends</h1></div>
 			<div class="col-md-10 col-xs-10">
@@ -1118,7 +1117,7 @@
 				{{/9.II}}
 			</div>
 		</div>
-	{{/9.III}}{{/9}}
+	{{/company}}
 
 	{{#capture}}
 		{{#7.I}}
