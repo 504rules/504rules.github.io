@@ -110,11 +110,11 @@
 			</ul>
 		</div>
 	</div>
-	{{#9}}{{^9.III}}<div class="row warning">
+	{{#company}}<div class="row warning">
 		<div class="col-md-12 col-xs-12">
 			<p>IMPORTANT: Because of the complexity of the game rules you only find a summary of the most important details. The complete rules are in the rules booklet!</p>
 		</div>
-	</div>{{/9.III}}{{/9}}
+	</div>{{/company}}
 	<div class="row section">
 		<div class="col-md-2 col-xs-2"><h1>Game Preparation</h1></div>
 		<div class="col-md-10 col-xs-10">
@@ -215,9 +215,9 @@
 			{{#6}}
 				<p>Each {{owner}} gets 19 roads in his color. If necessary the {{agent}}s may build more roads and need to use suitable replacement parts for these additional roads.</p>
 			{{/6}}
-			{{#9}}{{^9.III}}
+			{{#company}}
 				<p>Lay out the {{#9.II}}{{#7.I}}scoring{{/7.I}}{{^7.I}}player order{{/7.I}}{{/9.II}}{{^9.II}}player order{{/9.II}} cards for 5 companies for the business rounds (BR) and place 1 resident of each company next to these cards. 1 player gets the starting player card for the 1st share round (SR).</p>
-			{{/9.III}}{{/9}}
+			{{/company}}
 			<p>
 				{{#order.clockwise}}Players choose a start player, turns will proceed clockwise. {{^mapnum.1}}{{^mapnum.2}}{{^mapnum.3}}Players all place their capitals in the central city.{{/mapnum.3}}{{/mapnum.2}}{{/mapnum.1}}{{^mapnum.4}}{{^mapnum.5}}In reverse turn order players choose their capitals.{{/mapnum.5}}{{/mapnum.4}}{{/order.clockwise}}
 				{{^order.clockwise}}
@@ -234,7 +234,7 @@
 					{{#9.III}}<p>Depending on the # of players, choose the following capitals: 2♟: Capitals are across from each other. 3♟: Capitals are equidistant from each other. 4♟: Both unselected capitals are across from each other.</p>{{/9.III}}
 				{{/9}}
 				{{^9}}<p>Depending on the # of players, choose the following capitals: 2♟: Capitals are across from each other. 3♟: Capitals are equidistant from each other. 4♟: Both unselected capitals are across from each other.</p>{{/9}}
-				{{#1}}{{^1.III}}{{^9.I}}{{^9.II}}<p>When playing with 2♟/4♟ Players cannot choose cities 5 or 10 for their capital. (This allows all players to comply with both rules for capital placement.)</p>{{/9.II}}{{/9.I}}{{/1.III}}{{/1}}
+				{{#1}}{{^1.III}}{{^company}}<p>When playing with 2♟/4♟ Players cannot choose cities 5 or 10 for their capital. (This allows all players to comply with both rules for capital placement.)</p>{{/company}}{{/1.III}}{{/1}}
 				{{#8}}
 					{{^8.III}}<p>Place 1 barrack on all free cities. These barracks are considered trading houses.</p>{{/8.III}}
 					{{#8.III}}<p>Place 1 barrack and 1 militia on all free cities, which are not chosen as capitals.</p>{{/8.III}}
@@ -243,7 +243,7 @@
 			{{/4}}
 			{{#2}}{{^2.III}}
 					<p>To mark the chosen capitals, place 1 settlement of each {{owner}} onto the matching city cards.</p>
-					{{^residents}}<p>The {{agent}}s place their{{#9}}{{^9.III}} companies'{{/9.III}}{{/9}} 9 residents on the 9 cities, which they did not choose as their capitals.</p>{{/residents}}
+					{{^residents}}<p>The {{agent}}s place their{{#company}} companies'{{/company}} 9 residents on the 9 cities, which they did not choose as their capitals.</p>{{/residents}}
 			{{/2.III}}{{/2}}
 			{{#1}}
 				{{#1.III}}
@@ -603,7 +603,7 @@
 <script id="template_main" type="x-tmpl-mustache">
 	<div class="container">
 
-	{{#9}}{{^9.III}}
+	{{#company}}
 		<div class="row section">
 			<div class="col-md-2 col-xs-2"><h1>Share Round</h1></div>
 			<div class="col-md-10 col-xs-10">
@@ -644,7 +644,7 @@
 				</p>
 			</div>
 		</div>
-	{{/9.III}}{{/9}}
+	{{/company}}
 
 	{{#capture}}
 		{{#3}}{{^3.III}}{{^9.I}}{{^7.I}}
@@ -677,7 +677,7 @@
 		</div>
 	{{/hascapture}}
 
-	{{#9}}{{^9.III}}{{^3.I}}{{^7.I}}
+	{{#company}}{{^3.I}}{{^7.I}}
 		<div class="row section">
 			<div class="col-md-2 col-xs-2"><h1>Phase 1: Company Order</h1></div>
 			<div class="col-md-10 col-xs-10">
@@ -688,7 +688,7 @@
 				{{/3.II}}
 			</div>
 		</div>
-	{{/7.I}}{{/3.I}}{{/9.III}}{{/9}}
+	{{/7.I}}{{/3.I}}{{/company}}
 
 	{{#3}}{{^3.III}}
 		<div class="row section">
@@ -1072,7 +1072,7 @@
 		</div>
 	{{/hascapture}}
 
-	{{#9}}{{^9.III}}
+	{{#company}}
 		<div class="row section">
 			<div class="col-md-2 col-xs-2"><h1>Phase 4: Dividends</h1></div>
 			<div class="col-md-10 col-xs-10">
@@ -1090,7 +1090,7 @@
 				{{/9.II}}
 			</div>
 		</div>
-	{{/9.III}}{{/9}}
+	{{/company}}
 
 	{{#capture}}
 		{{#7.I}}
