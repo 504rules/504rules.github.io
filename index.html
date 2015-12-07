@@ -1844,6 +1844,9 @@
 			$("#worldno-entry, #worldno").toggle();
 		});
 
+	}
+	
+	$(function() { 
 		$('#randomizer').on('click', function (e) { randomizeWorlds($("input[name='world\[\]']:checkbox:checked").map(function() { return this.value; }).get()); });
 		$('#selectall').on('click', function (e) { $("input[name='world\[\]']:checkbox").prop('checked', true); $('#randomizer').prop('disabled', false).css("opacity", "1"); });
 		$('#selectnone').on('click', function (e) { $("input[name='world\[\]']:checkbox:checked").prop('checked', false); $('#randomizer').prop('disabled', true).css("opacity", "0.2"); });
@@ -1852,8 +1855,9 @@
 		});
 		$('#menuclose').on('click', function (e) { $("#menu").slideUp(100); });
 		$('#randomize').on('click', function (e) { $("#menu").slideDown(100); });
-		
-	}
+	});
+
+	
 	$(document).ready(load);
 	$(window).bind('hashchange', load);
 </script>
