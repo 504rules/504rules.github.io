@@ -1853,6 +1853,8 @@
 	
 	$(document).ready(load);
 	$(window).bind('hashchange', load);
+	$(window).bind('beforeprint', function() { $("#menu").slideUp(0); }); //didn't work in chrome
+	
 </script>
 <script>
 	// Via http://stackoverflow.com/questions/12556593/determining-a-page-is-outdated-on-github-pages
