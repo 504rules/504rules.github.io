@@ -946,14 +946,14 @@
 	{{/capture}}
 	{{#hascapture}}
 		<div class="row section">
-			<div class="col-md-2 col-xs-2"><h1>Phase 3 E: Transport Trolley</h1></div>
+			<div class="col-md-2 col-xs-2 mod1"><h1>Phase 3 E: Transport Trolley</h1></div>
 			<div class="col-md-10 col-xs-10">{{{captured}}}</div>
 		</div>
 	{{/hascapture}}
 
 	{{#3}}{{^3.III}}
 		<div class="row section">
-			<div class="col-md-2 col-xs-2"><h1>Phase 3 F: Factories</h1></div>
+			<div class="col-md-2 col-xs-2 mod3"><h1>Phase 3 F: Factories</h1></div>
 			<div class="col-md-10 col-xs-10">
 				<p>Each round, the player may buy at max 1 factory on each city, if he has 1 settlement there and pays the matching costs, see left for the table Factory.{{#3.I}} The player immediately gets 5 victory points (VP) for building the factory.{{/3.I}} On a city, the players in common may build a total of 3 factories.
 				<p>The player marks his factory with his settlement. If he owns several factories in the same city, he stacks them below his settlement.</p>
@@ -1066,8 +1066,7 @@
 	{{/capture}}
 	{{#hascapture}}
 		<div class="row section">
-
-			<div class="col-md-2 col-xs-2"><h1>Phase 3 H: Income</h1></div>
+			<div class="col-md-2 col-xs-2 {{#1.II}}mod1{{/1.II}}{{#2.II}}mod2{{/2.II}}{{#3.II}}mod3{{/3.II}}{{#4.II}}mod4{{/4.II}}{{#5.II}}mod5{{/5.II}}{{#6.II}}mod6{{/6.II}}{{#7.II}}mod7{{/7.II}}{{#8.II}}mod8{{/8.II}}{{#9.II}}mod9{{/9.II}}"><h1>Phase 3 H: Income</h1></div>
 			<div class="col-md-10 col-xs-10">{{{captured}}}</div>
 		</div>
 	{{/hascapture}}
@@ -1136,6 +1135,7 @@
 	{{/hascapture}}
 
 	<div class="row section">
+
 
 		<div class="col-md-2 col-xs-2"><h1>Game End</h1></div>
 		<div class="col-md-10 col-xs-10">
@@ -1863,6 +1863,7 @@
 	// Via http://stackoverflow.com/questions/12556593/determining-a-page-is-outdated-on-github-pages
 	// Check if a new cache is available on page load.
 
+
 	window.addEventListener('load', function(e) {
 		var appCache = window.applicationCache;
 
@@ -1879,6 +1880,7 @@
 			}
 		}, false);
 	}, false);
+
 
 </script>
 
