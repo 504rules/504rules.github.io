@@ -364,19 +364,8 @@ table th {
 		visibility: hidden;
 	}
 	
-	.section .mod1, .section .mod1 h1, .mod1 { background-color:#000; color:#FFFFFF; }
-	.section .mod2, .section .mod2 h1, .mod2 { background-color:#000; color:#FFFFFF; }
-	.section .mod3, .section .mod3 h1, .mod3 { background-color:#000; color:#FFFFFF; }
-	.section .mod4, .section .mod4 h1, .mod4 { background-color:#000; color:#FFFFFF; }
-	.section .mod5, .section .mod5 h1, .mod5 { background-color:#000; color:#FFFFFF; }
-	.section .mod6, .section .mod6 h1, .mod6 { background-color:#000; color:#FFFFFF; }
-	.section .mod7, .section .mod7 h1, .mod7 { background-color:#000; color:#FFFFFF; }
-	.section .mod8, .section .mod8 h1, .mod8 { background-color:#000; color:#FFFFFF; }
-	.section .mod9, .section .mod9 h1, .mod9 { background-color:#000; color:#FFFFFF; }
-
+	.section .col-md-2.col-xs-2, .section .col-md-2.col-xs-2 h1 { background-color: #000 !important; color: #FFFFFF !important; }
 
 	#worldno span { padding:0; }
-	
-	
-	
+
 }
