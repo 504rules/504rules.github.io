@@ -682,7 +682,7 @@
 		{{#3}}{{^3.III}}{{^9.I}}{{^7.I}}
 			<p>At game start, all players make a secret bid with their starting money ($0 is a valid bid). Starting with the highest bidder, each player chooses a position in the player order{{^9.II}}{{^mapnum.1}}{{^mapnum.2}}{{^mapnum.3}}, all capitals are placed in the central city.{{/mapnum.3}}{{/mapnum.2}}{{/mapnum.1}}{{^mapnum.4}}{{^mapnum.5}} and his capital on the map.{{/mapnum.5}}{{/mapnum.4}}{{/9.II}}{{#9.II}} for the first share round (SR).{{/9.II}} In case of a tie, randomly draw lots for the order of choice (the losers get $2 for each lost draw).</p>
 			{{#9.II}}<p>The stock company order for the 1st business round (BR) is determined in reverse order of establishment. If stock companies are only established in later SRs, just for once they are first in stock company order in the next BR!</p>{{/9.II}}
-			<p>Starting with the 2nd round, determine the {{^9.II}}player{{/9.II}}{{#9.II}}company{{/9.II}} order according to the income of the former round, from high to low (in case of a tie reverse the {{^9.II}}player{{/9.II}}{{#9.II}}company{{/9.II}} order of the former round for the tied {{^9.II}}players{{/9.II}}{{#9.II}}companies{{/9.II}}). According to the new {{^9.II}}player{{/9.II}}{{#9.II}}company{{/9.II}} order the {{^9.II}}players{{/9.II}}{{#9.II}}companies{{/9.II}} must pay taxes for their last income: The 1st {{^9.II}}player{{/9.II}}{{#9.II}}company{{/9.II}} pays 20%, the last pays 0%, and all other players pay 10% of their last income, see left for <b>Calculation of taxes</b>. Because of higher taxes the 1st {{^9.II}}player{{/9.II}}{{#9.II}}company{{/9.II}} may get a lower income compared to the 2nd.</p>
+			<p>Starting with the 2nd round, determine the {{owner}} order according to the income of the former round, from high to low (in case of a tie reverse the {{owner}} order of the former round for the tied {{owners}}). According to the new {{owner}} order the {{owners}} must pay taxes for their last income: The 1st {{owner}} pays 20%, the last pays 0%, and all other {{owners}} pay 10% of their last income, see left for <b>Calculation of taxes</b>. Because of higher taxes the 1st {{owner}} may get a lower income compared to the 2nd.</p>
 		{{/7.I}}{{/9.I}}{{/3.III}}{{/3}}
 		{{#7.I}}
 			{{^9.II}}
@@ -691,8 +691,8 @@
 			{{#9.II}}
 				<p>The stock company order for the 1st business round (BR) is determined in <b>reverse</b> order of establishment. If stock companies are only established in later share rounds (SR), just for once they are first in stock company order in the next BR, if necessary in reverse order of establishment!</p>
 			{{/9.II}}
-			<p>After all players have taken one complete turn, the player order is readjusted. For the 2nd turn set the new player order by placing the residents on the spaces of the 2nd starting card and starting with the 3rd round separately on the face down scoring cards.</p>
-			<p>As long as the players do not have victory points (VP), simply reverse the player order of the former turn. As soon as the players have VP, the new player order is determined according to VP from few to most. The player with the fewest VP is new starting player, the player with most VP is last. In case of a tie reverse the player order of all concerned players of the former turn.</p>
+			<p>After all {{owners}} have taken one complete turn, the {{owner}} order is readjusted. For the 2nd turn set the new {{owner}} order by placing the residents on the spaces of the 2nd starting card and starting with the 3rd round separately on the face down scoring cards.</p>
+			<p>As long as the {{owners}} do not have victory points (VP), simply reverse the {{owner}} order of the former turn. As soon as the {{owners}} have VP, the new {{owner}} order is determined according to VP from few to most. The {{owner}} with the fewest VP is new starting {{owner}}, the {{owner}} with most VP is last. In case of a tie reverse the {{owner}} order of all concerned {{owners}} of the former turn.</p>
 			{{#3.II}}<p>Starting with the 2nd round the income is taxed according to the money, but the player order according to VP. In case of a tie for highest income, the player must pay 20%, whose turn is now earlier in player order. In case of a tie for lowest income, the player pays no taxes, whose turn is now later in the player order.</p>{{/3.II}}
 		{{/7.I}}
 		{{#9.III}}{{^3}}{{^7.I}}
@@ -704,7 +704,7 @@
 		{{#company}}{{^3.I}}{{^7.I}}
 			<p>The order of the stock companies matches the actual share values from high to low. In case of a tie the order of the concerned companies matches the stack of share value markers from top to bottom.</p>
 			{{#3.II}}
-				<p>Starting with the 2nd round the income is taxed according to the companies with most to least income: The company with the highest income from the previous round pays 20% tax, the company with the with the lowest pays 0%, and all other players pay 10% of their last income, see above for <b>Calculation of taxes.</b> In the case of a tie, the company earlier in the turn order pays the higher tax rate. The company turn order continues to be determined according to the actual share value.</p>
+				<p>Starting with the 2nd round the income is taxed according to the companies with most to least income: The company with the highest income from the previous round pays 20% tax, the company with the with the lowest pays 0%, and all other companies pay 10% of their last income, see above for <b>Calculation of taxes.</b> In the case of a tie, the company earlier in the turn order pays the higher tax rate. The company turn order continues to be determined according to the actual share value.</p>
 				<p>The stock companies pay taxes from their company assets. If they do not have enough money or are dead broke, they pay their remaining money. The presidents do not pay remaining taxes!</p>
 			{{/3.II}}			
 		{{/7.I}}{{/3.I}}{{/company}}
@@ -721,17 +721,17 @@
 		<div class="row section">
 			<div class="col-md-2 col-xs-2"><h1>Phase 2: Privileges</h1></div>
 			<div class="col-md-10 col-xs-10">
-				<p>If there are still unsold privileges from the former round, place the price token to the right of these privileges. The starting bid for these privileges drops to $0. Draw new privileges and place them to the right of the price token, until you either draw 1 new privilege per player or there are a # of privileges in the row of cards depending on the # of players: 4 (2♟), 5 (3♟), 6 (4♟) or 7 privileges (5 stock companies). The starting bid for the new privileges is $20.</p>
-				<p>All privileges are now auctioned from left to right, one at a time. Beginning with the 1st player all players bid clockwise in sitting order around the table, until there is a highest bid. If a player passes he may only bid again for the next privilege. The highest bidder pays the amount to the bank and places the privilege face up in front of him. If the starting bid of the privilege was $20, and all players pass, the privilege simply remains in the row of cards. If the starting bid of the privilege was $0 and all players pass again, remove that privilege from the game!</p>
-				<p>The player may only buy each type of privilege once. He may use his privileges immediately after purchase.</p>
+				<p>If there are still unsold privileges from the former round, place the price token to the right of these privileges. The starting bid for these privileges drops to $0. Draw new privileges and place them to the right of the price token, until you either draw 1 new privilege per {{owner}} or there are a # of privileges in the row of cards depending on the # of players: 4 (2♟), 5 (3♟), 6 (4♟) or 7 privileges (5 stock companies). The starting bid for the new privileges is $20.</p>
+				<p>All privileges are now auctioned from left to right, one at a time. Beginning with the 1st {{owner}} all {{agent}}s bid clockwise in sitting order around the table, until there is a highest bid. If a {{agent}} passes he may only bid again for the next privilege. The highest bidder pays the amount to the bank and places the privilege face up in front of him. If the starting bid of the privilege was $20, and all {{agent}}s pass, the privilege simply remains in the row of cards. If the starting bid of the privilege was $0 and all {{agent}}s pass again, remove that privilege from the game!</p>
+				<p>{{^company}}The player may only buy each type of privilege once{{/company}}{{#company}}The president can't buy a privelege for their company if the company already owns it{{/company}}. He may use his privileges immediately after purchase.</p>
 			</div>
 		</div>
 	{{/3.III}}{{/3}}
 
 	{{#capture}}
 		{{#2}}{{#residents}}
-			<p>At the start of his turn, the player may change his capital by exchanging his headquarters with 1 of his own settlements in any other city.</p>
-			<p>If the player does not have enough residents to buy in <b>Phase 3 C</b> or enough settlements to settle a tile in <b>Phase 3 D/3 E/3 G</b> in his storage, he may take back the missing pieces from the game map without substitution and place them directly back on the map. If he takes back 1 settlement, he must take back all residents on the same tile.</p>
+			<p>At the start of his turn, the {{agent}} may change {{fowns}} capital by exchanging {{owns}} headquarters with 1 of {{fowns}} own settlements in any other city.</p>
+			<p>If the {{owner}} does not have enough residents to buy in <b>Phase 3 C</b> or enough settlements to settle a tile in <b>Phase 3 D/3 E/3 G</b> in {{owns}} storage, the {{agent}} may take back the missing pieces from the game map without substitution and place them directly back on the map. If he takes back 1 settlement, he must take back all residents on the same tile.</p>
 		{{/residents}}{{/2}}
 	{{/capture}}
 	{{#hascapture}}
