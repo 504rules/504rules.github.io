@@ -383,5 +383,18 @@ table th {
 	.mod8 { background-color:#000!important; color:#FFFFFF!important; }
 	.mod9 { background-color:#000!important; color:#FFFFFF!important; }
 	
+	.mod1 h1 { color:#FFFFFF!important; }
+	.mod2 h1 { color:#FFFFFF!important; }
+	.mod3 h1 { color:#FFFFFF!important; }
+	.mod4 h1 { color:#FFFFFF!important; }
+	.mod5 h1 { color:#FFFFFF!important; }
+	.mod6 h1 { color:#FFFFFF!important; }
+	.mod7 h1 { color:#FFFFFF!important; }
+	.mod8 h1 { color:#FFFFFF!important; }
+	.mod9 h1 { color:#FFFFFF!important; }
+
+	#worldno span { padding:0; }
+	
+	
 	
 }
