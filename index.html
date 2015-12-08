@@ -827,32 +827,32 @@
 		{{/4}}
 		{{#5.I}}<p>The {{agent}} may explore an adjacent unknown space with 1 active resident. He places that resident back into {{fowns}} storage (if the resident explores water, instead it is placed exhausted on the starting tile).</p>{{/5.I}}
 		{{#5.II}}
-			{{#2}}<p>The player may explore any number of adjacent unknown spaces with 1 active resident. After exploring he places that resident back into his storage (except if it explores only water, instead it is placed exhausted on the starting tile).</p>{{/2}}
-			{{^2}}{{#4}}<p>The player may explore an adjacent unknown space with 1 active resident. After exploring the tile the player places that resident back into his storage (except if it explores water, instead it is placed exhausted on the starting tile).</p>{{/4}}{{/2}}
-			{{^2}}{{^4}}<p>The player may explore an adjacent unknown space with 1 active resident. Afterwards the resident is exhausted on the starting tile.</p>{{/4}}{{/2}}
+			{{#2}}{{^4.I}}<p>The {{agent}} may explore any number of adjacent unknown spaces with 1 active resident. After exploring he places that resident back into his storage (except if it explores only water, instead it is placed exhausted on the starting tile).</p>{{/4.I}}{{/2}}
+			{{^2.I}}{{#4}}<p>The {{agent}} may explore an adjacent unknown space with 1 active resident. After exploring the tile he places that resident back into his storage (except if it explores water, instead it is placed exhausted on the starting tile).</p>{{/4}}{{/2.I}}
+			{{^2}}{{^4}}<p>The {{agent}} may explore an adjacent unknown space with 1 active resident. Afterwards the resident is exhausted on the starting tile.</p>{{/4}}{{/2}}
 		{{/5.II}}
-		{{#5.III}}<p>The player may explore any number of adjacent unknown spaces with 1 active resident. He places that resident back into his storage (except if it explores only water, instead it is placed exhausted on the starting tile).</p>{{/5.III}}
+		{{#5.III}}<p>The {{agent}} may explore any number of adjacent unknown spaces with 1 active resident. He places that resident back into his storage (except if it explores only water, instead it is placed exhausted on the starting tile).</p>{{/5.III}}
 		{{#5}}
-			<p><b>Exploring:</b> After choosing the destination space, the player places the explorer tiles next to the following stacks, until he placed all 6 tiles.</p>
+			<p><b>Exploring:</b> After choosing the destination space, the {{agent}} places the explorer tiles next to the following stacks, until he placed all 6 tiles.</p>
 			<ol>
 				<li><b>City:</b> # of explorer tiles = # of tiles between the destination space and the closest city (Across existing land tiles). New cities are never located adjacent to other cities!</li>
-				<li><b>Water:</b> # of explorer tiles = # of tiles between the destination space and the central city (across linear distance, even across water or empty spaces). New water tiles are never located adjacent to other water tiles!</li>
+				<li><b>Water:</b> # of explorer tiles = # of tiles between the destination space and the central city (across linear distance, even across water or empty spaces), or 0 if next to an existing water tile. New water tiles are never located adjacent to other water tiles!</li>
 				<li><b>Land tiles:</b> 1 explorer tile next to each stack, in the following order: grassland, forest field, mountain, desert.</li>
 				<li><b>Remaining explorer tiles:</b> 1 additional explorer tile next to each stack, which already received 1 or more explorer tiles, in the following order: city, water, grassland, forest, field, mountain desert, if necessary repeatedly.</li>
 			</ol>
-			<p>Afterwards the player rolls 1 die and places the corresponding map tile on the destination space. See the example <b>Exploring</b>.</p>
-			{{#mapnum.1}}<p>The players may only explore in a distance of 4 spaces around the central city. Thus, following the adjacency rules above the players will not always explore all cities or water tiles.</p>{{/mapnum.1}}
+			<p>Afterwards the {{agent}} rolls 1 die and places the corresponding map tile on the destination space. See the example <b>Exploring</b>.</p>
+			{{#mapnum.1}}<p>The {{agent}}s may only explore in a distance of 4 spaces around the central city. Thus, following the adjacency rules above the {{agent}}s will not always explore all cities or water tiles.</p>{{/mapnum.1}}
 			{{#5.I}}
-				{{#2.III}}
-					<p>The player counts that tile on the majority board.</p>
-					{{#6.II}}<p>Note: Use another token like a settlement to track exploration. Do not add this to the count of your road network.</p>{{/6.II}}
-					{{#7.II}}<p>Note: Use another token like a road to track exploration. Do not add this to the count of your majorities.</p>{{/7.II}}
-				{{/2.III}}
-				<p>The player immediately gets 1 victory point (VP) for each explored tile, including water. Then, place a stack of 2 "1 VP" tokens on each explored land tile and a stack of 4 "1 VP" tokens on each explored city.</p>
-				<p>During the game the player gets additional victory points (VP) by taking them from the appropriate tiles:</p>
+				{{#2.III}}<p>
+					The {{agent}} counts that tile on the majority board.
+					{{#6.II}}Note: Use another token like a settlement to track exploration. Do not add this to the count of your road network.{{/6.II}}
+					{{#7.II}}Note: Use another token like a road to track exploration. Do not add this to the count of your majorities.{{/7.II}}
+				</p>{{/2.III}}
+				<p>The {{owner}} immediately gets 1 victory point (VP) for each explored tile, including water. Then, place a stack of 2 "1 VP" tokens on each explored land tile and a stack of 4 "1 VP" tokens on each explored city.</p>
+				<p>During the game the {{owner}} gets additional victory points (VP) by taking them from the appropriate tiles:</p>
 				<ol>
-					<li>The player gets 1 VP for placing the collectively 1st settlement on the tile.</li>
-					<li>The player gets the last VP from a land tile only, if he exhausts 1 resident for the action harvest on the corresponding tile (On cities the player needs to do this for each of the last three VP tokens). The player does not get this VP, if he exhausts his resident for another action that tile.</li>
+					<li>The {{owner}} gets 1 VP for placing the collectively 1st settlement on the tile.</li>
+					<li>The {{owner}} gets the last VP from a land tile only, if they exhaust 1 resident for the action harvest on the corresponding tile (On cities the {{agent}} needs to do this for each of the last three VP tokens). The player does not get this VP, if he exhausts his resident for another action that tile.</li>
 				</ol>
 
 			{{/5.I}}
@@ -1382,8 +1382,8 @@
 	}
 	
 	var shares_defs = {
-		"company": {agent: 'president', owner: 'company', owners:'companies' , fowns: 'the company\'s', owns: 'its', company: true},
-		"player": {agent: 'player', owner: 'player', owners:'players',  fowns: 'his', owns: 'his', company: false}
+		"company": {agent: 'president', sagent: 'the president', owner: 'company', owners:'companies' , fowns: 'the company\'s', owns: 'its', company: true},
+		"player": {agent: 'player', sagent: 'he', owner: 'player', owners:'players',  fowns: 'his', owns: 'his', company: false}
 	}
 
 	var module_defs = {
@@ -1767,6 +1767,7 @@
 			'order': priority_match([modules['I']['order'], modules['II']['order'], modules['III']['order']]),
 			'money': priority_match([modules['I']['money'], modules['II']['money'], modules['III']['money']]),
 			'agent': shares_defs[getNameTokens(world)]['agent'],
+			'sagent': shares_defs[getNameTokens(world)]['sagent'],
 			'owner':shares_defs[getNameTokens(world)]['owner'],
 			'owners':shares_defs[getNameTokens(world)]['owners'],
 			'fowns':shares_defs[getNameTokens(world)]['fowns'],
