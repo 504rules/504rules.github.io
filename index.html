@@ -9,10 +9,40 @@
 	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
 	<link rel="stylesheet" href="css/main.css" media="all">
 	<link rel="apple-touch-icon" href="img/apple-touch-icon-180x180.png"/>
-	<style type="text/css">
-	</style>
+	<style type="text/css"></style>
 </head>
 <body>
+<div id="menu">
+	<form id="ModulesForm">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-9 col-xs-9">
+					<div class="row">
+						<div class="col-md-12 col-xs-12">
+							<p>Please pick your preferred modules:</p>
+						</div>
+					</div>
+					<div class="row modules">
+						<div class="col-md-4 col-xs-4 mod1"><label><input type="checkbox" name="world[]" value="1" checked />(1) Pick up & Deliver</label></div>
+						<div class="col-md-4 col-xs-4 mod2"><label><input type="checkbox" name="world[]" value="2" checked />(2) Race</label></div>
+						<div class="col-md-4 col-xs-4 mod3"><label><input type="checkbox" name="world[]" value="3" checked />(3) Privileges</label></div>
+						<div class="col-md-4 col-xs-4 mod4"><label><input type="checkbox" name="world[]" value="4" checked />(4) Military</label></div>
+						<div class="col-md-4 col-xs-4 mod5"><label><input type="checkbox" name="world[]" value="5" checked />(5) Exploring</label></div>
+						<div class="col-md-4 col-xs-4 mod6"><label><input type="checkbox" name="world[]" value="6" checked />(6) Roads</label></div>
+						<div class="col-md-4 col-xs-4 mod7"><label><input type="checkbox" name="world[]" value="7" checked />(7) Majorities</label></div>
+						<div class="col-md-4 col-xs-4 mod8"><label><input type="checkbox" name="world[]" value="8" checked />(8) Production</label></div>
+						<div class="col-md-4 col-xs-4 mod9"><label><input type="checkbox" name="world[]" value="9" checked />(9) Shares</label></div>
+					</div>
+					<div class="row">
+						<div class="col-md-12 col-xs-12">
+							<button type="button" id="selectnone">deselect all</button> <button type="button" id="selectall">select all</button> <button type="button" id="randomizer">randomize</button> <button type="button" id="menuclose">close</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
 <div id="target_head">Loading Head...</div>
 <div id="target_main">Loading Main...</div>
 <script id="name-template" type="x-tmpl-mustache">
@@ -77,11 +107,11 @@
 					{{^mapnum.4}}{{^mapnum.5}}<p>Capitals chosen counter clockwise from last player to first</p>{{/mapnum.5}}{{/mapnum.4}}
 				{{/order.clockwise}}
 				{{#order.income}}
-					<h2>Round-based player order</h2>
+					<h2>Round-based {{owner}} order</h2>
 					<p>(according to income from high to low)</p>
 				{{/order.income}}
 				{{#order.vp}}
-					<h2>Round-based player order</h2>
+					<h2>Round-based {{owner}} order</h2>
 					<p>(according to victory points from fewest to most)</p>
 				{{/order.vp}}
 				{{#order.shares}}
@@ -110,54 +140,39 @@
 			</ul>
 		</div>
 	</div>
-	{{#9}}{{^9.III}}<div class="row warning">
+	{{#company}}<div class="row warning">
 		<div class="col-md-12 col-xs-12">
 			<p>IMPORTANT: Because of the complexity of the game rules you only find a summary of the most important details. The complete rules are in the rules booklet!</p>
 		</div>
-	</div>{{/9.III}}{{/9}}
+	</div>{{/company}}
 	<div class="row section">
 		<div class="col-md-2 col-xs-2"><h1>Game Preparation</h1></div>
 		<div class="col-md-10 col-xs-10">
-			//map setup
+			{{#5}}<p>Place all map tiles in separate stacks in a row as follows: city, water, grassland, forest, field, mountain and desert. {{^1.III}}Lay out the cities in a numerical ascending stack - lowest numbered city on top, city "10" on bottom.{{^8}} Place 4 goods onto each city, matching the small circular symbol.{{/8}}{{/1.III}}</p>{{/5}}
 			<p>
-				{{#5}}Place all map tiles in separate stacks in a row as follows: city, water, grassland, forest, field, mountain and desert. {{^1.III}}Lay out the cities in a numerical ascending stack - lowest numbered city on top, city "10" on bottom.{{^8}} Place 4 goods onto each city, matching the small circular symbol.{{/8}}{{/1.III}}{{/5}}
 				Lay out the map {{map.value}}.
 				{{^1.III}}Display cities with their goods side atop. {{#8}}The cities remain empty of goods.{{/8}}{{/1.III}}
 				{{#8}}
 					{{^8.III}}
-						<p>Display land and water tiles with the goods side atop.</p>
-						<p>Deserts do not produce goods themselves (but see <span class="water-adjacent icon"></span>).</p>
+						Display land and water tiles with the goods side atop.
+						Deserts do not produce goods themselves (but see <span class="water-adjacent icon"></span>).
 					{{/8.III}}
 					{{#8.III}}{{#1}}
-						<p>Display land and water tiles with the goods side atop.</p>
-						<p>Deserts do not produce goods themselves (but see <span class="water-adjacent icon"></span>).</p>
+						Display land and water tiles with the goods side atop.
+						Deserts do not produce goods themselves (but see <span class="water-adjacent icon"></span>).
 					{{/1}}{{/8.III}}
 				{{/8}}
 			</p>
-			//other central setup
 			{{^7}}
 				{{#6.I}}
-					<p>Place the majority board next to the game map with the column for deserts showing and place the 6 marking tokens for each player below this board.</p>
+					<p>Place the majority board next to the game map with the column for deserts showing and place the 6 marking tokens for each {{owner}}}} below this board.</p>
 				{{/6.I}}
 				{{#6.II}}
-					<p>Place the majority board next to the game map with{{^2.III}}out{{/2.III}}{{#2.III}}{{^9.I}}{{^5.I}}out{{/5.I}}{{/9.I}}{{/2.III}} the column for deserts showing and place {{^2.III}}5 of the{{/2.III}}{{#2.III}}{{^9.I}}5 of the{{/9.I}}{{#9.I}}the 6{{/9.I}}{{/2.III}} marking tokens for each player below this board.</p>
+					<p>Place the majority board next to the game map with{{^2.III}}out{{/2.III}}{{#2.III}}{{^9.I}}{{^5.I}}out{{/5.I}}{{/9.I}}{{/2.III}} the column for deserts showing and place {{^2.III}}5 of the{{/2.III}}{{#2.III}}{{^9.I}}5 of the{{/9.I}}{{#9.I}}the 6{{/9.I}}{{/2.III}} marking tokens for each {{owner}} below this board.</p>
 				{{/6.II}}
 			{{/7}}
 			{{#7}}
-				{{#7.I}}
-					{{^9.II}}
-						<p>2♟, 3♟, 4♟: Depending on the # of players, take the corresponding starting and scoring cards. Place the 2 starting cards next to the map. Then shuffle the corresponding scoring cards separated by their backs of I, II, III and place them in 3 face down rows next to the starting cards.</p>
-					{{/9.II}}
-					{{#9.II}}
-						<p>Possibly, not all 5 stock companies are always active. Thus, the players take the following cards for each business round (BR):</p>
-						<ul>
-							<li>1. & 2. BR: Choose the starting card matching the number of active stock companies.</li>
-							<li>3. BR: Take the scoring cards with back I. Shuffle the card "1st scoring" with a # of <span class="glyphicon glyphicon-ok"></span> cards, so there is a face down card for each active stock company.</li>
-							<li>4. & 5. BR: Accordingly use the scoring cards with the back II or III.</li>
-						</ul>
-					{{/9.II}}
-				{{/7.I}}
-				<p>Place the majority board next to the game map with the column for deserts showing and place the 6 marking tokens for each player below this board.</p>
+				<p>Place the majority board next to the game map with the column for deserts showing and place the 6 marking tokens for each {{owner}} below this board.</p>
 			{{/7}}
 			{{#1.II}}<p>Place the goods price board next to the game map and place 1 each of the goods tiles on space "20" of it.</p>{{/1.II}}
 			{{#9}}<p>
@@ -174,8 +189,7 @@
 			{{#3}}
 				<p>Depending on the 3 modules take the appropriate privileges. 4♟ or 5 stock companies: Take 2 cards of each privilege. 3♟: First take 1 card of each privilege, shuffle them and remove half of them from the game. Then, add 1 card of each privilege to the remaining half. 2♟: Take 1 card of each privilege.</p>
 				<p>Shuffle the privileges separated by card backs I, II, III and place them in a single stack, so that the cards with the back I are on top, the cards with the back III are at the bottom.</p>
-				<p>Place the price token next to the map. Draw 1 privilege per player and place them in a face-up row to the right of the price token, so that the minimal bid for each privilege is $20.</p>
-				{{^3.III}}<p>Depending on the # of players place the matching player order cards and 1 resident of each player next to the map.</p>{{/3.III}}
+				<p>Place the price token next to the map. Draw 1 privilege per {{owner}} and place them in a face-up row to the right of the price token, so that the minimal bid for each privilege is $20.</p>
 			{{/3}}
 			{{#2.III}}
 				{{^5.I}}{{^6}}{{^7}}
@@ -189,8 +203,8 @@
 					<p>Place 3 VP next to the first city space of the majority board, 4 VP next to the second space, and so forth.</p>
 				{{/4.I}}
 				{{#5.I}}
-					{{^6}}{{^7}}<p>Place the majority board next to the game map with the column for deserts showing and place the 6 marking tokens for each player below this board.</p>{{/7}}{{/6}}
-					<p>Place 5 VP below each terrain column of the majority board. {{#6}}Place 6 other tokens, such as settlements, per player below the majority board to track exploration.{{/6}}{{#7}}Place 6 other tokens, such as roads, per player below the majority board to track exploration.{{/7}}</p>
+					{{^6}}{{^7}}<p>Place the majority board next to the game map with the column for deserts showing and place the 6 marking tokens for each {{owner}} below this board.</p>{{/7}}{{/6}}
+					<p>Place 5 VP below each terrain column of the majority board. {{#6}}Place 6 other tokens, such as settlements, per {{owner}} below the majority board to track exploration.{{/6}}{{#7}}Place 6 other tokens, such as roads, per player below the majority board to track exploration.{{/7}}</p>
 				{{/5.I}}
 				{{#6.I}}<p>Place 5 VP below each terrain column of the majority board.</p>{{/6.I}}
 				{{#7.I}}<p>Place 10 VP next to the first row of the majority board, and 20 VP next to the second row of the majority board.</p>{{/7.I}}
@@ -214,18 +228,33 @@
 			{{#2}}{{^2.III}}
 					<p>Place the 10 city cards face up next to the map.</p>
 			{{/2.III}}{{/2}}
-			// player setup
 			{{#6}}
 				<p>Each {{owner}} gets 19 roads in his color. If necessary the {{agent}}s may build more roads and need to use suitable replacement parts for these additional roads.</p>
 			{{/6}}
-			{{#9}}{{^9.III}}
-				<p>Lay out the {{#9.II}}{{#7.I}}scoring{{/7.I}}{{^7.I}}player order{{/7.I}}{{/9.II}}{{^9.II}}player order{{/9.II}} cards for 5 companies for the business rounds (BR) and place 1 resident of each company next to these cards. 1 player gets the starting player card for the 1st share round (SR).</p>
-			{{/9.III}}{{/9}}
+			{{#company}}
+				<p>Lay out the {{#9.II}}{{#7.I}}scoring{{/7.I}}{{^7.I}}company order{{/7.I}}{{/9.II}}{{^9.II}}player order{{/9.II}} cards for 5 companies for the business rounds (BR) and place 1 resident of each company next to these cards. 1 player gets the starting player card for the 1st share round (SR).</p>
+			{{/company}}
 			<p>
 				{{#order.clockwise}}Players choose a start player, turns will proceed clockwise. {{^mapnum.1}}{{^mapnum.2}}{{^mapnum.3}}Players all place their capitals in the central city.{{/mapnum.3}}{{/mapnum.2}}{{/mapnum.1}}{{^mapnum.4}}{{^mapnum.5}}In reverse turn order players choose their capitals.{{/mapnum.5}}{{/mapnum.4}}{{/order.clockwise}}
 				{{^order.clockwise}}
 					{{#order.shares}}Players choose a start player for the first SR. Capitals are placed when companies are established.{{/order.shares}}
-					{{^order.shares}}Round based player order as shown in Phase 1. {{^9.II}}Capitals are placed in Phase 1 of the first round.{{/9.II}}{{#9.II}}Capitals are placed when companies are established.{{/9.II}}{{/order.shares}}
+					{{^order.shares}}
+						Round based {{owner}} order as shown in Phase 1. {{^9.II}}Capitals are placed in Phase 1 of the first round.{{/9.II}}{{#9.II}}Capitals are placed when companies are established.{{/9.II}}
+						{{#order.income}}Depending on the # of players place the matching player order cards and 1 resident of each player next to the map.{{/order.income}}
+						{{#order.vp}}
+							{{^9.II}}
+								<p>2♟, 3♟, 4♟: Depending on the # of players, take the corresponding starting and scoring cards. Place the 2 starting cards next to the map. Then shuffle the corresponding scoring cards separated by their backs of I, II, III and place them in 3 face down rows next to the starting cards.</p>
+							{{/9.II}}
+							{{#9.II}}
+								<p>Possibly, not all 5 stock companies are always active. Thus, the players take the following cards for each business round (BR):</p>
+								<ul>
+									<li>1. & 2. BR: Choose the starting card matching the number of active stock companies.</li>
+									<li>3. BR: Take the scoring cards with back I. Shuffle the card "1st scoring" with a # of <span class="glyphicon glyphicon-ok"></span> cards, so there is a face down card for each active stock company.</li>
+									<li>4. & 5. BR: Accordingly use the scoring cards with the back II or III.</li>
+								</ul>
+							{{/9.II}}
+						{{/order.vp}}
+					{{/order.shares}}
 				{{/order.clockwise}}
 			</p>
 			{{#1}}{{^1.III}}
@@ -237,7 +266,7 @@
 					{{#9.III}}<p>Depending on the # of players, choose the following capitals: 2♟: Capitals are across from each other. 3♟: Capitals are equidistant from each other. 4♟: Both unselected capitals are across from each other.</p>{{/9.III}}
 				{{/9}}
 				{{^9}}<p>Depending on the # of players, choose the following capitals: 2♟: Capitals are across from each other. 3♟: Capitals are equidistant from each other. 4♟: Both unselected capitals are across from each other.</p>{{/9}}
-				{{#1}}{{^1.III}}{{^9.I}}{{^9.II}}<p>When playing with 2♟/4♟ Players cannot choose cities 5 or 10 for their capital. (This allows all players to comply with both rules for capital placement.)</p>{{/9.II}}{{/9.I}}{{/1.III}}{{/1}}
+				{{#1}}{{^1.III}}{{^company}}<p>When playing with 2♟/4♟ Players cannot choose cities 5 or 10 for their capital. (This allows all players to comply with both rules for capital placement.)</p>{{/company}}{{/1.III}}{{/1}}
 				{{#8}}
 					{{^8.III}}<p>Place 1 barrack on all free cities. These barracks are considered trading houses.</p>{{/8.III}}
 					{{#8.III}}<p>Place 1 barrack and 1 militia on all free cities, which are not chosen as capitals.</p>{{/8.III}}
@@ -245,11 +274,8 @@
 				{{^8}}<p>Place 1 barrack and 1 militia on all free cities, which are not chosen as capitals.</p>{{/8}}
 			{{/4}}
 			{{#2}}{{^2.III}}
-					<p>To mark the chosen capitals, place 1 settlement of each player onto the matching city cards.</p>
-					{{^residents}}<p>The players place their 9 residents on the 9 cities, which they did not choose as their own capitals.</p>{{/residents}}
-			{{/2.III}}{{/2}}			{{#2}}{{^2.III}}
-					<p>To mark the chosen capitals, place 1 settlement of each player onto the matching city cards.</p>
-					{{^residents}}<p>The players place their 9 residents on the 9 cities, which they did not choose as their own capitals.</p>{{/residents}}
+					<p>To mark the chosen capitals, place 1 settlement of each {{owner}} onto the matching city cards.</p>
+					{{^residents}}<p>The {{agent}}s place their{{#company}} companies'{{/company}} 9 residents on the 9 cities, which they did not choose as their capitals.</p>{{/residents}}
 			{{/2.III}}{{/2}}
 			{{#1}}
 				{{#1.III}}
@@ -285,7 +311,7 @@
 			{{^3.III}}
 				<div class="note col-md-3 col-xs-4">
 					<h2>Calculation of taxes:</h2>
-					<p>To simplify this process, the {{^7.I}}{{^9.I}}first player{{/9.I}}{{/7.I}}{{#7.I}}player with the highest income{{/7.I}}{{#9.I}}company with the highest income{{/9.I}} pays $2 taxes for each full $10 of this income, the other players except the {{^7.I}}{{^9.I}}last player{{/9.I}}{{/7.I}}{{#7.I}}player with the lowest income{{/7.I}}{{#9.I}}company with the lowest income{{/9.I}} pay $1 taxes for each full $10 of their income. The {{^7.I}}{{^9.I}}last player{{/9.I}}{{/7.I}}{{#7.I}}player with the lowest income{{/7.I}}{{#9.I}}company with the lowest income{{/9.I}} pays $0 taxes.</p>
+					<p>To simplify this process, the {{^7.I}}{{^9.I}}first {{owner}}{{/9.I}}{{/7.I}}{{#7.I}}player with the highest income{{/7.I}}{{#9.I}}company with the highest income{{/9.I}} pays $2 taxes for each full $10 of this income, the other players except the {{^7.I}}{{^9.I}}last player{{/9.I}}{{/7.I}}{{#7.I}}player with the lowest income{{/7.I}}{{#9.I}}company with the lowest income{{/9.I}} pay $1 taxes for each full $10 of their income. The {{^7.I}}{{^9.I}}last {{owner}}{{/9.I}}{{/7.I}}{{#7.I}}player with the lowest income{{/7.I}}{{#9.I}}company with the lowest income{{/9.I}} pays $0 taxes.</p>
 					{{^7.I}}{{^9.I}}
 						<h2>Example:</h2>
 						<p>Camille gets an income of $68. Thus, she must pay $12 taxes for the full $60 of her income for being first.</p>
@@ -609,7 +635,7 @@
 <script id="template_main" type="x-tmpl-mustache">
 	<div class="container">
 
-	{{#9}}{{^9.III}}
+	{{#company}}
 		<div class="row section">
 			<div class="col-md-2 col-xs-2"><h1>Share Round</h1></div>
 			<div class="col-md-10 col-xs-10">
@@ -650,13 +676,13 @@
 				</p>
 			</div>
 		</div>
-	{{/9.III}}{{/9}}
+	{{/company}}
 
 	{{#capture}}
 		{{#3}}{{^3.III}}{{^9.I}}{{^7.I}}
 			<p>At game start, all players make a secret bid with their starting money ($0 is a valid bid). Starting with the highest bidder, each player chooses a position in the player order{{^9.II}}{{^mapnum.1}}{{^mapnum.2}}{{^mapnum.3}}, all capitals are placed in the central city.{{/mapnum.3}}{{/mapnum.2}}{{/mapnum.1}}{{^mapnum.4}}{{^mapnum.5}} and his capital on the map.{{/mapnum.5}}{{/mapnum.4}}{{/9.II}}{{#9.II}} for the first share round (SR).{{/9.II}} In case of a tie, randomly draw lots for the order of choice (the losers get $2 for each lost draw).</p>
 			{{#9.II}}<p>The stock company order for the 1st business round (BR) is determined in reverse order of establishment. If stock companies are only established in later SRs, just for once they are first in stock company order in the next BR!</p>{{/9.II}}
-			<p>Starting with the 2nd round, determine the {{^9.II}}player{{/9.II}}{{#9.II}}company{{/9.II}} order according to the income of the former round, from high to low (in case of a tie reverse the {{^9.II}}player{{/9.II}}{{#9.II}}company{{/9.II}} order of the former round for the tied {{^9.II}}players{{/9.II}}{{#9.II}}companies{{/9.II}}). According to the new {{^9.II}}player{{/9.II}}{{#9.II}}company{{/9.II}} order the {{^9.II}}players{{/9.II}}{{#9.II}}companies{{/9.II}} must pay taxes for their last income: The 1st {{^9.II}}player{{/9.II}}{{#9.II}}company{{/9.II}} pays 20%, the last pays 0%, and all other players pay 10% of their last income, see left for <b>Calculation of taxes</b>. Because of higher taxes the 1st {{^9.II}}player{{/9.II}}{{#9.II}}company{{/9.II}} may get a lower income compared to the 2nd.</p>
+			<p>Starting with the 2nd round, determine the {{owner}} order according to the income of the former round, from high to low (in case of a tie reverse the {{owner}} order of the former round for the tied {{owners}}). According to the new {{owner}} order the {{owners}} must pay taxes for their last income: The 1st {{owner}} pays 20%, the last pays 0%, and all other {{owners}} pay 10% of their last income, see left for <b>Calculation of taxes</b>. Because of higher taxes the 1st {{owner}} may get a lower income compared to the 2nd.</p>
 		{{/7.I}}{{/9.I}}{{/3.III}}{{/3}}
 		{{#7.I}}
 			{{^9.II}}
@@ -665,8 +691,8 @@
 			{{#9.II}}
 				<p>The stock company order for the 1st business round (BR) is determined in <b>reverse</b> order of establishment. If stock companies are only established in later share rounds (SR), just for once they are first in stock company order in the next BR, if necessary in reverse order of establishment!</p>
 			{{/9.II}}
-			<p>After all players have taken one complete turn, the player order is readjusted. For the 2nd turn set the new player order by placing the residents on the spaces of the 2nd starting card and starting with the 3rd round separately on the face down scoring cards.</p>
-			<p>As long as the players do not have victory points (VP), simply reverse the player order of the former turn. As soon as the players have VP, the new player order is determined according to VP from few to most. The player with the fewest VP is new starting player, the player with most VP is last. In case of a tie reverse the player order of all concerned players of the former turn.</p>
+			<p>After all {{owners}} have taken one complete turn, the {{owner}} order is readjusted. For the 2nd turn set the new {{owner}} order by placing the residents on the spaces of the 2nd starting card and starting with the 3rd round separately on the face down scoring cards.</p>
+			<p>As long as the {{owners}} do not have victory points (VP), simply reverse the {{owner}} order of the former turn. As soon as the {{owners}} have VP, the new {{owner}} order is determined according to VP from few to most. The {{owner}} with the fewest VP is new starting {{owner}}, the {{owner}} with most VP is last. In case of a tie reverse the {{owner}} order of all concerned {{owners}} of the former turn.</p>
 			{{#3.II}}<p>Starting with the 2nd round the income is taxed according to the money, but the player order according to VP. In case of a tie for highest income, the player must pay 20%, whose turn is now earlier in player order. In case of a tie for lowest income, the player pays no taxes, whose turn is now later in the player order.</p>{{/3.II}}
 		{{/7.I}}
 		{{#9.III}}{{^3}}{{^7.I}}
@@ -675,42 +701,37 @@
 				Starting with the 2nd round determine the player order according to the income of the former round, from low to high. In case of a tie simply reverse the player order of the concerned players.
 			</p>
 		{{/7.I}}{{/3}}{{/9.III}}
+		{{#company}}{{^3.I}}{{^7.I}}
+			<p>The order of the stock companies matches the actual share values from high to low. In case of a tie the order of the concerned companies matches the stack of share value markers from top to bottom.</p>
+			{{#3.II}}
+				<p>Starting with the 2nd round the income is taxed according to the companies with most to least income: The company with the highest income from the previous round pays 20% tax, the company with the with the lowest pays 0%, and all other companies pay 10% of their last income, see above for <b>Calculation of taxes.</b> In the case of a tie, the company earlier in the turn order pays the higher tax rate. The company turn order continues to be determined according to the actual share value.</p>
+				<p>The stock companies pay taxes from their company assets. If they do not have enough money or are dead broke, they pay their remaining money. The presidents do not pay remaining taxes!</p>
+			{{/3.II}}			
+		{{/7.I}}{{/3.I}}{{/company}}
 	{{/capture}}
 	{{#hascapture}}
 		<div class="row section">
-			<div class="col-md-2 col-xs-2"><h1>Phase 1: Player Order</h1></div>
+			<div class="col-md-2 col-xs-2"><h1>Phase 1: {{^company}}Player{{/company}}{{#company}}Company{{/company}} Order</h1></div>
 			<div class="col-md-10 col-xs-10">{{{captured}}}</div>
 		</div>
 	{{/hascapture}}
 
-	{{#9}}{{^9.III}}{{^3.I}}{{^7.I}}
-		<div class="row section">
-			<div class="col-md-2 col-xs-2"><h1>Phase 1: Company Order</h1></div>
-			<div class="col-md-10 col-xs-10">
-				<p>The order of the stock companies matches the actual share values from high to low. In case of a tie the order of the concerned companies matches the stack of share value markers from top to bottom.</p>
-				{{#3.II}}
-					<p>Starting with the 2nd round the income is taxed according to the companies with most to least income: The company with the highest income from the previous round pays 20% tax, the company with the with the lowest pays 0%, and all other players pay 10% of their last income, see above for <b>Calculation of taxes.</b> In the case of a tie, the company earlier in the turn order pays the higher tax rate. The company turn order continues to be determined according to the actual share value.</p>
-					<p>The stock companies pay taxes from their company assets. If they do not have enough money or are dead broke, they pay their remaining money. The presidents do not pay remaining taxes!</p>
-				{{/3.II}}
-			</div>
-		</div>
-	{{/7.I}}{{/3.I}}{{/9.III}}{{/9}}
 
 	{{#3}}{{^3.III}}
 		<div class="row section">
 			<div class="col-md-2 col-xs-2"><h1>Phase 2: Privileges</h1></div>
 			<div class="col-md-10 col-xs-10">
-				<p>If there are still unsold privileges from the former round, place the price token to the right of these privileges. The starting bid for these privileges drops to $0. Draw new privileges and place them to the right of the price token, until you either draw 1 new privilege per player or there are a # of privileges in the row of cards depending on the # of players: 4 (2♟), 5 (3♟), 6 (4♟) or 7 privileges (5 stock companies). The starting bid for the new privileges is $20.</p>
-				<p>All privileges are now auctioned from left to right, one at a time. Beginning with the 1st player all players bid clockwise in sitting order around the table, until there is a highest bid. If a player passes he may only bid again for the next privilege. The highest bidder pays the amount to the bank and places the privilege face up in front of him. If the starting bid of the privilege was $20, and all players pass, the privilege simply remains in the row of cards. If the starting bid of the privilege was $0 and all players pass again, remove that privilege from the game!</p>
-				<p>The player may only buy each type of privilege once. He may use his privileges immediately after purchase.</p>
+				<p>If there are still unsold privileges from the former round, place the price token to the right of these privileges. The starting bid for these privileges drops to $0. Draw new privileges and place them to the right of the price token, until you either draw 1 new privilege per {{owner}} or there are a # of privileges in the row of cards depending on the # of players: 4 (2♟), 5 (3♟), 6 (4♟) or 7 privileges (5 stock companies). The starting bid for the new privileges is $20.</p>
+				<p>All privileges are now auctioned from left to right, one at a time. Beginning with the 1st {{owner}} all {{agent}}s bid clockwise in sitting order around the table, until there is a highest bid. If a {{agent}} passes he may only bid again for the next privilege. The highest bidder pays the amount to the bank and places the privilege face up in front of him. If the starting bid of the privilege was $20, and all {{agent}}s pass, the privilege simply remains in the row of cards. If the starting bid of the privilege was $0 and all {{agent}}s pass again, remove that privilege from the game!</p>
+				<p>{{^company}}The player may only buy each type of privilege once{{/company}}{{#company}}The president can't buy a privelege for their company if the company already owns it{{/company}}. He may use his privileges immediately after purchase.</p>
 			</div>
 		</div>
 	{{/3.III}}{{/3}}
 
 	{{#capture}}
 		{{#2}}{{#residents}}
-			<p>At the start of his turn, the player may change his capital by exchanging his headquarters with 1 of his own settlements in any other city.</p>
-			<p>If the player does not have enough residents to buy in <b>Phase 3 C</b> or enough settlements to settle a tile in <b>Phase 3 D/3 E/3 G</b> in his storage, he may take back the missing pieces from the game map without substitution and place them directly back on the map. If he takes back 1 settlement, he must take back all residents on the same tile.</p>
+			<p>At the start of his turn, the {{agent}} may change {{fowns}} capital by exchanging {{owns}} headquarters with 1 of {{fowns}} own settlements in any other city.</p>
+			<p>If the {{owner}} does not have enough residents to buy in <b>Phase 3 C</b> or enough settlements to settle a tile in <b>Phase 3 D/3 E/3 G</b> in {{owns}} storage, the {{agent}} may take back the missing pieces from the game map without substitution and place them directly back on the map. If he takes back 1 settlement, he must take back all residents on the same tile.</p>
 		{{/residents}}{{/2}}
 	{{/capture}}
 	{{#hascapture}}
@@ -732,19 +753,19 @@
 
 	{{#capture}}
 		{{#3.III}}
-			<p>If there are less privileges in the row of cards as the # of players at the start of this phase, the active player draws 1 privilege and places it to the right of the row of cards (2♟: If less than 3 privileges are in the row of cards, the player draws 1 privilege). The price of a newly drawn privilege is always $20.</p>
-			<p>Now the player may buy 1 privilege for $20. If he does not buy one privilege, the price drops for all privileges for $0 and the price token is placed on the right of the row of cards. Newly drawn privileges are again placed on the right of the price token, so their price is $20. If at any time there are privileges with different backs (I, II or III) in that row, the price for all privileges with the lower back drops to $0 and the price token is placed to the right of them.</p>
-			<p>The player may only buy each type of privilege once. He may use his privileges immediately after purchase.</p>
+			<p>If there are less privileges in the row of cards as the # of {{owners}} at the start of this phase, the active {{agent}} draws 1 privilege and places it to the right of the row of cards {{^company}}(2♟: If less than 3 privileges are in the row of cards, the player draws 1 privilege).{{/company}} The price of a newly drawn privilege is always $20.</p>
+			<p>Now the {{agent}} may buy 1 privilege. If he does not buy one privilege, the price drops for all privileges for $0 and the price token is placed on the right of the row of cards. Newly drawn privileges are again placed on the right of the price token, so their price is $20. If at any time there are privileges with different backs (I, II or III) in that row, the price for all privileges with the lower back drops to $0 and the price token is placed to the right of them.</p>
+			<p>{{^company}}The player may only buy each type of privilege once{{/company}}{{#company}}The president can't buy a privelege for their company if the company already owns it{{/company}}. He may use his privileges immediately after purchase.</p>
 		{{/3.III}}
 		{{#1}}
-			<p>The player may buy exactly 1 upgrade for his transport trolley per turn, either a bigger cargo hold or more movement points, see table <b>Prices for Upgrades</b>.</p>
+			<p>The {{agent}} may buy exactly 1 upgrade for {{fowns}} transport trolley per turn, either a bigger cargo hold or more movement points, see table <b>Prices for Upgrades</b>.</p>
 		{{/1}}
 		{{#8.III}}
-			<p>Starting with the 2nd round the player may buy only at max 2 more residents than the # of plants he owns in each turn.</p>
-			<p><b>Example:</b> If the player owns 4 plants, he may only buy up to 6 residents.</p>
+			<p>Starting with the 2nd round the {{agent}} may buy only at max 2 more residents than the # of plants {{^company}}he{{/company}}{{#company}}the company{{/company}} owns in each turn.</p>
+			<p><b>Example:</b> If the {{owner}} owns 4 plants, {{^company}}he{{/company}}{{#company}}the president{{/company}} may only buy up to 6 residents.</p>
 		{{/8.III}}
 		{{#residents}}
-			<p>The player may buy residents for 10$ each and place them on the board.</p>
+			<p>The player may buy residents for 10$ each and place them on the board. (subject to placement rules)</p>
 		{{/residents}}
 	{{/capture}}
 	{{#hascapture}}
@@ -755,51 +776,49 @@
 	{{/hascapture}}
 
 	{{#capture}}{{#residents}}
-		{{#hurry}}<p>While moving, the residents are <b>in a hurry</b>. Thus, if the player moves them onto tiles with at least 1 of his exhausted residents, they remain active.</p>{{/hurry}}
+		{{#hurry}}<p>While moving, the residents are <b>in a hurry</b>. Thus, if the {{agent}} moves them onto tiles with at least 1 of {{fowns}} exhausted residents, they remain active.</p>{{/hurry}}
 		{{#2}}
 			{{^2.III}}
-				<p>The first time the player reaches 1 city and exchanges 1 resident for 1 settlement, he places {{#9}}a settlement{{/9}}{{^9}}that resident{{/9}} directly on top of the matching city card. IMPORTANT: The players must reach the cities once during the game. They do not need to stay there until the end of the game. The players may voluntarily remove their settlements from these cities during the game, or may be forced to remove them because of war!</p>
-				{{#4}}<p>The player reaches an opposing city the first time, if he moves 1 of his residents on this city. In that case he places 1 additional resident from his storage on top of the matching city card (moving on the city is important, not the outcome of the following fight!).</p>{{/4}}
+				<p>The first time the {{owner}} reaches 1 city and exchanges 1 resident for 1 settlement, {{^company}}he{{/company}}{{#company}}the president{{/company}} places {{#9}}a settlement{{/9}}{{^9}}that resident{{/9}} directly on top of the matching city card. IMPORTANT: The {{owners}} must reach the cities once during the game. They do not need to stay there until the end of the game. The players may voluntarily remove their settlements from these cities during the game, or may be forced to remove them because of war!</p>
+				{{#4}}<p>The {{owner}} reaches an opposing city the first time, if {{^company}}he{{/company}}{{#company}}the president{{/company}} moves 1 of {{fowns}} residents on this city. In that case he places 1 additional resident from his storage on top of the matching city card (moving on the city is important, not the outcome of the following fight!).</p>{{/4}}
 			{{/2.III}}
 		{{/2}}
 		{{#4}}
-			<p>All residents and settlements (including the headquarters in the capital) count as armies. The player attacks opponents with his residents, but defends his tiles with all his armies he has there.</p>
+			<p>All residents and settlements (including the headquarters in the capital) count as armies. The {{agent}} attacks opponents with {{fowns}} residents, but defends {{fowns}} tiles with all {{owns}} armies he has there.</p>
 			<p>
-				Only 1 player may have a settlement on a tile.
+				Only 1 {{owner}} may have a settlement on a tile.
 				{{^4.III}}
-					{{^2}}If the player attacks an opponent by moving residents onto one of his tiles, these residents are exhausted and cannot leave the tile. The player will resolve all fights on tiles in <b>Phase 3 G</b>, where he attacks an opponent. He decides, in which order he resolves these fights.{{/2}}
+					{{^2}}If the {{agent}} attacks an opponent by moving residents onto one of {{owns}} tiles, these residents are exhausted and cannot leave the tile. The {{agent}} will resolve all fights on tiles in <b>Phase 3 G</b>, where he attacks an opponent. He decides, in which order he resolves these fights.{{/2}}
 					{{#2}}
-						After the player moved all requested residents onto an opposing tile, these residents are exhausted. A fight follows immediately, see <b>Fight Sequence</b> and table <b>Dice Results</b>. If at least 1 defender survives the attack, the attacker cannot attack this tile again in the same round. The player may move additional active residents onto neutralized or conquered tiles.
+						After the {{agent}} moved all requested residents onto an opposing tile, these residents are exhausted. A fight follows immediately, see <b>Fight Sequence</b> and table <b>Dice Results</b>. If at least 1 defender survives the attack, the attacker cannot attack this tile again in the same round. The {{agent}} may move additional active residents onto neutralized or conquered tiles.
 					{{/2}}
 				{{/4.III}}
-				{{#4.III}}As soon as the player moves a resident onto an opposing tile, a fight follows immediately, see <b>Fight Sequence</b>.{{/4.III}}
+				{{#4.III}}As soon as the {{agent}} moves a resident onto an opposing tile, a fight follows immediately, see <b>Fight Sequence</b>.{{/4.III}}
 			</p>
-			{{#8}}<p>There are no fights in cities, so any number of players may have their own trading houses there. The trading houses of free cities also count. If the player conquers a land tile, he also conquers an existing plant. If the land tile is neutralized, the plant remains abandoned for now.</p>{{/8}}
+			{{#8}}<p>There are no fights in cities, so any number of {{owners}} may have their own trading houses there. The trading houses of free cities also count. If the {{agent}} conquers a land tile, he also conquers an existing plant. If the land tile is neutralized, the plant remains abandoned for now.</p>{{/8}}
 			{{^8}}
+				<p>The free cities defend themselves with their barracks and militia.</p>
 				{{^4.III}}{{#2}}
 					{{#3}}<p>If the attacker neutralizes an opposing city, 1 existing factory there is destroyed. If the attacker later conquers the city with 1 additional resident, he gets the remaining factories there.</p>{{/3}}
-					{{#4.II}}{{#9}}<p>If the attacking stock company conquers an opposing capital by immediately moving 1 additional active resident onto the neutralized city, it also conquers all other tiles of the defender by exchanging the armies with its own.{{#2.III}} If the attacking stock company neutralizes the last capital of the defender, it may conquer that capital immediately after the fight by moving 1 additional active resident onto the neutralized city.{{/2.III}} If the attacker only neutralizes the capital, the defender loses all of his tiles without the attacker conquering them. Afterwards the players lose all shares of the defeated stock company without substitution. The stock company starts anew and may be established again by the players in the next share round (SR).{{#1.1}} Place all delivered goods of that company separately next to the map, as they still count for the game end!{{/1.1}}</p>{{/9}}{{/4.II}}
 				{{/2}}{{/4.III}}
 				{{#4.III}}
 					{{#3}}<p>If the attacker neutralizes an opposing city, 1 existing factory there is destroyed. IF the attacker later conquers the city with 1 additional resident, he gets the remaining factories there.</p>{{/3}}
-					{{#9}}<p>If the attacking stock company conquers an opposing capital by immediately moving 1 additional active resident onto the neutralized city, it also conquers all other tiles of the defender by exchanging the armies with its own. If the attacker only neutralizes the capital, the defender loses all of his tiles without the attacker conquering them. Afterwards the players lose all shares of the defeated stock company without substitution. The stock company starts anew and may be established again by the players in the next share round (SR).{{#1.1}} Place all delivered goods of that company separately next to the map, as they still count for the game end!{{/1.1}}</p>{{/9}}
 				{{/4.III}}
 				<p>
 					{{#4.I}}If the capital is attacked, the headquarters defends itself last and counts as 3 armies. {{/4.I}}
-					{{^4.I}}{{#2}}If the capital is attacked, the headquarters defends itself last and counts as 3 armies.{{/2}}{{/4.I}}
-					{{^4.I}}{{^2}}{{#9.I}}If the capital is attacked, the headquarters defends itself last and counts as 3 armies.{{/9.I}}{{/2}}{{/4.I}}
-					{{^2}}{{^9.I}}{{#4.III}}The capital of another player cannot be attacked.{{/4.III}}{{/9.I}}{{/2}}
-					{{#4.II}}{{^2}}{{^9.I}}The capital of another player cannot be attacked.{{/9.I}}{{/2}}{{/4.II}}
 					{{#2}}
+						{{^4.I}}If the capital is attacked, the headquarters defends itself last and counts as 3 armies.{{/4.I}} 
 						If the capital of the defender is neutralized or conquered, the defender immediately chooses a new capital by replacing his settlement on one of his cities with his headquarters.
 						{{#4.I}}If the defender does not control another city, the game ends, see <b>Game End</b>.{{/4.I}}
-						{{^4.I}}If the defender only controls the capital (and possibly additional land tiles), his capital cannot be attacked{{#9.I}} (exception, see below){{/9.I}}.{{/4.I}}
+						{{^4.I}}{{^company}}If the defender only controls the capital (and possibly additional land tiles), his capital cannot be attacked.{{/company}}{{/4.I}}
+						{{#company}}If the defender does not control another city, the attacker also conquers all other tiles of the defender and exchanges the armies with its own. If it only neutralizes the opposing capital, the defender loses all of his tiles without the attacker conquering them. Afterwards the players lose all shares of the defeated stock company without substitution. The stock company starts anew and may be established again by the players in the next share round (SR).{{/company}}
 					{{/2}}
-					The free cities defend themselves with their barracks and militia.
+					{{^4.I}}{{^2}}{{#company}}If the capital is attacked, the headquarters defends itself last and counts as 3 armies, see <b>Phase 3 G</b>.{{/company}}{{/2}}{{/4.I}}
+					{{^2}}{{^company}}{{^4.I}}The capital of another player cannot be attacked.{{/4.I}}{{/company}}{{/2}}
 				</p>
 			{{/8}}
 		{{/4}}
-		{{#5.I}}<p>The player may explore an adjacent unknown space with 1 active resident. He places that resident back into his storage (except if it explores water, instead it is placed exhausted on the starting tile).</p>{{/5.I}}
+		{{#5.I}}<p>The {{agent}} may explore an adjacent unknown space with 1 active resident. He places that resident back into {{fowns}} storage (if the resident explores water, instead it is placed exhausted on the starting tile).</p>{{/5.I}}
 		{{#5.II}}
 			{{#2}}<p>The player may explore any number of adjacent unknown spaces with 1 active resident. After exploring he places that resident back into his storage (except if it explores only water, instead it is placed exhausted on the starting tile).</p>{{/2}}
 			{{^2}}{{#4}}<p>The player may explore an adjacent unknown space with 1 active resident. After exploring the tile the player places that resident back into his storage (except if it explores water, instead it is placed exhausted on the starting tile).</p>{{/4}}{{/2}}
@@ -1078,7 +1097,7 @@
 		</div>
 	{{/hascapture}}
 
-	{{#9}}{{^9.III}}
+	{{#company}}
 		<div class="row section">
 			<div class="col-md-2 col-xs-2"><h1>Phase 4: Dividends</h1></div>
 			<div class="col-md-10 col-xs-10">
@@ -1096,7 +1115,7 @@
 				{{/9.II}}
 			</div>
 		</div>
-	{{/9.III}}{{/9}}
+	{{/company}}
 
 	{{#capture}}
 		{{#7.I}}
@@ -1306,6 +1325,18 @@
 		return {'value': 4};
 	}
 
+	function randomizeWorlds (values) {
+		shuffle(values, 3);
+		update_world(values[0] + values[1] + values[2]);
+	}
+	function checkThree(values) {
+		if(values.length>=3) {
+			$('#randomizer').prop('disabled', false).css("opacity", "1");;
+		} else {
+			$('#randomizer').prop('disabled', true).css("opacity", "0.2");;
+		}
+	}
+	
 	var parts = {
 		'2': {'name': 'goods', 'max': 48},
 		'3': {'name': 'covering tokens', 'max': 30},
@@ -1341,6 +1372,11 @@
 		'32': {'name': 'shares', 'max': 45},
 		'33': {'name': 'overview tile', 'max': 1},
 		'36': {'name': 'boat', 'max': 1},
+	}
+	
+	var shares_defs = {
+		"company": {agent: 'president', owner: 'company', owners:'companies' , fowns: 'the company\'s', owns: 'its', company: true},
+		"player": {agent: 'player', owner: 'player', owners:'players',  fowns: 'his', owns: 'his', company: false}
 	}
 
 	var module_defs = {
@@ -1661,31 +1697,32 @@
 	}
 
 	function shuffle(arr, num) {
-		if(num == undefined)
-			num = arr.length;
-		for(var i = 0; i < num; i++) {
-			var j = Math.floor(Math.random() * (arr.length - i - 1)) + i + 1;
+		if(num == undefined) num = arr.length;
+		
+		for (var i = arr.length - 1; i > 0; i--) {
+			var j = Math.floor(Math.random() * (i + 1));
 			var temp = arr[i];
 			arr[i] = arr[j];
 			arr[j] = temp;
 		}
+		
+		arr.slice(0,3);
+		
+		return arr;
+		
 	}
 	
 	function getNameTokens(world) {
-		var tokens;
-		if(world.indexOf('9') == 1 ||world.indexOf('9') == 0) {
-			tokens = {agent: 'president', owner: 'company', fowns: 'the company\'s', owns: 'its'};
-		} else {
-			tokens = {agent: 'player', owner: 'player', fowns: 'his', owns: 'his'};
+		if(world.indexOf('9') == 1||world.indexOf('9') == 0) {
+			return "company";
 		}
-		return tokens;
+		return "player";
 	}
 	
-	function load() {
+	function buildRules(template) {
+	
 		var world = validate_world(window.location.hash.substr(1)) || ['1', '2', '3'];
 
-		var template = $('#template_head').html();
-		
 		var modules = {
 			'I': $.extend(true, {}, module_defs[world[0]]['I']),
 			'II': $.extend(true, {}, module_defs[world[1]]['II']),
@@ -1722,18 +1759,19 @@
 			'mapnum': {},
 			'order': priority_match([modules['I']['order'], modules['II']['order'], modules['III']['order']]),
 			'money': priority_match([modules['I']['money'], modules['II']['money'], modules['III']['money']]),
-			// create tokens
-			getNameTokens: getNameTokens,
-			'tokenNames': getNameTokens(world)
+			'agent': shares_defs[getNameTokens(world)]['agent'],
+			'owner':shares_defs[getNameTokens(world)]['owner'],
+			'owners':shares_defs[getNameTokens(world)]['owners'],
+			'fowns':shares_defs[getNameTokens(world)]['fowns'],
+			'owns':shares_defs[getNameTokens(world)]['owns'],
+			'company':shares_defs[getNameTokens(world)]['company'],
 		};
+		
 		params[world[0]] = {'I': true};
 		params[world[1]] = {'II': true};
 		params[world[2]] = {'III': true};
 		params['mapnum'][params.map.value] = true;
-		params['agent'] = params.tokenNames['agent'];
-		params['owner'] = params.tokenNames['owner'];
-		params['fowns'] = params.tokenNames['fowns'];
-		params['owns'] = params.tokenNames['owns'];
+
 		// Run pre-render hooks and assemble the list of parts
 		var game_parts = {};
 		$.map(['I', 'II', 'III'], function(i) {
@@ -1764,83 +1802,15 @@
 		$("title").text(params['long_name'])
 
 		var rendered = Mustache.render(template, params);
-		$("#target_head").html(rendered);
-		
-		// Render Main
-		
-		template = $('#template_main').html();
-		
-		capture_stack = [];
-		params = {
-			'capture': function() {
-				return function(template, render) {
-					var rendered = render(template).trim();
-					if(rendered.length > 0)
-						capture_stack.push(rendered);
-					return '';
-				};
-			},
-			'hascapture': function() {
-				return function(template, render) {
-					if(capture_stack.length > 0) {
-						return render(template);
-					} else {
-						return '';
-					}
-				};
-			},
-			'captured': function() {
-				return capture_stack.pop();
-			},
-			'world': world,
-			'module': modules,
-			'residents': modules['I']['residents'] || modules['II']['residents'] || modules['III']['residents'] || world.indexOf('1') == -1,
-			'hurry': world.indexOf('2') != -1 || world.indexOf('8') != -1,
-			'map': priority_match([modules['I']['map'], modules['II']['map'], modules['III']['map']]),
-			'mapnum': {},
-			'order': priority_match([modules['I']['order'], modules['II']['order'], modules['III']['order']]),
-			'money': priority_match([modules['I']['money'], modules['II']['money'], modules['III']['money']]),
-			// create tokens
-			getNameTokens: getNameTokens,
-			'tokenNames': getNameTokens(world)
-		};
-		params[world[0]] = {'I': true};
-		params[world[1]] = {'II': true};
-		params[world[2]] = {'III': true};
-		params['mapnum'][params.map.value] = true;
-		params['agent'] = params.tokenNames['agent'];
-		params['owner'] = params.tokenNames['owner'];
-		params['fowns'] = params.tokenNames['fowns'];
-		params['owns'] = params.tokenNames['owns'];
-		// Run pre-render hooks and assemble the list of parts
-		game_parts = {};
-		$.map(['I', 'II', 'III'], function(i) {
-			if(modules[i]['before_render'] != undefined)
-				modules[i]['before_render'](params, modules[i]);
 
-			$.map(modules[i]['parts'], function(value, key) {
-				game_parts[key] = Math.min(
-					(game_parts[key] || 0) + value,
-					parts[key]['max']);
-			});
-		});
-		part_list = [];
-		$.map(game_parts, function(value, key) {
-			var partinfo = parts[key];
-			part_list.push({
-				'name': partinfo.name,
-				'id': partinfo.id==undefined?key:partinfo.id,
-				'count': value,
-			});
-		});
-		part_list.sort(function(a, b) {
-			return a['id'] - b['id'];
-		});
-		params['parts'] = part_list;
-
-		rendered = Mustache.render(template, params);
-		$("#target_main").html(rendered);
+		return rendered;
 		
+	}
+	
+	function load() {
+		
+		$("#target_head").html(buildRules($('#template_head').html()));
+		$("#target_main").html(buildRules($('#template_main').html()));
 
 		$("#editbutton").click(function() {
 			$("#worldno-entry, #worldno").toggle();
@@ -1864,15 +1834,26 @@
 			update_world($("#worldno-entry").val());
 			$("#worldno-entry, #worldno").toggle();
 		});
+		
+		$('#randomize').on('click', function (e) { $("#menu").slideDown(100); });
 
-		$("#randomize").click(function() {
-			modules = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
-			shuffle(modules, 3);
-			update_world(modules[0] + modules[1] + modules[2])
-		})
 	}
+	
+	$(function() { 
+		$('#randomizer').on('click', function (e) { randomizeWorlds($("input[name='world\[\]']:checkbox:checked").map(function() { return this.value; }).get()); });
+		$('#selectall').on('click', function (e) { $("input[name='world\[\]']:checkbox").prop('checked', true); $('#randomizer').prop('disabled', false).css("opacity", "1"); });
+		$('#selectnone').on('click', function (e) { $("input[name='world\[\]']:checkbox:checked").prop('checked', false); $('#randomizer').prop('disabled', true).css("opacity", "0.2"); });
+		$("input[name='world\[\]']:checkbox").on('click', function (e) {
+			checkThree($("input[name='world\[\]']:checkbox:checked").map(function() { return this.value; }).get());
+		});
+		$('#menuclose').on('click', function (e) { $("#menu").slideUp(100); });
+	});
+
+	
 	$(document).ready(load);
 	$(window).bind('hashchange', load);
+	$(window).bind('beforeprint', function() { $("#menu").slideUp(0); }); //didn't work in chrome
+	
 </script>
 <script>
 	// Via http://stackoverflow.com/questions/12556593/determining-a-page-is-outdated-on-github-pages

@@ -12,7 +12,8 @@
 	display:flex;
 }
 
-#target {
+#target_main,
+#target_head {
 	background-color:#ddd;
 }
 
@@ -243,6 +244,64 @@ table th {
 	background-color:#fff;
 }
 
+
+
+#menu {
+	width:100%;
+	background-color:#333;
+	padding:1em;
+	color:#fff;
+	display:none;
+}
+
+#menu .modules div {
+	padding:8px;
+}
+
+#menu input {
+	vertical-align:text-bottom;
+	margin-right:6px;
+}
+
+#menu button {
+	margin-top:10px;
+	color:#444;
+}
+
+#menu label {
+	margin:0px;
+	padding:0 0 0 6px;
+}
+
+#menu div.countries {
+}
+
+#menu div.countries ul {
+	list-style: none;
+	float:right;
+}
+
+#menu div.countries ul li {
+	float:left;
+	margin:3px;
+}
+
+#menu div.countries ul li.off {
+	opacity:0.3;
+}
+
+.mod1 { background-color:#97b911; color:#000000; }
+.mod2 { background-color:#009ee0 ; color:#FFFFFF; }
+.mod3 { background-color:#007930; color:#FFFFFF; }
+.mod4 { background-color:#a7d6c9; color:#000000; }
+.mod5 { background-color:#cd071e; color:#FFFFFF; }
+.mod6 { background-color:#ffed00; color:#000000; }
+.mod7 { background-color:#e06c9e; color:#FFFFFF; }
+.mod8 { background-color:#f7a800; color:#000000; }
+.mod9 { background-color:#972f86; color:#FFFFFF; }
+
+
+
 @media print {
 	* {
 		font-size: 10px;
@@ -256,7 +315,8 @@ table th {
 		page-break-inside: avoid;
 	}
 
-	#target {
+	#target_head,
+	#target_main {
 		background-color:#FFF;
 	}
 	
@@ -295,6 +355,10 @@ table th {
 		padding-left: 30px;
 		padding-top:0;
 		padding-bottom:0;
+	}
+	
+	#menu { 
+		display:none; 
 	}
 	
 }
