@@ -1,6 +1,7 @@
 <html manifest="manifest.appcache">
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="initial-scale=1,user-scalable=yes">
 	<title>504</title>
 	<script src="js/jquery-1.11.3.min.js"></script>
 	<script src="js/mustache.min.js"></script>
@@ -16,7 +17,7 @@
 	<form id="ModulesForm">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-9 col-xs-9">
+				<div class="col-md-10 col-xs-10">
 					<div class="row">
 						<div class="col-md-12 col-xs-12">
 							<p>Please pick your preferred modules:</p>
@@ -84,7 +85,7 @@
 				<span class="glyphicon glyphicon-random" id="randomize"></span>
 				<span class="glyphicon glyphicon-edit" id="editbutton"></span>
 				World
-				<span id="worldno">{{world.0}}{{world.1}}{{world.2}}</span>
+				<span id="worldno"><span class="mod{{world.0}}">{{world.0}}</span><span class="mod{{world.1}}">{{world.1}}</span><span class="mod{{world.2}}">{{world.2}}</span></span>
 				<input type="text" id="worldno-entry" style="display: none">
 				: {{long_name}}
 			</h1>
@@ -295,7 +296,7 @@
 	{{/capture}}
 	{{#hascapture}}
 	<div class="row section">
-		<div class="col-md-2 col-xs-2"><h1>Playing the Game</h1></div>
+		<div class="col-md-2 col-xs-2 {{#4}}{{#5}}mod5{{/5}}{{/4}}{{#9.I}} mod9{{/9.I}}{{#9.II}} mod9{{/9.II}}"><h1>Playing the Game</h1></div>
 		<div class="col-md-10 col-xs-10">{{{captured}}}</div>
 	</div>
 	{{/hascapture}}
@@ -637,7 +638,7 @@
 
 	{{#company}}
 		<div class="row section">
-			<div class="col-md-2 col-xs-2"><h1>Share Round</h1></div>
+			<div class="col-md-2 col-xs-2 mod9"><h1>Share Round</h1></div>
 			<div class="col-md-10 col-xs-10">
 				<p>During the SR, the players can choose the following actions: <b>deal shares, pass or quit</b>.</p>
 				<p><b>Dealing Shares:</b> When you take this action you buy 1 share and/or sell any number of shares. During the same SR a player can either buy or sell stocks from a given company; he cannot do both.</p>
@@ -719,7 +720,7 @@
 
 	{{#3}}{{^3.III}}
 		<div class="row section">
-			<div class="col-md-2 col-xs-2"><h1>Phase 2: Privileges</h1></div>
+			<div class="col-md-2 col-xs-2 mod3"><h1>Phase 2: Privileges</h1></div>
 			<div class="col-md-10 col-xs-10">
 				<p>If there are still unsold privileges from the former round, place the price token to the right of these privileges. The starting bid for these privileges drops to $0. Draw new privileges and place them to the right of the price token, until you either draw 1 new privilege per {{owner}} or there are a # of privileges in the row of cards depending on the # of players: 4 (2♟), 5 (3♟), 6 (4♟) or 7 privileges (5 stock companies). The starting bid for the new privileges is $20.</p>
 				<p>All privileges are now auctioned from left to right, one at a time. Beginning with the 1st {{owner}} all {{agent}}s bid clockwise in sitting order around the table, until there is a highest bid. If a {{agent}} passes he may only bid again for the next privilege. The highest bidder pays the amount to the bank and places the privilege face up in front of him. If the starting bid of the privilege was $20, and all {{agent}}s pass, the privilege simply remains in the row of cards. If the starting bid of the privilege was $0 and all {{agent}}s pass again, remove that privilege from the game!</p>
@@ -736,14 +737,14 @@
 	{{/capture}}
 	{{#hascapture}}
 		<div class="row section">
-			<div class="col-md-2 col-xs-2"><h1>Phase 3 A: Capital</h1></div>
+			<div class="col-md-2 col-xs-2 mod2"><h1>Phase 3 A: Capital</h1></div>
 			<div class="col-md-10 col-xs-10">{{{captured}}}</div>
 		</div>
 	{{/hascapture}}
 
 	{{#9.III}}
 		<div class="row section">
-			<div class="col-md-2 col-xs-2"><h1>Phase 3 B: Stock Dealing</h1></div>
+			<div class="col-md-2 col-xs-2 mod9"><h1>Phase 3 B: Stock Dealing</h1></div>
 			<div class="col-md-10 col-xs-10">
 				<p>The player may buy any number of shares of the other players from the bank for the actual share value, if these were already sold in a former round to the bank (if their dark side is face up). The player cannot sell these shares again!</p>
 				<p>Additionally, the player may sell exactly 1 of his shares to the bank during his turn. He places the share for now with the light side face up into the bank and gets money according to the actual share value (this money is not considered as income!). Then, the share value drops by $10. The player cannot sell his president's share! The player may conduct this <b>sale during his complete turn</b> to get missing money for one of his actions!</p>
@@ -944,14 +945,14 @@
 	{{/capture}}
 	{{#hascapture}}
 		<div class="row section">
-			<div class="col-md-2 col-xs-2"><h1>Phase 3 E: Transport Trolley</h1></div>
+			<div class="col-md-2 col-xs-2 mod1"><h1>Phase 3 E: Transport Trolley</h1></div>
 			<div class="col-md-10 col-xs-10">{{{captured}}}</div>
 		</div>
 	{{/hascapture}}
 
 	{{#3}}{{^3.III}}
 		<div class="row section">
-			<div class="col-md-2 col-xs-2"><h1>Phase 3 F: Factories</h1></div>
+			<div class="col-md-2 col-xs-2 mod3"><h1>Phase 3 F: Factories</h1></div>
 			<div class="col-md-10 col-xs-10">
 				<p>Each round, the player may buy at max 1 factory on each city, if he has 1 settlement there and pays the matching costs, see left for the table Factory.{{#3.I}} The player immediately gets 5 victory points (VP) for building the factory.{{/3.I}} On a city, the players in common may build a total of 3 factories.
 				<p>The player marks his factory with his settlement. If he owns several factories in the same city, he stacks them below his settlement.</p>
@@ -971,7 +972,7 @@
 	{{/capture}}
 	{{#hascapture}}
 		<div class="row section">
-			<div class="col-md-2 col-xs-2"><h1>Phase 3 G: Fight</h1></div>
+			<div class="col-md-2 col-xs-2 mod4"><h1>Phase 3 G: Fight</h1></div>
 			<div class="col-md-10 col-xs-10">{{{captured}}}</div>
 		</div>
 	{{/hascapture}}
@@ -1064,7 +1065,7 @@
 	{{/capture}}
 	{{#hascapture}}
 		<div class="row section">
-			<div class="col-md-2 col-xs-2"><h1>Phase 3 H: Income</h1></div>
+			<div class="col-md-2 col-xs-2 mod{{world.1}}"><h1>Phase 3 H: Income</h1></div>
 			<div class="col-md-10 col-xs-10">{{{captured}}}</div>
 		</div>
 	{{/hascapture}}
@@ -1092,14 +1093,14 @@
 	{{/capture}}
 	{{#hascapture}}
 		<div class="row section">
-			<div class="col-md-2 col-xs-2"><h1>Mid-Term Scorings</h1></div>
+			<div class="col-md-2 col-xs-2 mod2"><h1>Mid-Term Scorings</h1></div>
 			<div class="col-md-10 col-xs-10">{{{captured}}}</div>
 		</div>
 	{{/hascapture}}
 
 	{{#company}}
 		<div class="row section">
-			<div class="col-md-2 col-xs-2"><h1>Phase 4: Dividends</h1></div>
+			<div class="col-md-2 col-xs-2 mod9"><h1>Phase 4: Dividends</h1></div>
 			<div class="col-md-10 col-xs-10">
 				{{#9.I}}
 					{{#3.II}}<p>The presidents record their companies' incomes for the round, this figure is used to calculate taxes for the following round.</p>{{/3.II}}
@@ -1127,13 +1128,13 @@
 	{{/capture}}
 	{{#hascapture}}
 		<div class="row section">
-			<div class="col-md-2 col-xs-2"><h1>Phase 5: Scoring and Final Scoring</h1></div>
+			<div class="col-md-2 col-xs-2 mod7"><h1>Phase 5: Scoring and Final Scoring</h1></div>
 			<div class="col-md-10 col-xs-10">{{{captured}}}</div>
 		</div>
 	{{/hascapture}}
 
 	<div class="row section">
-		<div class="col-md-2 col-xs-2"><h1>Game End</h1></div>
+		<div class="col-md-2 col-xs-2 mod{{world.0}}"><h1>Game End</h1></div>
 		<div class="col-md-10 col-xs-10">
 			{{#1.I}}
 				{{^9.II}}<p>The game ends at the end of the round, after all players commonly delivered at least 19 (2♟), 21 (3♟) or 23 (4♟) goods tiles.</p>{{/9.II}}
@@ -1306,7 +1307,7 @@
 	{{/capture}}
 	{{#hascapture}}
 		<div class="row section">
-			<div class="col-md-2 col-xs-2"><h1>Final Scoring</h1></div>
+			<div class="col-md-2 col-xs-2 mod{{world.0}}"><h1>Final Scoring</h1></div>
 			<div class="col-md-10 col-xs-10">{{{captured}}}</div>
 		</div>
 	{{/hascapture}}
@@ -1858,6 +1859,8 @@
 <script>
 	// Via http://stackoverflow.com/questions/12556593/determining-a-page-is-outdated-on-github-pages
 	// Check if a new cache is available on page load.
+
+
 	window.addEventListener('load', function(e) {
 		var appCache = window.applicationCache;
 
@@ -1874,6 +1877,8 @@
 			}
 		}, false);
 	}, false);
+
+
 </script>
 
 </body>

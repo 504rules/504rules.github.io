@@ -27,7 +27,7 @@
 
 p {
 	margin-bottom: 0.75em;
-	border-bottom:1px dashed rgba(0,100,0,0.5);
+	border-bottom:1px dashed rgba(56, 143, 127,0.3); 
 	padding-bottom: 0.75em;
 }
 
@@ -144,6 +144,7 @@ table th {
 	font-size: 1.5em;
 	font-weight: bold;
 	margin: 1em 0;
+	line-height: 1.5em;	
 }
 
 .name h1 span {
@@ -189,10 +190,11 @@ table th {
 }
 
 .section .col-md-2 {
-	background: darkgreen;
+	background-color: #388f7f;
 	border-radius: 0 15px 15px 0;
 	padding: 15px;
 	margin: 0;
+	min-width:120px;
 }
 
 .section .col-md-2 h1 {
@@ -235,9 +237,9 @@ table th {
 }
 
 .warning  {
-	border: 1px solid darkgreen;
-	border-top: 5px solid darkgreen;
-	border-bottom: 5px solid darkgreen;
+	border: 1px solid #972f86;
+	border-top: 5px solid #972f86;
+	border-bottom: 5px solid #972f86;
 	margin-right: 0;
 	margin-bottom: 15px;
 	padding: 7px;
@@ -256,6 +258,8 @@ table th {
 
 #menu .modules div {
 	padding:8px;
+    	white-space: nowrap;
+    	overflow: hidden;	
 }
 
 #menu input {
@@ -290,17 +294,17 @@ table th {
 	opacity:0.3;
 }
 
-.mod1 { background-color:#97b911; color:#000000; }
-.mod2 { background-color:#009ee0 ; color:#FFFFFF; }
-.mod3 { background-color:#007930; color:#FFFFFF; }
-.mod4 { background-color:#a7d6c9; color:#000000; }
-.mod5 { background-color:#cd071e; color:#FFFFFF; }
-.mod6 { background-color:#ffed00; color:#000000; }
-.mod7 { background-color:#e06c9e; color:#FFFFFF; }
-.mod8 { background-color:#f7a800; color:#000000; }
-.mod9 { background-color:#972f86; color:#FFFFFF; }
+.section .mod1, .section .mod1 h1, .mod1 { background-color:#97b911; color:#000000; }
+.section .mod2, .section .mod2 h1, .mod2 { background-color:#009ee0; color:#FFFFFF; }
+.section .mod3, .section .mod3 h1, .mod3 { background-color:#007930; color:#FFFFFF; }
+.section .mod4, .section .mod4 h1, .mod4 { background-color:#a7d6c9; color:#000000; }
+.section .mod5, .section .mod5 h1, .mod5 { background-color:#cd071e; color:#FFFFFF; }
+.section .mod6, .section .mod6 h1, .mod6 { background-color:#ffed00; color:#000000; }
+.section .mod7, .section .mod7 h1, .mod7 { background-color:#e06c9e; color:#FFFFFF; }
+.section .mod8, .section .mod8 h1, .mod8 { background-color:#f7a800; color:#000000; }
+.section .mod9, .section .mod9 h1, .mod9 { background-color:#972f86; color:#FFFFFF; }
 
-
+#worldno span { padding:4px 10px; }
 
 @media print {
 	* {
@@ -344,7 +348,7 @@ table th {
 		padding-top: 25px;
 	}
 	.section .col-md-2 {
-		background: black;
+		background-color: black;
 		border-radius: 0 15px 15px 0;
 		padding: 15px;
 		margin: 0;
@@ -357,8 +361,14 @@ table th {
 		padding-bottom:0;
 	}
 	
-	#menu { 
-		display:none; 
+	#menu, 
+	#menu * { 
+		display:none!important;
+		visibility: hidden;
 	}
 	
+	.section .col-md-2.col-xs-2, .section .col-md-2.col-xs-2 h1 { background-color: #000 !important; color: #FFFFFF !important; }
+
+	#worldno span { padding:0; }
+
 }
