@@ -144,6 +144,7 @@ table th {
 	font-size: 1.5em;
 	font-weight: bold;
 	margin: 1em 0;
+	line-height: 1.5em;	
 }
 
 .name h1 span {
@@ -257,6 +258,8 @@ table th {
 
 #menu .modules div {
 	padding:8px;
+    	white-space: nowrap;
+    	overflow: hidden;	
 }
 
 #menu input {
