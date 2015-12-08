@@ -763,7 +763,7 @@
 		{{/1}}
 		{{#8.III}}
 			<p>Starting with the 2nd round the {{agent}} may buy only at max 2 more residents than the # of plants {{^company}}he{{/company}}{{#company}}the company{{/company}} owns in each turn.</p>
-			<p><b>Example:</b> If the {{owner}} owns 4 plants, {{^company}}he{{/company}}{{#company}}the president{{/company}} may only buy up to 6 residents.</p>
+			<p><b>Example:</b> If the {{owner}} owns 4 plants, {{sagent}} may only buy up to 6 residents.</p>
 		{{/8.III}}
 		{{#residents}}
 			<p>The player may buy residents for 10$ each and place them on the board. (subject to placement rules)</p>
@@ -780,8 +780,8 @@
 		{{#hurry}}<p>While moving, the residents are <b>in a hurry</b>. Thus, if the {{agent}} moves them onto tiles with at least 1 of {{fowns}} exhausted residents, they remain active.</p>{{/hurry}}
 		{{#2}}
 			{{^2.III}}
-				<p>The first time the {{owner}} reaches 1 city and exchanges 1 resident for 1 settlement, {{^company}}he{{/company}}{{#company}}the president{{/company}} places {{#9}}a settlement{{/9}}{{^9}}that resident{{/9}} directly on top of the matching city card. IMPORTANT: The {{owners}} must reach the cities once during the game. They do not need to stay there until the end of the game. The players may voluntarily remove their settlements from these cities during the game, or may be forced to remove them because of war!</p>
-				{{#4}}<p>The {{owner}} reaches an opposing city the first time, if {{^company}}he{{/company}}{{#company}}the president{{/company}} moves 1 of {{fowns}} residents on this city. In that case he places 1 additional resident from his storage on top of the matching city card (moving on the city is important, not the outcome of the following fight!).</p>{{/4}}
+				<p>The first time the {{owner}} reaches 1 city and exchanges 1 resident for 1 settlement, {{sagent}} places {{#9}}a settlement{{/9}}{{^9}}that resident{{/9}} directly on top of the matching city card. IMPORTANT: The {{owners}} must reach the cities once during the game. They do not need to stay there until the end of the game. The players may voluntarily remove their settlements from these cities during the game, or may be forced to remove them because of war!</p>
+				{{#4}}<p>The {{owner}} reaches an opposing city the first time, if {{sagent}} moves 1 of {{fowns}} residents on this city. In that case he places 1 additional resident from {{owns}} storage on top of the matching city card (moving on the city is important, not the outcome of the following fight!).</p>{{/4}}
 			{{/2.III}}
 		{{/2}}
 		{{#4}}
@@ -831,7 +831,7 @@
 			{{^2.I}}{{#4}}<p>The {{agent}} may explore an adjacent unknown space with 1 active resident. After exploring the tile he places that resident back into his storage (except if it explores water, instead it is placed exhausted on the starting tile).</p>{{/4}}{{/2.I}}
 			{{^2}}{{^4}}<p>The {{agent}} may explore an adjacent unknown space with 1 active resident. Afterwards the resident is exhausted on the starting tile.</p>{{/4}}{{/2}}
 		{{/5.II}}
-		{{#5.III}}<p>The {{agent}} may explore any number of adjacent unknown spaces with 1 active resident. He places that resident back into his storage (except if it explores only water, instead it is placed exhausted on the starting tile).</p>{{/5.III}}
+		{{#5.III}}<p>The {{agent}} may explore any number of adjacent unknown spaces with 1 active resident. He places that resident back into {{fowns}} storage (except if it explores only water, instead it is placed exhausted on the starting tile).</p>{{/5.III}}
 		{{#5}}
 			<p><b>Exploring:</b> After choosing the destination space, the {{agent}} places the explorer tiles next to the following stacks, until he placed all 6 tiles.</p>
 			<ol>
@@ -851,37 +851,37 @@
 				<p>The {{owner}} immediately gets 1 victory point (VP) for each explored tile, including water. Then, place a stack of 2 "1 VP" tokens on each explored land tile and a stack of 4 "1 VP" tokens on each explored city.</p>
 				<p>During the game the {{owner}} gets additional victory points (VP) by taking them from the appropriate tiles:</p>
 				<ol>
-					<li>The {{owner}} gets 1 VP for placing the collectively 1st settlement on the tile.</li>
-					<li>The {{owner}} gets the last VP from a land tile only, if they exhaust 1 resident for the action harvest on the corresponding tile (On cities the {{agent}} needs to do this for each of the last three VP tokens). The player does not get this VP, if he exhausts his resident for another action that tile.</li>
+					<li>The {{owner}} gets the first VP for placing the collectively 1st settlement on the tile.</li>
+					<li>The {{owner}} gets other VP from tiles, if they exhaust 1 resident for the harvest action on the corresponding tile (On cities the {{agent}} needs to do this for each of the last three VP tokens). The {{owner}} does not get this VP, if {{sagent}} exhausts {{fowns}} resident for another action that tile.</li>
 				</ol>
 
 			{{/5.I}}
 			{{#5.II}}
-				{{#3.I}}<p>The player may move any number of his active residents from adjacent tiles onto the just explored tile without exhausting them in this way.</p>{{/3.I}}
-				{{#4.I}}<p>Depending on the terrain the player discovers or receives the following. <span class="desert icon"></span> empty, <span class="grass icon"></span> & <span class="forest icon"></span> 1 own settlement, <span class="grain icon"></span> 1 own settlement + 1 own exhausted resident, <span class="mountain icon"></span> 1 militia. For defeating this militia once-only $20. <span class="city icon"></span> 1 barrack and 1 militia. The player does not get income tokens for discovered settlements!</p>{{/4.I}}
-				{{#2.III}}{{#9.I}}<p>The player counts that tile on the majority board.</p>{{/9.I}}{{/2.III}}
+				{{#3.I}}<p>The {{agent}} may move any number of {{fowns}} active residents from adjacent tiles onto the just explored tile without exhausting them in this way.</p>{{/3.I}}
+				{{#4.I}}<p>Depending on the terrain the {{owner}} discovers or receives the following. <span class="desert icon"></span> empty, <span class="grass icon"></span> & <span class="forest icon"></span> 1 own settlement, <span class="grain icon"></span> 1 own settlement + 1 own exhausted resident, <span class="mountain icon"></span> 1 militia. For defeating this militia once-only $20. <span class="city icon"></span> 1 barrack and 1 militia. The player does not get income tokens for discovered settlements!</p>{{/4.I}}
+				{{#2.III}}{{#9.I}}<p>The {{agent}} counts that tile on the majority board.</p>{{/9.I}}{{/2.III}}
 			{{/5.II}}
 		{{/5}}
 		{{#6}}
-			<p><b>Roads:</b> If the player has 1 settlement each on two adjacent tiles, he may connect both tiles with 1 of his roads. To build a road he needs a the number of active residents equal to the more expensive of the two terrain types, see the table <b>Road</b>. {{^6.III}}He places 1 of his used residents back into his supply and places 1 road. The remaining residents are exhausted from the build and will be available again in the next round. {{/6.III}}{{#6.III}}All of the used residents are exhausted and are available again in the next round.{{/6.III}}</p>
-			{{^6.III}}<p>The player must build his roads in a connected network. His 1st road must start in his capital, afterwards the network may branch out in any direction.</p>{{/6.III}}
-			{{#6.III}}<p>The play may build his roads on any tiles, they do not need to start in his capital and do not need to be connected.</p>{{/6.III}}
+			<p><b>Roads:</b> If the {{owner}} has 1 settlement each on two adjacent tiles, {{sagent}} may connect both tiles with 1 of his roads. To build a road he needs a the number of active residents equal to the more expensive of the two terrain types, see the table <b>Road</b>. {{^6.III}}He places 1 of {{fowns}} used residents back into his supply and places 1 road. The remaining residents are exhausted from the build and will be available again in the next round. {{/6.III}}{{#6.III}}All of the used residents are exhausted and are available again in the next round.{{/6.III}}</p>
+			{{^6.III}}<p>The {{agent}} must build {{fowns}} roads in a connected network. His 1st road must start in {{fowns}} capital, afterwards the network may branch out in any direction.</p>{{/6.III}}
+			{{#6.III}}<p>The {{agent}} may build {{fowns}} roads on any tiles, they do not need to start in {{fowns}} capital and do not need to be connected.</p>{{/6.III}}
 			{{#4}}
 				<p>
-					The players build neutral roads, so there is always only 1 road between 2 tiles.
-					{{^6.III}}The roads built by a player must be connected with his capital solely across tiles controlled by that player.{{/6.III}}
-					{{#6.I}}The player only counts a land tile on the majority board, if he is the first who connects that land tile with 1 road. Multiple players may count a city each once, if they control that city during the game AND connect it via roads solely across their own tiles to their capital. Each player counts his capital, when he builds his first road.{{/6.I}}
-					{{#6.II}}The roads built by a player must be connected with his capital solely across tiles controlled by that player. The player counts these tiles on the majority board (including his capital{{^7}}, but no deserts{{/7}}). If the player loses the control of a tile, he must subtract all tiles on the majority board, which now are not connected anymore via roads to his capital solely across his own tiles.{{/6.II}}
-					The player may move his active residents any distance along roads on his own tiles without exhausting them in this way.
+					The {{agent}}s build neutral roads, so there is always only 1 road between 2 tiles.
+					{{^6.III}}The roads built by a {{agent}} must be a connected with {{fowns}} capital solely across tiles controlled by that {{owner}}.{{/6.III}}
+					{{#6.I}}The {{owner}} only counts a land tile on the majority board, if {{^company}}he is the first who{{/company}}{{#company}}it is the first company that{{/company}} connects that land tile with 1 road. Multiple {{owners}} may count a city each once, if they control that city during the game AND connect it via roads solely across their own tiles to their capital. Each {{owner}} counts {{owns}} capital, when {{sagent}} builds {{owns}} first road.{{/6.I}}
+					{{#6.II}}The roads built by a {{agent}}}} must be connected with {{fowns}} capital solely across tiles controlled by that {{owner}}. The {{owner}} counts these tiles on the majority board (including {{owns}} capital{{^7}}, but no deserts{{/7}}). If the {{owner}} loses the control of a tile, {{sagent}} must subtract all tiles on the majority board, which now are not connected anymore via roads to {{fowns}} capital solely across {{owns}} own tiles.{{/6.II}}
+					The {{agent}} may move {{fowns}} active residents any distance along roads on {{owns}} own tiles without exhausting them in this way.
 				</p>
-				{{^4.III}}<p>If the player moves 1 or more residents onto an opposing tile, he may build 1 road onto that tile, too (even though he has no settlement there and must fight in <b>Phase 3 G</b>).</p>{{/4.III}}
+				{{^4.III}}<p>If the {{agent}} moves 1 or more residents onto an opposing tile, he may build 1 road onto that tile, too (even though {{^company}}he{{/company}}{{#company}}the company{{/company}} has no settlement there and must fight in <b>Phase 3 G</b>).</p>{{/4.III}}
 			{{/4}}
 			{{^4}}
-				<p>The player may move his active units any distance along his roads without exhausting them in this way.</p>
-				{{#6.I}}<p>Directly after building a road, the player counts all the new tiles he connected on the majority board (including his capital). This way, each tile may be counted by multiple players!</p>{{/6.I}}
-				{{#6.II}}<p>Directly after building a road, the player counts all the new tiles he connected on the majority board (including his capital{{^7}}, but no deserts{{/7}}). This way, each tile may be counted by multiple players! Each city has demand for the different types of terrain, so the player's goal is to connect one of each of the terrain types for each of the cities he connects with his roads.</p>{{/6.II}}
-				{{#2}}<p>{{^6.III}}If the player changes his capital, he cannot start a new network. {{/6.III}}If the player removes 1 settlement from the map, his roads to that tile turn neutral{{^6.III}}, and he subtracts that tile on the majority board{{/6.III}}. The 1st player, who owns 1 settlement each on both these tiles, exchanges the neutral road with one of his own roads, if it is connected to his other roads and he does not own a road there.{{^6.III}} He counts it on the majority board.{{/6.III}}</p>{{/2}}
-				{{^2}}{{#7.I}}<p>{{^6.III}}If the player changes his capital, he cannot start a new network. {{/6.III}}If the player removes 1 settlement from the map, his roads to that tile turn neutral{{^6.III}}, and he subtracts that tile on the majority board{{/6.III}}. The 1st player, who owns 1 settlement each on both these tiles, exchanges the neutral road with one of his own roads, if it is connected to his other roads and he does not own a road there.{{^6.III}} He counts it on the majority board.{{/6.III}}</p>{{/7.I}}{{/2}}
+				<p>The {{agent}} may move {{fowns}} active units any distance along {{owns}} roads without exhausting them in this way.</p>
+				{{#6.I}}<p>Directly after building a road, the {{owner}} counts all the new tiles {{sagent}} connected on the majority board (including {{fowns}} capital). This way, each tile may be counted by multiple {{owners}}!</p>{{/6.I}}
+				{{#6.II}}<p>Directly after building a road, the {{owner}} counts all the new tiles {{sagent}} connected on the majority board (including {{fowns}} capital{{^7}}, but no deserts{{/7}}). This way, each tile may be counted by multiple {{owners}}! Each city has demand for the different types of terrain, so the {{owner}}'s goal is to connect one of each of the terrain types for each of the cities {{sagent}} connects with {{fowns}} roads.</p>{{/6.II}}
+				{{#2}}<p>{{^6.III}}If the {{agent}} changes {{fowns}} capital, he cannot start a new network. {{/6.III}}If the {{agent}} removes 1 settlement from the map, his roads to that tile turn neutral{{^6.III}}, and he subtracts that tile on the majority board{{/6.III}}. The 1st {{owner}}, who owns 1 settlement each on both these tiles, exchanges the neutral road with one of {{owns}} own roads, if it is connected to {{owns}} other roads and he does not own a road there.{{^6.III}} He counts it on the majority board.{{/6.III}}</p>{{/2}}
+				{{^2}}{{#7.I}}<p>{{^6.III}}If the{{agent}} changes {{fowns}} capital, he cannot start a new network. {{/6.III}}If the {{agent}} removes 1 settlement from the map, his roads to that tile turn neutral{{^6.III}}, and he subtracts that tile on the majority board{{/6.III}}. The 1st {{owner}}, who owns 1 settlement each on both these tiles, exchanges the neutral road with one of {{owns}} own roads, if it is connected to {{owns}} other roads and he does not own a road there.{{^6.III}} He counts it on the majority board.{{/6.III}}</p>{{/7.I}}{{/2}}
 			{{/4}}
 		{{/6}}
 		{{#7}}{{^6.I}}{{^6.II}}
