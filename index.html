@@ -1065,7 +1065,7 @@
 	{{/capture}}
 	{{#hascapture}}
 		<div class="row section">
-			<div class="col-md-2 col-xs-2 {{#1.II}}mod1{{/1.II}}{{#2.II}}mod2{{/2.II}}{{#3.II}}mod3{{/3.II}}{{#4.II}}mod4{{/4.II}}{{#5.II}}mod5{{/5.II}}{{#6.II}}mod6{{/6.II}}{{#7.II}}mod7{{/7.II}}{{#8.II}}mod8{{/8.II}}{{#9.II}}mod9{{/9.II}}"><h1>Phase 3 H: Income</h1></div>
+			<div class="col-md-2 col-xs-2 mod{{world.1}}"><h1>Phase 3 H: Income</h1></div>
 			<div class="col-md-10 col-xs-10">{{{captured}}}</div>
 		</div>
 	{{/hascapture}}
@@ -1134,7 +1134,7 @@
 	{{/hascapture}}
 
 	<div class="row section">
-		<div class="col-md-2 col-xs-2 {{#1.I}}mod1{{/1.I}}{{#2.I}}mod2{{/2.I}}{{#3.I}}mod3{{/3.I}}{{#4.I}}mod4{{/4.I}}{{#5.I}}mod5{{/5.I}}{{#6.I}}mod6{{/6.I}}{{#7.I}}mod7{{/7.I}}{{#8.I}}mod8{{/8.I}}{{#9.I}}mod9{{/9.I}}"><h1>Game End</h1></div>
+		<div class="col-md-2 col-xs-2 mod{{world.0}}"><h1>Game End</h1></div>
 		<div class="col-md-10 col-xs-10">
 			{{#1.I}}
 				{{^9.II}}<p>The game ends at the end of the round, after all players commonly delivered at least 19 (2♟), 21 (3♟) or 23 (4♟) goods tiles.</p>{{/9.II}}
@@ -1307,7 +1307,7 @@
 	{{/capture}}
 	{{#hascapture}}
 		<div class="row section">
-			<div class="col-md-2 col-xs-2 {{#1.I}}mod1{{/1.I}}{{#2.I}}mod2{{/2.I}}{{#3.I}}mod3{{/3.I}}{{#4.I}}mod4{{/4.I}}{{#5.I}}mod5{{/5.I}}{{#6.I}}mod6{{/6.I}}{{#7.I}}mod7{{/7.I}}{{#8.I}}mod8{{/8.I}}"><h1>Final Scoring</h1></div>
+			<div class="col-md-2 col-xs-2 mod{{world.0}}"><h1>Final Scoring</h1></div>
 			<div class="col-md-10 col-xs-10">{{{captured}}}</div>
 		</div>
 	{{/hascapture}}
