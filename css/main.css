@@ -367,7 +367,7 @@ table th {
 		visibility: hidden;
 	}
 	
-	.section .col-md-2.col-xs-2, .section, .section span, .col-md-2.col-xs-2 h1 { background-color: #000 !important; color: #FFFFFF !important; }
+	.section .col-md-2.col-xs-2, #worldno span, .section .col-md-2.col-xs-2 h1 { background-color: #000 !important; color: #FFFFFF !important; }
 
 	#worldno span { padding:0; }
 
