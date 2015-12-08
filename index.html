@@ -766,7 +766,7 @@
 			<p><b>Example:</b> If the {{owner}} owns 4 plants, {{sagent}} may only buy up to 6 residents.</p>
 		{{/8.III}}
 		{{#residents}}
-			<p>The player may buy residents for 10$ each and place them on the board. (subject to placement rules)</p>
+			<p>The {{agent}} may buy residents for 10$ each and place them on the board. (subject to placement rules)</p>
 		{{/residents}}
 	{{/capture}}
 	{{#hascapture}}
@@ -886,19 +886,19 @@
 		{{/6}}
 		{{#7}}{{^6.I}}{{^6.II}}
 			{{^7.II}}
-				<p>Each time the player places 1 settlement on a tile, he counts the matching type of terrain on the majority board (including his capital).</p>
+				<p>Each time the {{agent}} places 1 settlement on a tile, he counts the matching type of terrain on the majority board (including {{fowns}} capital).</p>
 			{{/7.II}}
 			{{#7.II}}
-				{{#8}}<p>The player counts a land tile, if he builds the plant (if he builds a "fish"-plant, he counts the original terrain). Additionally he counts a city, if he builds his trading house there (including his capital).</p>{{/8}}
-				{{^8}}<p>The player counts a tile, when he places 1 settlement on that tile (including his capital).</p>{{/8}}
+				{{#8}}<p>The {{agent}} counts a land tile, if he builds the plant (if he builds a "fish"-plant, he counts the original terrain). Additionally he counts a city, if he builds {{fowns}} trading house there (including {{owns}} capital).</p>{{/8}}
+				{{^8}}<p>The {{agent}} counts a tile, when he places 1 settlement on that tile (including {{fowns}} capital).</p>{{/8}}
 			{{/7.II}}
-			{{#4}}<p>If the player conquers the tile of another player{{#8}} that contains a plant{{/8}}, he counts that tile on the majority board, while the other player subtracts it.</p>{{/4}}
+			{{#4}}<p>If the {{agent}} conquers the tile of another {{owner}}{{#8}} that contains a plant{{/8}}, he counts that tile on the majority board, while the other {{owner}} subtracts it.</p>{{/4}}
 		{{/6.II}}{{/6.I}}{{/7}}
 		{{#8}}
-			<p><b>Plants:</b> On each land tile the players commonly may build a total of 1 plant. The player needs active residents depending on the terrain, see the table <b>Plant</b>. Afterwards the used residents are exhausted and available again in the next round. The player marks the ownership by placing his settlement on the plant. {{#8.I}}The player places that good face up in front of himself.{{/8.I}} {{#1}}The plant immediately produces 1 goods tile, which is placed on top of the plant for now.{{/1}}</p>
+			<p><b>Plants:</b> On each land tile the {{owners}} commonly may build a total of 1 plant. The {{agent}} needs active residents to perform this action depending on the terrain, see the table <b>Plant</b>. Afterwards the used residents are exhausted and available again in the next round. The {{agent}} marks the ownership by placing {{fowns}} settlement on the plant. {{^1}}{{#8.I}}The {{agent}} places that good face up in {{^company}}front of himself{{/company}}{{#company}}his company's holdings{{/company}}.{{/8.I}}{{/1}} {{#1}}The plant immediately produces 1 goods tile, which is placed on top of the plant for now.{{/1}}</p>
 			{{^8.III}}
-				<p><b>Trading House:</b> If the player moves residents onto a city and exchanges 1 resident into 1 settlement, it becomes his trading house. The player must pay additional money to build this trading house, see the table <b>Trading House</b>. If the player does not have enough money, he cannot move onto the city. Each player can only have 1 trading house in each city (the headquarters is a trading house, too).</p>
-				{{#4}}<p>Any number of players may build trading houses on each city (no fights on cities). The players must take the trading houses of the militia into account, so even the first player must pay money to build his trading house!</p>{{/4}}
+				<p><b>Trading House:</b> If the {{agent}} moves residents onto a city and exchanges 1 resident into 1 settlement, it becomes {{fowns}} trading house. The {{owner}} must pay additional money to build this trading house, see the table <b>Trading House</b>. If the {{owner}} does not have enough money, {{sagent}} cannot move onto the city. Each {{owner}} can only have 1 trading house in each city (the headquarters is a trading house, too).</p>
+				{{#4}}<p>Any number of {{owners}} may build trading houses on each city (no fights on cities). The {{agent}}s must take the trading houses of the militia into account, so even the first {{owner}} must pay money to build {{owns}} trading house!</p>{{/4}}
 			{{/8.III}}
 		{{/8}}
 	{{/residents}}{{/capture}}
