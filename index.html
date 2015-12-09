@@ -914,27 +914,23 @@
 			{{^1.III}}<p>The {{agent}} may transport 1 good of any type or up to 2 of {{fowns}} exhausted residents per cargo hold. He may load and unload the transport trolley any number of times. If he unloads goods on a land tile or a city, which has no demand for these goods{{#8}}{{^8.III}} (or without one of {{fowns}} trading houses){{/8.III}}{{/8}}, the goods remain there until any {{owner}} loads them again onto {{own}} transport trolley.</p>{{/1.III}}
 			{{#1.III}}<p>The {{agent}} may transport {{#8}}{{^8.III}}1 good of any type or {{/8.III}}{{/8}}up to 2 of {{fowns}} exhausted residents per cargo hold. He may load and unload the transport trolley any number of times.{{#8}}{{^8.III}}If he unloads goods on a land tile or a city, without one of {{fowns}} trading houses, the goods remain there until any {{owner}} loads them again onto {{owns}} transport trolley.{{/8.III}}{{/8}}</p>{{/1.III}}
 			<p>The {{agent}} needs 1 MP to move {{fowns}} transport trolley from tile to tile; but he needs 2 MP for the movement from any tile up on each mountain.{{#residents}}{{^4}} The transport trolley with loaded residents may move through tiles without settlements of the {{owner}}, which are empty or have opposing settlements and residents.{{/4}} If the {{agent}} unloads residents on a tile without 1 of {{fowns}} settlements, 1 resident turns into 1 settlement.{{/residents}}</p>
-			{{^residents}}<p>The {{owner}} may buy additional MP for {{owns}} transport trolley, see the table <b>Prices for Additional Movement Points (MP)</b>.</p>{{/residents}}
-			{{#6}}<p>The {{agent}} needs 0.5 MP per road, when moving {{fowns}} transport trolley on {{owns}} roads.</p>{{/6}}
+			{{#6}}
+				<p>The {{agent}} needs 0.5 MP per road, when moving {{fowns}} transport trolley on {{owns}} roads.</p>
+				{{#1.III}}<p>Once per turn and following the building rules for roads, the {{agent}} may build 1 road for free from the tile with his transport trolley, if the {{owner}}} has 1 settlement each on both affected tiles.</p>{{/1.III}}
+			{{/6}}
 			{{#4}}
 				<p>The {{agent}} may move {{fowns}} transport trolley on all tiles, even on opposing tiles. He gets 1 additional MP, if the transport trolley starts the movement on one of {{fowns}} tiles. If the transport trolley moves onto opposing tiles for the first time during this phase, he needs 1 additional MP for each opponent (if it starts on an opposing tile or continues to move onto more tiles of the same opponent, no further additional MPs are needed).</p>
 				{{#8}}{{^8.III}}<p>The cities are neutral and no {{owner}} controls them. Each {{agent}} may move onto a city for 1 MP.</p>{{/8.III}}{{/8}}
 				<p> If the transport trolley moves onto a tile without 1 of {{fowns}} settlements, the {{agent}} must unload at least 1 resident which turns into 1 settlement. If the transport trolley moves onto an opposing tile with loaded residents, the {{agent}} must unload them for the fight. The {{agent}} cannot load exhausted residents on an opposing tile. {{#2}}After the transport trolley finishes its movement, a fight follows immediately.{{/2}}</p>
 			{{/4}}
+			{{#2.II}}{{#residents}}<p>The {{agent}} reaches a city only with {{fowns}} transport trolley. In that case he places 1 resident from {{fowns}} storage on top of the matching city card.</p>{{/residents}}{{/2.II}}
 			{{^residents}}
-				{{#3}}{{^3.III}}<p>The player may place 1 settlement on a city, when he moves there with his transport trolley (This is a voluntary action. Because of the limited number of his settlements the player may pass on this action!).</p>{{/3.III}}{{/3}}
-				{{#5.II}}<p>The player may place 1 settlement on a tile, when he arrives there with his transport trolley, see <b>Income</b> (This is a voluntary action. Because of the limited number of his settlements the player may pass on this action!).</p>{{/5.II}}
-				{{#7.III}}<p>The player may place 1 settlement on 1 tile, when he arrives there with his transport trolley. He counts the matching type of terrain on the majority board (This is a voluntary action. Because of the limited number of his settlements the player may pass on this action!)</p>{{/7.III}}
+				<p>The {{owner}} may buy additional MP for {{owns}} transport trolley, see the table <b>Prices for Additional Movement Points (MP)</b>.</p>
+				{{#2}}{{^2.III}}<p>The {{agent}} reaches cities with {{fowns}} transport trolley. In that case he moves {{fowns}} resident from that city to the matching city card.{{/2.III}}{{/2}}
+				{{#5}}<p>The transport trolley may explore new tiles. It must move onto the newly explored tile for 1 movement point (MP), it only needs 2 MP for moving onto each mountain. If the {{agent}} explores 1 water tile, he needs 1 MP but the transport trolley must remain on the starting tile. If the {{agent}} explores 1 mountain tile with his last MP, the transport trolley must remain on the starting tile, too.</p>{{/5}}
+				<p>If the game requires settlements for scoring, income or buildings, the {{agent}} may place 1 settlement on a tile, when he arrives there with {{fowns}} transport trolley. {{#7.III}}He counts the matching type of terrain on the majority board{{/7.III}} This is a voluntary action. Because of the limited number of his settlements the {{agent}} may pass on this action!.</p> 
+				<p>Note: This rule may not apply to this game! Check below for <b>Phase 3 F</b> (factories) <b>Income</b> and <b> Scoring</b>.</p>
 			{{/residents}}
-			{{#2.I}}{{^residents}}<p>The {{agent}} reaches cities with {{fowns}} transport trolley. In that case he moves {{fowns}} resident from that city to the matching city card.{{#9.II}} Additionally, the {{agent}} may place 1 settlement on a tile, when he moves there with his transport trolley, see below for Income (This is a voluntary action. Because of the limited number of his settlements the {{agent}} may pass on this action!){{/9.II}}</p>{{/residents}}{{/2.I}}
-			{{#2.II}}
-				<p>The {{agent}} reaches a city only with {{fowns}} transport trolley. In that case he places 1 resident from {{fowns}} storage on top of the matching city card.</p>
-				{{^residents}}<p>The {{agent}} moves {{fowns}} resident from the city to the matching city card. Additionally, the {{agent}} may place 1 settlement on a tile, when he moves there with {{fowns}} transport trolley, see below for Income (This is a voluntary action. Because of the limited number of his settlements the {{agent}} may pass on this action!).</p>{{/residents}}
-			{{/2.II}}
-			{{#5}}{{^residents}}<p>
-				{{^5.I}}The transport trolley may explore new tiles. It must move onto the newly explored tile for 1 movement point (MP), it only needs 2 MP for moving onto each mountain. If the {{agent}} explores 1 water tile, he needs 1 MP but the transport trolley must remain on the starting tile. If the {{agent}} explores 1 mountain tile with his last MP, the transport trolley must remain on the starting tile, too.{{/5.I}}
-			</p>{{/residents}}{{/5}}
-			{{#6}}{{#1.III}}<p>Once per turn and following the building rules for roads, the {{agent}} may build 1 road for free from the tile with his transport trolley, if the {{owner}}} has 1 settlement each on both affected tiles.</p>{{/1.III}}{{/6}}
 			{{^1.III}}<p>
 				The goal of the {{owner}} is to deliver the goods to a city, which has demand for this type of good. Each city takes only 1 good for each listed goods type.
 				{{^8.I}}{{^8.II}}
