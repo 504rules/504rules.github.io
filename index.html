@@ -1070,13 +1070,13 @@
 
 	{{#capture}}
 		{{#2.III}}
-			{{#1.I}}<p>Award 5 VP to the first player delivering one of the good types a second time from the stack set aside for this purpose.</p>{{/1.I}}
-			{{#3.I}}<p>Award 10 VP to the first player having at least 1 factory in 3 cities, and to the first player having 3 factories in 1 city.</p>{{/3.I}}
-			{{#4.I}}<p>Award VP to a player when they conquer a free city from the stacks set aside on the majority board (3 for the first free city, 4 for the second, etc).</p>{{/4.I}}
-			{{#5.I}}<p>Award 5VP from the stack set aside on the corresponding column of the majority board to the first player to explore one of the 6 terrain types (no water) three times.</p>{{/5.I}}
-			{{#6.I}}<p>Award 5 VP from the stack set aside on the corresponding column of the majority board to the first player to connect one of the 6 terrain types (no water) with his roads a third time.</p>{{/6.I}}
-			{{#7.I}}<p>Award 10 VP to the first player to control 1 of each terrain type (no water). Award 20 VP to the first player to control 2 of each terrain type (no water).</p>{{/7.I}}
-			{{#8.I}}<p>Award 5 VP from the stack set aside for this purpose to the first player owning 3 plants of a good type.</p>{{/8.I}}
+			{{#1.I}}<p>Award 5 VP to the first {{owner}} delivering one of the good types a second time from the stack set aside for this purpose.</p>{{/1.I}}
+			{{#3.I}}<p>Award 10 VP to the first {{owner}} having at least 1 factory in 3 cities, and to the first {{owner}} having 3 factories in 1 city.</p>{{/3.I}}
+			{{#4.I}}<p>Award VP to a {{owner}} when they conquer a free city from the stacks set aside on the majority board (3 for the first free city, 4 for the second, etc).</p>{{/4.I}}
+			{{#5.I}}<p>Award 5VP from the stack set aside on the corresponding column of the majority board to the first {{owner}} to explore one of the 6 terrain types (no water) three times.</p>{{/5.I}}
+			{{#6.I}}<p>Award 5 VP from the stack set aside on the corresponding column of the majority board to the first {{owner}} to connect one of the 6 terrain types (no water) with {{owns}} roads a third time.</p>{{/6.I}}
+			{{#7.I}}<p>Award 10 VP to the first {{owner}} to control 1 of each terrain type (no water). Award 20 VP to the first {{owner}} to control 2 of each terrain type (no water).</p>{{/7.I}}
+			{{#8.I}}<p>Award 5 VP from the stack set aside for this purpose to the first {{owner}} owning 3 plants of a good type.</p>{{/8.I}}
 			{{#9.I}}<p>
 				{{#1.II}}Award $50 to the first stock company delivering one of the good types a second time from the stack set aside for this purpose.{{/1.II}}
 				{{#3.II}}Award $100 to the first stock company having at least 1 factory in 3 cities, and to the first stock company having 3 factories in 1 city.{{/3.II}}
@@ -1118,10 +1118,10 @@
 
 	{{#capture}}
 		{{#7.I}}
-			<p>Starting with the 3rd round, the player now removes his resident from the face down scoring card and turns this card face up. If the card shows a <span class="glyphicon glyphicon-ok"></span>, the next player continues with his turn. If it is one of the three scorings, the game is paused for an immediate scoring!</p>
-			<p><b>1st and 2nd Scoring:</b> The players get victory points (VP) for their majorities, see table and example <b>Scoring</b>.</p>
-			<p><b>3rd Scoring (Final Scoring):</b> The players get victory points (VP) for their majorities, see the table and example <b>Scoring</b>. All players missing their last turn get once-only additional 3 VP.</p>
-			<p>Following each scoring, each player adds the VP he got in the actual scoring. Starting with the player getting the most VP, each player must remove 1 resident for each {{^9.II}}3 VP (2♟) or 4 VP (3♟, 4♟){{/9.II}}{{#9.II}}4 VP{{/9.II}} from the map. IF he has not enough residents, he now must remove 1 settlement for each missing resident, so all remaining settlements are still on connected tiles to his capital. He cannot remove the headquarters on his capital. If the player cannot remove enough residents and settlements, he does not score the VPs for those pieces. Afterwards the player must adjust his marking tokens on the majority board. In case of a tie for VP use the actual turn order for concerned players.</p>
+			<p>Starting with the 3rd round, the {{agent}} now removes {{fowns}} resident from the face down scoring card and turns this card face up. If the card shows a <span class="glyphicon glyphicon-ok"></span>, the next {{agent}} continues with his turn. If it is one of the three scorings, the game is paused for an immediate scoring!</p>
+			<p><b>1st and 2nd Scoring:</b> The {{owners}} get victory points (VP) for their majorities, see table and example <b>Scoring</b>.</p>
+			<p><b>3rd Scoring (Final Scoring):</b> The {{owners}} get victory points (VP) for their majorities, see the table and example <b>Scoring</b>. All {{owners}} missing their last turn get once-only additional 3 VP.</p>
+			<p>Following each scoring, the {{owners}} add the VP they got in the actual scoring. Starting with the {{owner}} getting the most VP, each {{agent}} must remove 1 resident for each {{^9.II}}3 VP (2♟) or 4 VP (3♟, 4♟){{/9.II}}{{#9.II}}4 VP{{/9.II}} from the map. IF he has not enough residents, he now must remove 1 settlement for each missing resident, so all remaining settlements are still on connected tiles to {{fowns}} capital. He cannot remove the headquarters on {{fowns}} capital. If the {{agent}} cannot remove enough residents and settlements, he does not score the VPs for those pieces. Afterwards the {{agent}} must adjust {{fowns}} marking tokens on the majority board. In case of a tie for VP use the actual turn order for concerned {{owners}}.</p>
 		{{/7.I}}
 	{{/capture}}
 	{{#hascapture}}
