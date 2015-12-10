@@ -956,8 +956,8 @@
 		<div class="row section">
 			<div class="col-md-2 col-xs-2 mod3"><h1>Phase 3 F: Factories</h1></div>
 			<div class="col-md-10 col-xs-10">
-				<p>Each round, the player may buy at max 1 factory on each city, if he has 1 settlement there and pays the matching costs, see left for the table Factory.{{#3.I}} The player immediately gets 5 victory points (VP) for building the factory.{{/3.I}} On a city, the players in common may build a total of 3 factories.
-				<p>The player marks his factory with his settlement. If he owns several factories in the same city, he stacks them below his settlement.</p>
+				<p>Each round, the {{agent}} may buy at max 1 factory on each city, if {{fowns}} has 1 settlement there and pays the matching costs, see left for the table Factory.{{#3.I}} The {{owner}} immediately gets 5 victory points (VP) for building the factory.{{/3.I}} On a city, the {{owners}} in common may build a total of 3 factories.
+				<p>The {{owner}} marks {{owns}} factory with {{owns}} settlement. If the {{owner}} owns several factories in the same city, {{^company}}he{{/company}}{{#company}}it{{/company}} stacks them below {{owns}} settlement.</p>
 			</div>
 		</div>
 	{{/3.III}}{{/3}}
@@ -965,9 +965,9 @@
 	{{#capture}}
 		{{^2}}
 			{{#4}}{{^4.III}}
-				<p>A fight happens, if armies of 2 different players are on the same tile. See <b>Fight Sequence</b> and table <b>Dice Results</b>.</p>
-				{{#3}}{{^3.III}}<p>If the attacker neutralizes an opposing city, 1 existing factory there is destroyed. If the attacker later conquers the city with 1 additional resident, he gets the remaining factories there.</p>{{/3.III}}{{/3}}
-				{{#8}}{{^8.III}}<p>There are no fights in cities, so any number of players may have their own trading houses there. If the player conquers a land tile, he also conquers an existing plant. If the land tile is neutralized, the plant remains abandoned for now.</p>{{/8.III}}{{/8}}
+				<p>A fight happens, if armies of 2 different {{owners}} are on the same tile. See <b>Fight Sequence</b> and table <b>Dice Results</b>.</p>
+				{{#3}}{{^3.III}}{{^8.I}}{{^8.II}}<p>If the attacker neutralizes an opposing city, 1 existing factory there is destroyed. If the attacker later conquers the city with 1 additional resident, he gets the remaining factories there.</p>{{/8.II}}{{/8.I}}{{/3.III}}{{/3}}
+				{{#8}}{{^8.III}}<p>There are no fights in cities, so any number of {{owners}} may have their own trading houses there. If the {{agent}} conquers a land tile, he also conquers an existing plant. If the land tile is neutralized, the plant remains abandoned for now.</p>{{/8.III}}{{/8}}
 			{{/4.III}}{{/4}}
 			{{#4.II}}{{#9.I}}<p>If the attacking stock company conquers an opposing capital, it also conquers all other tiles of the defender and exchanges the armies with its own. If it only neutralizes the opposing capital, the defender loses all of his tiles without the attacker conquering them. Afterwards the players lose all shares of the defeated stock company without substitution. The stock company starts anew and may be established again by the players in the next share round (SR).</p>{{/9.I}}{{/4.II}}
 		{{/2}}
@@ -981,42 +981,40 @@
 
 	{{#capture}}
 		{{#1.II}}
-			<p>The player gets $20 base income for the capital, plus once-only money for each good delivered in <b>Phase 3 E</b>. The player balances accounts separately for each good. He gets the price for the 1st good according to the goods price board and adjusts all prices: the price for the delivered good drops 3 spaces, the prices for all other goods each rise 1 space. Then, the player gets the price for the 2nd good etc.! The price for a type of goods cannot drop below the first "$10" space and cannot rise above $140. {{^8.I}}Finally, the player places all delivered goods into the general storage.{{/8.I}}{{#8.I}}Finally, the player returns the additional goods tokens (below the price board) into the general storage; they leave the tokens on the trading houses.{{/8.I}}</p>
-			{{#4}}<p>If the player delivers goods to a city without his settlements, he must pay $1 for each full $10 of this sale to the owner of the city, or in case of a free city, payment goes to the bank.</p>{{/4}}
+			<p>The {{owner}} gets $20 base income for {{owns}} capital, plus once-only money for each good delivered in <b>Phase 3 E</b>. The {{owner}} balances accounts separately for each good. He gets the price for the 1st good according to the goods price board and adjusts all prices: the price for the delivered good drops 3 spaces, the prices for all other goods each rise 1 space. Then, the {{owner}} gets the price for the 2nd good etc.! The price for a type of goods cannot drop below the first "$10" space and cannot rise above $140. {{^8.I}}Finally, the {{agent}} places all delivered goods into the general storage.{{/8.I}}{{#8.I}}The player leaves their goods tokens on the trading houses. (If he used additional tokens under the goods price board to track deliveries, he returns those tokens into the general storage.) {{/8.I}}</p>
+			{{#4}}<p>If the {{owner}} delivers goods to a city without his settlements, he must pay $1 for each full $10 of this sale to the owner of the city, or in case of a free city, payment goes to the bank.</p>{{/4}}
 		{{/1.II}}
 		{{#2.II}}
-			<p>The player gets $20 base income for his capital, plus once-only money for each settlement, which he placed on an empty tile during this turn, depending on the type of terrain: He gets $5 for <span class="grass icon"></span>, <span class="forest icon"></span>, <span class="grain icon"></span>, <span class="desert icon"></span> and $10 for <span class="city icon"></span> and <span class="mountain icon"></span>. Additionally the player gets once-only money each time he places a new resident on 1 or more city cards in <b>Phase 3 D</b>. For the overall 1st resident $10, for the overall 2nd resident $20 etc. Afterwards he moves the new residents to the bottom of the matching city cards - see example of <b>Income</b>.</p>
-			{{#7.I}}<p>If the player removes his settlement and then there are no settlements left on the tile, the next player placing a first settlement on that tile gets again once-only $5 (once-only $10 for city and mountain).</p>{{/7.I}}
+			<p>The {{owner}} gets $20 base income for {{owns}} capital, plus once-only money for each settlement, which {{sagent}} placed on an empty tile during this turn, depending on the type of terrain: He gets $5 for <span class="grass icon"></span>, <span class="forest icon"></span>, <span class="grain icon"></span>, <span class="desert icon"></span> and $10 for <span class="city icon"></span> and <span class="mountain icon"></span>. Additionally the {{owner}} gets once-only money each time {{sagent}} places a new resident on 1 or more city cards in <b>Phase 3 D</b>. For the overall 1st resident $10, for the overall 2nd resident $20 etc. Afterwards he moves the new residents to the bottom of the matching city cards - see example of <b>Income</b>.</p>
+			{{#7.I}}<p>If the {{agent}} removes {{fowns}} settlement and then there are no settlements left on the tile, the next {{owner}} placing a first settlement on that tile gets again once-only $5 (once-only $10 for city and mountain).</p>{{/7.I}}
 			{{^7.I}}
 				{{#1}}
-					<p>If the player removes his settlement and then there are no settlements left on the tile, the next player placing a first settlement on that tile gets again once-only $5 (once-only $10 for city and mountain).</p>
-				{{/1}}
-				{{^1}}
-					{{#4}}<p>If the player removes his settlement and then there are no settlements left on the tile, the next player placing a first settlement on that tile gets again once-only $5 (once-only $10 for city and mountain).</p>{{/4}}
+					<p>If the {{agent}} removes {{fowns}} settlement and then there are no settlements left on the tile, the next {{owner}} placing a first settlement on that tile gets again once-only $5 (once-only $10 for city and mountain).</p>
 				{{/1}}
 			{{/7.I}}
+			{{#4}}<p>If a {{agent}} neutralizes a tile from another {{owner}}, the next {{owner}} placing a first settlement on that tile gets again once-only $5 (once-only $10 for city and mountain). If he conquers that tile he gets that income.</p>{{/4}}
 		{{/2.II}}
 		{{#3.II}}
-			<p>The player gets $20 base income for his capital, plus $15 for each of his factories. All players place their income for now to one side, until they paid taxes in the next Phase 1.</p>
+			<p>The {{owner}} gets $20 base income for {{owns}} capital, plus $15 for each of {{owns}} factories.{{^company}} All {{owners}} place their income for now to one side, until they paid taxes in the next Phase 1.{{/company}}</p>
 		{{/3.II}}
 		{{#4.II}}
-			<p>The players receive $20 base income for their capital, plus $5 for each additionally owned tile. The players also receive a bonus income for different types of land tiles (non city tiles), see the example <b>Income</b>.</p>
+			<p>The {{owner}} gets $20 base income for {{owns}} capital, plus $5 for each additionally owned tile. The {{owners}} also receive a bonus income for different types of land tiles (non city tiles), see the example <b>Income</b>.</p>
 			<table>
 				<tr><th># of different types of land tiles</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
 				<tr><th>bonus income</th><td>$0</td><td>$5</td><td>$10</td><td>$20</td><td>$30</td></tr>
 			</table>
 		{{/4.II}}
 		{{#5.II}}
-			<p>The player gets $20 base income for the capital, plus $5 for each tile he explored (including water) plus $5 for each settlement, which the player placed first on a tile. For a better overview the player places 1 income token for each explored tile and settlement in {{^company}}front of himself{{/company}}{{#company}}his company's holdings{{/company}}, see the example <b>Income</b>.</p>
-			{{#2}}<p>If the player removes his settlement and then the tile is completely empty, the next player placing a new first settlement on that tile also takes 1 income token.</p>{{/2}}
-			{{^2}}{{#4}}<p>If the player removes his settlement and then the tile is completely empty, the next player placing a new first settlement on that tile also takes 1 income token.</p>{{/4}}{{/2}}
-			{{^2}}{{^4}}{{#7.I}}<p>If the player removes his settlement and then the tile is completely empty, the next player placing a new first settlement on that tile also takes 1 income token.</p>{{/7.I}}{{/4}}{{/2}}
+			<p>The {{owner}} gets $20 base income for {{owns}} capital, plus $5 for each tile he explored (including water) plus $5 for each settlement, which the player placed first on a tile. For a better overview the {{agent}} places 1 income token for each explored tile and settlement in {{^company}}front of himself{{/company}}{{#company}}his company's holdings{{/company}}, see the example <b>Income</b>.</p>
+			{{#2}}<p>If the {{agent}} removes {{fowns}} settlement and then the tile is completely empty, the next {{owner}} placing a new first settlement on that tile also takes 1 income token.</p>{{/2}}
+			{{^2}}{{#7.I}}<p>If the {{agent}} removes {{fowns}} settlement and then the tile is completely empty, the next {{owner}} placing a new first settlement on that tile also takes 1 income token.</p>{{/7.I}}{{/2}}
+			{{#4}}<p>If a {{agent}} neutralizes a tile from another {{owner}}, the next {{owner}} placing a first settlement on that tile also takes 1 income token. If he conquers that tile he gets that income token.</p>{{/4}}
 		{{/5.II}}
-		{{#6.II}}<p>The player gets $20 base income for his capital, plus $10 for each additional city he connected. Furthermore each of his connected cities gives the player money for 1 land tile of each type (except deserts): he gets $5 for grassland, field & forest, $10 for mountain, plus a bonus of $10 for each set containing 1 city, 1 grassland, 1 field, 1 forest, 1 mountain (no desert), see the example <b>Income</b>.</p>{{/6.II}}
-		{{#7.II}}<p>The player gets $20 base income for the capital, plus income for the majorities as stated above, see table and example <b>Income</b>.</p>{{/7.II}}
+		{{#6.II}}<p>The {{owner}} gets $20 base income for {{owns}} capital, plus $10 for each additional city connected to {{owns}} capital(via road network). Furthermore each of {{owns}} connected cities gives the {{owner}} money for 1 land tile of each type (except deserts): he gets $5 for grassland, field & forest, $10 for mountain, plus a bonus of $10 for each set containing 1 city, 1 grassland, 1 field, 1 forest, 1 mountain (no desert), see the example <b>Income</b>.</p>{{/6.II}}
+		{{#7.II}}<p>The {{owner}} gets $20 base income for {{owns}} capital, plus income for the majorities as stated above, see table and example <b>Income</b>.</p>{{/7.II}}
 		{{#8.II}}
-			<p>{{^1}}During this phase, the player gets 1 matching good for each of his plants from the general storage.{{/1}}{{#1}}The player may sell goods already delivered to his trading houses.{{/1}} He may sell {{^4}}1 good{{/4}}{{#4}}2 goods{{/4}} to each of his trading houses{{^4}} (up to 2 goods to the headquarters in his capital){{/4}}. {{^1}}Afterwards, he places the sold goods back into the general storage.{{/1}}{{#1}}Afterwards, the goods remain on the trading houses.{{/1}}</p>
-			<p>The player gets $20 base income for his capital and additional income for the sold goods, see the table and example <b>Scoring</b>. {{^1}}The player may exchange goods in a ratio of 2:1 into different goods types, to get a higher income for the sale. The {{owner}} may store any number of goods face up in {{^company}}front of himself{{/company}}{{#company}}its holdings{{/company}} for a later sale.{{/1}}</p>
+			<p>{{^1}}During this phase, the {{owner}} gets 1 matching good for each of his plants from the general storage.{{/1}}{{#1}}The {{agent}} may sell goods already delivered to his trading houses.{{/1}} He may sell {{^4}}1 good{{/4}}{{#4}}2 goods{{/4}} to each of {{fowns}} trading houses{{^4}} (up to 2 goods to the headquarters in {{owns}} capital){{/4}}. {{^1}}Afterwards, he places the sold goods back into the general storage.{{/1}}{{#1}}Afterwards, the goods remain on the trading houses.{{/1}}</p>
+			<p>The {{owner}} gets $20 base income for {{owns}} capital and additional income for the sold goods, see the table and example <b>Scoring</b>. {{^1}}The {{agent}} may exchange goods in a ratio of 2:1 into different goods types, to get a higher income for the sale. The {{owner}} may store any number of goods face up in {{^company}}front of himself{{/company}}{{#company}}its holdings{{/company}} for a later sale.{{/1}}</p>
 		{{/8.II}}
 		{{#9.I}}
 			{{#2.III}}<p>The company also gets income from <b>Mid-Term Scorings</b> below.</p>{{/2.III}}
@@ -1024,7 +1022,7 @@
 		{{/9.I}}
 		{{#9.II}}
 			{{#1.I}}
-				<p>The company gets $20 base income for the capital, plus once-only money for each good delivered in <b>Phase 3 E</b>. The company balances accounts separately for each good. It gets the price for the 1st good according to the goods price board and adjusts all prices: the price for the delivered good drops 3 spaces, the prices for all other goods each rise 1 space. Then, the company gets the price for the 2nd good etc.! The price for a type of goods cannot drop below the first "$10" space and cannot rise above $140. After receiving their income, the company places the delivered goods in front of their company board to score VP for them in the Final Scoring.</p>
+				<p>The company gets $20 base income for its capital, plus once-only money for each good delivered in <b>Phase 3 E</b>. The company balances accounts separately for each good. It gets the price for the 1st good according to the goods price board and adjusts all prices: the price for the delivered good drops 3 spaces, the prices for all other goods each rise 1 space. Then, the company gets the price for the 2nd good etc.! The price for a type of goods cannot drop below the first "$10" space and cannot rise above $140. After receiving their income, the company places the delivered goods in front of their company board to score VP for them in the Final Scoring.</p>
 				{{#4}}<p>If the company delivers goods to a city without its settlements, it must pay $1 for each full $10 of this sale to the owner of the city, or in case of a free city, payment goes to the bank.</p>{{/4}}
 			{{/1.I}}
 			{{#2.I}}
@@ -1032,9 +1030,7 @@
 				{{#1}}
 					<p>If the company removes its settlement and then there are no settlements left on the tile, the next company placing a first settlement on that tile gets again once-only $5 (once-only $10 for city and mountain).</p>
 				{{/1}}
-				{{^1}}
-					{{#4}}<p>If the company removes its settlement and then there are no settlements left on the tile, the next company placing a first settlement on that tile gets again once-only $5 (once-only $10 for city and mountain).</p>{{/4}}
-				{{/1}}
+				{{#4}}<p>If a stock company neutralizes a tile from another company, the next presdent placing a first settlement on that tile gets again once-only $5 (once-only $10 for city and mountain). If the company conquers that tile it gets that income.</p>{{/4}}
 			{{/2.I}}
 			{{#3.I}}
 				<p>The company gets $20 base income for its capital, plus $15 for each of its factories. All companies place their income for now to one side, until they paid taxes in the next Phase 1.</p>
@@ -1055,15 +1051,15 @@
 			{{#7.I}}<p>The company gets $20 base income for the capital, plus income for the majorities as stated above, see table and example <b>Income</b>.</p>{{/7.I}}
 			{{#8.I}}
 				<p>{{^1}}The company may sell goods already produced in its plants.{{/1}}{{#1}}The company may sell goods already delivered to its trading houses.{{/1}} It may sell 1 good to each of its trading houses (up to 2 goods to the headquarters in its capital). {{^1}}Afterwards, the goods remain in front of the company card.{{/1}}{{#1}}Afterwards, the goods remain on the trading houses.{{/1}}</p>
-				<p>The company gets $20 base income for his capital and additional income for the sold goods, see the table and example <b>Scoring</b>. {{^1}}The company may exchange goods in a ratio of 2:1 into different goods types, to get a higher income for the sale. It may store any number of goods face up in front of it for a later sale.{{/1}}</p>
+				<p>The company gets $20 base income for his capital and additional income for the sold goods, see the table and example <b>Scoring</b>. The company may not exchange goods during the income phase.</p>
 			{{/8.I}}
 			<p>Place the income of the stock company separate from the company assets to the side for now.</p>
 		{{/9.II}}
 		{{#9.III}}<p>The players place their income for now separately from their cash. After all players got their income, the players with the highest income raise their share values by $20. All other players raise their share values by $10. Finally flip all shares sold to the bank during this round, so their dark sides are face up again.</p>{{/9.III}}
 
-		{{#3.I}}
+		{{^company}}{{#3.I}}
 			<p>The players place their income for now to one side, until they paid taxes in the next Phase 1.</p>
-		{{/3.I}}
+		{{/3.I}}{{/company}}
 	{{/capture}}
 	{{#hascapture}}
 		<div class="row section">
