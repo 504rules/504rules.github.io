@@ -258,8 +258,12 @@ table th {
 
 #menu .modules div {
 	padding:8px;
-    	white-space: nowrap;
-    	overflow: hidden;	
+    white-space: nowrap;
+    overflow: hidden;	
+}
+
+#menu .modules img {
+	padding-right:6px;
 }
 
 #menu input {
