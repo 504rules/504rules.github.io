@@ -1,6 +1,7 @@
 <html manifest="manifest.appcache">
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="initial-scale=1,user-scalable=yes">
 	<title>504</title>
 	<script src="js/jquery-1.11.3.min.js"></script>
 	<script src="js/mustache.min.js"></script>
@@ -16,7 +17,7 @@
 	<form id="ModulesForm">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-9 col-xs-9">
+				<div class="col-md-10 col-xs-10">
 					<div class="row">
 						<div class="col-md-12 col-xs-12">
 							<p>Please pick your preferred modules:</p>
@@ -84,7 +85,7 @@
 				<span class="glyphicon glyphicon-random" id="randomize"></span>
 				<span class="glyphicon glyphicon-edit" id="editbutton"></span>
 				World
-				<span id="worldno">{{world.0}}{{world.1}}{{world.2}}</span>
+				<span id="worldno"><span class="mod{{world.0}}">{{world.0}}</span><span class="mod{{world.1}}">{{world.1}}</span><span class="mod{{world.2}}">{{world.2}}</span></span>
 				<input type="text" id="worldno-entry" style="display: none">
 				: {{long_name}}
 			</h1>
@@ -295,7 +296,7 @@
 	{{/capture}}
 	{{#hascapture}}
 	<div class="row section">
-		<div class="col-md-2 col-xs-2"><h1>Playing the Game</h1></div>
+		<div class="col-md-2 col-xs-2 {{#4}}{{#5}}mod5{{/5}}{{/4}}{{#9.I}} mod9{{/9.I}}{{#9.II}} mod9{{/9.II}}"><h1>Playing the Game</h1></div>
 		<div class="col-md-10 col-xs-10">{{{captured}}}</div>
 	</div>
 	{{/hascapture}}
@@ -637,7 +638,7 @@
 
 	{{#company}}
 		<div class="row section">
-			<div class="col-md-2 col-xs-2"><h1>Share Round</h1></div>
+			<div class="col-md-2 col-xs-2 mod9"><h1>Share Round</h1></div>
 			<div class="col-md-10 col-xs-10">
 				<p>During the SR, the players can choose the following actions: <b>deal shares, pass or quit</b>.</p>
 				<p><b>Dealing Shares:</b> When you take this action you buy 1 share and/or sell any number of shares. During the same SR a player can either buy or sell stocks from a given company; he cannot do both.</p>
@@ -719,11 +720,11 @@
 
 	{{#3}}{{^3.III}}
 		<div class="row section">
-			<div class="col-md-2 col-xs-2"><h1>Phase 2: Privileges</h1></div>
+			<div class="col-md-2 col-xs-2 mod3"><h1>Phase 2: Privileges</h1></div>
 			<div class="col-md-10 col-xs-10">
 				<p>If there are still unsold privileges from the former round, place the price token to the right of these privileges. The starting bid for these privileges drops to $0. Draw new privileges and place them to the right of the price token, until you either draw 1 new privilege per {{owner}} or there are a # of privileges in the row of cards depending on the # of players: 4 (2♟), 5 (3♟), 6 (4♟) or 7 privileges (5 stock companies). The starting bid for the new privileges is $20.</p>
-				<p>All privileges are now auctioned from left to right, one at a time. Beginning with the 1st {{owner}} all {{agent}}s bid clockwise in sitting order around the table, until there is a highest bid. If a {{agent}} passes he may only bid again for the next privilege. The highest bidder pays the amount to the bank and places the privilege face up in front of him. If the starting bid of the privilege was $20, and all {{agent}}s pass, the privilege simply remains in the row of cards. If the starting bid of the privilege was $0 and all {{agent}}s pass again, remove that privilege from the game!</p>
-				<p>{{^company}}The player may only buy each type of privilege once{{/company}}{{#company}}The president can't buy a privelege for their company if the company already owns it{{/company}}. He may use his privileges immediately after purchase.</p>
+				<p>All privileges are now auctioned from left to right, one at a time. Beginning with the{{#company}} president of the{{/company}} 1st {{owner}} all {{agent}}s bid (or pass) in clockwise seatting order around the table, until there is a highest bid. If a {{agent}} passes he may only bid again for the next privilege. The highest bidder pays the amount{{#company}} from the winning company{{/company}} to the bank and places the privilege face up in {{^company}}front of him{{/company}}{{#company}}the company's holdings{{/company}}. If the starting bid of the privilege was $20, and all {{agent}}s pass, the privilege simply remains in the row of cards. If the starting bid of the privilege was $0 and all {{agent}}s pass again, remove that privilege from the game!</p>
+				<p>{{^company}}The player may only buy each type of privilege once{{/company}}{{#company}}The president can't buy a privelege for their company if the company already owns it{{/company}}. He may use {{fowns}} privileges immediately after purchase.</p>
 			</div>
 		</div>
 	{{/3.III}}{{/3}}
@@ -736,14 +737,14 @@
 	{{/capture}}
 	{{#hascapture}}
 		<div class="row section">
-			<div class="col-md-2 col-xs-2"><h1>Phase 3 A: Capital</h1></div>
+			<div class="col-md-2 col-xs-2 mod2"><h1>Phase 3 A: Capital</h1></div>
 			<div class="col-md-10 col-xs-10">{{{captured}}}</div>
 		</div>
 	{{/hascapture}}
 
 	{{#9.III}}
 		<div class="row section">
-			<div class="col-md-2 col-xs-2"><h1>Phase 3 B: Stock Dealing</h1></div>
+			<div class="col-md-2 col-xs-2 mod9"><h1>Phase 3 B: Stock Dealing</h1></div>
 			<div class="col-md-10 col-xs-10">
 				<p>The player may buy any number of shares of the other players from the bank for the actual share value, if these were already sold in a former round to the bank (if their dark side is face up). The player cannot sell these shares again!</p>
 				<p>Additionally, the player may sell exactly 1 of his shares to the bank during his turn. He places the share for now with the light side face up into the bank and gets money according to the actual share value (this money is not considered as income!). Then, the share value drops by $10. The player cannot sell his president's share! The player may conduct this <b>sale during his complete turn</b> to get missing money for one of his actions!</p>
@@ -762,10 +763,10 @@
 		{{/1}}
 		{{#8.III}}
 			<p>Starting with the 2nd round the {{agent}} may buy only at max 2 more residents than the # of plants {{^company}}he{{/company}}{{#company}}the company{{/company}} owns in each turn.</p>
-			<p><b>Example:</b> If the {{owner}} owns 4 plants, {{^company}}he{{/company}}{{#company}}the president{{/company}} may only buy up to 6 residents.</p>
+			<p><b>Example:</b> If the {{owner}} owns 4 plants, {{sagent}} may only buy up to 6 residents.</p>
 		{{/8.III}}
 		{{#residents}}
-			<p>The player may buy residents for 10$ each and place them on the board. (subject to placement rules)</p>
+			<p>The {{agent}} may buy residents for 10$ each and place them on the board. (subject to placement rules)</p>
 		{{/residents}}
 	{{/capture}}
 	{{#hascapture}}
@@ -779,8 +780,8 @@
 		{{#hurry}}<p>While moving, the residents are <b>in a hurry</b>. Thus, if the {{agent}} moves them onto tiles with at least 1 of {{fowns}} exhausted residents, they remain active.</p>{{/hurry}}
 		{{#2}}
 			{{^2.III}}
-				<p>The first time the {{owner}} reaches 1 city and exchanges 1 resident for 1 settlement, {{^company}}he{{/company}}{{#company}}the president{{/company}} places {{#9}}a settlement{{/9}}{{^9}}that resident{{/9}} directly on top of the matching city card. IMPORTANT: The {{owners}} must reach the cities once during the game. They do not need to stay there until the end of the game. The players may voluntarily remove their settlements from these cities during the game, or may be forced to remove them because of war!</p>
-				{{#4}}<p>The {{owner}} reaches an opposing city the first time, if {{^company}}he{{/company}}{{#company}}the president{{/company}} moves 1 of {{fowns}} residents on this city. In that case he places 1 additional resident from his storage on top of the matching city card (moving on the city is important, not the outcome of the following fight!).</p>{{/4}}
+				<p>The first time the {{owner}} reaches 1 city and exchanges 1 resident for 1 settlement, {{sagent}} places {{#9}}a settlement{{/9}}{{^9}}that resident{{/9}} directly on top of the matching city card. IMPORTANT: The {{owners}} must reach the cities once during the game. They do not need to stay there until the end of the game. The players may voluntarily remove their settlements from these cities during the game, or may be forced to remove them because of war!</p>
+				{{#4}}<p>The {{owner}} reaches an opposing city the first time, if {{sagent}} moves 1 of {{fowns}} residents on this city. In that case he places 1 additional resident from {{owns}} storage on top of the matching city card (moving on the city is important, not the outcome of the following fight!).</p>{{/4}}
 			{{/2.III}}
 		{{/2}}
 		{{#4}}
@@ -816,82 +817,88 @@
 					{{^4.I}}{{^2}}{{#company}}If the capital is attacked, the headquarters defends itself last and counts as 3 armies, see <b>Phase 3 G</b>.{{/company}}{{/2}}{{/4.I}}
 					{{^2}}{{^company}}{{^4.I}}The capital of another player cannot be attacked.{{/4.I}}{{/company}}{{/2}}
 				</p>
+				{{^4.I}}{{#company}}<p>
+					If the attacking stock company conquers an opposing capital by immediately moving 1 additional active resident onto the neutralized city, it also conquers all other tiles of the defender by exchanging the armies with its own.
+					{{#2.III}} If the attacking stock company neutralizes the last capital of the defender, it may conquer that capital immediately after the fight by moving 1 additional active resident onto the neutralized city.{{/2.III}} 
+					If the attacker only neutralizes the capital, the defender loses all of his tiles without the attacker conquering them. Afterwards the players lose all shares of the defeated stock company without substitution. The stock company starts anew and may be established again by the players in the next share round (SR).
+					{{#1.1}} Place all delivered goods of that company separately next to the map, as they still count for the game end!{{/1.1}}
+				</p>{{/company}}{{/4.I}}
 			{{/8}}
 		{{/4}}
 		{{#5.I}}<p>The {{agent}} may explore an adjacent unknown space with 1 active resident. He places that resident back into {{fowns}} storage (if the resident explores water, instead it is placed exhausted on the starting tile).</p>{{/5.I}}
 		{{#5.II}}
-			{{#2}}<p>The player may explore any number of adjacent unknown spaces with 1 active resident. After exploring he places that resident back into his storage (except if it explores only water, instead it is placed exhausted on the starting tile).</p>{{/2}}
-			{{^2}}{{#4}}<p>The player may explore an adjacent unknown space with 1 active resident. After exploring the tile the player places that resident back into his storage (except if it explores water, instead it is placed exhausted on the starting tile).</p>{{/4}}{{/2}}
-			{{^2}}{{^4}}<p>The player may explore an adjacent unknown space with 1 active resident. Afterwards the resident is exhausted on the starting tile.</p>{{/4}}{{/2}}
+			{{#2}}{{^4.I}}<p>The {{agent}} may explore any number of adjacent unknown spaces with 1 active resident. After exploring he places that resident back into his storage (except if it explores only water, instead it is placed exhausted on the starting tile).</p>{{/4.I}}{{/2}}
+			{{^2.I}}{{#4}}<p>The {{agent}} may explore an adjacent unknown space with 1 active resident. After exploring the tile he places that resident back into his storage (except if it explores water, instead it is placed exhausted on the starting tile).</p>{{/4}}{{/2.I}}
+			{{^2}}{{^4}}<p>The {{agent}} may explore an adjacent unknown space with 1 active resident. Afterwards the resident is exhausted on the starting tile.</p>{{/4}}{{/2}}
 		{{/5.II}}
-		{{#5.III}}<p>The player may explore any number of adjacent unknown spaces with 1 active resident. He places that resident back into his storage (except if it explores only water, instead it is placed exhausted on the starting tile).</p>{{/5.III}}
+		{{#5.III}}<p>The {{agent}} may explore any number of adjacent unknown spaces with 1 active resident. He places that resident back into {{fowns}} storage (except if it explores only water, instead it is placed exhausted on the starting tile).</p>{{/5.III}}
 		{{#5}}
-			<p><b>Exploring:</b> After choosing the destination space, the player places the explorer tiles next to the following stacks, until he placed all 6 tiles.</p>
+			<p><b>Exploring:</b> After choosing the destination space, the {{agent}} places the explorer tiles next to the following stacks, until he placed all 6 tiles.</p>
 			<ol>
 				<li><b>City:</b> # of explorer tiles = # of tiles between the destination space and the closest city (Across existing land tiles). New cities are never located adjacent to other cities!</li>
-				<li><b>Water:</b> # of explorer tiles = # of tiles between the destination space and the central city (across linear distance, even across water or empty spaces). New water tiles are never located adjacent to other water tiles!</li>
+				<li><b>Water:</b> # of explorer tiles = # of tiles between the destination space and the central city (across linear distance, even across water or empty spaces), or 0 if next to an existing water tile. New water tiles are never located adjacent to other water tiles!</li>
 				<li><b>Land tiles:</b> 1 explorer tile next to each stack, in the following order: grassland, forest field, mountain, desert.</li>
 				<li><b>Remaining explorer tiles:</b> 1 additional explorer tile next to each stack, which already received 1 or more explorer tiles, in the following order: city, water, grassland, forest, field, mountain desert, if necessary repeatedly.</li>
 			</ol>
-			<p>Afterwards the player rolls 1 die and places the corresponding map tile on the destination space. See the example <b>Exploring</b>.</p>
-			{{#mapnum.1}}<p>The players may only explore in a distance of 4 spaces around the central city. Thus, following the adjacency rules above the players will not always explore all cities or water tiles.</p>{{/mapnum.1}}
+			<p>Afterwards the {{agent}} rolls 1 die and places the corresponding map tile on the destination space. See the example <b>Exploring</b>.</p>
+			{{#mapnum.1}}<p>The {{agent}}s may only explore in a distance of 4 spaces around the central city. Thus, following the adjacency rules above the {{agent}}s will not always explore all cities or water tiles.</p>{{/mapnum.1}}
 			{{#5.I}}
-				{{#2.III}}
-					<p>The player counts that tile on the majority board.</p>
-					{{#6.II}}<p>Note: Use another token like a settlement to track exploration. Do not add this to the count of your road network.</p>{{/6.II}}
-					{{#7.II}}<p>Note: Use another token like a road to track exploration. Do not add this to the count of your majorities.</p>{{/7.II}}
-				{{/2.III}}
-				<p>The player immediately gets 1 victory point (VP) for each explored tile, including water. Then, place a stack of 2 "1 VP" tokens on each explored land tile and a stack of 4 "1 VP" tokens on each explored city.</p>
-				<p>During the game the player gets additional victory points (VP) by taking them from the appropriate tiles:</p>
+				{{#2.III}}<p>
+					The {{agent}} counts that tile on the majority board.
+					{{#6.II}}Note: Use another token like a settlement to track exploration. Do not add this to the count of your road network.{{/6.II}}
+					{{#7.II}}Note: Use another token like a road to track exploration. Do not add this to the count of your majorities.{{/7.II}}
+				</p>{{/2.III}}
+				<p>The {{owner}} immediately gets 1 victory point (VP) for each explored tile, including water. Then, place a stack of 2 "1 VP" tokens on each explored land tile and a stack of 4 "1 VP" tokens on each explored city.</p>
+				<p>During the game the {{owner}} gets additional victory points (VP) by taking them from the appropriate tiles:</p>
 				<ol>
-					<li>The player gets 1 VP for placing the collectively 1st settlement on the tile.</li>
-					<li>The player gets the last VP from a land tile only, if he exhausts 1 resident for the action harvest on the corresponding tile (On cities the player needs to do this for each of the last three VP tokens). The player does not get this VP, if he exhausts his resident for another action that tile.</li>
+					<li>The {{owner}} gets the first VP for placing the collectively 1st settlement on the tile.</li>
+					<li>The {{owner}} gets other VP from tiles, if they exhaust 1 resident for the harvest action on the corresponding tile (On cities the {{agent}} needs to do this for each of the last three VP tokens). The {{owner}} does not get this VP, if {{sagent}} exhausts {{fowns}} resident for another action that tile.</li>
 				</ol>
 
 			{{/5.I}}
 			{{#5.II}}
-				{{#3.I}}<p>The player may move any number of his active residents from adjacent tiles onto the just explored tile without exhausting them in this way.</p>{{/3.I}}
-				{{#4.I}}<p>Depending on the terrain the player discovers or receives the following. <span class="desert icon"></span> empty, <span class="grass icon"></span> & <span class="forest icon"></span> 1 own settlement, <span class="grain icon"></span> 1 own settlement + 1 own exhausted resident, <span class="mountain icon"></span> 1 militia. For defeating this militia once-only $20. <span class="city icon"></span> 1 barrack and 1 militia. The player does not get income tokens for discovered settlements!</p>{{/4.I}}
-				{{#2.III}}{{#9.I}}<p>The player counts that tile on the majority board.</p>{{/9.I}}{{/2.III}}
+				{{#3.I}}<p>The {{agent}} may move any number of {{fowns}} active residents from adjacent tiles onto the just explored tile without exhausting them in this way.</p>{{/3.I}}
+				{{#4.I}}<p>Depending on the terrain the {{owner}} discovers or receives the following. <span class="desert icon"></span> empty, <span class="grass icon"></span> & <span class="forest icon"></span> 1 own settlement, <span class="grain icon"></span> 1 own settlement + 1 own exhausted resident, <span class="mountain icon"></span> 1 militia. For defeating this militia once-only $20. <span class="city icon"></span> 1 barrack and 1 militia. The player does not get income tokens for discovered settlements!</p>{{/4.I}}
+				{{#2.III}}{{#9.I}}<p>The {{agent}} counts that tile on the majority board.</p>{{/9.I}}{{/2.III}}
 			{{/5.II}}
 		{{/5}}
 		{{#6}}
-			<p><b>Roads:</b> If the player has 1 settlement each on two adjacent tiles, he may connect both tiles with 1 of his roads. To build a road he needs a the number of active residents equal to the more expensive of the two terrain types, see the table <b>Road</b>. {{^6.III}}He places 1 of his used residents back into his supply and places 1 road. The remaining residents are exhausted from the build and will be available again in the next round. {{/6.III}}{{#6.III}}All of the used residents are exhausted and are available again in the next round.{{/6.III}}</p>
-			{{^6.III}}<p>The player must build his roads in a connected network. His 1st road must start in his capital, afterwards the network may branch out in any direction.</p>{{/6.III}}
-			{{#6.III}}<p>The play may build his roads on any tiles, they do not need to start in his capital and do not need to be connected.</p>{{/6.III}}
+			<p><b>Roads:</b> If the {{owner}} has 1 settlement each on two adjacent tiles, {{sagent}} may connect both tiles with 1 of his roads. To build a road he needs a the number of active residents equal to the more expensive of the two terrain types, see the table <b>Road</b>. {{^6.III}}He places 1 of {{fowns}} used residents back into his supply and places 1 road. The remaining residents are exhausted from the build and will be available again in the next round. {{/6.III}}{{#6.III}}All of the used residents are exhausted and are available again in the next round.{{/6.III}}</p>
+			{{^6.III}}<p>The {{agent}} must build {{fowns}} roads in a connected network. His 1st road must start in {{fowns}} capital, afterwards the network may branch out in any direction.</p>{{/6.III}}
+			{{#6.III}}<p>The {{agent}} may build {{fowns}} roads on any tiles, they do not need to start in {{fowns}} capital and do not need to be connected.</p>{{/6.III}}
 			{{#4}}
 				<p>
-					The players build neutral roads, so there is always only 1 road between 2 tiles.
-					{{^6.III}}The roads built by a player must be connected with his capital solely across tiles controlled by that player.{{/6.III}}
-					{{#6.I}}The player only counts a land tile on the majority board, if he is the first who connects that land tile with 1 road. Multiple players may count a city each once, if they control that city during the game AND connect it via roads solely across their own tiles to their capital. Each player counts his capital, when he builds his first road.{{/6.I}}
-					{{#6.II}}The roads built by a player must be connected with his capital solely across tiles controlled by that player. The player counts these tiles on the majority board (including his capital{{^7}}, but no deserts{{/7}}). If the player loses the control of a tile, he must subtract all tiles on the majority board, which now are not connected anymore via roads to his capital solely across his own tiles.{{/6.II}}
-					The player may move his active residents any distance along roads on his own tiles without exhausting them in this way.
+					The {{agent}}s build neutral roads, so there is always only 1 road between 2 tiles.
+					{{^6.III}}The roads built by a {{agent}} must be a connected with {{fowns}} capital solely across tiles controlled by that {{owner}}.{{/6.III}}
+					{{#6.I}}The {{owner}} only counts a land tile on the majority board, if {{^company}}he is the first who{{/company}}{{#company}}it is the first company that{{/company}} connects that land tile with 1 road. Multiple {{owners}} may count a city each once, if they control that city during the game AND connect it via roads solely across their own tiles to their capital. Each {{owner}} counts {{owns}} capital, when {{sagent}} builds {{owns}} first road.{{/6.I}}
+					{{#6.II}}The roads built by a {{agent}}}} must be connected with {{fowns}} capital solely across tiles controlled by that {{owner}}. The {{owner}} counts these tiles on the majority board (including {{owns}} capital{{^7}}, but no deserts{{/7}}). If the {{owner}} loses the control of a tile, {{sagent}} must subtract all tiles on the majority board, which now are not connected anymore via roads to {{fowns}} capital solely across {{owns}} own tiles.{{/6.II}}
+					The {{agent}} may move {{fowns}} active residents any distance along roads on {{owns}} own tiles without exhausting them in this way.
 				</p>
-				{{^4.III}}<p>If the player moves 1 or more residents onto an opposing tile, he may build 1 road onto that tile, too (even though he has no settlement there and must fight in <b>Phase 3 G</b>).</p>{{/4.III}}
+				{{^4.III}}<p>If the {{agent}} moves 1 or more residents onto an opposing tile, he may build 1 road onto that tile, too (even though {{^company}}he{{/company}}{{#company}}the company{{/company}} has no settlement there and must fight in <b>Phase 3 G</b>).</p>{{/4.III}}
 			{{/4}}
 			{{^4}}
-				<p>The player may move his active units any distance along his roads without exhausting them in this way.</p>
-				{{#6.I}}<p>Directly after building a road, the player counts all the new tiles he connected on the majority board (including his capital). This way, each tile may be counted by multiple players!</p>{{/6.I}}
-				{{#6.II}}<p>Directly after building a road, the player counts all the new tiles he connected on the majority board (including his capital{{^7}}, but no deserts{{/7}}). This way, each tile may be counted by multiple players! Each city has demand for the different types of terrain, so the player's goal is to connect one of each of the terrain types for each of the cities he connects with his roads.</p>{{/6.II}}
-				{{#2}}<p>{{^6.III}}If the player changes his capital, he cannot start a new network. {{/6.III}}If the player removes 1 settlement from the map, his roads to that tile turn neutral{{^6.III}}, and he subtracts that tile on the majority board{{/6.III}}. The 1st player, who owns 1 settlement each on both these tiles, exchanges the neutral road with one of his own roads, if it is connected to his other roads and he does not own a road there.{{^6.III}} He counts it on the majority board.{{/6.III}}</p>{{/2}}
-				{{^2}}{{#7.I}}<p>{{^6.III}}If the player changes his capital, he cannot start a new network. {{/6.III}}If the player removes 1 settlement from the map, his roads to that tile turn neutral{{^6.III}}, and he subtracts that tile on the majority board{{/6.III}}. The 1st player, who owns 1 settlement each on both these tiles, exchanges the neutral road with one of his own roads, if it is connected to his other roads and he does not own a road there.{{^6.III}} He counts it on the majority board.{{/6.III}}</p>{{/7.I}}{{/2}}
+				<p>The {{agent}} may move {{fowns}} active units any distance along {{owns}} roads without exhausting them in this way.</p>
+				{{#6.I}}<p>Directly after building a road, the {{owner}} counts all the new tiles {{sagent}} connected on the majority board (including {{fowns}} capital). This way, each tile may be counted by multiple {{owners}}!</p>{{/6.I}}
+				{{#6.II}}<p>Directly after building a road, the {{owner}} counts all the new tiles {{sagent}} connected on the majority board (including {{fowns}} capital{{^7}}, but no deserts{{/7}}). This way, each tile may be counted by multiple {{owners}}! Each city has demand for the different types of terrain, so the {{owner}}'s goal is to connect one of each of the terrain types for each of the cities {{sagent}} connects with {{fowns}} roads.</p>{{/6.II}}
+				{{#2}}<p>{{^6.III}}If the {{agent}} changes {{fowns}} capital, he cannot start a new network. {{/6.III}}If the {{agent}} removes 1 settlement from the map, his roads to that tile turn neutral{{^6.III}}, and he subtracts that tile on the majority board{{/6.III}}. The 1st {{owner}}, who owns 1 settlement each on both these tiles, exchanges the neutral road with one of {{owns}} own roads, if it is connected to {{owns}} other roads and he does not own a road there.{{^6.III}} He counts it on the majority board.{{/6.III}}</p>{{/2}}
+				{{^2}}{{#7.I}}<p>{{^6.III}}If the{{agent}} changes {{fowns}} capital, he cannot start a new network. {{/6.III}}If the {{agent}} removes 1 settlement from the map, his roads to that tile turn neutral{{^6.III}}, and he subtracts that tile on the majority board{{/6.III}}. The 1st {{owner}}, who owns 1 settlement each on both these tiles, exchanges the neutral road with one of {{owns}} own roads, if it is connected to {{owns}} other roads and he does not own a road there.{{^6.III}} He counts it on the majority board.{{/6.III}}</p>{{/7.I}}{{/2}}
 			{{/4}}
 		{{/6}}
 		{{#7}}{{^6.I}}{{^6.II}}
 			{{^7.II}}
-				<p>Each time the player places 1 settlement on a tile, he counts the matching type of terrain on the majority board (including his capital).</p>
+				<p>Each time the {{agent}} places 1 settlement on a tile, he counts the matching type of terrain on the majority board (including {{fowns}} capital).</p>
 			{{/7.II}}
 			{{#7.II}}
-				{{#8}}<p>The player counts a land tile, if he builds the plant (if he builds a "fish"-plant, he counts the original terrain). Additionally he counts a city, if he builds his trading house there (including his capital).</p>{{/8}}
-				{{^8}}<p>The player counts a tile, when he places 1 settlement on that tile (including his capital).</p>{{/8}}
+				{{#8}}<p>The {{agent}} counts a land tile, if he builds the plant (if he builds a "fish"-plant, he counts the original terrain). Additionally he counts a city, if he builds {{fowns}} trading house there (including {{owns}} capital).</p>{{/8}}
+				{{^8}}<p>The {{agent}} counts a tile, when he places 1 settlement on that tile (including {{fowns}} capital).</p>{{/8}}
 			{{/7.II}}
-			{{#4}}<p>If the player conquers the tile of another player{{#8}} that contains a plant{{/8}}, he counts that tile on the majority board, while the other player subtracts it.</p>{{/4}}
+			{{#4}}<p>If the {{agent}} conquers the tile of another {{owner}}{{#8}} that contains a plant{{/8}}, he counts that tile on the majority board, while the other {{owner}} subtracts it.</p>{{/4}}
 		{{/6.II}}{{/6.I}}{{/7}}
 		{{#8}}
-			<p><b>Plants:</b> On each land tile the players commonly may build a total of 1 plant. The player needs active residents depending on the terrain, see the table <b>Plant</b>. Afterwards the used residents are exhausted and available again in the next round. The player marks the ownership by placing his settlement on the plant. {{#8.I}}The player places that good face up in front of himself.{{/8.I}} {{#1}}The plant immediately produces 1 goods tile, which is placed on top of the plant for now.{{/1}}</p>
+			<p><b>Plants:</b> On each land tile the {{owners}} commonly may build a total of 1 plant. The {{agent}} needs active residents to perform this action depending on the terrain, see the table <b>Plant</b>. Afterwards the used residents are exhausted and available again in the next round. The {{agent}} marks the ownership by placing {{fowns}} settlement on the plant. {{^1}}{{#8.I}}The {{agent}} places that good face up in {{^company}}front of himself{{/company}}{{#company}}his company's holdings{{/company}}.{{/8.I}}{{/1}} {{#1}}The plant immediately produces 1 goods tile, which is placed on top of the plant for now.{{/1}}</p>
 			{{^8.III}}
-				<p><b>Trading House:</b> If the player moves residents onto a city and exchanges 1 resident into 1 settlement, it becomes his trading house. The player must pay additional money to build this trading house, see the table <b>Trading House</b>. If the player does not have enough money, he cannot move onto the city. Each player can only have 1 trading house in each city (the headquarters is a trading house, too).</p>
-				{{#4}}<p>Any number of players may build trading houses on each city (no fights on cities). The players must take the trading houses of the militia into account, so even the first player must pay money to build his trading house!</p>{{/4}}
+				<p><b>Trading House:</b> If the {{agent}} moves residents onto a city and exchanges 1 resident into 1 settlement, it becomes {{fowns}} trading house. The {{owner}} must pay additional money to build this trading house, see the table <b>Trading House</b>. If the {{owner}} does not have enough money, {{sagent}} cannot move onto the city. Each {{owner}} can only have 1 trading house in each city (the headquarters is a trading house, too).</p>
+				{{#4}}<p>Any number of {{owners}} may build trading houses on each city (no fights on cities). The {{agent}}s must take the trading houses of the militia into account, so even the first {{owner}} must pay money to build {{owns}} trading house!</p>{{/4}}
 			{{/8.III}}
 		{{/8}}
 	{{/residents}}{{/capture}}
@@ -904,57 +911,53 @@
 
 	{{#capture}}
 		{{#1}}
-			{{^1.III}}<p>The player may transport 1 good of any type or up to 2 of his exhausted residents per cargo hold. He may load and unload his transport trolley any number of times. If he unloads goods on a land tile or a city, which has no demand for these goods{{#8}}{{^8.III}} (or without one of his trading houses){{/8.III}}{{/8}}, the goods remain there until any player loads them again onto his transport trolley.</p>{{/1.III}}
-			{{#1.III}}<p>The player may transport {{#8}}{{^8.III}}1 good of any type or {{/8.III}}{{/8}}up to 2 of his exhausted residents per cargo hold. He may load and unload his transport trolley any number of times.{{#8}}{{^8.III}}If he unloads goods on a land tile or a city, without one of his trading houses, the goods remain there until any player loads them again onto his transport trolley.{{/8.III}}{{/8}}</p>{{/1.III}}
-			<p>The player needs 1 MP to move his transport trolley from tile to tile; but he needs 2 MP for the movement from any tile up on each mountain.{{#residents}}{{^4}} The transport trolley with loaded residents may move through tiles without settlements of the player, which are empty or have opposing settlements and residents.{{/4}} If the player unloads residents on a tile without 1 of his settlements, 1 resident turns into 1 settlement.{{/residents}}</p>
-			{{^residents}}<p>The player may buy additional MP for his transport trolley, see the table <b>Prices for Additional Movement Points (MP)</b>.</p>{{/residents}}
-			{{#6}}<p>The player needs 0.5 MP per road, when moving his transport trolley on his roads.</p>{{/6}}
+			{{^1.III}}<p>The {{agent}} may transport 1 good of any type or up to 2 of {{fowns}} exhausted residents per cargo hold. He may load and unload the transport trolley any number of times. If he unloads goods on a land tile or a city, which has no demand for these goods{{#8}}{{^8.III}} (or without one of {{fowns}} trading houses){{/8.III}}{{/8}}, the goods remain there until any {{owner}} loads them again onto {{own}} transport trolley.</p>{{/1.III}}
+			{{#1.III}}<p>The {{agent}} may transport {{#8}}{{^8.III}}1 good of any type or {{/8.III}}{{/8}}up to 2 of {{fowns}} exhausted residents per cargo hold. He may load and unload the transport trolley any number of times.{{#8}}{{^8.III}}If he unloads goods on a land tile or a city, without one of {{fowns}} trading houses, the goods remain there until any {{owner}} loads them again onto {{owns}} transport trolley.{{/8.III}}{{/8}}</p>{{/1.III}}
+			<p>The {{agent}} needs 1 MP to move {{fowns}} transport trolley from tile to tile; but he needs 2 MP for the movement from any tile up on each mountain.{{#residents}}{{^4}} The transport trolley with loaded residents may move through tiles without settlements of the {{owner}}, which are empty or have opposing settlements and residents.{{/4}} If the {{agent}} unloads residents on a tile without 1 of {{fowns}} settlements, 1 resident turns into 1 settlement.{{/residents}}</p>
+			{{#6}}
+				<p>The {{agent}} needs 0.5 MP per road, when moving {{fowns}} transport trolley on {{owns}} roads.</p>
+				{{#1.III}}<p>Once per turn and following the building rules for roads, the {{agent}} may build 1 road for free from the tile with his transport trolley, if the {{owner}}} has 1 settlement each on both affected tiles.</p>{{/1.III}}
+			{{/6}}
 			{{#4}}
-				<p>The player may move his transport trolley on all tiles, even on opposing tiles. He gets 1 additional MP, if the transport trolley starts the movement on one of his tiles. If the transport trolley moves onto opposing tiles for the first time during this phase, he needs 1 additional MP for each opponent (if it starts on an opposing tile or continues to move onto more tiles of the same opponent, no further additional MPs are needed).</p>
-				{{#8}}{{^8.III}}<p>The cities are neutral and no player is controlling them. Each player may move onto a city for 1 MP.</p>{{/8.III}}{{/8}}
-				<p> If the transport trolley moves onto a tile without 1 of his settlements, the player must unload at least 1 resident which turns into 1 settlement. If the transport trolley moves onto an opposing tile with loaded residents, the player must unload them for the fight. The player cannot load exhausted residents on an opposing tile. {{#2}}After the transport trolley finishes its movement, a fight follows immediately.{{/2}}</p>
+				<p>The {{agent}} may move {{fowns}} transport trolley on all tiles, even on opposing tiles. He gets 1 additional MP, if the transport trolley starts the movement on one of {{fowns}} tiles. If the transport trolley moves onto opposing tiles for the first time during this phase, he needs 1 additional MP for each opponent (if it starts on an opposing tile or continues to move onto more tiles of the same opponent, no further additional MPs are needed).</p>
+				{{#8}}{{^8.III}}<p>The cities are neutral and no {{owner}} controls them. Each {{agent}} may move onto a city for 1 MP.</p>{{/8.III}}{{/8}}
+				<p> If the transport trolley moves onto a tile without 1 of {{fowns}} settlements, the {{agent}} must unload at least 1 resident which turns into 1 settlement. If the transport trolley moves onto an opposing tile with loaded residents, the {{agent}} must unload them for the fight. The {{agent}} cannot load exhausted residents on an opposing tile. {{#2}}After the transport trolley finishes its movement, a fight follows immediately.{{/2}}</p>
 			{{/4}}
+			{{#2.II}}{{#residents}}<p>The {{agent}} reaches a city only with {{fowns}} transport trolley. In that case he places 1 resident from {{fowns}} storage on top of the matching city card.</p>{{/residents}}{{/2.II}}
 			{{^residents}}
-				{{#3}}{{^3.III}}<p>The player may place 1 settlement on a city, when he moves there with his transport trolley (This is a voluntary action. Because of the limited number of his settlements the player may pass on this action!).</p>{{/3.III}}{{/3}}
-				{{#5.II}}<p>The player may place 1 settlement on a tile, when he arrives there with his transport trolley, see <b>Income</b> (This is a voluntary action. Because of the limited number of his settlements the player may pass on this action!).</p>{{/5.II}}
-				{{#7.III}}<p>The player may place 1 settlement on 1 tile, when he arrives there with his transport trolley. He counts the matching type of terrain on the majority board (This is a voluntary action. Because of the limited number of his settlements the player may pass on this action!)</p>{{/7.III}}
+				<p>The {{owner}} may buy additional MP for {{owns}} transport trolley, see the table <b>Prices for Additional Movement Points (MP)</b>.</p>
+				{{#2}}{{^2.III}}<p>The {{agent}} reaches cities with {{fowns}} transport trolley. In that case he moves {{fowns}} resident from that city to the matching city card.{{/2.III}}{{/2}}
+				{{#5}}<p>The transport trolley may explore new tiles. It must move onto the newly explored tile for 1 movement point (MP), it only needs 2 MP for moving onto each mountain. If the {{agent}} explores 1 water tile, he needs 1 MP but the transport trolley must remain on the starting tile. If the {{agent}} explores 1 mountain tile with his last MP, the transport trolley must remain on the starting tile, too.</p>{{/5}}
+				<p>If the game requires settlements for scoring, income or buildings, the {{agent}} may place 1 settlement on a tile, when he arrives there with {{fowns}} transport trolley. {{#7.III}}He counts the matching type of terrain on the majority board{{/7.III}} This is a voluntary action. Because of the limited number of his settlements the {{agent}} may pass on this action!.</p> 
+				<p>Note: This rule may not apply to this game! Check below for <b>Phase 3 F</b> (factories) <b>Income</b> and <b> Scoring</b>.</p>
 			{{/residents}}
-			{{#2.I}}{{^residents}}<p>The player reaches cities with his transport trolley. In that case he moves his resident from that city to the matching city card.{{#9.II}} Additionally, the player may place 1 settlement on a tile, when he moves there with his transport trolley, see below for Income (This is a voluntary action. Because of the limited number of his settlements the player may pass on this action!){{/9.II}}</p>{{/residents}}{{/2.I}}
-			{{#2.II}}
-				<p>The player reaches a city only with his transport trolley. In that case he places 1 resident from his storage on top of the matching city card.</p>
-				{{^residents}}<p>The player moves his resident from the city to the matching city card. Additionally, the player may place 1 settlement on a tile, when he moves there with his transport trolley, see below for Income (This is a voluntary action. Because of the limited number of his settlements the player may pass on this action!).</p>{{/residents}}
-			{{/2.II}}
-			{{#5}}{{^residents}}<p>
-				{{^5.I}}The transport trolley may explore new tiles. It must move onto the newly explored tile for 1 movement point (MP), it only needs 2 MP for moving onto each mountain. If the player explores 1 water tile, he needs 1 MP but the transport trolley must remain on the starting tile. If the player explores 1 mountain tile with his last MP, the transport trolley must remain on the starting tile, too.{{/5.I}}
-			</p>{{/residents}}{{/5}}
-			{{#6}}{{#1.III}}<p>Once per turn and following the building rules for roads, the player may build 1 road for free from the tile with his transport trolley, if he has 1 settlement each on both affected tiles.</p>{{/1.III}}{{/6}}
 			{{^1.III}}<p>
-				The goal of the player is to deliver the goods to a city, which has demand for this type of good. Each city takes only 1 good for each listed goods type.
+				The goal of the {{owner}} is to deliver the goods to a city, which has demand for this type of good. Each city takes only 1 good for each listed goods type.
 				{{^8.I}}{{^8.II}}
-					{{#1.I}}The player places the delivered goods face up in front of himself and covers the matching spaces on the cities with covering tokens.{{/1.I}}
-					{{#1.II}}The player places the goods face up below the goods price board in the order he delivered them during his turn and covers the matching spaces on the cities with covering tokens. IF the player delivers 2 goods to the same city, he decides in which order he places them below the goods price board.{{/1.II}}
+					{{#1.I}}The {{agent}} places the delivered goods face up in {{^company}}front of himself{{/company}}{{#company}}his company's holdings{{/company}} and covers the matching spaces on the cities with covering tokens.{{/1.I}}
+					{{#1.II}}The {{agent}} places the goods face up below the goods price board in the order he delivered them during his turn and covers the matching spaces on the cities with covering tokens. IF the player delivers 2 goods to the same city, he decides in which order he places them below the goods price board.{{/1.II}}
 				{{/8.II}}{{/8.I}}
 			</p>{{/1.III}}
 			{{#8}}
-				<p>Directly after the player builds a plant, it produces once-only 1 good. The player places that good for the moment on top of the plant. Only the owner may transport the goods placed on the plants!</p>
-				{{#1.III}}<p>The goal of the player is to deliver the goods to a city, where he has a trading house. He must also follow the limited delivery quantities of his trading houses (The cities themselves have no specific demand for the goods)! If the player unloads goods on a land tile or cities, where he has no trading houses or already fulfilled their delivery quantities, the goods remain there until any player loads them again onto his transport trolley.</p>{{/1.III}}
-				{{^1.III}}{{^8.III}}<p>The player must transport the goods to his trading houses on the cities. He must follow the limited delivery quantities of his trading houses and additionally he must follow the demand of the cities. He places the delivered goods for the moment on top of the trading house{{#1.II}}, he places matching goods from the supply face up below the goods price board,{{/1.II}} and covers the matching spaces on the cities with covering tokens. {{#8.I}}See below at <b>Final Scoring</b>{{/8.I}}{{#8.II}}See below at <b>Phase 3 H:Income</b>{{/8.II}} for the limited delivery quantities of trading houses.</p>{{/8.III}}{{/1.III}}
+				<p>Directly after the {{agent}} builds a plant, it produces once-only 1 good. The {{agent}} places that good for the moment on top of the plant. Only the owner may transport the goods placed on the plants!</p>
+				{{#1.III}}<p>The {{agent}} must transport the goods to {{fowns}} trading houses on the cities. He must follow the limited delivery quantities of {{fowns}} trading houses (The cities themselves have no specific demand for the goods)! If the {{agent}} unloads goods on a land tile or cities, where he has no trading houses or already fulfilled their delivery quantities, the goods remain there until any {{owner}} loads them again onto {{owns}} transport trolley.</p>{{/1.III}}
+				{{^1.III}}{{^8.III}}<p>The  {{agent}} must transport the goods to {{fowns}} trading houses on the cities. He must follow the limited delivery quantities of {{fowns}} trading houses and additionally he must follow the demand of the cities. He places the delivered goods for the moment on top of the trading house and covers the matching spaces on the cities with covering tokens. {{#1.II}} (He can track delivered goods by placing matching goods from the supply face up below the goods price board.){{/1.II}}{{#8.I}}See below at <b>Final Scoring</b>{{/8.I}}{{#8.II}}See below at <b>Phase 3 H:Income</b>{{/8.II}} for the limited delivery quantities of trading houses.</p>{{/8.III}}{{/1.III}}
 			{{/8}}
 		{{/1}}
 	{{/capture}}
 	{{#hascapture}}
 		<div class="row section">
-			<div class="col-md-2 col-xs-2"><h1>Phase 3 E: Transport Trolley</h1></div>
+			<div class="col-md-2 col-xs-2 mod1"><h1>Phase 3 E: Transport Trolley</h1></div>
 			<div class="col-md-10 col-xs-10">{{{captured}}}</div>
 		</div>
 	{{/hascapture}}
 
 	{{#3}}{{^3.III}}
 		<div class="row section">
-			<div class="col-md-2 col-xs-2"><h1>Phase 3 F: Factories</h1></div>
+			<div class="col-md-2 col-xs-2 mod3"><h1>Phase 3 F: Factories</h1></div>
 			<div class="col-md-10 col-xs-10">
-				<p>Each round, the player may buy at max 1 factory on each city, if he has 1 settlement there and pays the matching costs, see left for the table Factory.{{#3.I}} The player immediately gets 5 victory points (VP) for building the factory.{{/3.I}} On a city, the players in common may build a total of 3 factories.
-				<p>The player marks his factory with his settlement. If he owns several factories in the same city, he stacks them below his settlement.</p>
+				<p>Each round, the {{agent}} may buy at max 1 factory on each city, if {{fowns}} has 1 settlement there and pays the matching costs, see left for the table Factory.{{#3.I}} The {{owner}} immediately gets 5 victory points (VP) for building the factory.{{/3.I}} On a city, the {{owners}} in common may build a total of 3 factories.
+				<p>The {{owner}} marks {{owns}} factory with {{owns}} settlement. If the {{owner}} owns several factories in the same city, {{^company}}he{{/company}}{{#company}}it{{/company}} stacks them below {{owns}} settlement.</p>
 			</div>
 		</div>
 	{{/3.III}}{{/3}}
@@ -962,58 +965,56 @@
 	{{#capture}}
 		{{^2}}
 			{{#4}}{{^4.III}}
-				<p>A fight happens, if armies of 2 different players are on the same tile. See <b>Fight Sequence</b> and table <b>Dice Results</b>.</p>
-				{{#3}}{{^3.III}}<p>If the attacker neutralizes an opposing city, 1 existing factory there is destroyed. If the attacker later conquers the city with 1 additional resident, he gets the remaining factories there.</p>{{/3.III}}{{/3}}
-				{{#8}}{{^8.III}}<p>There are no fights in cities, so any number of players may have their own trading houses there. If the player conquers a land tile, he also conquers an existing plant. If the land tile is neutralized, the plant remains abandoned for now.</p>{{/8.III}}{{/8}}
+				<p>A fight happens, if armies of 2 different {{owners}} are on the same tile. See <b>Fight Sequence</b> and table <b>Dice Results</b>.</p>
+				{{#3}}{{^3.III}}{{^8.I}}{{^8.II}}<p>If the attacker neutralizes an opposing city, 1 existing factory there is destroyed. If the attacker later conquers the city with 1 additional resident, he gets the remaining factories there.</p>{{/8.II}}{{/8.I}}{{/3.III}}{{/3}}
+				{{#8}}{{^8.III}}<p>There are no fights in cities, so any number of {{owners}} may have their own trading houses there. If the {{agent}} conquers a land tile, he also conquers an existing plant. If the land tile is neutralized, the plant remains abandoned for now.</p>{{/8.III}}{{/8}}
 			{{/4.III}}{{/4}}
 			{{#4.II}}{{#9.I}}<p>If the attacking stock company conquers an opposing capital, it also conquers all other tiles of the defender and exchanges the armies with its own. If it only neutralizes the opposing capital, the defender loses all of his tiles without the attacker conquering them. Afterwards the players lose all shares of the defeated stock company without substitution. The stock company starts anew and may be established again by the players in the next share round (SR).</p>{{/9.I}}{{/4.II}}
 		{{/2}}
 	{{/capture}}
 	{{#hascapture}}
 		<div class="row section">
-			<div class="col-md-2 col-xs-2"><h1>Phase 3 G: Fight</h1></div>
+			<div class="col-md-2 col-xs-2 mod4"><h1>Phase 3 G: Fight</h1></div>
 			<div class="col-md-10 col-xs-10">{{{captured}}}</div>
 		</div>
 	{{/hascapture}}
 
 	{{#capture}}
 		{{#1.II}}
-			<p>The player gets $20 base income for the capital, plus once-only money for each good delivered in <b>Phase 3 E</b>. The player balances accounts separately for each good. He gets the price for the 1st good according to the goods price board and adjusts all prices: the price for the delivered good drops 3 spaces, the prices for all other goods each rise 1 space. Then, the player gets the price for the 2nd good etc.! The price for a type of goods cannot drop below the first "$10" space and cannot rise above $140. {{^8.I}}Finally, the player places all delivered goods into the general storage.{{/8.I}}{{#8.I}}Finally, the player returns the additional goods tokens (below the price board) into the general storage; they leave the tokens on the trading houses.{{/8.I}}</p>
-			{{#4}}<p>If the player delivers goods to a city without his settlements, he must pay $1 for each full $10 of this sale to the owner of the city, or in case of a free city, payment goes to the bank.</p>{{/4}}
+			<p>The {{owner}} gets $20 base income for {{owns}} capital, plus once-only money for each good delivered in <b>Phase 3 E</b>. The {{owner}} balances accounts separately for each good. He gets the price for the 1st good according to the goods price board and adjusts all prices: the price for the delivered good drops 3 spaces, the prices for all other goods each rise 1 space. Then, the {{owner}} gets the price for the 2nd good etc.! The price for a type of goods cannot drop below the first "$10" space and cannot rise above $140. {{^8.I}}Finally, the {{agent}} places all delivered goods into the general storage.{{/8.I}}{{#8.I}}The player leaves their goods tokens on the trading houses. (If he used additional tokens under the goods price board to track deliveries, he returns those tokens into the general storage.) {{/8.I}}</p>
+			{{#4}}<p>If the {{owner}} delivers goods to a city without his settlements, he must pay $1 for each full $10 of this sale to the owner of the city, or in case of a free city, payment goes to the bank.</p>{{/4}}
 		{{/1.II}}
 		{{#2.II}}
-			<p>The player gets $20 base income for his capital, plus once-only money for each settlement, which he placed on an empty tile during this turn, depending on the type of terrain: He gets $5 for <span class="grass icon"></span>, <span class="forest icon"></span>, <span class="grain icon"></span>, <span class="desert icon"></span> and $10 for <span class="city icon"></span> and <span class="mountain icon"></span>. Additionally the player gets once-only money each time he places a new resident on 1 or more city cards in <b>Phase 3 D</b>. For the overall 1st resident $10, for the overall 2nd resident $20 etc. Afterwards he moves the new residents to the bottom of the matching city cards - see example of <b>Income</b>.</p>
-			{{#7.I}}<p>If the player removes his settlement and then there are no settlements left on the tile, the next player placing a first settlement on that tile gets again once-only $5 (once-only $10 for city and mountain).</p>{{/7.I}}
+			<p>The {{owner}} gets $20 base income for {{owns}} capital, plus once-only money for each settlement, which {{sagent}} placed on an empty tile during this turn, depending on the type of terrain: He gets $5 for <span class="grass icon"></span>, <span class="forest icon"></span>, <span class="grain icon"></span>, <span class="desert icon"></span> and $10 for <span class="city icon"></span> and <span class="mountain icon"></span>. Additionally the {{owner}} gets once-only money each time {{sagent}} places a new resident on 1 or more city cards in <b>Phase 3 D</b>. For the overall 1st resident $10, for the overall 2nd resident $20 etc. Afterwards he moves the new residents to the bottom of the matching city cards - see example of <b>Income</b>.</p>
+			{{#7.I}}<p>If the {{agent}} removes {{fowns}} settlement and then there are no settlements left on the tile, the next {{owner}} placing a first settlement on that tile gets again once-only $5 (once-only $10 for city and mountain).</p>{{/7.I}}
 			{{^7.I}}
 				{{#1}}
-					<p>If the player removes his settlement and then there are no settlements left on the tile, the next player placing a first settlement on that tile gets again once-only $5 (once-only $10 for city and mountain).</p>
-				{{/1}}
-				{{^1}}
-					{{#4}}<p>If the player removes his settlement and then there are no settlements left on the tile, the next player placing a first settlement on that tile gets again once-only $5 (once-only $10 for city and mountain).</p>{{/4}}
+					<p>If the {{agent}} removes {{fowns}} settlement and then there are no settlements left on the tile, the next {{owner}} placing a first settlement on that tile gets again once-only $5 (once-only $10 for city and mountain).</p>
 				{{/1}}
 			{{/7.I}}
+			{{#4}}<p>If a {{agent}} neutralizes a tile from another {{owner}}, the next {{owner}} placing a first settlement on that tile gets again once-only $5 (once-only $10 for city and mountain). If he conquers that tile he gets that income.</p>{{/4}}
 		{{/2.II}}
 		{{#3.II}}
-			<p>The player gets $20 base income for his capital, plus $15 for each of his factories. All players place their income for now to one side, until they paid taxes in the next Phase 1.</p>
+			<p>The {{owner}} gets $20 base income for {{owns}} capital, plus $15 for each of {{owns}} factories.{{^company}} All {{owners}} place their income for now to one side, until they paid taxes in the next Phase 1.{{/company}}</p>
 		{{/3.II}}
 		{{#4.II}}
-			<p>The players receive $20 base income for their capital, plus $5 for each additionally owned tile. The players also receive a bonus income for different types of land tiles (non city tiles), see the example <b>Income</b>.</p>
+			<p>The {{owner}} gets $20 base income for {{owns}} capital, plus $5 for each additionally owned tile. The {{owners}} also receive a bonus income for different types of land tiles (non city tiles), see the example <b>Income</b>.</p>
 			<table>
 				<tr><th># of different types of land tiles</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
 				<tr><th>bonus income</th><td>$0</td><td>$5</td><td>$10</td><td>$20</td><td>$30</td></tr>
 			</table>
 		{{/4.II}}
 		{{#5.II}}
-			<p>The player gets $20 base income for the capital, plus $5 for each tile he explored (including water) plus $5 for each settlement, which the player placed first on a tile. For a better overview the player places 1 income token for each explored tile and settlement in front of himself, see the example <b>Income</b>.</p>
-			{{#2}}<p>If the player removes his settlement and then the tile is completely empty, the next player placing a new first settlement on that tile also takes 1 income token.</p>{{/2}}
-			{{^2}}{{#4}}<p>If the player removes his settlement and then the tile is completely empty, the next player placing a new first settlement on that tile also takes 1 income token.</p>{{/4}}{{/2}}
-			{{^2}}{{^4}}{{#7.I}}<p>If the player removes his settlement and then the tile is completely empty, the next player placing a new first settlement on that tile also takes 1 income token.</p>{{/7.I}}{{/4}}{{/2}}
+			<p>The {{owner}} gets $20 base income for {{owns}} capital, plus $5 for each tile he explored (including water) plus $5 for each settlement, which the player placed first on a tile. For a better overview the {{agent}} places 1 income token for each explored tile and settlement in {{^company}}front of himself{{/company}}{{#company}}his company's holdings{{/company}}, see the example <b>Income</b>.</p>
+			{{#2}}<p>If the {{agent}} removes {{fowns}} settlement and then the tile is completely empty, the next {{owner}} placing a new first settlement on that tile also takes 1 income token.</p>{{/2}}
+			{{^2}}{{#7.I}}<p>If the {{agent}} removes {{fowns}} settlement and then the tile is completely empty, the next {{owner}} placing a new first settlement on that tile also takes 1 income token.</p>{{/7.I}}{{/2}}
+			{{#4}}<p>If a {{agent}} neutralizes a tile from another {{owner}}, the next {{owner}} placing a first settlement on that tile also takes 1 income token. If he conquers that tile he gets that income token.</p>{{/4}}
 		{{/5.II}}
-		{{#6.II}}<p>The player gets $20 base income for his capital, plus $10 for each additional city he connected. Furthermore each of his connected cities gives the player money for 1 land tile of each type (except deserts): he gets $5 for grassland, field & forest, $10 for mountain, plus a bonus of $10 for each set containing 1 city, 1 grassland, 1 field, 1 forest, 1 mountain (no desert), see the example <b>Income</b>.</p>{{/6.II}}
-		{{#7.II}}<p>The player gets $20 base income for the capital, plus income for the majorities as stated above, see table and example <b>Income</b>.</p>{{/7.II}}
+		{{#6.II}}<p>The {{owner}} gets $20 base income for {{owns}} capital, plus $10 for each additional city connected to {{owns}} capital(via road network). Furthermore each of {{owns}} connected cities gives the {{owner}} money for 1 land tile of each type (except deserts): he gets $5 for grassland, field & forest, $10 for mountain, plus a bonus of $10 for each set containing 1 city, 1 grassland, 1 field, 1 forest, 1 mountain (no desert), see the example <b>Income</b>.</p>{{/6.II}}
+		{{#7.II}}<p>The {{owner}} gets $20 base income for {{owns}} capital, plus income for the majorities as stated above, see table and example <b>Income</b>.</p>{{/7.II}}
 		{{#8.II}}
-			<p>{{^1}}During this phase, the player gets 1 matching good for each of his plants from the general storage.{{/1}}{{#1}}The player may sell goods already delivered to his trading houses.{{/1}} He may sell {{^4}}1 good{{/4}}{{#4}}2 goods{{/4}} to each of his trading houses{{^4}} (up to 2 goods to the headquarters in his capital){{/4}}. {{^1}}Afterwards, he places the sold goods back into the general storage.{{/1}}{{#1}}Afterwards, the goods remain on the trading houses.{{/1}}</p>
-			<p>The player gets $20 base income for his capital and additional income for the sold goods, see the table and example <b>Scoring</b>. {{^1}}The player may exchange goods in a ratio of 2:1 into different goods types, to get a higher income for the sale. He may store any number of goods face up in front of him for a later sale.{{/1}}</p>
+			<p>{{^1}}During this phase, the {{owner}} gets 1 matching good for each of his plants from the general storage.{{/1}}{{#1}}The {{agent}} may sell goods already delivered to his trading houses.{{/1}} He may sell {{^4}}1 good{{/4}}{{#4}}2 goods{{/4}} to each of {{fowns}} trading houses{{^4}} (up to 2 goods to the headquarters in {{owns}} capital){{/4}}. {{^1}}Afterwards, he places the sold goods back into the general storage.{{/1}}{{#1}}Afterwards, the goods remain on the trading houses.{{/1}}</p>
+			<p>The {{owner}} gets $20 base income for {{owns}} capital and additional income for the sold goods, see the table and example <b>Scoring</b>. {{^1}}The {{agent}} may exchange goods in a ratio of 2:1 into different goods types, to get a higher income for the sale. The {{owner}} may store any number of goods face up in {{^company}}front of himself{{/company}}{{#company}}its holdings{{/company}} for a later sale.{{/1}}</p>
 		{{/8.II}}
 		{{#9.I}}
 			{{#2.III}}<p>The company also gets income from <b>Mid-Term Scorings</b> below.</p>{{/2.III}}
@@ -1021,7 +1022,7 @@
 		{{/9.I}}
 		{{#9.II}}
 			{{#1.I}}
-				<p>The company gets $20 base income for the capital, plus once-only money for each good delivered in <b>Phase 3 E</b>. The company balances accounts separately for each good. It gets the price for the 1st good according to the goods price board and adjusts all prices: the price for the delivered good drops 3 spaces, the prices for all other goods each rise 1 space. Then, the company gets the price for the 2nd good etc.! The price for a type of goods cannot drop below the first "$10" space and cannot rise above $140. After receiving their income, the company places the delivered goods in front of their company board to score VP for them in the Final Scoring.</p>
+				<p>The company gets $20 base income for its capital, plus once-only money for each good delivered in <b>Phase 3 E</b>. The company balances accounts separately for each good. It gets the price for the 1st good according to the goods price board and adjusts all prices: the price for the delivered good drops 3 spaces, the prices for all other goods each rise 1 space. Then, the company gets the price for the 2nd good etc.! The price for a type of goods cannot drop below the first "$10" space and cannot rise above $140. After receiving their income, the company places the delivered goods in front of their company board to score VP for them in the Final Scoring.</p>
 				{{#4}}<p>If the company delivers goods to a city without its settlements, it must pay $1 for each full $10 of this sale to the owner of the city, or in case of a free city, payment goes to the bank.</p>{{/4}}
 			{{/1.I}}
 			{{#2.I}}
@@ -1029,9 +1030,7 @@
 				{{#1}}
 					<p>If the company removes its settlement and then there are no settlements left on the tile, the next company placing a first settlement on that tile gets again once-only $5 (once-only $10 for city and mountain).</p>
 				{{/1}}
-				{{^1}}
-					{{#4}}<p>If the company removes its settlement and then there are no settlements left on the tile, the next company placing a first settlement on that tile gets again once-only $5 (once-only $10 for city and mountain).</p>{{/4}}
-				{{/1}}
+				{{#4}}<p>If a stock company neutralizes a tile from another company, the next presdent placing a first settlement on that tile gets again once-only $5 (once-only $10 for city and mountain). If the company conquers that tile it gets that income.</p>{{/4}}
 			{{/2.I}}
 			{{#3.I}}
 				<p>The company gets $20 base income for its capital, plus $15 for each of its factories. All companies place their income for now to one side, until they paid taxes in the next Phase 1.</p>
@@ -1052,32 +1051,32 @@
 			{{#7.I}}<p>The company gets $20 base income for the capital, plus income for the majorities as stated above, see table and example <b>Income</b>.</p>{{/7.I}}
 			{{#8.I}}
 				<p>{{^1}}The company may sell goods already produced in its plants.{{/1}}{{#1}}The company may sell goods already delivered to its trading houses.{{/1}} It may sell 1 good to each of its trading houses (up to 2 goods to the headquarters in its capital). {{^1}}Afterwards, the goods remain in front of the company card.{{/1}}{{#1}}Afterwards, the goods remain on the trading houses.{{/1}}</p>
-				<p>The company gets $20 base income for his capital and additional income for the sold goods, see the table and example <b>Scoring</b>. {{^1}}The company may exchange goods in a ratio of 2:1 into different goods types, to get a higher income for the sale. It may store any number of goods face up in front of it for a later sale.{{/1}}</p>
+				<p>The company gets $20 base income for his capital and additional income for the sold goods, see the table and example <b>Scoring</b>. The company may not exchange goods during the income phase.</p>
 			{{/8.I}}
 			<p>Place the income of the stock company separate from the company assets to the side for now.</p>
 		{{/9.II}}
 		{{#9.III}}<p>The players place their income for now separately from their cash. After all players got their income, the players with the highest income raise their share values by $20. All other players raise their share values by $10. Finally flip all shares sold to the bank during this round, so their dark sides are face up again.</p>{{/9.III}}
 
-		{{#3.I}}
+		{{^company}}{{#3.I}}
 			<p>The players place their income for now to one side, until they paid taxes in the next Phase 1.</p>
-		{{/3.I}}
+		{{/3.I}}{{/company}}
 	{{/capture}}
 	{{#hascapture}}
 		<div class="row section">
-			<div class="col-md-2 col-xs-2"><h1>Phase 3 H: Income</h1></div>
+			<div class="col-md-2 col-xs-2 mod{{world.1}}"><h1>Phase 3 H: Income</h1></div>
 			<div class="col-md-10 col-xs-10">{{{captured}}}</div>
 		</div>
 	{{/hascapture}}
 
 	{{#capture}}
 		{{#2.III}}
-			{{#1.I}}<p>Award 5 VP to the first player delivering one of the good types a second time from the stack set aside for this purpose.</p>{{/1.I}}
-			{{#3.I}}<p>Award 10 VP to the first player having at least 1 factory in 3 cities, and to the first player having 3 factories in 1 city.</p>{{/3.I}}
-			{{#4.I}}<p>Award VP to a player when they conquer a free city from the stacks set aside on the majority board (3 for the first free city, 4 for the second, etc).</p>{{/4.I}}
-			{{#5.I}}<p>Award 5VP from the stack set aside on the corresponding column of the majority board to the first player to explore one of the 6 terrain types (no water) three times.</p>{{/5.I}}
-			{{#6.I}}<p>Award 5 VP from the stack set aside on the corresponding column of the majority board to the first player to connect one of the 6 terrain types (no water) with his roads a third time.</p>{{/6.I}}
-			{{#7.I}}<p>Award 10 VP to the first player to control 1 of each terrain type (no water). Award 20 VP to the first player to control 2 of each terrain type (no water).</p>{{/7.I}}
-			{{#8.I}}<p>Award 5 VP from the stack set aside for this purpose to the first player owning 3 plants of a good type.</p>{{/8.I}}
+			{{#1.I}}<p>Award 5 VP to the first {{owner}} delivering one of the good types a second time from the stack set aside for this purpose.</p>{{/1.I}}
+			{{#3.I}}<p>Award 10 VP to the first {{owner}} having at least 1 factory in 3 cities, and to the first {{owner}} having 3 factories in 1 city.</p>{{/3.I}}
+			{{#4.I}}<p>Award VP to a {{owner}} when they conquer a free city from the stacks set aside on the majority board (3 for the first free city, 4 for the second, etc).</p>{{/4.I}}
+			{{#5.I}}<p>Award 5VP from the stack set aside on the corresponding column of the majority board to the first {{owner}} to explore one of the 6 terrain types (no water) three times.</p>{{/5.I}}
+			{{#6.I}}<p>Award 5 VP from the stack set aside on the corresponding column of the majority board to the first {{owner}} to connect one of the 6 terrain types (no water) with {{owns}} roads a third time.</p>{{/6.I}}
+			{{#7.I}}<p>Award 10 VP to the first {{owner}} to control 1 of each terrain type (no water). Award 20 VP to the first {{owner}} to control 2 of each terrain type (no water).</p>{{/7.I}}
+			{{#8.I}}<p>Award 5 VP from the stack set aside for this purpose to the first {{owner}} owning 3 plants of a good type.</p>{{/8.I}}
 			{{#9.I}}<p>
 				{{#1.II}}Award $50 to the first stock company delivering one of the good types a second time from the stack set aside for this purpose.{{/1.II}}
 				{{#3.II}}Award $100 to the first stock company having at least 1 factory in 3 cities, and to the first stock company having 3 factories in 1 city.{{/3.II}}
@@ -1092,14 +1091,14 @@
 	{{/capture}}
 	{{#hascapture}}
 		<div class="row section">
-			<div class="col-md-2 col-xs-2"><h1>Mid-Term Scorings</h1></div>
+			<div class="col-md-2 col-xs-2 mod2"><h1>Mid-Term Scorings</h1></div>
 			<div class="col-md-10 col-xs-10">{{{captured}}}</div>
 		</div>
 	{{/hascapture}}
 
 	{{#company}}
 		<div class="row section">
-			<div class="col-md-2 col-xs-2"><h1>Phase 4: Dividends</h1></div>
+			<div class="col-md-2 col-xs-2 mod9"><h1>Phase 4: Dividends</h1></div>
 			<div class="col-md-10 col-xs-10">
 				{{#9.I}}
 					{{#3.II}}<p>The presidents record their companies' incomes for the round, this figure is used to calculate taxes for the following round.</p>{{/3.II}}
@@ -1119,21 +1118,21 @@
 
 	{{#capture}}
 		{{#7.I}}
-			<p>Starting with the 3rd round, the player now removes his resident from the face down scoring card and turns this card face up. If the card shows a <span class="glyphicon glyphicon-ok"></span>, the next player continues with his turn. If it is one of the three scorings, the game is paused for an immediate scoring!</p>
-			<p><b>1st and 2nd Scoring:</b> The players get victory points (VP) for their majorities, see table and example <b>Scoring</b>.</p>
-			<p><b>3rd Scoring (Final Scoring):</b> The players get victory points (VP) for their majorities, see the table and example <b>Scoring</b>. All players missing their last turn get once-only additional 3 VP.</p>
-			<p>Following each scoring, each player adds the VP he got in the actual scoring. Starting with the player getting the most VP, each player must remove 1 resident for each {{^9.II}}3 VP (2♟) or 4 VP (3♟, 4♟){{/9.II}}{{#9.II}}4 VP{{/9.II}} from the map. IF he has not enough residents, he now must remove 1 settlement for each missing resident, so all remaining settlements are still on connected tiles to his capital. He cannot remove the headquarters on his capital. If the player cannot remove enough residents and settlements, he does not score the VPs for those pieces. Afterwards the player must adjust his marking tokens on the majority board. In case of a tie for VP use the actual turn order for concerned players.</p>
+			<p>Starting with the 3rd round, the {{agent}} now removes {{fowns}} resident from the face down scoring card and turns this card face up. If the card shows a <span class="glyphicon glyphicon-ok"></span>, the next {{agent}} continues with his turn. If it is one of the three scorings, the game is paused for an immediate scoring!</p>
+			<p><b>1st and 2nd Scoring:</b> The {{owners}} get victory points (VP) for their majorities, see table and example <b>Scoring</b>.</p>
+			<p><b>3rd Scoring (Final Scoring):</b> The {{owners}} get victory points (VP) for their majorities, see the table and example <b>Scoring</b>. All {{owners}} missing their last turn get once-only additional 3 VP.</p>
+			<p>Following each scoring, the {{owners}} add the VP they got in the actual scoring. Starting with the {{owner}} getting the most VP, each {{agent}} must remove 1 resident for each {{^9.II}}3 VP (2♟) or 4 VP (3♟, 4♟){{/9.II}}{{#9.II}}4 VP{{/9.II}} from the map. IF he has not enough residents, he now must remove 1 settlement for each missing resident, so all remaining settlements are still on connected tiles to {{fowns}} capital. He cannot remove the headquarters on {{fowns}} capital. If the {{agent}} cannot remove enough residents and settlements, he does not score the VPs for those pieces. Afterwards the {{agent}} must adjust {{fowns}} marking tokens on the majority board. In case of a tie for VP use the actual turn order for concerned {{owners}}.</p>
 		{{/7.I}}
 	{{/capture}}
 	{{#hascapture}}
 		<div class="row section">
-			<div class="col-md-2 col-xs-2"><h1>Phase 5: Scoring and Final Scoring</h1></div>
+			<div class="col-md-2 col-xs-2 mod7"><h1>Phase 5: Scoring and Final Scoring</h1></div>
 			<div class="col-md-10 col-xs-10">{{{captured}}}</div>
 		</div>
 	{{/hascapture}}
 
 	<div class="row section">
-		<div class="col-md-2 col-xs-2"><h1>Game End</h1></div>
+		<div class="col-md-2 col-xs-2 mod{{world.0}}"><h1>Game End</h1></div>
 		<div class="col-md-10 col-xs-10">
 			{{#1.I}}
 				{{^9.II}}<p>The game ends at the end of the round, after all players commonly delivered at least 19 (2♟), 21 (3♟) or 23 (4♟) goods tiles.</p>{{/9.II}}
@@ -1296,7 +1295,7 @@
 				<p>The player with the most VP wins the game. {{#4}}In case of a tie the tied player with the most residents on tiles with neutral roads wins.{{/4}}{{^4}}In case of a tie, the tied player with the most residents on tiles with his roads wins.{{/4}}</p>
 			{{/6.I}}
 			{{#8.I}}
-				<p>The player takes the goods {{#1}}on top of his trading houses{{/1}}{{^1}}in front of him{{/1}} and may score {{#4}}2 goods{{/4}}{{^4}}1 good{{/4}} for each of his trading houses{{^4}} (up to 2 goods for the headquarters in his capital){{/4}}. The player gets victory points (VP) for all scored goods, see the table and example <b>Final Scoring</b>. Before scoring the player may exchange goods in a ratio of 2:1 into different goods types, to get more valuable sets.</p>
+				<p>The {{agent}} takes the goods {{#1}}on top of his trading houses{{/1}}{{^1}}{{^company}}front of himself{{/company}}{{#company}}his company's holdings{{/company}}{{/1}} and may score {{#4}}2 goods{{/4}}{{^4}}1 good{{/4}} for each of his trading houses{{^4}} (up to 2 goods for the headquarters in his capital){{/4}}. The player gets victory points (VP) for all scored goods, see the table and example <b>Final Scoring</b>. Before scoring the player may exchange goods in a ratio of 2:1 into different goods types, to get more valuable sets.</p>
 				{{#7.III}}
 					<p>The players get additional victory points (VP) for majorities during the final scoring, see table and example of the <b>Final Scoring</b>.</p>
 				{{/7.III}}
@@ -1306,7 +1305,7 @@
 	{{/capture}}
 	{{#hascapture}}
 		<div class="row section">
-			<div class="col-md-2 col-xs-2"><h1>Final Scoring</h1></div>
+			<div class="col-md-2 col-xs-2 mod{{world.0}}"><h1>Final Scoring</h1></div>
 			<div class="col-md-10 col-xs-10">{{{captured}}}</div>
 		</div>
 	{{/hascapture}}
@@ -1375,8 +1374,8 @@
 	}
 	
 	var shares_defs = {
-		"company": {agent: 'president', owner: 'company', owners:'companies' , fowns: 'the company\'s', owns: 'its', company: true},
-		"player": {agent: 'player', owner: 'player', owners:'players',  fowns: 'his', owns: 'his', company: false}
+		"company": {agent: 'president', sagent: 'the president', owner: 'company', owners:'companies' , fowns: 'the company\'s', owns: 'its', company: true},
+		"player": {agent: 'player', sagent: 'he', owner: 'player', owners:'players',  fowns: 'his', owns: 'his', company: false}
 	}
 
 	var module_defs = {
@@ -1760,6 +1759,7 @@
 			'order': priority_match([modules['I']['order'], modules['II']['order'], modules['III']['order']]),
 			'money': priority_match([modules['I']['money'], modules['II']['money'], modules['III']['money']]),
 			'agent': shares_defs[getNameTokens(world)]['agent'],
+			'sagent': shares_defs[getNameTokens(world)]['sagent'],
 			'owner':shares_defs[getNameTokens(world)]['owner'],
 			'owners':shares_defs[getNameTokens(world)]['owners'],
 			'fowns':shares_defs[getNameTokens(world)]['fowns'],
@@ -1858,6 +1858,8 @@
 <script>
 	// Via http://stackoverflow.com/questions/12556593/determining-a-page-is-outdated-on-github-pages
 	// Check if a new cache is available on page load.
+
+
 	window.addEventListener('load', function(e) {
 		var appCache = window.applicationCache;
 
@@ -1874,6 +1876,8 @@
 			}
 		}, false);
 	}, false);
+
+
 </script>
 
 </body>

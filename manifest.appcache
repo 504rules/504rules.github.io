@@ -4,7 +4,7 @@ CACHE MANIFEST
 # whenever you make any changes be sure to also update the comment below by changing the date and
 # incrementing the version number
 
-# 2015-12-08:v1.30
+# 2015-12-11:v1.47
 
 CACHE:
 index.html
