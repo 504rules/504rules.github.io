@@ -24,15 +24,15 @@
 						</div>
 					</div>
 					<div class="row modules">
-						<div class="col-md-4 col-xs-4 mod1"><label><input type="checkbox" name="world[]" value="1" checked />(1) Pick up & Deliver</label></div>
-						<div class="col-md-4 col-xs-4 mod2"><label><input type="checkbox" name="world[]" value="2" checked />(2) Race</label></div>
-						<div class="col-md-4 col-xs-4 mod3"><label><input type="checkbox" name="world[]" value="3" checked />(3) Privileges</label></div>
-						<div class="col-md-4 col-xs-4 mod4"><label><input type="checkbox" name="world[]" value="4" checked />(4) Military</label></div>
-						<div class="col-md-4 col-xs-4 mod5"><label><input type="checkbox" name="world[]" value="5" checked />(5) Exploring</label></div>
-						<div class="col-md-4 col-xs-4 mod6"><label><input type="checkbox" name="world[]" value="6" checked />(6) Roads</label></div>
-						<div class="col-md-4 col-xs-4 mod7"><label><input type="checkbox" name="world[]" value="7" checked />(7) Majorities</label></div>
-						<div class="col-md-4 col-xs-4 mod8"><label><input type="checkbox" name="world[]" value="8" checked />(8) Production</label></div>
-						<div class="col-md-4 col-xs-4 mod9"><label><input type="checkbox" name="world[]" value="9" checked />(9) Shares</label></div>
+						<div class="col-md-4 col-xs-4 mod1"><label><input type="checkbox" name="world[]" value="1" checked /><img src="img/modules/icon-mod1.png" />Pick up & Deliver (1)</label></div>
+						<div class="col-md-4 col-xs-4 mod2"><label><input type="checkbox" name="world[]" value="2" checked /><img src="img/modules/icon-mod2.png" />Race (2)</label></div>
+						<div class="col-md-4 col-xs-4 mod3"><label><input type="checkbox" name="world[]" value="3" checked /><img src="img/modules/icon-mod3.png" />Privileges (3)</label></div>
+						<div class="col-md-4 col-xs-4 mod4"><label><input type="checkbox" name="world[]" value="4" checked /><img src="img/modules/icon-mod4.png" />Military (4)</label></div>
+						<div class="col-md-4 col-xs-4 mod5"><label><input type="checkbox" name="world[]" value="5" checked /><img src="img/modules/icon-mod5.png" />Exploring (5)</label></div>
+						<div class="col-md-4 col-xs-4 mod6"><label><input type="checkbox" name="world[]" value="6" checked /><img src="img/modules/icon-mod6.png" />Roads (6)</label></div>
+						<div class="col-md-4 col-xs-4 mod7"><label><input type="checkbox" name="world[]" value="7" checked /><img src="img/modules/icon-mod7.png" />Majorities (7)</label></div>
+						<div class="col-md-4 col-xs-4 mod8"><label><input type="checkbox" name="world[]" value="8" checked /><img src="img/modules/icon-mod8.png" />Production (8)</label></div>
+						<div class="col-md-4 col-xs-4 mod9"><label><input type="checkbox" name="world[]" value="9" checked /><img src="img/modules/icon-mod9.png" />Shares (9)</label></div>
 					</div>
 					<div class="row">
 						<div class="col-md-12 col-xs-12">
@@ -149,10 +149,10 @@
 	<div class="row section">
 		<div class="col-md-2 col-xs-2"><h1>Game Preparation</h1></div>
 		<div class="col-md-10 col-xs-10">
-			{{#5}}<p>Place all map tiles in separate stacks in a row as follows: city, water, grassland, forest, field, mountain and desert. {{^1.III}}Lay out the cities in a numerical ascending stack - lowest numbered city on top, city "10" on bottom.{{^8}} Place 4 goods onto each city, matching the small circular symbol.{{/8}}{{/1.III}}</p>{{/5}}
+			{{#5}}<p>Place all map tiles in separate stacks in a row as follows: city, water, grassland, forest, field, mountain and desert. {{#1}}{{^1.III}}Lay out the cities in a numerical ascending stack - lowest numbered city on top, city "10" on bottom.{{/1.III}}{{/1}}</p>{{/5}}
 			<p>
 				Lay out the map {{map.value}}.
-				{{^1.III}}Display cities with their goods side atop. {{#8}}The cities remain empty of goods.{{/8}}{{/1.III}}
+				{{#1}}{{^1.III}}Display cities with their goods side atop. {{#8}}The cities remain empty of goods.{{/8}}{{^8}} Place 4 goods onto each city, matching the small circular symbol.{{/8}}{{/1.III}}{{/1}}
 				{{#8}}
 					{{^8.III}}
 						Display land and water tiles with the goods side atop.
@@ -723,8 +723,8 @@
 			<div class="col-md-2 col-xs-2 mod3"><h1>Phase 2: Privileges</h1></div>
 			<div class="col-md-10 col-xs-10">
 				<p>If there are still unsold privileges from the former round, place the price token to the right of these privileges. The starting bid for these privileges drops to $0. Draw new privileges and place them to the right of the price token, until you either draw 1 new privilege per {{owner}} or there are a # of privileges in the row of cards depending on the # of players: 4 (2♟), 5 (3♟), 6 (4♟) or 7 privileges (5 stock companies). The starting bid for the new privileges is $20.</p>
-				<p>All privileges are now auctioned from left to right, one at a time. Beginning with the 1st {{owner}} all {{agent}}s bid clockwise in sitting order around the table, until there is a highest bid. If a {{agent}} passes he may only bid again for the next privilege. The highest bidder pays the amount to the bank and places the privilege face up in front of him. If the starting bid of the privilege was $20, and all {{agent}}s pass, the privilege simply remains in the row of cards. If the starting bid of the privilege was $0 and all {{agent}}s pass again, remove that privilege from the game!</p>
-				<p>{{^company}}The player may only buy each type of privilege once{{/company}}{{#company}}The president can't buy a privelege for their company if the company already owns it{{/company}}. He may use his privileges immediately after purchase.</p>
+				<p>All privileges are now auctioned from left to right, one at a time. Beginning with the{{#company}} president of the{{/company}} 1st {{owner}}, all {{agent}}s bid (or pass){{#company}} for each of their companies{{/company}} in clockwise seatting order around the table, until there is a highest bid. If a {{owner}} passes he may only bid again for the next privilege. The highest bidder pays the amount{{#company}} from the winning company{{/company}} to the bank and places the privilege face up in {{^company}}front of him{{/company}}{{#company}}the company's holdings{{/company}}. If the starting bid of the privilege was $20, and all {{owners}} pass, the privilege simply remains in the row of cards. If the starting bid of the privilege was $0 and all {{owners}} pass again, remove that privilege from the game!</p>
+				<p>The {{owner}} may only buy each type of privilege once, {{sagent}} may use {{fowns}} privileges immediately after purchase.</p>
 			</div>
 		</div>
 	{{/3.III}}{{/3}}
@@ -842,6 +842,7 @@
 			</ol>
 			<p>Afterwards the {{agent}} rolls 1 die and places the corresponding map tile on the destination space. See the example <b>Exploring</b>.</p>
 			{{#mapnum.1}}<p>The {{agent}}s may only explore in a distance of 4 spaces around the central city. Thus, following the adjacency rules above the {{agent}}s will not always explore all cities or water tiles.</p>{{/mapnum.1}}
+			{{#1}}{{^1.III}}{{^8}}<p>When placing a city, place 4 goods onto that city, matching the small circular symbol.</p>{{/8}}{{/1.III}}{{/1}}
 			{{#5.I}}
 				{{#2.III}}<p>
 					The {{agent}} counts that tile on the majority board.
@@ -927,7 +928,24 @@
 			{{^residents}}
 				<p>The {{owner}} may buy additional MP for {{owns}} transport trolley, see the table <b>Prices for Additional Movement Points (MP)</b>.</p>
 				{{#2}}{{^2.III}}<p>The {{agent}} reaches cities with {{fowns}} transport trolley. In that case he moves {{fowns}} resident from that city to the matching city card.{{/2.III}}{{/2}}
-				{{#5}}<p>The transport trolley may explore new tiles. It must move onto the newly explored tile for 1 movement point (MP), it only needs 2 MP for moving onto each mountain. If the {{agent}} explores 1 water tile, he needs 1 MP but the transport trolley must remain on the starting tile. If the {{agent}} explores 1 mountain tile with his last MP, the transport trolley must remain on the starting tile, too.</p>{{/5}}
+				{{#5}}
+					<p>The transport trolley may explore new tiles. It must move onto the newly explored tile for 1 movement point (MP), it only needs 2 MP for moving onto each mountain. If the {{agent}} explores 1 water tile, he needs 1 MP but the transport trolley must remain on the starting tile. If the {{agent}} explores 1 mountain tile with his last MP, the transport trolley must remain on the starting tile, too.</p>
+					<p><b>Exploring:</b> After choosing the destination space, the {{agent}} places the explorer tiles next to the following stacks, until he placed all 6 tiles.</p>
+					<ol>
+						<li><b>City:</b> # of explorer tiles = # of tiles between the destination space and the closest city (Across existing land tiles). New cities are never located adjacent to other cities!</li>
+						<li><b>Water:</b> # of explorer tiles = # of tiles between the destination space and the central city (across linear distance, even across water or empty spaces), or 0 if next to an existing water tile. New water tiles are never located adjacent to other water tiles!</li>
+						<li><b>Land tiles:</b> 1 explorer tile next to each stack, in the following order: grassland, forest field, mountain, desert.</li>
+						<li><b>Remaining explorer tiles:</b> 1 additional explorer tile next to each stack, which already received 1 or more explorer tiles, in the following order: city, water, grassland, forest, field, mountain desert, if necessary repeatedly.</li>
+					</ol>
+					<p>Afterwards the {{agent}} rolls 1 die and places the corresponding map tile on the destination space. See the example <b>Exploring</b>.</p>
+					{{#mapnum.1}}<p>The {{agent}}s may only explore in a distance of 4 spaces around the central city. Thus, following the adjacency rules above the {{agent}}s will not always explore all cities or water tiles.</p>{{/mapnum.1}}
+					{{^1.III}}{{^8}}<p>When placing a city, place 4 goods onto that city, matching the small circular symbol.</p>{{/8}}{{/1.III}}
+					{{#5.II}}
+						{{#3.I}}<p>The {{agent}} may move any number of {{fowns}} active residents from adjacent tiles onto the just explored tile without exhausting them in this way.</p>{{/3.I}}
+						{{#4.I}}<p>Depending on the terrain the {{owner}} discovers or receives the following. <span class="desert icon"></span> empty, <span class="grass icon"></span> & <span class="forest icon"></span> 1 own settlement, <span class="grain icon"></span> 1 own settlement + 1 own exhausted resident, <span class="mountain icon"></span> 1 militia. For defeating this militia once-only $20. <span class="city icon"></span> 1 barrack and 1 militia. The player does not get income tokens for discovered settlements!</p>{{/4.I}}
+						{{#2.III}}{{#9.I}}<p>The {{agent}} counts that tile on the majority board.</p>{{/9.I}}{{/2.III}}
+					{{/5.II}}
+				{{/5}}
 				<p>If the game requires settlements for scoring, income or buildings, the {{agent}} may place 1 settlement on a tile, when he arrives there with {{fowns}} transport trolley. {{#7.III}}He counts the matching type of terrain on the majority board{{/7.III}} This is a voluntary action. Because of the limited number of his settlements the {{agent}} may pass on this action!.</p> 
 				<p>Note: This rule may not apply to this game! Check below for <b>Phase 3 F</b> (factories) <b>Income</b> and <b> Scoring</b>.</p>
 			{{/residents}}
