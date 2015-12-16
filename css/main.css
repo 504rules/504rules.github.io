@@ -2,11 +2,11 @@
 	font-size: 12px;
 }
 
-
 .row.top > div {
 	display:flex;
 	margin:0 auto;
 }
+
 
 .top {
 	display:flex;
@@ -246,7 +246,9 @@ table th {
 	background-color:#fff;
 }
 
-
+.privileges img { width:100%; max-width:73px; }
+.privileges>div { padding-bottom:20px; }
+.cards h3 { margin: 0 0 0.5em 0; border-bottom:1px dashed rgba(56, 143, 127,0.3); }
 
 #menu {
 	width:100%;
@@ -374,5 +376,7 @@ table th {
 	.section .col-md-2.col-xs-2, #worldno span, .section .col-md-2.col-xs-2 h1 { background-color: #000 !important; color: #FFFFFF !important; }
 
 	#worldno span { padding:0; }
+	
+	.cards { display:none; }
 
 }
