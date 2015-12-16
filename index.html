@@ -17,7 +17,7 @@
 	<form id="ModulesForm">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-10 col-xs-10">
+				<div class="col-md-6 col-xs-12">
 					<div class="row">
 						<div class="col-md-12 col-xs-12">
 							<p>Please pick your preferred modules:</p>
@@ -289,6 +289,57 @@
 			{{/1}}	
 		</div>
 	</div>
+	
+	{{#3}}
+		<div class="row section cards">
+			<div class="col-md-2 col-xs-2 mod3"><h1>Privilege Cards</h1></div>
+			<div class="col-md-10 col-xs-10">
+				<h3>Level I</h3>
+				<div class="row privileges">
+					{{#priv.I-1}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l1-1.png" /></div><div class="col-xs-8"><strong>I (1)</strong> The player may place 1 additional new resident on each tile, but cannot exceed the limits of those tiles (on his capital he can have at max 1 headquarters and 9 residents, on all other tiles at max 1 settlement and 7 residents).</div></div></div>{{/priv.I-1}}
+					{{#priv.I-2}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l1-2.png" /></div><div class="col-xs-8"><strong>I (2)</strong> The player gets a one-time only additional income of $15 for placing a settlement on a city. (Phase 3 H: Income)</div></div></div>{{/priv.I-2}}
+					{{#priv.I-3}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l1-3.png" /></div><div class="col-xs-8"><strong>I (3)</strong> When all shares of that stock company are owned by players, the share value of that stock company is raised by $20 (instead of $10). (Share Round (SR))</div></div></div>{{/priv.I-3}}
+					{{#priv.I-4}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l1-4.png" /></div><div class="col-xs-8"><strong>I (4)</strong> The player has a better protection while defending and subtracts 1 hit of the attacker. He only rolls dice for each remaining hit of the attacker. (Phase 3 G: Fight{{#2}}, Phase 3 D: Residents{{/2}})</div></div></div>{{/priv.I-4}}
+					{{#priv.I-5}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l1-5.png" /></div><div class="col-xs-8"><strong>I (5)</strong> The player gets an additional income of $10. (Phase 3 H: Income)</div></div></div>{{/priv.I-5}}
+					{{#priv.I-6}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l1-6.png" /></div><div class="col-xs-8"><strong>I (6)</strong> When selling goods, the player gets an additional income of $10 for each sold good. (Phase 3 H: Income)</div></div></div>{{/priv.I-6}}
+					{{#priv.I-7}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l1-7.png" /></div><div class="col-xs-8"><strong>I (7)</strong> The stock company must pay at max maintenance costs of $20. All additional costs are compensated. (Phase 4: Dividends)</div></div></div>{{/priv.I-7}}
+					{{#priv.I-8}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l1-8.png" /></div><div class="col-xs-8"><strong>I (8)</strong> The player pays $15 less for each upgrade of his transport trolley, both for the bigger cargo hold and for more movement points. (Phase 3 C: Purchase)</div></div></div>{{/priv.I-8}}
+					{{#priv.I-9}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l1-9.png" /></div><div class="col-xs-8"><strong>I (9)</strong> The player only needs 1 resident for determining the building costs of roads connecting a forest (same number as for grassland). (Phase 3 D: Residents)</div></div></div>{{/priv.I-9}}
+					{{#priv.I-10}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l1-10.png" /></div><div class="col-xs-8"><strong>I (10)</strong> After the player placed all explorer tokens accordingly next to the stacks, he may take 1 of these explorer tiles and newly place it next to another pile with 1 or more other explorer tiles. ({{#residents}}Phase 3 D: Residents{{/residents}}{{^residents}}Phase 3 E: Transport Trolley{{/residents}}) Example: Rachel may take the explorer tile next to the stack of water tiles and place it next to the stack of grassland. Sadly, she cannot choose the stack of city tiles, as no explorer tiles are already next to that stack.</div></div></div>{{/priv.I-10}}
+					{{#priv.I-11}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l1-11.png" /></div><div class="col-xs-8"><strong>I (11)</strong> The player gets 2 victory points.{{#7.I}} (The victory points are considered for player order.){{/7.I}} (Final Scoring)</div></div></div>{{/priv.I-11}}
+					{{#priv.I-12}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l1-12.png" /></div><div class="col-xs-8"><strong>I (12)</strong> The player counts this card as 1 additional field on the majority board. (Majorities)</div></div></div>{{/priv.I-12}}
+				</div>
+				<h3>Level II</h3>
+				<div class="row privileges">
+					{{#priv.II-1}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l2-1.png" /></div><div class="col-xs-8"><strong>II (1)</strong> The stock company may only pay 50% dividends of its income and still raises its share value by $10. The company pays $1 dividends for each full $20 income to each share ($2 to the president‘s share). (Phase 4: Dividends)</div></div></div>{{/priv.II-1}}
+					{{#priv.II-2}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l2-2.png" /></div><div class="col-xs-8"><strong>II (2)</strong> After determining the new player order, the player does not pay taxes. (Phase 1: Player Order)</div></div></div>{{/priv.II-2}}
+					{{#priv.II-3}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l2-3.png" /></div><div class="col-xs-8"><strong>II (3)</strong>The player always pays $20 for each factory (instead of $20, $30, $40). (Phase 3 F: Factories)</div></div></div>{{/priv.II-3}}
+					{{#priv.II-4}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l2-4.png" /></div><div class="col-xs-8"><strong>II (4)</strong> The player only pays $8 for each resident (instead of $10). (Phase 3 C: Purchase)</div></div></div>{{/priv.II-4}}
+					{{#priv.II-5}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l2-5.png" /></div><div class="col-xs-8"><strong>II (5)</strong> Once each turn, the player gets 1 additional movement point (MP) for his transport trolley. (Phase 3 E: Transport Trolley) Example: Camille moves her transport trolley with her last 3 movement points onto the grassland next to city “2“. With help of this privilege she finally may move her transport trolley onto that city.</div></div></div>{{/priv.II-5}}
+					{{#priv.II-6}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l2-6.png" /></div><div class="col-xs-8"><strong>II (6)</strong> The player may deliver 1 additional good to one of his trading houses. (Phase 3 H: Income, Game End{{#1}}, Phase 3 E: Transport Trolley{{/1}})</div></div></div>{{/priv.II-6}}
+					{{#priv.II-7}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l2-7.png" /></div><div class="col-xs-8"><strong>II (7)</strong> {{#1}}{{^1.III}}The player only needs 1 movement point (MP) to move on a mountain (same number as for grassland). (Phase 3 E: Transport Trolley){{/1.III}}{{/1}}{{#4}}{{^4.III}} If the player attacks an opponent on a mountain, he gets the attack bonus for grassland: +1 for each of his die rolls. (Phase 3 G: Fight){{/4.III}}{{/4}}{{#6}}{{^6.III}} The player only needs 1 resident for determining the building costs of roads connecting a mountain (same number as for grassland). (Phase 3 D: Residents){{/6.III}}{{/6}}{{#8.I}} The player only needs 1 resident for building 1 plant on a mountain (same number as for grassland). (Phase 3 D: Residents){{/8.I}}</div></div></div>{{/priv.II-7}}
+					{{#priv.II-8}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l2-8.png" /></div><div class="col-xs-8"><strong>II (8)</strong> The player only needs 1 resident for determining the building costs of roads connecting a city (same number as for grassland). (Phase 3 D: Residents)</div></div></div>{{/priv.II-8}}
+					{{#priv.II-9}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l2-9.png" /></div><div class="col-xs-8"><strong>II (9)</strong> The player gets 3 victory points.{{#7}} (The victory points are considered for player order.){{/7}} (Final Scoring)</div></div></div>{{/priv.II-9}}
+					{{#priv.II-10}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l2-10.png" /></div><div class="col-xs-8"><strong>II (10)</strong> The player counts this card as 1 additional forest on the majority board. (Majorities)</div></div></div>{{/priv.II-10}}
+					{{#priv.II-11}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l2-11.png" /></div><div class="col-xs-8"><strong>II (11)</strong> The player may use 1 resident for 2 actions during his turn. (Phase 3 D: Residents)</div></div></div>{{/priv.II-11}}
+					{{#priv.II-12}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l2-12.png" /></div><div class="col-xs-8"><strong>II (12)</strong> The player gets an additional income of $20. (Phase 3 H: Income)</div></div></div>{{/priv.II-12}}
+				</div>
+				<h3>Level III</h3>
+				<div class="row privileges">
+					{{#priv.III-1}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l3-1.png" /></div><div class="col-xs-8"><strong>III (1)</strong> The player does not spent movement points to move his transport trolley onto a city. He may still move onto a city after spending his last movement point to move the transport trolley onto an adjacent tile of that city. (Phase 3 E: Transport Trolley)</div></div></div>{{/priv.III-1}}
+					{{#priv.III-2}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l3-2.png" /></div><div class="col-xs-8"><strong>III (2)</strong> The player counts this card as 1 additional grassland on the majority board. (Majorities)</div></div></div>{{/priv.III-2}}
+					{{#priv.III-3}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l3-3.png" /></div><div class="col-xs-8"><strong>III (3)</strong> The player counts this card as 1 additional city on the majority board. (Majorities)</div></div></div>{{/priv.III-3}}
+					{{#priv.III-4}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l3-4.png" /></div><div class="col-xs-8"><strong>III (4)</strong> TThe player gets 1 additional dice, both for attack and defense. (Phase 3 G: Fight{{#2}}, Phase 3 D: Residents{{/2}})</div></div></div>{{/priv.III-4}}
+					{{#priv.III-5}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l3-5.png" /></div><div class="col-xs-8"><strong>III (5)</strong> The player gets an income of $10 for each tile he controls (instead of $5). (Phase 3 H: Income)</div></div></div>{{/priv.III-5}}
+					{{#priv.III-6}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l3-6.png" /></div><div class="col-xs-8"><strong>III (6)</strong> The player gets 5 victory points.{{#7.I}} (The victory points are considered for player order.){{/7.I}} (Final Scoring)</div></div></div>{{/priv.III-6}}
+					{{#priv.III-7}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l3-7.png" /></div><div class="col-xs-8"><strong>III (7)</strong> The player always pays $20 for each factory (instead of $20, $30, $40). (Phase 3 F: Factories)</div></div></div>{{/priv.III-7}}
+					{{#priv.III-8}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l3-8.png" /></div><div class="col-xs-8"><strong>III (8)</strong> The player does not pay for his trading houses, even if he reaches the cities as 2nd, 3rd and so on. (Phase 3 D: Residents)</div></div></div>{{/priv.III-8}}
+					{{#priv.III-9}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l3-9.png" /></div><div class="col-xs-8"><strong>III (9)</strong> Each turn, the player may build 1 legit road for free, meaning that he does not need active residents to build them. (Phase 3 D: Residents)</div></div></div>{{/priv.III-9}}
+				</div>
+			</div>
+		</div>
+	{{/3}}
+	
 	{{#capture}}
 		{{#4}}{{#5}}<p>Place 1 barrack and 1 militia on all free cities, which are explored during the game.</p>{{/5}}{{/4}}
 		{{#9.I}}<p>Play the game in the following order of turns: SR, BR, BR, SR, BR, SR, BR, SR, BR, game end.</p>{{/9.I}}
@@ -1349,6 +1400,7 @@
 		shuffle(values, 3);
 		update_world(values[0] + values[1] + values[2]);
 	}
+	
 	function checkThree(values) {
 		if(values.length>=3) {
 			$('#randomizer').prop('disabled', false).css("opacity", "1");;
@@ -1357,6 +1409,9 @@
 		}
 	}
 	
+	var world;
+	var modules;
+
 	var parts = {
 		'2': {'name': 'goods', 'max': 48},
 		'3': {'name': 'covering tokens', 'max': 30},
@@ -1398,7 +1453,46 @@
 		"company": {agent: 'president', sagent: 'the president', owner: 'company', owners:'companies' , fowns: 'the company\'s', owns: 'its', company: true},
 		"player": {agent: 'player', sagent: 'he', owner: 'player', owners:'players',  fowns: 'his', owns: 'his', company: false}
 	}
-
+	
+	var privilege_defs = {
+		'I-1': {allow:  ['4.I', '4.II', '5.I', '8.I', '8.II'], disallow: [] },
+		'I-2': {allow: ['2.I', '2.II', '4.II', '6.II', '7.II', '6.II', '9.I', '9.II'], disallow: [] },
+		'I-3': {allow: ['9.I', '9.II'], disallow: [] },
+		'I-4': {allow: ['4.I', '4.II'], disallow: [] },
+		'I-5': {allow: ['2.II', '3.II', '5.II', '8.II', '9.I', '9.II'], disallow: [] },
+		'I-6': {allow: ['1.II'], disallow: [] },
+		'I-7': {allow: ['9.I'], disallow: [] },
+		'I-8': {allow: ['1.I', '1.II'], disallow: [] },
+		'I-9': {allow: ['6.I', '6.II'], disallow: [] },
+		'I-10': {allow: ['5'], disallow: [] },
+		'I-11': {allow: ['all'], disallow: [] },
+		'I-12': {allow: ['7.I', '7.II'], disallow: [] },
+		
+		'II-1': {allow: ['9.I'], disallow: [] },
+		'II-2': {allow: ['3.I', '3.II'], disallow: [] },
+		'II-3': {allow: ['3.II'], disallow: [] },
+		'II-4': {allow: ['residents'], disallow: [] },
+		'II-5': {allow: ['1'], disallow: [] },
+		'II-6': {allow: ['8.I', '8.II'], disallow: [] },
+		'II-7': {allow: ['1.I', '1.II', '4.I', '4.II', '6.I', '6.II', '8.I'], disallow: [] },
+		'II-8': {allow: ['6.I', '6.II'], disallow: [] },
+		'II-9': {allow: ['all'], disallow: ['9.I'] },
+		'II-10': {allow: ['7.I', '7.II'], disallow: [] },
+		'II-11': {allow: ['residents'], disallow: [] },
+		'II-12': {allow: ['2.II', '3.II', '5.II', '8.II', '9.I', '9.II'], disallow: [] },
+		
+		'III-1': {allow: ['1.I', '1.II'], disallow: [] },
+		'III-2': {allow: ['7.I', '7.II'], disallow: [] },
+		'III-3': {allow: ['7.I', '7.II'], disallow: [] },
+		'III-4': {allow: ['4.I', '4.II'], disallow: [] },
+		'III-5': {allow: ['4.II'], disallow: [] },
+		'III-6': {allow: ['all'], disallow: ['3.III', '9.I'] },
+		'III-7': {allow: ['3.I'], disallow: [] },
+		'III-8': {allow: ['8.I', '8.II'], disallow: [] },
+		'III-9': {allow: ['6.I', '6.II'], disallow: [] },
+		
+	}
+	
 	var module_defs = {
 		'1': {
 			'name': 'Pick up & Deliver',
@@ -1698,7 +1792,28 @@
 			return best;
 		}
 	}
-
+	
+	function catchPrivileges(world) {
+		var cards = [];
+		var worldmapping = [world[0]+".I", world[1]+".II", world[2]+".III"];
+		var residents = false;
+		
+		if (modules['I']['residents'] || modules['II']['residents'] || modules['III']['residents'] || world.indexOf('1') == -1) residents = true;
+		
+		$.map(privilege_defs, function(value, key) {
+			var cardflag = false;
+			$.each(value['allow'], function (alval, alkey) {
+				if(worldmapping.indexOf(alkey)!=-1 || alkey=="all" || (alkey=="residents" && residents) || world.indexOf(alkey)!=-1 || world.indexOf(alkey)!=-1) cardflag=true;
+			});
+			$.each(value['disallow'], function (alval, alkey) {
+				if(worldmapping.indexOf(alkey)!=-1 || world.indexOf(alkey)!=-1) cardflag=false;
+			});
+			if(cardflag) cards[key] = true;
+		});
+		
+		return cards
+	}
+	
 	function validate_world(worldno) {
 		var world = worldno.split('');
 		if (
@@ -1740,15 +1855,7 @@
 	}
 	
 	function buildRules(template) {
-	
-		var world = validate_world(window.location.hash.substr(1)) || ['1', '2', '3'];
-
-		var modules = {
-			'I': $.extend(true, {}, module_defs[world[0]]['I']),
-			'II': $.extend(true, {}, module_defs[world[1]]['II']),
-			'III': $.extend(true, {}, module_defs[world[2]]['III']),
-		};
-
+		
 		var capture_stack = [];
 		var params = {
 			'capture': function() {
@@ -1786,8 +1893,9 @@
 			'fowns':shares_defs[getNameTokens(world)]['fowns'],
 			'owns':shares_defs[getNameTokens(world)]['owns'],
 			'company':shares_defs[getNameTokens(world)]['company'],
+			'priv': catchPrivileges(world),
 		};
-		
+	
 		params[world[0]] = {'I': true};
 		params[world[1]] = {'II': true};
 		params[world[2]] = {'III': true};
@@ -1829,6 +1937,14 @@
 	}
 	
 	function load() {
+		
+		world = validate_world(window.location.hash.substr(1)) || ['1', '2', '3'];
+		
+		modules = {
+			'I': $.extend(true, {}, module_defs[world[0]]['I']),
+			'II': $.extend(true, {}, module_defs[world[1]]['II']),
+			'III': $.extend(true, {}, module_defs[world[2]]['III']),
+		};
 		
 		$("#target_head").html(buildRules($('#template_head').html()));
 		$("#target_main").html(buildRules($('#template_main').html()));
