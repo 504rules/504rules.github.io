@@ -7,14 +7,10 @@
 	margin:0 auto;
 }
 
+body { background-color:#ddd; }
 
 .top {
 	display:flex;
-}
-
-#target_main,
-#target_head {
-	background-color:#ddd;
 }
 
 #editbutton, #randomize {
@@ -293,10 +289,6 @@ table th {
 	opacity:1;
 }
 
-#menu .modules img {
-	/* padding-right:6px; */
-}
-
 #menu input {
 	vertical-align:text-bottom;
 	margin-right:6px;
@@ -345,18 +337,15 @@ table th {
 	* {
 		font-size: 10px;
 	}
-
+	
+	body { background-color:#fff; }
+	
 	.container {
 		page-break-after: always;
 	}
 
 	.row {
 		page-break-inside: avoid;
-	}
-
-	#target_head,
-	#target_main {
-		background-color:#FFF;
 	}
 	
 	#editbutton, #randomize {
