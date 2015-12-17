@@ -1905,7 +1905,11 @@
 			}
 		});
 
-		if(cards['list'].length > 0) cards['list'] = cards['list'].join(", ");
+		if(cards['list'].length > 0) {
+			var lastpriv = cards['list'].pop();
+			cards['list'] = cards['list'].join(", ");
+			cards['list'] += ", and "+lastpriv;
+		}
 		
 		return cards
 	}
