@@ -63,6 +63,7 @@
 	<div id="target_gameplay">Loading Gameplay...</div>
 	<div id="target_ending">Loading Scoring...</div>
 </div>
+
 <script id="name-template" type="x-tmpl-mustache">
 	{{#1.I}}The World of Traveling{{/1.I}}
 	{{#2.I}}The World of Restless{{/2.I}}
@@ -113,7 +114,6 @@
 				<h2>Map {{map.value}}</h2>
 					<p>{{#residents}}<img src="img/meeple.png" class="meeple">{{/residents}}
 					{{^residents}}<img src="img/meeple_not.png" class="meeple">{{/residents}}</p>
-
 			</div>
 		</div>
 		<div class="col-md-6 col-xs-6">
@@ -184,7 +184,7 @@
 			</p>
 			{{^7}}
 				{{#6.I}}
-					<p>Place the majority board next to the game map with the column for deserts showing and place the 6 marking tokens for each {{owner}}}} below this board.</p>
+					<p>Place the majority board next to the game map with the column for deserts showing and place the 6 marking tokens for each {{owner}} below this board.</p>
 				{{/6.I}}
 				{{#6.II}}
 					<p>Place the majority board next to the game map with{{^2.III}}out{{/2.III}}{{#2.III}}{{^9.I}}{{^5.I}}out{{/5.I}}{{/9.I}}{{/2.III}} the column for deserts showing and place {{^2.III}}5 of the{{/2.III}}{{#2.III}}{{^9.I}}5 of the{{/9.I}}{{#9.I}}the 6{{/9.I}}{{/2.III}} marking tokens for each {{owner}} below this board.</p>
@@ -311,7 +311,7 @@
 <script id="template_privileges" type="x-tmpl-mustache">
 	{{#3}}
 		<div class="row section cards">
-			<div class="col-md-2 col-xs-2 mod3"><h1>Privilege Cards</h1><p>{{priv.I.list}}</p><p>{{priv.II.list}}</p><p>{{priv.III.list}}</p></div>
+			<div class="col-md-2 col-xs-2 mod3"><h1>Privilege Cards</h1></div>
 			<div class="col-md-10 col-xs-10">
 				{{#priv.I.exists}}
 				<h3>Step I</h3>
@@ -353,7 +353,7 @@
 					{{#priv.III.1}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l3-1.png" /></div><div class="col-xs-8"><strong>III (1)</strong> The player does not spent movement points to move his transport trolley onto a city. He may still move onto a city after spending his last movement point to move the transport trolley onto an adjacent tile of that city. (Phase 3 E: Transport Trolley)</div></div></div>{{/priv.III.1}}
 					{{#priv.III.2}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l3-2.png" /></div><div class="col-xs-8"><strong>III (2)</strong> The player counts this card as 1 additional grassland on the majority board. (Majorities)</div></div></div>{{/priv.III.2}}
 					{{#priv.III.3}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l3-3.png" /></div><div class="col-xs-8"><strong>III (3)</strong> The player counts this card as 1 additional city on the majority board. (Majorities)</div></div></div>{{/priv.III.3}}
-					{{#priv.III.4}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l3-4.png" /></div><div class="col-xs-8"><strong>III (4)</strong> TThe player gets 1 additional dice, both for attack and defense. (Phase 3 G: Fight{{#2}}, Phase 3 D: Residents{{/2}})</div></div></div>{{/priv.III.4}}
+					{{#priv.III.4}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l3-4.png" /></div><div class="col-xs-8"><strong>III (4)</strong> The player gets 1 additional dice, both for attack and defense. (Phase 3 G: Fight{{#2}}, Phase 3 D: Residents{{/2}})</div></div></div>{{/priv.III.4}}
 					{{#priv.III.5}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l3-5.png" /></div><div class="col-xs-8"><strong>III (5)</strong> The player gets an income of $10 for each tile he controls (instead of $5). (Phase 3 H: Income)</div></div></div>{{/priv.III.5}}
 					{{#priv.III.6}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l3-6.png" /></div><div class="col-xs-8"><strong>III (6)</strong> The player gets 5 victory points.{{#7.I}} (The victory points are considered for player order.){{/7.I}} (Final Scoring)</div></div></div>{{/priv.III.6}}
 					{{#priv.III.7}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l3-7.png" /></div><div class="col-xs-8"><strong>III (7)</strong> The player always pays $20 for each factory (instead of $20, $30, $40). (Phase 3 F: Factories)</div></div></div>{{/priv.III.7}}
@@ -877,7 +877,7 @@
 					{{#3}}<p>If the attacker neutralizes an opposing city, 1 existing factory there is destroyed. If the attacker later conquers the city with 1 additional resident, he gets the remaining factories there.</p>{{/3}}
 				{{/2}}{{/4.III}}
 				{{#4.III}}
-					{{#3}}<p>If the attacker neutralizes an opposing city, 1 existing factory there is destroyed. IF the attacker later conquers the city with 1 additional resident, he gets the remaining factories there.</p>{{/3}}
+					{{#3}}<p>If the attacker neutralizes an opposing city, 1 existing factory there is destroyed. If the attacker later conquers the city with 1 additional resident, he gets the remaining factories there.</p>{{/3}}
 				{{/4.III}}
 				<p>
 					{{#4.I}}If the capital is attacked, the headquarters defends itself last and counts as 3 armies. {{/4.I}}
@@ -1027,7 +1027,7 @@
 				The goal of the {{owner}} is to deliver the goods to a city, which has demand for this type of good. Each city takes only 1 good for each listed goods type.
 				{{^8.I}}{{^8.II}}
 					{{#1.I}}The {{agent}} places the delivered goods face up in {{^company}}front of himself{{/company}}{{#company}}his company&rsquo;s holdings{{/company}} and covers the matching spaces on the cities with covering tokens.{{/1.I}}
-					{{#1.II}}The {{agent}} places the goods face up below the goods price board in the order he delivered them during his turn and covers the matching spaces on the cities with covering tokens. IF the player delivers 2 goods to the same city, he decides in which order he places them below the goods price board.{{/1.II}}
+					{{#1.II}}The {{agent}} places the goods face up below the goods price board in the order he delivered them during his turn and covers the matching spaces on the cities with covering tokens. If the player delivers 2 goods to the same city, he decides in which order he places them below the goods price board.{{/1.II}}
 				{{/8.II}}{{/8.I}}
 			</p>{{/1.III}}
 			{{#8}}
@@ -1214,7 +1214,7 @@
 			<p>Starting with the 3rd round, the {{agent}} now removes {{fowns}} resident from the face down scoring card and turns this card face up. If the card shows a <span class="glyphicon glyphicon-ok"></span>, the next {{agent}} continues with his turn. If it is one of the three scorings, the game is paused for an immediate scoring!</p>
 			<p><b>1st and 2nd Scoring:</b> The {{owners}} get victory points (VP) for their majorities, see table and example <b>Scoring</b>.</p>
 			<p><b>3rd Scoring (Final Scoring):</b> The {{owners}} get victory points (VP) for their majorities, see the table and example <b>Scoring</b>. All {{owners}} missing their last turn get once-only additional 3 VP.</p>
-			<p>Following each scoring, the {{owners}} add the VP they got in the actual scoring. Starting with the {{owner}} getting the most VP, each {{agent}} must remove 1 resident for each {{^9.II}}3 VP (2♟) or 4 VP (3♟, 4♟){{/9.II}}{{#9.II}}4 VP{{/9.II}} from the map. IF he has not enough residents, he now must remove 1 settlement for each missing resident, so all remaining settlements are still on connected tiles to {{fowns}} capital. He cannot remove the headquarters on {{fowns}} capital. If the {{agent}} cannot remove enough residents and settlements, he does not score the VPs for those pieces. Afterwards the {{agent}} must adjust {{fowns}} marking tokens on the majority board. In case of a tie for VP use the actual turn order for concerned {{owners}}.</p>
+			<p>Following each scoring, the {{owners}} add the VP they got in the actual scoring. Starting with the {{owner}} getting the most VP, each {{agent}} must remove 1 resident for each {{^9.II}}3 VP (2♟) or 4 VP (3♟, 4♟){{/9.II}}{{#9.II}}4 VP{{/9.II}} from the map. If he has not enough residents, he now must remove 1 settlement for each missing resident, so all remaining settlements are still on connected tiles to {{fowns}} capital. He cannot remove the headquarters on {{fowns}} capital. If the {{agent}} cannot remove enough residents and settlements, he does not score the VPs for those pieces. Afterwards the {{agent}} must adjust {{fowns}} marking tokens on the majority board. In case of a tie for VP use the actual turn order for concerned {{owners}}.</p>
 		{{/7.I}}
 	{{/capture}}
 	{{#hascapture}}
