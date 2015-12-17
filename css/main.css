@@ -255,7 +255,7 @@ table th {
 	background-color:#666;
 	padding:1em;
 	color:#fff;
-	/* display:none; */
+	display:none;
 }
 
 #menu .modules div {
