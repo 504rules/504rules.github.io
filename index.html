@@ -248,7 +248,8 @@
 					<p>Place the 10 city cards face up next to the map.</p>
 			{{/2.III}}{{/2}}
 			{{#6}}
-				<p>Each {{owner}} gets 19 roads in his color. If necessary the {{agent}}s may build more roads and need to use suitable replacement parts for these additional roads.</p>
+				{{^4}}<p>Each {{owner}} gets {{^company}}19{{/company}}{{#company}}14{{/company}} roads in {{owns}} color. If necessary the {{agent}}s may build more roads and need to use suitable replacement parts for these additional roads.</p>{{/4}}
+				{{#4}}<p>Place a shared pool of 40 neutral roads next to the game board, they can be used by all {{owners}}. If necessary the {{agent}}s may build more roads and need to use suitable replacement parts for these additional roads.</p>{{/4}}
 			{{/6}}
 			{{#company}}
 				<p>Lay out the {{#9.II}}{{#7.I}}scoring{{/7.I}}{{^7.I}}company order{{/7.I}}{{/9.II}}{{^9.II}}player order{{/9.II}} cards for 5 companies for the business rounds (BR) and place 1 resident of each company next to these cards. 1 player gets the starting player card for the 1st share round (SR).</p>
