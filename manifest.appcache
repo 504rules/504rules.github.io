@@ -4,7 +4,7 @@ CACHE MANIFEST
 # whenever you make any changes be sure to also update the comment below by changing the date and
 # incrementing the version number
 
-# 2015-12-17:v1.231
+# 2015-12-17:v1.32
 
 CACHE:
 index.html
@@ -39,6 +39,48 @@ img/meeple.png
 img/meeple_not.png
 img/mountain-icon.png
 img/water-adjacent-icon.png
+img/privileges/card-l1-1.png
+img/privileges/card-l1-10.png
+img/privileges/card-l1-11.png
+img/privileges/card-l1-12.png
+img/privileges/card-l1-2.png
+img/privileges/card-l1-3.png
+img/privileges/card-l1-4.png
+img/privileges/card-l1-5.png
+img/privileges/card-l1-6.png
+img/privileges/card-l1-7.png
+img/privileges/card-l1-8.png
+img/privileges/card-l1-9.png
+img/privileges/card-l2-1.png
+img/privileges/card-l2-10.png
+img/privileges/card-l2-11.png
+img/privileges/card-l2-12.png
+img/privileges/card-l2-2.png
+img/privileges/card-l2-3.png
+img/privileges/card-l2-4.png
+img/privileges/card-l2-5.png
+img/privileges/card-l2-6.png
+img/privileges/card-l2-7.png
+img/privileges/card-l2-8.png
+img/privileges/card-l2-9.png
+img/privileges/card-l3-1.png
+img/privileges/card-l3-2.png
+img/privileges/card-l3-3.png
+img/privileges/card-l3-4.png
+img/privileges/card-l3-5.png
+img/privileges/card-l3-6.png
+img/privileges/card-l3-7.png
+img/privileges/card-l3-8.png
+img/privileges/card-l3-9.png
+img/modules/icon-mod1.png
+img/modules/icon-mod2.png
+img/modules/icon-mod3.png
+img/modules/icon-mod4.png
+img/modules/icon-mod5.png
+img/modules/icon-mod6.png
+img/modules/icon-mod7.png
+img/modules/icon-mod8.png
+img/modules/icon-mod9.png
 js/bootstrap.js
 js/bootstrap.min.js
 js/jquery-1.11.3.min.js
