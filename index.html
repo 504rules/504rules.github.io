@@ -53,8 +53,16 @@
 		</div>
 	</form>
 </div>
-<div id="target_head">Loading Head...</div>
-<div id="target_main">Loading Main...</div>
+<div class="container">
+	<div id="target_head">Loading Head...</div>
+	<div id="target_setup">Loading Setup...</div>
+	<div id="target_privileges">Loading Privilege Cards...</div>
+	<div id="target_examples">Loading Examples...</div>
+</div>
+<div class="container">
+	<div id="target_gameplay">Loading Gameplay...</div>
+	<div id="target_ending">Loading Scoring...</div>
+</div>
 <script id="name-template" type="x-tmpl-mustache">
 	{{#1.I}}The World of Traveling{{/1.I}}
 	{{#2.I}}The World of Restless{{/2.I}}
@@ -87,7 +95,6 @@
 	{{#9.III}}by External Financing.{{/9.III}}
 </script>
 <script id="template_head" type="x-tmpl-mustache">
-	<div class="container">
 	<div class="row name">
 		<div class="col-md-12 col-xs-12">
 			<h1>
@@ -140,6 +147,8 @@
 			</div>
 		</div>
 	</div>
+</script>
+<script id="template_setup" type="x-tmpl-mustache">
 	<div class="row section">
 		<div class="col-md-2 col-xs-2"><h1>Special game parts</h1></div>
 		<div class="col-md-10 col-xs-10">
@@ -298,7 +307,8 @@
 			{{/1}}	
 		</div>
 	</div>
-	
+</script>
+<script id="template_privileges" type="x-tmpl-mustache">
 	{{#3}}
 		<div class="row section cards">
 			<div class="col-md-2 col-xs-2 mod3"><h1>Privilege Cards</h1><p>{{priv.I.list}}</p><p>{{priv.II.list}}</p><p>{{priv.III.list}}</p></div>
@@ -354,7 +364,8 @@
 			</div>
 		</div>
 	{{/3}}
-	
+</script>
+<script id="template_examples" type="x-tmpl-mustache">
 	{{#capture}}
 		{{#4}}{{#5}}<p>Place 1 barrack and 1 militia on all free cities, which are explored during the game.</p>{{/5}}{{/4}}
 		{{#9.I}}<p>Play the game in the following order of turns: SR, BR, BR, SR, BR, SR, BR, SR, BR, game end.</p>{{/9.I}}
@@ -697,10 +708,8 @@
 			</div>
 		{{/9.III}}
 	</div>
-	</div>
 </script>
-<script id="template_main" type="x-tmpl-mustache">
-	<div class="container">
+<script id="template_gameplay" type="x-tmpl-mustache">
 	{{#company}}
 		<div class="row section">
 			<div class="col-md-2 col-xs-2 mod9"><h1>Share Round</h1></div>
@@ -1150,7 +1159,8 @@
 			<div class="col-md-10 col-xs-10">{{{captured}}}</div>
 		</div>
 	{{/hascapture}}
-
+</script>
+<script id="template_ending" type="x-tmpl-mustache">
 	{{#capture}}
 		{{#2.III}}
 			{{#1.I}}<p>Award 5 VP to the first {{owner}} delivering one of the good types a second time from the stack set aside for this purpose.</p>{{/1.I}}
@@ -1399,7 +1409,6 @@
 		<div class="col-md-12"><p>This is a fan project for the game 504. All contents are supplied without liability and are subject to change. 504 rule text is copyright 2f-spiele.</p>
 		</div>
 	</div>
-</div>
 </script>
 <script>
 	function explorer_map(maps) {
@@ -2033,7 +2042,11 @@
 		};
 		
 		$("#target_head").html(buildRules($('#template_head').html()));
-		$("#target_main").html(buildRules($('#template_main').html()));
+		$("#target_setup").html(buildRules($('#template_setup').html()));
+		$("#target_privileges").html(buildRules($('#template_privileges').html()));
+		$("#target_examples").html(buildRules($('#template_examples').html()));
+		$("#target_gameplay").html(buildRules($('#template_gameplay').html()));
+		$("#target_ending").html(buildRules($('#template_ending').html()));
 
 		$("#editbutton").click(function() {
 			$("#worldno-entry, #worldno").toggle();
