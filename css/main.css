@@ -244,7 +244,7 @@ table th {
 
 .privileges img { width:100%; max-width:73px; }
 .privileges>div { padding-bottom:20px; }
-.cards h3 { margin: 0 0 0.5em 0; border-bottom:1px dashed rgba(56, 143, 127,0.3); }
+.cards h3 { margin: 0 0 0.7em 0; padding-bottom: 0.3em; border-bottom:1px dashed rgba(56, 143, 127,0.3); font-size:1.5em; }
 
 #menu {
 	width:100%;
@@ -260,6 +260,7 @@ table th {
 	width:auto;
 	display:inline-block;
 	position:relative;
+	cursor:pointer;
 }
 
 #menu .modules div .locked {
