@@ -169,7 +169,7 @@
 		<div class="col-md-10 col-xs-10">
 			{{#5}}<p>Place all map tiles in separate stacks in a row as follows: city, water, grassland, forest, field, mountain and desert. {{#1}}{{^1.III}}Lay out the cities in a numerical ascending stack - lowest numbered city on top, city "10" on bottom.{{/1.III}}{{/1}}</p>{{/5}}
 			<p>
-				Lay out the map {{map.value}}.
+				Lay out map {{map.value}}.
 				{{#1}}{{^1.III}}Display cities with their goods side atop. {{#8}}The cities remain empty of goods.{{/8}}{{^8}} Place 4 goods onto each city, matching the small circular symbol.{{/8}}{{/1.III}}{{/1}}
 				{{#8}}
 					{{^8.III}}
@@ -289,9 +289,9 @@
 				{{#1}}{{^1.III}}{{^company}}<p>When playing with 2♟/4♟ Players cannot choose cities 5 or 10 for their capital. (This allows all players to comply with both rules for capital placement.)</p>{{/company}}{{/1.III}}{{/1}}
 				{{#8}}
 					{{^8.III}}<p>Place 1 barrack on all free cities. These barracks are considered trading houses.</p>{{/8.III}}
-					{{#8.III}}<p>Place 1 barrack and 1 militia on all free cities, which are not chosen as capitals.</p>{{/8.III}}
+					{{#8.III}}<p>Place 1 barrack and 1 militia on all free cities which are not chosen as capitals.</p>{{/8.III}}
 				{{/8}}
-				{{^8}}<p>Place 1 barrack and 1 militia on all free cities, which are not chosen as capitals.</p>{{/8}}
+				{{^8}}<p>Place 1 barrack and 1 militia on all free cities which are not chosen as capitals.</p>{{/8}}
 			{{/4}}
 			{{#2}}{{^2.III}}
 					<p>To mark the chosen capitals, place 1 settlement of each {{owner}} onto the matching city cards.</p>
@@ -368,7 +368,7 @@
 </script>
 <script id="template_examples" type="x-tmpl-mustache">
 	{{#capture}}
-		{{#4}}{{#5}}<p>Place 1 barrack and 1 militia on all free cities, which are explored during the game.</p>{{/5}}{{/4}}
+		{{#4}}{{#5}}<p>Place 1 barrack and 1 militia on all free cities which are explored during the game.</p>{{/5}}{{/4}}
 		{{#9.I}}<p>Play the game in the following order of turns: SR, BR, BR, SR, BR, SR, BR, SR, BR, game end.</p>{{/9.I}}
 		{{#9.II}}<p>Play the game in <b>alternating</b> turns: SR, BR, SR, BR, SR, BR, etc.</p>{{/9.II}}
 	{{/capture}}
@@ -552,7 +552,7 @@
 					<tr><th>2nd place (not for 2 players)</th><td>6 VP</td><td>6 VP</td><td>5 VP</td><td>4 VP</td><td>3 VP</td><td>2 VP</td></tr>
 				</table>
 				<p>In case of a tie for 1st place all concerned players each get 2 VP less (this applies for 2 players, too) and 0 VP for 2nd place. In case of a tie for 2nd place all concerned players get the stated VP.</p>
-				<p><b>Example Scoring:</b> In a game with 3 players Camille has majorities for cities, forests and a 2nd place for mountains. She gets 22 VP. Afterwards she must remove 5 residents from the game map (1 resident for each 4 VP).</p>
+				<p><b>Example Scoring:</b> In a game with 3 players Camille has majorities for cities, forests and a 2nd place for mountains. She gets 22 VP. Afterwards, she must remove 5 residents from the game map (1 resident for each 4 VP).</p>
 			</div>
 		{{/7.I}}
 		{{#7.II}}
@@ -608,7 +608,7 @@
 						<tr><th># of different types of goods</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
 						<tr><th>Total VP</th><td>1 VP</td><td>3 VP</td><td>6 VP</td><td>10 VP</td><td>15 VP</td></tr>
 					</table>
-					<p><b>Example Final Scoring:</b> Paul owns 5 trading houses (including his headquarters) and can score up to 6 goods. He built a total of 9 plants and received 9 goods (3 wheat, 3 cattle, 2 fish, 1 wood). He misses ore for a complete set of 5 different goods, so he exchanges 1 wheat and 1 cattle for 1 ore. Afterwards he gets 26 VP = 10 (for 5 trading houses) + 15 (set with 5 different goods) + 1 (set with 1 wheat). He scored the maximum number goods, so he does not get VP for the surplus cattle and fish.</p>
+					<p><b>Example Final Scoring:</b> Paul owns 5 trading houses (including his headquarters) and can score up to 6 goods. He built a total of 9 plants and received 9 goods (3 wheat, 3 cattle, 2 fish, 1 wood). He misses ore for a complete set of 5 different goods, so he exchanges 1 wheat and 1 cattle for 1 ore. Afterwards, he gets 26 VP = 10 (for 5 trading houses) + 15 (set with 5 different goods) + 1 (set with 1 wheat). He scored the maximum number goods, so he does not get VP for the surplus cattle and fish.</p>
 				</div>
 			{{/8.I}}
 			{{#8.II}}
@@ -829,7 +829,7 @@
 
 	{{#capture}}
 		{{#3.III}}
-			<p>If there are less privileges in the row of cards as the # of {{owners}} at the start of this phase, the active {{agent}} draws 1 privilege and places it to the right of the row of cards {{^company}}(2♟: If less than 3 privileges are in the row of cards, the player draws 1 privilege).{{/company}} The price of a newly drawn privilege is always $20.</p>
+			<p>If there are fewer privileges in the row of cards as the # of {{owners}} at the start of this phase, the active {{agent}} draws 1 privilege and places it to the right of the row of cards {{^company}}(2♟: If less than 3 privileges are in the row of cards, the player draws 1 privilege).{{/company}} The price of a newly drawn privilege is always $20.</p>
 			<p>Now the {{agent}} may buy 1 privilege. If he does not buy one privilege, the price drops for all privileges for $0 and the price token is placed on the right of the row of cards. Newly drawn privileges are again placed on the right of the price token, so their price is $20. If at any time there are privileges with different backs (I, II or III) in that row, the price for all privileges with the lower back drops to $0 and the price token is placed to the right of them.</p>
 			<p>{{^company}}The player may only buy each type of privilege once{{/company}}{{#company}}The president can&rsquo;t buy a privelege for their company if the company already owns it{{/company}}. He may use his privileges immediately after purchase.</p>
 		{{/3.III}}
@@ -887,7 +887,7 @@
 						If the capital of the defender is neutralized or conquered, the defender immediately chooses a new capital by replacing his settlement on one of his cities with his headquarters.
 						{{#4.I}}If the defender does not control another city, the game ends, see <b>Game End</b>.{{/4.I}}
 						{{^4.I}}{{^company}}If the defender only controls the capital (and possibly additional land tiles), his capital cannot be attacked.{{/company}}{{/4.I}}
-						{{#company}}If the defender does not control another city, the attacker also conquers all other tiles of the defender and exchanges the armies with its own. If it only neutralizes the opposing capital, the defender loses all of his tiles without the attacker conquering them. Afterwards the players lose all shares of the defeated stock company without substitution. The stock company starts anew and may be established again by the players in the next share round (SR).{{/company}}
+						{{#company}}If the defender does not control another city, the attacker also conquers all other tiles of the defender and exchanges the armies with its own. If it only neutralizes the opposing capital, the defender loses all of his tiles without the attacker conquering them. Afterwards, the players lose all shares of the defeated stock company without substitution. The stock company starts anew and may be established again by the players in the next share round (SR).{{/company}}
 					{{/2}}
 					{{^4.I}}{{^2}}{{#company}}If the capital is attacked, the headquarters defends itself last and counts as 3 armies, see <b>Phase 3 G</b>.{{/company}}{{/2}}{{/4.I}}
 					{{^2}}{{^company}}{{^4.I}}The capital of another player cannot be attacked.{{/4.I}}{{/company}}{{/2}}
@@ -895,7 +895,7 @@
 				{{^4.I}}{{#company}}<p>
 					If the attacking stock company conquers an opposing capital by immediately moving 1 additional active resident onto the neutralized city, it also conquers all other tiles of the defender by exchanging the armies with its own.
 					{{#2.III}} If the attacking stock company neutralizes the last capital of the defender, it may conquer that capital immediately after the fight by moving 1 additional active resident onto the neutralized city.{{/2.III}} 
-					If the attacker only neutralizes the capital, the defender loses all of his tiles without the attacker conquering them. Afterwards the players lose all shares of the defeated stock company without substitution. The stock company starts anew and may be established again by the players in the next share round (SR).
+					If the attacker only neutralizes the capital, the defender loses all of his tiles without the attacker conquering them. Afterwards, the players lose all shares of the defeated stock company without substitution. The stock company starts anew and may be established again by the players in the next share round (SR).
 					{{#1.1}} Place all delivered goods of that company separately next to the map, as they still count for the game end!{{/1.1}}
 				</p>{{/company}}{{/4.I}}
 			{{/8}}
@@ -904,7 +904,7 @@
 		{{#5.II}}
 			{{#2}}<p>The {{agent}} may explore any number of adjacent unknown spaces with 1 active resident. After exploring he places that resident back into his storage (except if it explores only water, instead it is placed exhausted on the starting tile).</p>{{/2}}
 			{{^2}}{{#4}}<p>The {{agent}} may explore an adjacent unknown space with 1 active resident. After exploring the tile he places that resident back into his storage (except if it explores water, instead it is placed exhausted on the starting tile).</p>{{/4}}{{/2}}
-			{{^2}}{{^4}}<p>The {{agent}} may explore an adjacent unknown space with 1 active resident. Afterwards the resident is exhausted on the starting tile.</p>{{/4}}{{/2}}
+			{{^2}}{{^4}}<p>The {{agent}} may explore an adjacent unknown space with 1 active resident. Afterwards, the resident is exhausted on the starting tile.</p>{{/4}}{{/2}}
 		{{/5.II}}
 		{{#5.III}}<p>The {{agent}} may explore any number of adjacent unknown spaces with 1 active resident. He places that resident back into {{fowns}} storage (except if it explores only water, instead it is placed exhausted on the starting tile).</p>{{/5.III}}
 		{{#5}}
@@ -915,8 +915,8 @@
 				<li><b>Land tiles:</b> 1 explorer tile next to each stack, in the following order: grassland, forest field, mountain, desert.</li>
 				<li><b>Remaining explorer tiles:</b> 1 additional explorer tile next to each stack, which already received 1 or more explorer tiles, in the following order: city, water, grassland, forest, field, mountain desert, if necessary repeatedly.</li>
 			</ol>
-			<p>Afterwards the {{agent}} rolls 1 die and places the corresponding map tile on the destination space. See the example <b>Exploring</b>.</p>
-			{{#mapnum.1}}<p>The {{agent}}s may only explore in a distance of 4 spaces around the central city. Thus, following the adjacency rules above the {{agent}}s will not always explore all cities or water tiles.</p>{{/mapnum.1}}
+			<p>Afterwards, the {{agent}} rolls 1 die and places the corresponding map tile on the destination space. See the example <b>Exploring</b>.</p>
+			{{#mapnum.1}}<p>The {{agent}}s may only explore in a distance of 4 spaces around the central city. Thus, following the adjacency rules above, the {{agent}}s will not always explore all cities or water tiles.</p>{{/mapnum.1}}
 			{{#1}}{{^1.III}}{{^8}}<p>When placing a city, place 4 goods onto that city, matching the small circular symbol.</p>{{/8}}{{/1.III}}{{/1}}
 			{{#5.I}}
 				{{#2.III}}<p>
@@ -934,13 +934,13 @@
 			{{/5.I}}
 			{{#5.II}}
 				{{#3.I}}<p>The {{agent}} may move any number of {{fowns}} active residents from adjacent tiles onto the just explored tile without exhausting them in this way.</p>{{/3.I}}
-				{{#4.I}}<p>Depending on the terrain the {{owner}} discovers or receives the following. <span class="desert icon"></span> empty, <span class="grass icon"></span> & <span class="forest icon"></span> 1 own settlement, <span class="grain icon"></span> 1 own settlement + 1 own exhausted resident, <span class="mountain icon"></span> 1 militia. For defeating this militia once-only $20. <span class="city icon"></span> 1 barrack and 1 militia. The player does not get income tokens for discovered settlements!</p>{{/4.I}}
+				{{#4.I}}<p>Depending on the terrain the {{owner}} discovers or receives the following. <span class="desert icon"></span> empty, <span class="grass icon"></span> & <span class="forest icon"></span> 1 own settlement, <span class="grain icon"></span> 1 own settlement + 1 own exhausted resident, <span class="mountain icon"></span> 1 militia. The player that defeats this militia gets a once-only $20. <span class="city icon"></span> 1 barrack and 1 militia. The player does not get income tokens for discovered settlements!</p>{{/4.I}}
 				{{#2.III}}{{#9.I}}<p>The {{agent}} counts that tile on the majority board.</p>{{/9.I}}{{/2.III}}
 			{{/5.II}}
 		{{/5}}
 		{{#6}}
 			<p><b>Roads:</b> If the {{owner}} has 1 settlement each on two adjacent tiles, {{sagent}} may connect both tiles with 1 of his roads. To build a road he needs a the number of active residents equal to the more expensive of the two terrain types, see the table <b>Road</b>. {{^6.III}}He places 1 of {{fowns}} used residents back into his supply and places 1 road. The remaining residents are exhausted from the build and will be available again in the next round. {{/6.III}}{{#6.III}}All of the used residents are exhausted and are available again in the next round.{{/6.III}}</p>
-			{{^6.III}}<p>The {{agent}} must build {{fowns}} roads in a connected network. His 1st road must start in {{fowns}} capital, afterwards the network may branch out in any direction.</p>{{/6.III}}
+			{{^6.III}}<p>The {{agent}} must build {{fowns}} roads in a connected network. His 1st road must start in {{fowns}} capital, afterwards, the network may branch out in any direction.</p>{{/6.III}}
 			{{#6.III}}<p>The {{agent}} may build {{fowns}} roads on any tiles, they do not need to start in {{fowns}} capital and do not need to be connected.</p>{{/6.III}}
 			{{#4}}
 				<p>
@@ -1012,8 +1012,8 @@
 						<li><b>Land tiles:</b> 1 explorer tile next to each stack, in the following order: grassland, forest field, mountain, desert.</li>
 						<li><b>Remaining explorer tiles:</b> 1 additional explorer tile next to each stack, which already received 1 or more explorer tiles, in the following order: city, water, grassland, forest, field, mountain desert, if necessary repeatedly.</li>
 					</ol>
-					<p>Afterwards the {{agent}} rolls 1 die and places the corresponding map tile on the destination space. See the example <b>Exploring</b>.</p>
-					{{#mapnum.1}}<p>The {{agent}}s may only explore in a distance of 4 spaces around the central city. Thus, following the adjacency rules above the {{agent}}s will not always explore all cities or water tiles.</p>{{/mapnum.1}}
+					<p>Afterwards, the {{agent}} rolls 1 die and places the corresponding map tile on the destination space. See the example <b>Exploring</b>.</p>
+					{{#mapnum.1}}<p>The {{agent}}s may only explore in a distance of 4 spaces around the central city. Thus, following the adjacency rules above, the {{agent}}s will not always explore all cities or water tiles.</p>{{/mapnum.1}}
 					{{^1.III}}{{^8}}<p>When placing a city, place 4 goods onto that city, matching the small circular symbol.</p>{{/8}}{{/1.III}}
 					{{#5.II}}
 						{{#3.I}}<p>The {{agent}} may move any number of {{fowns}} active residents from adjacent tiles onto the just explored tile without exhausting them in this way.</p>{{/3.I}}
@@ -1025,7 +1025,7 @@
 				<p>Note: This rule may not apply to this game! Check below for <b>Phase 3 F</b> (factories) <b>Income</b> and <b> Scoring</b>.</p>
 			{{/residents}}
 			{{^1.III}}<p>
-				The goal of the {{owner}} is to deliver the goods to a city, which has demand for this type of good. Each city takes only 1 good for each listed goods type.
+				The goal of the {{owner}} is to deliver the goods to a city which has demand for this type of good. Each city takes only 1 good for each listed goods type.
 				{{^8.I}}{{^8.II}}
 					{{#1.I}}The {{agent}} places the delivered goods face up in {{^company}}front of himself{{/company}}{{#company}}his company&rsquo;s holdings{{/company}} and covers the matching spaces on the cities with covering tokens.{{/1.I}}
 					{{#1.II}}The {{agent}} places the goods face up below the goods price board in the order he delivered them during his turn and covers the matching spaces on the cities with covering tokens. If the player delivers 2 goods to the same city, he decides in which order he places them below the goods price board.{{/1.II}}
@@ -1062,7 +1062,7 @@
 				{{#3}}{{^3.III}}{{^8.I}}{{^8.II}}<p>If the attacker neutralizes an opposing city, 1 existing factory there is destroyed. If the attacker later conquers the city with 1 additional resident, he gets the remaining factories there.</p>{{/8.II}}{{/8.I}}{{/3.III}}{{/3}}
 				{{#8}}{{^8.III}}<p>There are no fights in cities, so any number of {{owners}} may have their own trading houses there. If the {{agent}} conquers a land tile, he also conquers an existing plant. If the land tile is neutralized, the plant remains abandoned for now.</p>{{/8.III}}{{/8}}
 			{{/4.III}}{{/4}}
-			{{#4.II}}{{#9.I}}<p>If the attacking stock company conquers an opposing capital, it also conquers all other tiles of the defender and exchanges the armies with its own. If it only neutralizes the opposing capital, the defender loses all of his tiles without the attacker conquering them. Afterwards the players lose all shares of the defeated stock company without substitution. The stock company starts anew and may be established again by the players in the next share round (SR).</p>{{/9.I}}{{/4.II}}
+			{{#4.II}}{{#9.I}}<p>If the attacking stock company conquers an opposing capital, it also conquers all other tiles of the defender and exchanges the armies with its own. If it only neutralizes the opposing capital, the defender loses all of his tiles without the attacker conquering them. Afterwards, the players lose all shares of the defeated stock company without substitution. The stock company starts anew and may be established again by the players in the next share round (SR).</p>{{/9.I}}{{/4.II}}
 		{{/2}}
 	{{/capture}}
 	{{#hascapture}}
@@ -1078,7 +1078,7 @@
 			{{#4}}<p>If the {{owner}} delivers goods to a city without his settlements, he must pay $1 for each full $10 of this sale to the owner of the city, or in case of a free city, payment goes to the bank.</p>{{/4}}
 		{{/1.II}}
 		{{#2.II}}
-			<p>The {{owner}} gets $20 base income for {{owns}} capital, plus once-only money for each settlement, which {{sagent}} placed on an empty tile during this turn, depending on the type of terrain: He gets $5 for <span class="grass icon"></span>, <span class="forest icon"></span>, <span class="grain icon"></span>, <span class="desert icon"></span> and $10 for <span class="city icon"></span> and <span class="mountain icon"></span>. Additionally the {{owner}} gets once-only money each time {{sagent}} places a new resident on 1 or more city cards in <b>Phase 3 D</b>. For the overall 1st resident $10, for the overall 2nd resident $20 etc. Afterwards he moves the new residents to the bottom of the matching city cards - see example of <b>Income</b>.</p>
+			<p>The {{owner}} gets $20 base income for {{owns}} capital, plus once-only money for each settlement which {{sagent}} placed on an empty tile during this turn, depending on the type of terrain: He gets $5 for <span class="grass icon"></span>, <span class="forest icon"></span>, <span class="grain icon"></span>, <span class="desert icon"></span> and $10 for <span class="city icon"></span> and <span class="mountain icon"></span>. Additionally the {{owner}} gets once-only money each time {{sagent}} places a new resident on 1 or more city cards in <b>Phase 3 D</b>. For the overall 1st resident $10, for the overall 2nd resident $20 etc. Afterwards, he moves the new residents to the bottom of the matching city cards - see example of <b>Income</b>.</p>
 			{{#7.I}}<p>If the {{agent}} removes {{fowns}} settlement and then there are no settlements left on the tile, the next {{owner}} placing a first settlement on that tile gets again once-only $5 (once-only $10 for city and mountain).</p>{{/7.I}}
 			{{^7.I}}
 				{{#1}}
@@ -1098,7 +1098,7 @@
 			</table>
 		{{/4.II}}
 		{{#5.II}}
-			<p>The {{owner}} gets $20 base income for {{owns}} capital, plus $5 for each tile he explored (including water) plus $5 for each settlement, which the player placed first on a tile. For a better overview the {{agent}} places 1 income token for each explored tile and settlement in {{^company}}front of himself{{/company}}{{#company}}his company&rsquo;s holdings{{/company}}, see the example <b>Income</b>.</p>
+			<p>The {{owner}} gets $20 base income for {{owns}} capital, plus $5 for each tile he explored (including water) plus $5 for each settlement, which the player placed first on a tile. For a better overview, the {{agent}} places 1 income token for each explored tile and settlement in {{^company}}front of himself{{/company}}{{#company}}his company&rsquo;s holdings{{/company}}, see the example <b>Income</b>.</p>
 			{{#2}}<p>If the {{agent}} removes {{fowns}} settlement and then the tile is completely empty, the next {{owner}} placing a new first settlement on that tile also takes 1 income token.</p>{{/2}}
 			{{^2}}{{#7.I}}<p>If the {{agent}} removes {{fowns}} settlement and then the tile is completely empty, the next {{owner}} placing a new first settlement on that tile also takes 1 income token.</p>{{/7.I}}{{/2}}
 			{{#4}}<p>If a {{agent}} neutralizes a tile from another {{owner}}, the next {{owner}} placing a first settlement on that tile also takes 1 income token. If he conquers that tile he gets that income token.</p>{{/4}}
@@ -1119,7 +1119,7 @@
 				{{#4}}<p>If the company delivers goods to a city without its settlements, it must pay $1 for each full $10 of this sale to the owner of the city, or in case of a free city, payment goes to the bank.</p>{{/4}}
 			{{/1.I}}
 			{{#2.I}}
-				<p>The company gets $20 base income for its capital, plus once-only money for each settlement, which it placed on an empty tile during this turn, depending on the type of terrain: It gets $5 for <span class="grass icon"></span>, <span class="forest icon"></span>, <span class="grain icon"></span>, <span class="desert icon"></span> and $10 for <span class="city icon"></span> and <span class="mountain icon"></span>. Additionally the company gets once-only money each time it places a settlement on 1 or more city cards in <b>Phase 3 D</b>. For the overall 1st resident $10, for the overall 2nd resident $20 etc. Afterwards it moves the new residents to the bottom of the matching city cards - see example of <b>Income</b>.</p>
+				<p>The company gets $20 base income for its capital, plus once-only money for each settlement, which it placed on an empty tile during this turn, depending on the type of terrain: It gets $5 for <span class="grass icon"></span>, <span class="forest icon"></span>, <span class="grain icon"></span>, <span class="desert icon"></span> and $10 for <span class="city icon"></span> and <span class="mountain icon"></span>. Additionally the company gets once-only money each time it places a settlement on 1 or more city cards in <b>Phase 3 D</b>. For the overall 1st resident $10, for the overall 2nd resident $20 etc. Afterwards, it moves the new residents to the bottom of the matching city cards - see example of <b>Income</b>.</p>
 				{{#1}}
 					<p>If the company removes its settlement and then there are no settlements left on the tile, the next company placing a first settlement on that tile gets again once-only $5 (once-only $10 for city and mountain).</p>
 				{{/1}}
@@ -1199,7 +1199,7 @@
 					<p>The presidents decide if they pay a dividend or keep the income in their company assets.</p>
 					<p><b>Pay a dividend:</b> According to the owned shares the income is divided between players, the bank and the stock company (the stock company keeps the remains). See the <b>Calculation of Dividends</b>. The share value of the company raises by $10.</p>
 					<p><b>Keep the income:</b> Place the whole income into the company assets. The share value remains the same.</p>
-					<p><b>Afterwards pay maintenance costs:</b> $3 each for all settlements and $1 each for all residents of the stock company. The president must pay missing payments with his own money.</p>
+					<p><b>Afterwards, pay maintenance costs:</b> $3 each for all settlements and $1 each for all residents of the stock company. The president must pay missing payments with his own money.</p>
 				{{/9.I}}
 				{{#9.II}}
 					{{#3.I}}<p>The presidents record their companies&rsquo; incomes for the round, this figure is used to calculate taxes for the following round.</p>{{/3.I}}
@@ -1215,7 +1215,7 @@
 			<p>Starting with the 3rd round, the {{agent}} now removes {{fowns}} resident from the face down scoring card and turns this card face up. If the card shows a <span class="glyphicon glyphicon-ok"></span>, the next {{agent}} continues with his turn. If it is one of the three scorings, the game is paused for an immediate scoring!</p>
 			<p><b>1st and 2nd Scoring:</b> The {{owners}} get victory points (VP) for their majorities, see table and example <b>Scoring</b>.</p>
 			<p><b>3rd Scoring (Final Scoring):</b> The {{owners}} get victory points (VP) for their majorities, see the table and example <b>Scoring</b>. All {{owners}} missing their last turn get once-only additional 3 VP.</p>
-			<p>Following each scoring, the {{owners}} add the VP they got in the actual scoring. Starting with the {{owner}} getting the most VP, each {{agent}} must remove 1 resident for each {{^9.II}}3 VP (2♟) or 4 VP (3♟, 4♟){{/9.II}}{{#9.II}}4 VP{{/9.II}} from the map. If he has not enough residents, he now must remove 1 settlement for each missing resident, so all remaining settlements are still on connected tiles to {{fowns}} capital. He cannot remove the headquarters on {{fowns}} capital. If the {{agent}} cannot remove enough residents and settlements, he does not score the VPs for those pieces. Afterwards the {{agent}} must adjust {{fowns}} marking tokens on the majority board. In case of a tie for VP use the actual turn order for concerned {{owners}}.</p>
+			<p>Following each scoring, the {{owners}} add the VP they got in the actual scoring. Starting with the {{owner}} getting the most VP, each {{agent}} must remove 1 resident for each {{^9.II}}3 VP (2♟) or 4 VP (3♟, 4♟){{/9.II}}{{#9.II}}4 VP{{/9.II}} from the map. If he has not enough residents, he now must remove 1 settlement for each missing resident, so all remaining settlements are still on connected tiles to {{fowns}} capital. He cannot remove the headquarters on {{fowns}} capital. If the {{agent}} cannot remove enough residents and settlements, he does not score the VPs for those pieces. Afterwards, the {{agent}} must adjust {{fowns}} marking tokens on the majority board. In case of a tie for VP use the actual turn order for concerned {{owners}}.</p>
 		{{/7.I}}
 	{{/capture}}
 	{{#hascapture}}
@@ -1229,8 +1229,8 @@
 		<div class="col-md-2 col-xs-2 mod{{world.0}}"><h1>Game End</h1></div>
 		<div class="col-md-10 col-xs-10">
 			{{#1.I}}
-				{{^9.II}}<p>The game ends at the end of the round, after all players commonly delivered at least 19 (2♟), 21 (3♟) or 23 (4♟) goods tiles.</p>{{/9.II}}
-				{{#9.II}}<p>The game ends at the end of the round, after all companies commonly delivered at least 25 goods tiles.</p>{{/9.II}}
+				{{^9.II}}<p>The game ends at the end of the round after all players commonly delivered at least 19 (2♟), 21 (3♟) or 23 (4♟) goods tiles.</p>{{/9.II}}
+				{{#9.II}}<p>The game ends at the end of the round after all companies commonly delivered at least 25 goods tiles.</p>{{/9.II}}
 			{{/1.I}}
 			{{#2.I}}
 				{{^residents}}
@@ -1239,16 +1239,16 @@
 				{{#residents}}
 					{{#4}}
 						{{#9.II}}<p>The game ends at the end of the round in which at least 1 stock company had 4 population on city cards.</p>{{/9.II}}
-						{{^9.II}}<p>Depending on the # of players the game ends at the end of the round, after at least 1 player placed population on 7 (2♟), 6 (3♟) or 5 (4♟) city cards.</p>{{/9.II}}
+						{{^9.II}}<p>Depending on the # of players the game ends at the end of the round after at least 1 player placed population on 7 (2♟), 6 (3♟) or 5 (4♟) city cards.</p>{{/9.II}}
 					{{/4}}
 					{{^4}}
 						{{#9.II}}<p>The game ends at the end of the round in which at least 1 stock company had 6 population on city cards.</p>{{/9.II}}
-						{{^9.II}}<p>Depending on the # of players the game ends at the end of the round, after at least 1 player placed population on 9 (2♟), 8 (3♟) or 7 (4♟) city cards.</p>{{/9.II}}
+						{{^9.II}}<p>Depending on the # of players the game ends at the end of the round after at least 1 player placed population on 9 (2♟), 8 (3♟) or 7 (4♟) city cards.</p>{{/9.II}}
 					{{/4}}
 				{{/residents}}
 			{{/2.I}}
 			{{#3.I}}
-				<p>The game ends at the end of the round, after a total of at least 20 factories stand in the cities.</p>
+				<p>The game ends at the end of the round after a total of at least 20 factories stand in the cities.</p>
 			{{/3.I}}
 			{{#4.I}}
 				<p>The game ends immediately after the end of the active player&rsquo;s turn, if the active player:</p>
@@ -1260,12 +1260,12 @@
 				</ol>
 			{{/4.I}}
 			{{#5.I}}
-				<p>The game ends at the end of the round, if only 7 or less map tiles are still unexplored.</p>
+				<p>The game ends at the end of the round if only 7 or fewer map tiles are still unexplored.</p>
 			{{/5.I}}
 			{{#6.I}}
-				{{#4}}<p>The game ends at the end of the round, after the players commonly build exactly 40 roads.</p>{{/4}}
-				{{^4}}{{#9.II}}<p>The game ends at the end of the round, after at least 1 stock company connects 4 cities to its roads.</p>{{/9.II}}{{/4}}
-				{{^4}}{{^9.II}}<p>Depending on the # of players, the game ends at the end of the round, after at least 1 player connects 7 (2♟), 6 (3♟) or 5 (4♟) cities to his roads.</p>{{/9.II}}{{/4}}
+				{{#4}}<p>The game ends at the end of the round after the players commonly build exactly 40 roads.</p>{{/4}}
+				{{^4}}{{#9.II}}<p>The game ends at the end of the round after at least 1 stock company connects 4 cities to its roads.</p>{{/9.II}}{{/4}}
+				{{^4}}{{^9.II}}<p>Depending on the # of players, the game ends at the end of the round after at least 1 player connects 7 (2♟), 6 (3♟) or 5 (4♟) cities to his roads.</p>{{/9.II}}{{/4}}
 			{{/6.I}}
 			{{#7.I}}
 				<p>The game ends immediately, after the 3rd scoring is turned face up. The <b>Final Scoring</b> takes place, see above.</p>
@@ -1276,18 +1276,18 @@
 			{{#8.I}}
 				{{^4}}
 					{{#9}}
-						<p>The game ends at the end of the round, after at least 1 stock company owns at least 4 trading houses and at least 5 goods.</p>
+						<p>The game ends at the end of the round after at least 1 stock company owns at least 4 trading houses and at least 5 goods.</p>
 					{{/9}}
 					{{^9}}
-						<p>Depending on the # of players the game ends at the end of the round, after at least 1 player owns 8 (2♟), 7 (3♟) or 6 (4♟) trading houses and at least 5 goods.</p>
+						<p>Depending on the # of players the game ends at the end of the round after at least 1 player owns 8 (2♟), 7 (3♟) or 6 (4♟) trading houses and at least 5 goods.</p>
 					{{/9}}
 				{{/4}}
 				{{#4}}
 					{{#9}}
-						<p>The game ends at the end of the round, after at least 1 stock company owns at least 3 trading houses and at least 5 goods.</p>
+						<p>The game ends at the end of the round after at least 1 stock company owns at least 3 trading houses and at least 5 goods.</p>
 					{{/9}}
 					{{^9}}
-						<p>Depending on the # of players the game ends at the end of the round, after at least 1 player owns 6 (2♟), 5 (3♟) or 4 (4♟) trading houses and at least 5 goods.</p>
+						<p>Depending on the # of players the game ends at the end of the round after at least 1 player owns 6 (2♟), 5 (3♟) or 4 (4♟) trading houses and at least 5 goods.</p>
 					{{/9}}
 				{{/4}}
 			{{/8.I}}
@@ -1318,7 +1318,7 @@
 				<p>The companies get victory points (VP) during the game for building factories and getting certain privileges.</p>
 			{{/3.I}}
 			{{#4.I}}
-				<p>The companies get the following victory points (VP): 3 VP for each own land tile, 5 VP for each own city.</p>
+				<p>The companies get the following victory points (VP): 3 VP for each owned land tile, 5 VP for each owned city.</p>
 			{{/4.I}}
 			{{#5.I}}
 				<p>The companies score victory points (VP) during the game for exploring, settling and activating tiles.</p>
@@ -1371,7 +1371,7 @@
 				<p>The player with the most VP wins the game! In case of a tie, the tied player with the most money wins the game.</p>
 			{{/3.I}}
 			{{#4.I}}
-				<p>The players get the following victory points (VP): 3 VP for each own land tile, 5 VP for each own city.</p>
+				<p>The players get the following victory points (VP): 3 VP for each owned land tile, 5 VP for each owned city.</p>
 				{{#7.III}}
 					<p>The players get additional victory points (VP) for majorities during the final scoring, see table and example of the <b>Final Scoring</b>.</p>
 				{{/7.III}}
