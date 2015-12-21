@@ -99,11 +99,10 @@
 	<div class="row name">
 		<div class="col-md-12 col-xs-12">
 			<h1>
-				<span class="glyphicon glyphicon-random" style="cursor: pointer;" id="randomize"></span>
-				<span class="glyphicon glyphicon-edit" style="cursor: pointer;" id="editbutton"></span>
+				<span class="glyphicon glyphicon-menu-hamburger" style="cursor: pointer;" id="randomize"></span>
 				World
 				<span id="worldno"><span class="mod{{world.0}}">{{world.0}}</span><span class="mod{{world.1}}">{{world.1}}</span><span class="mod{{world.2}}">{{world.2}}</span></span>
-				<input type="text" id="worldno-entry" style="display: none">
+				<input type="number" id="worldno-entry" style="display: none">
 				: {{long_name}}
 			</h1>
 		</div>
@@ -2053,7 +2052,7 @@
 		$("#target_gameplay").html(buildRules($('#template_gameplay').html()));
 		$("#target_ending").html(buildRules($('#template_ending').html()));
 
-		$("#editbutton").click(function() {
+		$("#worldno").click(function() {
 			$("#worldno-entry, #worldno").toggle();
 
 			var entry = $("#worldno-entry");
