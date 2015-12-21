@@ -149,6 +149,11 @@
 	</div>
 </script>
 <script id="template_setup" type="x-tmpl-mustache">
+	{{#shortrules}}<div class="row warning">
+		<div class="col-md-12 col-xs-12">
+			<p>This is a summary sheet of the special rules for world {{world.0}}{{world.1}}{{world.2}}. A more comprhensive Ruleset for this world can be found here. can b foundThe complete rules are in the rules booklet!</p>
+		</div>
+	</div>{{/shortrules}}
 	<div class="row section">
 		<div class="col-md-2 col-xs-2"><h1>Special game parts</h1></div>
 		<div class="col-md-10 col-xs-10">
@@ -159,11 +164,6 @@
 			</ul>
 		</div>
 	</div>
-	{{#company}}<div class="row warning">
-		<div class="col-md-12 col-xs-12">
-			<p>IMPORTANT: Because of the complexity of the game rules you only find a summary of the most important details. The complete rules are in the rules booklet!</p>
-		</div>
-	</div>{{/company}}
 	<div class="row section">
 		<div class="col-md-2 col-xs-2"><h1>Game Preparation</h1></div>
 		<div class="col-md-10 col-xs-10">
