@@ -1296,10 +1296,6 @@
 
 	{{#capture}}
 		{{#9}}
-			{{#9.I}}
-				<p>The players determine their wealth: Each player counts his money and adds the actual share value of each of his own shares according to the share value board to his money (the president&rsquo;s share counts twice). {{#7.III}}The share value of each share is $1 higher for each VP of the stock company.{{/7.III}}</p>
-				<p>The player with the biggest wealth wins the game! In case of a tie, all tied players share the victory.</p>
-			{{/9.I}}
 			{{#9.II}}
 				<p>The players determine the victory points (VP) of the 5 stock companies.</p> 
 			{{/9.II}}
@@ -1332,9 +1328,12 @@
 				<p>The companies take the goods {{#1}}on top of their trading houses{{/1}}{{^1}}in front of the company board{{/1}} and may score {{#4}}2 goods{{/4}}{{^4}}1 good{{/4}} for each of their trading houses{{^4}} (up to 2 goods for the headquarters in his capital){{/4}}. The company gets victory points (VP) for all scored goods, see the table and example <b>Final Scoring</b>. Before scoring, the company may exchange goods in a ratio of 2:1 into different goods types, to get more valuable sets.</p>
 			{{/8.I}}
 			{{#7.III}}
-				<p>The companies get additional victory points (VP) for majorities during the final scoring, see table and example of the <b>Final Scoring</b>.</p>
+				<p>The companies get {{^9.I}}additional {{/9.I}}victory points (VP) for majorities during the final scoring, see table and example of the <b>Final Scoring</b>.</p>
 			{{/7.III}}
-		
+			{{#9.I}}
+				<p>The players determine their wealth: Each player counts his money and adds the actual share value of each of his own shares according to the share value board to his money (the president&rsquo;s share counts twice). {{#7.III}}The share value of each share is $1 higher for each VP of the stock company.{{/7.III}}</p>
+				<p>The player with the biggest wealth wins the game! In case of a tie, all tied players share the victory.</p>
+			{{/9.I}}
 			{{#9.II}}
 				<p>The best stock companies (having the most VP) get bonus VP, see table <b>Bonus VP at the Final Scoring</b>.</p>
 				<p>The players get VP for each of their shares equal to the total number of VP of the matching stock companies (the president&rsquo;s share counts twice!).</p>
