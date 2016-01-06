@@ -870,7 +870,7 @@
 				{{/4.III}}
 				{{#4.III}}As soon as the {{agent}} moves a resident onto an opposing tile, a fight follows immediately, see <b>Fight Sequence</b>.{{/4.III}}
 			</p>
-			{{#8}}<p>There are no fights in cities, so any number of {{owners}} may have their own trading houses there. The trading houses of free cities also count when calculating prices of {{agent}} trading houses. If the {{agent}} conquers a land tile, he also conquers an existing plant. If the land tile is neutralized, the plant remains abandoned for now.</p>{{/8}}
+			{{#8}}{{^8.III}}<p>There are no fights in cities, so any number of {{owners}} may have their own trading houses there. The trading houses of free cities also count when calculating prices of {{agent}} trading houses. If the {{agent}} conquers a land tile, he also conquers an existing plant. If the land tile is neutralized, the plant remains abandoned for now.</p>{{/8.III}}{{/8}}
 			{{^8}}
 				<p>The free cities defend themselves with their barracks and militia.</p>
 				{{^4.III}}{{#2}}
