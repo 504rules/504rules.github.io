@@ -60,8 +60,10 @@
 	<div id="target_examples">Loading Examples...</div>
 </div>
 <div class="container">
-	<div id="target_gameplay">Loading Gameplay...</div>
-	<div id="target_ending">Loading Scoring...</div>
+	<div id="target_phase12">Loading Phases 1 and 2...</div>
+	<div id="target_phase3abcd">Loading Phase 3A-D...</div>
+	<div id="target_phase3efgh">Loading Phase 3E-H...</div>
+	<div id="target_scoring">Loading Scoring...</div>
 </div>
 
 <script id="name-template" type="x-tmpl-mustache">
@@ -709,7 +711,7 @@
 		{{/9.III}}
 	</div>
 </script>
-<script id="template_gameplay" type="x-tmpl-mustache">
+<script id="template_phase12" type="x-tmpl-mustache">
 	{{#company}}
 		<div class="row section">
 			<div class="col-md-2 col-xs-2 mod9"><h1>Share Round</h1></div>
@@ -802,7 +804,8 @@
 			</div>
 		</div>
 	{{/3.III}}{{/3}}
-
+</script>
+<script id="template_phase3abcd" type="x-tmpl-mustache">
 	{{#capture}}
 		{{#2}}{{#residents}}
 			<p>At the start of his turn, the {{agent}} may change {{fowns}} capital by exchanging {{owns}} headquarters with 1 of {{fowns}} own settlements in any other city.</p>
@@ -983,7 +986,8 @@
 			<div class="col-md-10 col-xs-10">{{{captured}}}</div>
 		</div>
 	{{/hascapture}}
-
+</script>
+<script id="template_phase3efgh" type="x-tmpl-mustache">
 	{{#capture}}
 		{{#1}}
 			{{^1.III}}<p>The {{agent}} may transport 1 good of any type or up to 2 of {{fowns}} exhausted residents per cargo hold. He may load and unload the transport trolley any number of times. If he unloads goods on a land tile or a city, which has no demand for these goods{{#8}}{{^8.III}} (or without one of {{fowns}} trading houses){{/8.III}}{{/8}}, the goods remain there until any {{owner}} loads them again onto {{own}} transport trolley.</p>{{/1.III}}
@@ -1160,7 +1164,7 @@
 		</div>
 	{{/hascapture}}
 </script>
-<script id="template_ending" type="x-tmpl-mustache">
+<script id="template_scoring" type="x-tmpl-mustache">
 	{{#capture}}
 		{{#2.III}}
 			{{#1.I}}<p>Award 5 VP to the first {{owner}} delivering one of the good types a second time from the stack set aside for this purpose.</p>{{/1.I}}
@@ -2044,13 +2048,11 @@
 			'II': $.extend(true, {}, module_defs[world[1]]['II']),
 			'III': $.extend(true, {}, module_defs[world[2]]['III']),
 		};
-		
-		$("#target_head").html(buildRules($('#template_head').html()));
-		$("#target_setup").html(buildRules($('#template_setup').html()));
-		$("#target_privileges").html(buildRules($('#template_privileges').html()));
-		$("#target_examples").html(buildRules($('#template_examples').html()));
-		$("#target_gameplay").html(buildRules($('#template_gameplay').html()));
-		$("#target_ending").html(buildRules($('#template_ending').html()));
+
+		var pageSections = ['head','setup','privileges','examples','phase12','phase3abcd','phase3efgh','scoring'];
+		$.each(pageSections, function(index, value) {
+			$('#target_' + value).html(buildRules($('#template_' + value).html()));
+		});
 
 		$("#worldno").click(function() {
 			$("#worldno-entry, #worldno").toggle();
