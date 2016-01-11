@@ -88,7 +88,6 @@
 		<div class="col-md-12 col-xs-12">
 			<div class="quickMenu">
 				<div class="randomizer"><span class="glyphicon glyphicon-random btn-sm" style="cursor: pointer;"></span></div>
-
 				<div id="printicon"><span class="glyphicon glyphicon-print btn-sm" style="cursor: pointer;"></span></div>
 				<div id="menuToggle"><span class="glyphicon glyphicon-menu-hamburger btn-sm" style="cursor: pointer;"></span></div>
 			</div>
@@ -2091,13 +2090,14 @@
 		
 		$('#menuToggle').on('click', function (e) { toggleMenu(); });
 		$('#printicon').on('click', function (e) { window.print(); });
-		$('.randomizer').each( function() { $(this).on('click', function (e) { randomizeWorlds(); }) });
+		$('div.randomizer').on('click', function (e) { randomizeWorlds(); });
 
 	}
 	
 	$(function() { 
 		$('#selectall').on('click', function (e) { setModuleSelect('stateon'); });
 		$('#selectnone').on('click', function (e) { setModuleSelect('stateoff'); });
+		$('button.randomizer').on('click', function (e) { randomizeWorlds(); });
 		
 		$('.modules').find('button[class^=mod]').each( function () {
 			$(this).on('click', function (e) { toggleModuleSelect(this); });
