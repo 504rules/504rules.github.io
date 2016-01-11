@@ -13,46 +13,32 @@
 	<style type="text/css"></style>
 </head>
 <body>
-<div id="menu">
-	<form id="ModulesForm">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12 col-xs-12">
-					<div class="row">
-						<div class="col-md-12 col-xs-12">
-							<p>Please pick your preferred modules:</p>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-7 col-xs-12 modules">
-							<div class="mod1 stateon"><img src="img/modules/icon-mod1.png" alt="Pick up & Deliver (1)" title="Pick up & Deliver (1)" /></div>
-							<div class="mod2 stateon"><img src="img/modules/icon-mod2.png" alt="Race (2)" title="Race (2)" /></div>
-							<div class="mod3 stateon"><img src="img/modules/icon-mod3.png" alt="Privileges (3)" title="Privileges (3)" /></div>
-							<div class="mod4 stateon"><img src="img/modules/icon-mod4.png" alt="Military (4)" title="Military (4)" /></div>
-							<div class="mod5 stateon"><img src="img/modules/icon-mod5.png" alt="Exploring (5)" title="Exploring (5)" /></div>
-							<div class="mod6 stateon"><img src="img/modules/icon-mod6.png" alt="Roads (6)" title="Roads (6)" /></div>
-							<div class="mod7 stateon"><img src="img/modules/icon-mod7.png" alt="Majorities (7)" title="Majorities (7)" /></div>
-							<div class="mod8 stateon"><img src="img/modules/icon-mod8.png" alt="Production (8)" title="Production (8)" /></div>
-							<div class="mod9 stateon"><img src="img/modules/icon-mod9.png" alt="Shares (9)" title="Shares (9)" /></div>
-						</div>
-						<div class="col-md-5 col-xs-12">
-							<div class="btn-group" role="group" aria-label="randomizer">
-								<button class="btn btn-default" type="button" id="selectnone">deselect all</button> 
-								<button class="btn btn-default" type="button" id="selectall">select all</button>
-							</div>
-							<div class="btn-group" role="group" aria-label="randomizer">
-								<button class="btn btn-default" type="button" id="randomizer">randomize</button> 
-							</div>
-							<div class="btn-group" role="group" aria-label="randomizer">
-								<button class="btn btn-default" type="button" id="menuclose">x</button>
-							</div>
-						</div>
-					</div>
+<nav class="navbar navbar-default navbar-fixed-top" id="menu">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-8">
+				<p>Please select your preferred modules:</p>
+				<div class="btn-group modules" role="group" aria-label="randomizer">
+					<button class="mod1 btn stateon"><img src="img/modules/icon-mod1.png" alt="Pick up & Deliver (1)" title="Pick up & Deliver (1)" /></button>
+					<button class="mod2 btn stateon"><img src="img/modules/icon-mod2.png" alt="Race (2)" title="Race (2)" /></button>
+					<button class="mod3 btn stateon"><img src="img/modules/icon-mod3.png" alt="Privileges (3)" title="Privileges (3)" /></button>
+					<button class="mod4 btn stateon"><img src="img/modules/icon-mod4.png" alt="Military (4)" title="Military (4)" /></button>
+					<button class="mod5 btn stateon"><img src="img/modules/icon-mod5.png" alt="Exploring (5)" title="Exploring (5)" /></button>
+					<button class="mod6 btn stateon"><img src="img/modules/icon-mod6.png" alt="Roads (6)" title="Roads (6)" /></button>
+					<button class="mod7 btn stateon"><img src="img/modules/icon-mod7.png" alt="Majorities (7)" title="Majorities (7)" /></button>
+					<button class="mod8 btn stateon"><img src="img/modules/icon-mod8.png" alt="Production (8)" title="Production (8)" /></button>
+					<button class="mod9 btn stateon"><img src="img/modules/icon-mod9.png" alt="Shares (9)" title="Shares (9)" /></button>
 				</div>
+				<div class="btn-group modulesbtn-group-lg" role="group" aria-label="randomizer">
+					<button class="btn btn-default" type="button" id="selectnone" title="deselect all"><span class="glyphicon glyphicon-remove" style="cursor: pointer;"></span></button> 
+					<button class="btn btn-default" type="button" id="selectall" title="select all"><span class="glyphicon glyphicon-ok" style="cursor: pointer;"></span></button>
+					<button class="btn btn-default randomizer" type="button" title="randomize"><span class="glyphicon glyphicon-random" style="cursor: pointer;"></span></button> 
+				</div>
+				<p class="moduleDescription">&nbsp;</p>
 			</div>
 		</div>
-	</form>
-</div>
+	</div>
+</nav>
 <div class="container">
 	<div id="target_head">Loading Head...</div>
 	<div id="target_setup">Loading Setup...</div>
@@ -100,10 +86,14 @@
 <script id="template_head" type="x-tmpl-mustache">
 	<div class="row name">
 		<div class="col-md-12 col-xs-12">
-			<h1>
-				<span class="glyphicon glyphicon-menu-hamburger" style="cursor: pointer;" id="randomize"></span>
-				World
-				<span id="worldno" style="cursor:pointer;"><span class="mod{{world.0}}">{{world.0}}</span><span class="mod{{world.1}}">{{world.1}}</span><span class="mod{{world.2}}">{{world.2}}</span></span>
+			<div class="quickMenu">
+				<div class="randomizer"><span class="glyphicon glyphicon-random btn-sm" style="cursor: pointer;"></span></div>
+
+				<div id="printicon"><span class="glyphicon glyphicon-print btn-sm" style="cursor: pointer;"></span></div>
+				<div id="menuToggle"><span class="glyphicon glyphicon-menu-hamburger btn-sm" style="cursor: pointer;"></span></div>
+			</div>
+
+			<h1>World <span id="worldno" style="cursor:pointer;"><span class="mod{{world.0}}">{{world.0}}</span><span class="mod{{world.1}}">{{world.1}}</span><span class="mod{{world.2}}">{{world.2}}</span></span>
 				<input type="number" id="worldno-entry" maxlength="3" style="display: none">
 				: {{long_name}}
 			</h1>
@@ -409,7 +399,7 @@
 						<p>The current company order is Orange, Blue, White, Green and Purple, and on the previous turn they earned $40, $68, $68, $40 and $50 dollars respectively. Blue and White have equal highest income ($68); as Blue is earlier in the turn she pays $2 for every full $10 income, in this case $12. Orange and Green have equal lowest income; as Green is later in the turn he doesn&rsquo;t pay any tax. White, Purple and Orange pay $6, $5 and $4 respectively. </p>
 					</div>
 				{{/9.I}}
-				<div class="note col-md-3 col-xs-4">
+				<div class="note col-md-3 col-xs-6">
 					<h2>Factory:</h2>
 					<p>The players pay the following prices for building a factory on a city.</p>
 					<table>
@@ -420,7 +410,7 @@
 			{{/3.III}}
 		{{/3}}
 		{{#1}}
-			<div class="note col-md-2 col-xs-3">
+			<div class="note col-md-2 col-xs-4">
 				<h2>Prices for Upgrades</h2>
 				<table>
 					<tr><th>4, 5, 7 MP</th><td>each {{#1.III}}{{#residents}}$30{{/residents}}{{^residents}}$50{{/residents}}{{/1.III}}{{^1.III}}$50{{/1.III}}</td></tr>
@@ -449,7 +439,7 @@
 			{{/1.I}}
 		{{/1}}
 		{{#2.I}}
-			<div class="note col-md-4 col-xs-4">
+			<div class="note col-md-4 col-xs-6">
 				<h2>Final Scoring:</h2>
 				<p>The player gets the following victory points (VP) for their population on X city cards, whereby X equals the # of cities triggering the game end.</p>
 				<table>
@@ -1428,9 +1418,9 @@
 		var modules = [];
 		var premodules = [];
 		
-		$('.modules').find('div[class^=mod]').each( function () {
+		$('.modules').find('button[class^=mod]').each( function () {
 			var classes = $(this).attr('class').split(' ');
-			states[classes[1]].push(classes[0].substring(3));
+			states[classes[2]].push(classes[0].substring(3));
 		});
 		
 		$.map(states['statelock'], function(value, key) { modules.push(value);} );
@@ -1445,7 +1435,7 @@
 	}
 
 	function setModuleSelect(newState) {
-		$('.modules').find('div[class^=mod]').each( function () {
+		$('.modules').find('button[class^=mod]').each( function () {
 			$(this).removeClass('stateon').removeClass('statelock').removeClass('stateoff').addClass(newState);
 		});
 		$('.modules').find('div.locked').remove();
@@ -1458,7 +1448,7 @@
 		var newState = "";
 		var statelock = $('.modules').find('.statelock').length;
 		
-		switch(classes[1]) {
+		switch(classes[2]) {
 			case "stateon": newState = statelock<3 ? "statelock":"stateoff"; break;
 			case "statelock": newState = "stateoff"; break;
 			case "stateoff": newState = "stateon"; break;
@@ -1471,15 +1461,20 @@
 		$('.modules').find('.statelock').append('<div class="locked"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></div>');
 
 		checkThree($('.modules').find('.statelock').length+$('.modules').find('.stateon').length);
-		
+		changeModuleDescription(module);
 	}
 	
+	function changeModuleDescription(module) {
+		var classes = $(module).attr('class').split(' ');
+		var state = "";
+		$('.moduleDescription').html($(module).find('img').attr('title')+' ('+states_defs[classes[2]]+')');
+	}
 	
 	function checkThree(value) {
 		if(value>=3) {
-			$('#randomizer').prop('disabled', false).css("opacity", "1");;
+			$('.randomizer').prop('disabled', false).css("opacity", "1");;
 		} else {
-			$('#randomizer').prop('disabled', true).css("opacity", "0.2");;
+			$('.randomizer').prop('disabled', true).css("opacity", "0.2");;
 		}
 	}
 	
@@ -1526,6 +1521,12 @@
 	var shares_defs = {
 		"company": {agent: 'president', sagent: 'the president', owner: 'company', owners:'companies' , fowns: 'the company\'s', owns: 'its', company: true},
 		"player": {agent: 'player', sagent: 'he', owner: 'player', owners:'players',  fowns: 'his', owns: 'his', company: false}
+	}
+	
+	var states_defs = {
+		"stateon": "on",
+		"stateoff": "off",
+		"statelock": "locked"
 	}
 	
 	var privilege_defs = {
@@ -2039,6 +2040,17 @@
 		
 	}
 	
+	function toggleMenu() {
+		if($("#menu").is(':hidden')) {
+			$("#menu").slideDown(100, function () {
+				$("body").css({ "padding-top": $("nav").outerHeight()+"px" });
+			});
+		} else {
+			$("#menu").slideUp(100);		
+			$("body").css({ "padding-top": "0px" });
+		}
+	}
+	
 	function load() {
 		
 		world = validate_world(window.location.hash.substr(1)) || ['1', '2', '3'];
@@ -2077,23 +2089,21 @@
 			$("#worldno-entry, #worldno").toggle();
 		});
 		
-		$('#randomize').on('click', function (e) { $("#menu").slideDown(100); });
+		$('#menuToggle').on('click', function (e) { toggleMenu(); });
+		$('#printicon').on('click', function (e) { window.print(); });
+		$('.randomizer').each( function() { $(this).on('click', function (e) { randomizeWorlds(); }) });
 
 	}
 	
 	$(function() { 
-		$('#randomizer').on('click', function (e) { randomizeWorlds(); });
 		$('#selectall').on('click', function (e) { setModuleSelect('stateon'); });
 		$('#selectnone').on('click', function (e) { setModuleSelect('stateoff'); });
 		
-		$('.modules').find('div[class^=mod]').each( function () {
+		$('.modules').find('button[class^=mod]').each( function () {
 			$(this).on('click', function (e) { toggleModuleSelect(this); });
+			$(this).on('mouseover', function (e) { changeModuleDescription(this); });
 		});
 		
-		$("input[name='world\[\]']:checkbox").on('click', function (e) {
-			checkThree($("input[name='world\[\]']:checkbox:checked").map(function() { return this.value; }).get());
-		});
-		$('#menuclose').on('click', function (e) { $("#menu").slideUp(100); });
 	});
 
 	
