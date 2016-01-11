@@ -13,8 +13,19 @@ body { background-color:#ddd; }
 	display:flex;
 }
 
-#editbutton, #randomize {
-	margin-right: 5px;
+.quickMenu {
+	position:absolute;
+	right:0.6em;
+	top:1em;
+}
+
+.quickMenu div {
+	display:inline-block;
+}
+
+.quickMenu .btn-sm {
+	font-size:1.5em;
+	padding:5px 5px;
 }
 
 .top p {
@@ -128,7 +139,11 @@ table th {
 .heading p { border:none; margin:0; padding:0; }
 
 
-
+.navbar-default {
+    background-color: #ddd;
+    border-color: #E7E7E7;
+	background-image: linear-gradient(to bottom,#ccc 0,#bbb 100%);
+}
 
 .top h2 {
 	font-size: 1.1em;
@@ -141,6 +156,7 @@ table th {
 	font-weight: bold;
 	margin: 1em 0;
 	line-height: 1.5em;	
+	padding-right:4em;
 }
 
 .name h1 span {
@@ -254,16 +270,16 @@ table th {
 	display:none;
 }
 
-#menu .modules div {
-	padding:10px;
-    white-space: nowrap;
-	width:auto;
-	display:inline-block;
-	position:relative;
-	cursor:pointer;
+#menu .modules button img {
+	width:100%;
+	max-width:32px;
 }
 
-#menu .modules div .locked {
+
+
+#menu p { color:#000; border:none; margin:0; padding:0; }
+
+#menu .modules button .locked {
 	position:absolute;
 	right:0;
 	top:0;
@@ -273,31 +289,26 @@ table th {
 	opacity:0.7;
 }
 
-#menu .modules div.stateon {
+#menu .modules button.stateon {
 }
-#menu .modules div.stateon img {
+#menu .modules button.stateon img {
 	opacity:1;
 }
-#menu .modules div.stateoff  {
+#menu .modules button.stateoff  {
 	background-color:#ccc;
 	opacity:0.7;
 }
-#menu .modules div.stateoff img {
+#menu .modules button.stateoff img {
 	opacity:0.3;
 }
 
-#menu .modules div.statelock {
+#menu .modules button.statelock {
 	opacity:1;
 }
 
 #menu input {
 	vertical-align:text-bottom;
 	margin-right:6px;
-}
-
-#menu button {
-	margin-top:10px;
-	color:#444;
 }
 
 #menu label {
