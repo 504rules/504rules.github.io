@@ -14,17 +14,17 @@ body { background-color:#ddd; }
 	display:flex;
 }
 
-.quickMenu {
+.quickmenu {
 	position:absolute;
 	right:0.6em;
 	top:1em;
 }
 
-.quickMenu div {
+.quickmenu div {
 	display:inline-block;
 }
 
-.quickMenu .btn-sm {
+.quickmenu .btn-sm {
 	font-size:1.5em;
 	padding:5px 5px;
 }
@@ -404,6 +404,6 @@ table th {
 	#target_privileges { display:none; }
 	#target_privileges_print { display:block; }
 
-	.quickMenu { display:none; }
+	.quickmenu { display:none; }
 
 }
