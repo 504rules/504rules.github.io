@@ -17,24 +17,54 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-8">
-				<p>Please select your preferred modules:</p>
-				<div class="btn-group modules" role="group" aria-label="randomizer">
-					<button class="mod1 btn stateon"><img src="img/modules/icon-mod1.png" alt="Pick up & Deliver (1)" title="Pick up & Deliver (1)" /></button>
-					<button class="mod2 btn stateon"><img src="img/modules/icon-mod2.png" alt="Race (2)" title="Race (2)" /></button>
-					<button class="mod3 btn stateon"><img src="img/modules/icon-mod3.png" alt="Privileges (3)" title="Privileges (3)" /></button>
-					<button class="mod4 btn stateon"><img src="img/modules/icon-mod4.png" alt="Military (4)" title="Military (4)" /></button>
-					<button class="mod5 btn stateon"><img src="img/modules/icon-mod5.png" alt="Exploring (5)" title="Exploring (5)" /></button>
-					<button class="mod6 btn stateon"><img src="img/modules/icon-mod6.png" alt="Roads (6)" title="Roads (6)" /></button>
-					<button class="mod7 btn stateon"><img src="img/modules/icon-mod7.png" alt="Majorities (7)" title="Majorities (7)" /></button>
-					<button class="mod8 btn stateon"><img src="img/modules/icon-mod8.png" alt="Production (8)" title="Production (8)" /></button>
-					<button class="mod9 btn stateon"><img src="img/modules/icon-mod9.png" alt="Shares (9)" title="Shares (9)" /></button>
+				<div class="panel panel-default">
+					<div class="panel-heading"><strong>Please select your preferred modules:</strong></div>
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-md-8">
+								<div class="btn-group modules" role="group" aria-label="randomizer">
+									<button class="mod1 btn stateon"><img src="img/modules/icon-mod1.png" alt="Pick up & Deliver (1)" title="Pick up & Deliver (1)" /></button>
+									<button class="mod2 btn stateon"><img src="img/modules/icon-mod2.png" alt="Race (2)" title="Race (2)" /></button>
+									<button class="mod3 btn stateon"><img src="img/modules/icon-mod3.png" alt="Privileges (3)" title="Privileges (3)" /></button>
+									<button class="mod4 btn stateon"><img src="img/modules/icon-mod4.png" alt="Military (4)" title="Military (4)" /></button>
+									<button class="mod5 btn stateon"><img src="img/modules/icon-mod5.png" alt="Exploring (5)" title="Exploring (5)" /></button>
+									<button class="mod6 btn stateon"><img src="img/modules/icon-mod6.png" alt="Roads (6)" title="Roads (6)" /></button>
+									<button class="mod7 btn stateon"><img src="img/modules/icon-mod7.png" alt="Majorities (7)" title="Majorities (7)" /></button>
+									<button class="mod8 btn stateon"><img src="img/modules/icon-mod8.png" alt="Production (8)" title="Production (8)" /></button>
+									<button class="mod9 btn stateon"><img src="img/modules/icon-mod9.png" alt="Shares (9)" title="Shares (9)" /></button>
+								</div>
+							</div>
+							<div class="col-md-4 text-center" style="padding-top:0.5em;">
+								<div class="btn-group modules btn-group-lg" role="group" aria-label="randomizer">
+									<button class="btn btn-default" type="button" id="selectnone" title="deselect all"><span class="glyphicon glyphicon-unchecked" style="cursor: pointer;"></span></button> 
+									<button class="btn btn-default" type="button" id="selectall" title="select all"><span class="glyphicon glyphicon-check" style="cursor: pointer;"></span></button>
+								</div>
+								<div class="btn-group modules btn-group-lg" role="group" aria-label="randomizer">
+									<button class="btn btn-default randomizer" type="button" title="randomize"><span class="glyphicon glyphicon-random" style="cursor: pointer;"></span></button> 
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="panel-footer">
+						<p class="moduleDescription">&nbsp;</p>
+					</div>
+				</div>				
+			</div>
+			<div class="col-md-4">
+				<div class="panel panel-default">
+					<div class="panel-heading"><strong>Other options:</strong></div>
+					<div class="panel-body">
+						<div class="form-horizontal">
+							<div class="form-group">
+								<div class="col-sm-offset-1 col-sm-11">
+									<div class="checkbox">
+										<label><input type="checkbox" name="printPrivileges" id="printPrivileges" value="-1" checked />Print privileges <small>(yes/no)</small></label>
+									</div>				
+								</div>				
+							</div>				
+						</div>				
+					</div>
 				</div>
-				<div class="btn-group modulesbtn-group-lg" role="group" aria-label="randomizer">
-					<button class="btn btn-default" type="button" id="selectnone" title="deselect all"><span class="glyphicon glyphicon-remove" style="cursor: pointer;"></span></button> 
-					<button class="btn btn-default" type="button" id="selectall" title="select all"><span class="glyphicon glyphicon-ok" style="cursor: pointer;"></span></button>
-					<button class="btn btn-default randomizer" type="button" title="randomize"><span class="glyphicon glyphicon-random" style="cursor: pointer;"></span></button> 
-				</div>
-				<p class="moduleDescription">&nbsp;</p>
 			</div>
 		</div>
 	</div>
@@ -50,6 +80,9 @@
 	<div id="target_phase3abcd">Loading Phase 3A-D...</div>
 	<div id="target_phase3efgh">Loading Phase 3E-H...</div>
 	<div id="target_scoring">Loading Scoring...</div>
+</div>
+<div class="container printPriv">
+	<div id="target_privileges_print">Loading Privilege Cards for Printing...</div>
 </div>
 
 <script id="name-template" type="x-tmpl-mustache">
@@ -87,13 +120,13 @@
 	<div class="row name">
 		<div class="col-md-12 col-xs-12">
 			<div class="quickMenu">
-				<div class="randomizer"><span class="glyphicon glyphicon-random btn-sm" style="cursor: pointer;"></span></div>
-				<div id="printicon"><span class="glyphicon glyphicon-print btn-sm" style="cursor: pointer;"></span></div>
-				<div id="menuToggle"><span class="glyphicon glyphicon-menu-hamburger btn-sm" style="cursor: pointer;"></span></div>
+				<div class="randomizer"><span class="glyphicon glyphicon-random btn-sm" style="cursor: pointer;"" title="randomize"></span></div>
+				<div id="printicon"><span class="glyphicon glyphicon-print btn-sm" style="cursor: pointer;"" title="print"></span></div>
+				<div id="menuToggle"><span class="glyphicon glyphicon-menu-hamburger btn-sm" style="cursor: pointer;"" title="Menu"></span></div>
 			</div>
 
 			<h1>World <span id="worldno" style="cursor:pointer;"><span class="mod{{world.0}}">{{world.0}}</span><span class="mod{{world.1}}">{{world.1}}</span><span class="mod{{world.2}}">{{world.2}}</span></span>
-				<input type="number" id="worldno-entry" maxlength="3" style="display: none">
+				<input type="number" id="worldno-entry" maxlength="3" style="display:none;" />
 				: {{long_name}}
 			</h1>
 		</div>
@@ -832,7 +865,7 @@
 			<p><b>Example:</b> If the {{owner}} owns 4 plants, {{sagent}} may only buy up to 6 residents.</p>
 		{{/8.III}}
 		{{#residents}}
-			<p>The {{agent}} may buy residents for $10 each {{#company}}(paying from his company's holdings){{/company}} and place them on the board. (subject to placement rules)</p>
+			<p>The {{agent}} may buy residents for $10 each {{#company}}(paying from his company&rsquo;s holdings){{/company}} and place them on the board. (subject to placement rules)</p>
 		{{/residents}}
 	{{/capture}}
 	{{#hascapture}}
@@ -1398,9 +1431,9 @@
 		</div>
 	{{/hascapture}}
 	<div class="row section footer">
-		<div class="col-md-12"><p>This is a fan project for the game 504. All contents are supplied without liability and are subject to change. 504 rule text is copyright 2f-spiele.</p>
-		</div>
+		<div class="col-md-12"><p>This is a fan project for the game 504. All contents are supplied without liability and are subject to change. 504 rule text is copyright 2f-spiele.</p></div>
 	</div>
+	
 </script>
 <script>
 	function explorer_map(maps) {
@@ -1467,6 +1500,15 @@
 		var classes = $(module).attr('class').split(' ');
 		var state = "";
 		$('.moduleDescription').html($(module).find('img').attr('title')+' ('+states_defs[classes[2]]+')');
+	}
+	
+	function togglePrintPrivileges() {
+		if($('#printPrivileges').prop( "checked" )) {
+			$('.container.printPriv').removeClass('printoff');
+		} else {
+			$('.container.printPriv').addClass('printoff');
+		}
+		
 	}
 	
 	function checkThree(value) {
@@ -2064,7 +2106,13 @@
 		$.each(pageSections, function(index, value) {
 			$('#target_' + value).html(buildRules($('#template_' + value).html()));
 		});
-
+		
+		var tmp = $('#template_privileges').html();
+		tmp = tmp.replace(/ col-xs-12/g, ' col-xs-6');
+		
+		$('#target_privileges_print').html(buildRules(tmp));
+		
+		
 		$("#worldno").click(function() {
 			$("#worldno-entry, #worldno").toggle();
 
@@ -2098,6 +2146,7 @@
 		$('#selectall').on('click', function (e) { setModuleSelect('stateon'); });
 		$('#selectnone').on('click', function (e) { setModuleSelect('stateoff'); });
 		$('button.randomizer').on('click', function (e) { randomizeWorlds(); });
+		$('#printPrivileges').on('click', function (e) { togglePrintPrivileges(); });
 		
 		$('.modules').find('button[class^=mod]').each( function () {
 			$(this).on('click', function (e) { toggleModuleSelect(this); });
@@ -2115,7 +2164,6 @@
 <script>
 	// Via http://stackoverflow.com/questions/12556593/determining-a-page-is-outdated-on-github-pages
 	// Check if a new cache is available on page load.
-
 
 	window.addEventListener('load', function(e) {
 		var appCache = window.applicationCache;
