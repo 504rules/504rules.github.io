@@ -263,7 +263,7 @@ table th {
 .privileges>div { padding-bottom:20px; }
 .cards h3 { margin: 0 0 0.7em 0; padding-bottom: 0.3em; border-bottom:1px dashed rgba(56, 143, 127,0.3); font-size:1.5em; }
 
-#target_privileges_print { display:none; }
+#target-privileges-print { display:none; }
 
 #menu {
 	width:100%;
@@ -401,8 +401,8 @@ table th {
 
 	#worldno span { padding:0; }
 	
-	#target_privileges { display:none; }
-	#target_privileges_print { display:block; }
+	#target-privileges { display:none; }
+	#target-privileges-print { display:block; }
 
 	.quickmenu { display:none; }
 
