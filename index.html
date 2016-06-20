@@ -272,11 +272,11 @@
 			{{/1.III}}{{/1}}
 			{{#4}}
 				{{#9}}
-					{{^9.III}}<p>The stock companies may choose any capitals at the edge of the map.</p>{{/9.III}}
-					{{#9.III}}<p>Depending on the # of players, choose the following capitals: 2♟: Capitals are across from each other. 3♟: Capitals are equidistant from each other. 4♟: Both unselected capitals are across from each other.</p>{{/9.III}}
+					{{^9.III}}<p>The stock companies may choose any capitals{{^mapnum.1}} at the edge of the map{{/mapnum.1}}.</p>{{/9.III}}
+					{{#9.III}}<p>{{#mapnum.1}}Each player chooses a different capital.  The players cannot choose the central city!{{/mapnum.1}}{{^mapnum.1}}Depending on the # of players, choose the following capitals: 2♟: Capitals are across from each other. 3♟: Capitals are equidistant from each other. 4♟: Both unselected capitals are across from each other.{{/mapnum.1}}</p>{{/9.III}}
 				{{/9}}
-				{{^9}}<p>Depending on the # of players, choose the following capitals: 2♟: Capitals are across from each other. 3♟: Capitals are equidistant from each other. 4♟: Both unselected capitals are across from each other.</p>{{/9}}
-				{{#1}}{{^1.III}}{{^company}}<p>When playing with 2♟/4♟ Players cannot choose cities 5 or 10 for their capital. (This allows all players to comply with both rules for capital placement.)</p>{{/company}}{{/1.III}}{{/1}}
+				{{^9}}<p>{{#mapnum.1}}Each player chooses a different capital.  The players cannot choose the central city!{{/mapnum.1}}{{^mapnum.1}}Depending on the # of players, choose the following capitals: 2♟: Capitals are across from each other. 3♟: Capitals are equidistant from each other. 4♟: Both unselected capitals are across from each other.{{/mapnum.1}}</p>{{/9}}
+				{{#1}}{{^1.III}}{{^company}}{{^mapnum.1}}<p>When playing with 2♟/4♟ Players cannot choose cities 5 or 10 for their capital. (This allows all players to comply with both rules for capital placement.)</p>{{/mapnum.1}}{{/company}}{{/1.III}}{{/1}}
 				{{#8}}
 					{{^8.III}}<p>Place 1 barrack on all free cities. These barracks are considered trading houses.</p>{{/8.III}}
 					{{#8.III}}<p>Place 1 barrack and 1 militia on all free cities which are not chosen as capitals.</p>{{/8.III}}
