@@ -17,39 +17,72 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-8">
-				<p>Please select your preferred modules:</p>
-				<div class="btn-group modules" role="group" aria-label="randomizer">
-					<button class="mod1 btn stateon"><img src="img/modules/icon-mod1.png" alt="Pick up & Deliver (1)" title="Pick up & Deliver (1)" /></button>
-					<button class="mod2 btn stateon"><img src="img/modules/icon-mod2.png" alt="Race (2)" title="Race (2)" /></button>
-					<button class="mod3 btn stateon"><img src="img/modules/icon-mod3.png" alt="Privileges (3)" title="Privileges (3)" /></button>
-					<button class="mod4 btn stateon"><img src="img/modules/icon-mod4.png" alt="Military (4)" title="Military (4)" /></button>
-					<button class="mod5 btn stateon"><img src="img/modules/icon-mod5.png" alt="Exploring (5)" title="Exploring (5)" /></button>
-					<button class="mod6 btn stateon"><img src="img/modules/icon-mod6.png" alt="Roads (6)" title="Roads (6)" /></button>
-					<button class="mod7 btn stateon"><img src="img/modules/icon-mod7.png" alt="Majorities (7)" title="Majorities (7)" /></button>
-					<button class="mod8 btn stateon"><img src="img/modules/icon-mod8.png" alt="Production (8)" title="Production (8)" /></button>
-					<button class="mod9 btn stateon"><img src="img/modules/icon-mod9.png" alt="Shares (9)" title="Shares (9)" /></button>
+				<div class="panel panel-default">
+					<div class="panel-heading"><strong>Please select your preferred modules:</strong></div>
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-md-8">
+								<div class="btn-group modules" role="group" aria-label="randomizer">
+									<button class="mod1 btn stateon"><img src="img/modules/icon-mod1.png" alt="Pick up & Deliver (1)" title="Pick up & Deliver (1)" /></button>
+									<button class="mod2 btn stateon"><img src="img/modules/icon-mod2.png" alt="Race (2)" title="Race (2)" /></button>
+									<button class="mod3 btn stateon"><img src="img/modules/icon-mod3.png" alt="Privileges (3)" title="Privileges (3)" /></button>
+									<button class="mod4 btn stateon"><img src="img/modules/icon-mod4.png" alt="Military (4)" title="Military (4)" /></button>
+									<button class="mod5 btn stateon"><img src="img/modules/icon-mod5.png" alt="Exploring (5)" title="Exploring (5)" /></button>
+									<button class="mod6 btn stateon"><img src="img/modules/icon-mod6.png" alt="Roads (6)" title="Roads (6)" /></button>
+									<button class="mod7 btn stateon"><img src="img/modules/icon-mod7.png" alt="Majorities (7)" title="Majorities (7)" /></button>
+									<button class="mod8 btn stateon"><img src="img/modules/icon-mod8.png" alt="Production (8)" title="Production (8)" /></button>
+									<button class="mod9 btn stateon"><img src="img/modules/icon-mod9.png" alt="Shares (9)" title="Shares (9)" /></button>
+								</div>
+							</div>
+							<div class="col-md-4 text-center" style="padding-top:0.5em;">
+								<div class="btn-group modules btn-group-lg" role="group" aria-label="randomizer">
+									<button class="btn btn-default" type="button" id="selectnone" title="deselect all"><span class="glyphicon glyphicon-unchecked" style="cursor: pointer;"></span></button> 
+									<button class="btn btn-default" type="button" id="selectall" title="select all"><span class="glyphicon glyphicon-check" style="cursor: pointer;"></span></button>
+								</div>
+								<div class="btn-group modules btn-group-lg" role="group" aria-label="randomizer">
+									<button class="btn btn-default randomizer" type="button" title="randomize"><span class="glyphicon glyphicon-random" style="cursor: pointer;"></span></button> 
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="panel-footer">
+						<p class="moduleDescription">&nbsp;</p>
+					</div>
+				</div>				
+			</div>
+			<div class="col-md-4">
+				<div class="panel panel-default">
+					<div class="panel-heading"><strong>Other options:</strong></div>
+					<div class="panel-body">
+						<div class="form-horizontal">
+							<div class="form-group">
+								<div class="col-sm-offset-1 col-sm-11">
+									<div class="checkbox">
+										<label><input type="checkbox" name="print-privileges" id="print-privileges" value="-1" checked />Print privileges <small>(yes/no)</small></label>
+									</div>				
+								</div>				
+							</div>				
+						</div>				
+					</div>
 				</div>
-				<div class="btn-group modulesbtn-group-lg" role="group" aria-label="randomizer">
-					<button class="btn btn-default" type="button" id="selectnone" title="deselect all"><span class="glyphicon glyphicon-remove" style="cursor: pointer;"></span></button> 
-					<button class="btn btn-default" type="button" id="selectall" title="select all"><span class="glyphicon glyphicon-ok" style="cursor: pointer;"></span></button>
-					<button class="btn btn-default randomizer" type="button" title="randomize"><span class="glyphicon glyphicon-random" style="cursor: pointer;"></span></button> 
-				</div>
-				<p class="moduleDescription">&nbsp;</p>
 			</div>
 		</div>
 	</div>
 </nav>
 <div class="container">
-	<div id="target_head">Loading Head...</div>
-	<div id="target_setup">Loading Setup...</div>
-	<div id="target_privileges">Loading Privilege Cards...</div>
-	<div id="target_examples">Loading Examples...</div>
+	<div id="target-head">Loading Head...</div>
+	<div id="target-setup">Loading Setup...</div>
+	<div id="target-privileges">Loading Privilege Cards...</div>
+	<div id="target-examples">Loading Examples...</div>
 </div>
 <div class="container">
-	<div id="target_phase12">Loading Phases 1 and 2...</div>
-	<div id="target_phase3abcd">Loading Phase 3A-D...</div>
-	<div id="target_phase3efgh">Loading Phase 3E-H...</div>
-	<div id="target_scoring">Loading Scoring...</div>
+	<div id="target-phase12">Loading Phases 1 and 2...</div>
+	<div id="target-phase3abcd">Loading Phase 3A-D...</div>
+	<div id="target-phase3efgh">Loading Phase 3E-H...</div>
+	<div id="target-scoring">Loading Scoring...</div>
+</div>
+<div class="container print-priv">
+	<div id="target-privileges-print">Loading Privilege Cards for Printing...</div>
 </div>
 
 <script id="name-template" type="x-tmpl-mustache">
@@ -83,17 +116,17 @@
 	{{#8.III}}with Production Needs.{{/8.III}}
 	{{#9.III}}by External Financing.{{/9.III}}
 </script>
-<script id="template_head" type="x-tmpl-mustache">
+<script id="template-head" type="x-tmpl-mustache">
 	<div class="row name">
 		<div class="col-md-12 col-xs-12">
-			<div class="quickMenu">
-				<div class="randomizer"><span class="glyphicon glyphicon-random btn-sm" style="cursor: pointer;"></span></div>
-				<div id="printicon"><span class="glyphicon glyphicon-print btn-sm" style="cursor: pointer;"></span></div>
-				<div id="menuToggle"><span class="glyphicon glyphicon-menu-hamburger btn-sm" style="cursor: pointer;"></span></div>
+			<div class="quickmenu">
+				<div class="randomizer"><span class="glyphicon glyphicon-random btn-sm" style="cursor: pointer;" title="randomize"></span></div>
+				<div id="printicon"><span class="glyphicon glyphicon-print btn-sm" style="cursor: pointer;" title="print"></span></div>
+				<div id="menuToggle"><span class="glyphicon glyphicon-menu-hamburger btn-sm" style="cursor: pointer;" title="Menu"></span></div>
 			</div>
 
 			<h1>World <span id="worldno" style="cursor:pointer;"><span class="mod{{world.0}}">{{world.0}}</span><span class="mod{{world.1}}">{{world.1}}</span><span class="mod{{world.2}}">{{world.2}}</span></span>
-				<input type="number" id="worldno-entry" maxlength="3" style="display: none">
+				<input type="number" id="worldno-entry" maxlength="3" style="display:none;" />
 				: {{long_name}}
 			</h1>
 		</div>
@@ -138,7 +171,7 @@
 		</div>
 	</div>
 </script>
-<script id="template_setup" type="x-tmpl-mustache">
+<script id="template-setup" type="x-tmpl-mustache">
 	<div class="row section">
 		<div class="col-md-2 col-xs-2"><h1>Special game parts</h1></div>
 		<div class="col-md-10 col-xs-10">
@@ -299,7 +332,7 @@
 		</div>
 	</div>
 </script>
-<script id="template_privileges" type="x-tmpl-mustache">
+<script id="template-privileges" type="x-tmpl-mustache">
 	{{#3}}
 		<div class="row section cards">
 			<div class="col-md-2 col-xs-2 mod3"><h1>Privilege Cards</h1></div>
@@ -356,7 +389,7 @@
 		</div>
 	{{/3}}
 </script>
-<script id="template_examples" type="x-tmpl-mustache">
+<script id="template-examples" type="x-tmpl-mustache">
 	{{#capture}}
 		{{#4}}{{#5}}<p>Place 1 barrack and 1 militia on all free cities which are explored during the game.</p>{{/5}}{{/4}}
 		{{#9.I}}<p>Play the game in the following order of turns: SR, BR, BR, SR, BR, SR, BR, SR, BR, game end.</p>{{/9.I}}
@@ -700,7 +733,7 @@
 		{{/9.III}}
 	</div>
 </script>
-<script id="template_phase12" type="x-tmpl-mustache">
+<script id="template-phase12" type="x-tmpl-mustache">
 	{{#company}}
 		<div class="row section">
 			<div class="col-md-2 col-xs-2 mod9"><h1>Share Round</h1></div>
@@ -794,7 +827,7 @@
 		</div>
 	{{/3.III}}{{/3}}
 </script>
-<script id="template_phase3abcd" type="x-tmpl-mustache">
+<script id="template-phase3abcd" type="x-tmpl-mustache">
 	{{#capture}}
 		{{#2}}{{#residents}}
 			<p>At the start of his turn, the {{agent}} may change {{fowns}} capital by exchanging {{owns}} headquarters with 1 of {{fowns}} own settlements in any other city.</p>
@@ -832,7 +865,7 @@
 			<p><b>Example:</b> If the {{owner}} owns 4 plants, {{sagent}} may only buy up to 6 residents.</p>
 		{{/8.III}}
 		{{#residents}}
-			<p>The {{agent}} may buy residents for $10 each {{#company}}(paying from his company's holdings){{/company}} and place them on the board. (subject to placement rules)</p>
+			<p>The {{agent}} may buy residents for $10 each {{#company}}(paying from his company&rsquo;s holdings){{/company}} and place them on the board. (subject to placement rules)</p>
 		{{/residents}}
 	{{/capture}}
 	{{#hascapture}}
@@ -976,7 +1009,7 @@
 		</div>
 	{{/hascapture}}
 </script>
-<script id="template_phase3efgh" type="x-tmpl-mustache">
+<script id="template-phase3efgh" type="x-tmpl-mustache">
 	{{#capture}}
 		{{#1}}
 			{{^1.III}}<p>The {{agent}} may transport 1 good of any type or up to 2 of {{fowns}} exhausted residents per cargo hold. He may load and unload the transport trolley any number of times. If he unloads goods on a land tile or a city, which has no demand for these goods{{#8}}{{^8.III}} (or without one of {{fowns}} trading houses){{/8.III}}{{/8}}, the goods remain there until any {{owner}} loads them again onto {{own}} transport trolley.</p>{{/1.III}}
@@ -1153,7 +1186,7 @@
 		</div>
 	{{/hascapture}}
 </script>
-<script id="template_scoring" type="x-tmpl-mustache">
+<script id="template-scoring" type="x-tmpl-mustache">
 	{{#capture}}
 		{{#2.III}}
 			{{#1.I}}<p>Award 5 VP to the first {{owner}} delivering one of the good types a second time from the stack set aside for this purpose.</p>{{/1.I}}
@@ -1398,9 +1431,9 @@
 		</div>
 	{{/hascapture}}
 	<div class="row section footer">
-		<div class="col-md-12"><p>This is a fan project for the game 504. All contents are supplied without liability and are subject to change. 504 rule text is copyright 2f-spiele.</p>
-		</div>
+		<div class="col-md-12"><p>This is a fan project for the game 504. All contents are supplied without liability and are subject to change. 504 rule text is copyright 2f-spiele.</p></div>
 	</div>
+	
 </script>
 <script>
 	function explorer_map(maps) {
@@ -1467,6 +1500,15 @@
 		var classes = $(module).attr('class').split(' ');
 		var state = "";
 		$('.moduleDescription').html($(module).find('img').attr('title')+' ('+states_defs[classes[2]]+')');
+	}
+	
+	function togglePrintPrivileges() {
+		if($('#print-privileges').prop( "checked" )) {
+			$('.container.print-priv').removeClass('printoff');
+		} else {
+			$('.container.print-priv').addClass('printoff');
+		}
+		
 	}
 	
 	function checkThree(value) {
@@ -2062,9 +2104,15 @@
 
 		var pageSections = ['head','setup','privileges','examples','phase12','phase3abcd','phase3efgh','scoring'];
 		$.each(pageSections, function(index, value) {
-			$('#target_' + value).html(buildRules($('#template_' + value).html()));
+			$('#target-' + value).html(buildRules($('#template-' + value).html()));
 		});
-
+		
+		var tmp = $('#template-privileges').html();
+		tmp = tmp.replace(/ col-xs-12/g, ' col-xs-6');
+		
+		$('#target-privileges-print').html(buildRules(tmp));
+		
+		
 		$("#worldno").click(function() {
 			$("#worldno-entry, #worldno").toggle();
 
@@ -2098,6 +2146,7 @@
 		$('#selectall').on('click', function (e) { setModuleSelect('stateon'); });
 		$('#selectnone').on('click', function (e) { setModuleSelect('stateoff'); });
 		$('button.randomizer').on('click', function (e) { randomizeWorlds(); });
+		$('#print-privileges').on('click', function (e) { togglePrintPrivileges(); });
 		
 		$('.modules').find('button[class^=mod]').each( function () {
 			$(this).on('click', function (e) { toggleModuleSelect(this); });
@@ -2115,7 +2164,6 @@
 <script>
 	// Via http://stackoverflow.com/questions/12556593/determining-a-page-is-outdated-on-github-pages
 	// Check if a new cache is available on page load.
-
 
 	window.addEventListener('load', function(e) {
 		var appCache = window.applicationCache;

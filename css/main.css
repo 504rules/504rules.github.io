@@ -1,5 +1,6 @@
 * {
-	font-size: 12px;
+	font-size: 14px;
+	line-height:1.5em;
 }
 
 .row.top > div {
@@ -13,17 +14,17 @@ body { background-color:#ddd; }
 	display:flex;
 }
 
-.quickMenu {
+.quickmenu {
 	position:absolute;
 	right:0.6em;
 	top:1em;
 }
 
-.quickMenu div {
+.quickmenu div {
 	display:inline-block;
 }
 
-.quickMenu .btn-sm {
+.quickmenu .btn-sm {
 	font-size:1.5em;
 	padding:5px 5px;
 }
@@ -262,20 +263,20 @@ table th {
 .privileges>div { padding-bottom:20px; }
 .cards h3 { margin: 0 0 0.7em 0; padding-bottom: 0.3em; border-bottom:1px dashed rgba(56, 143, 127,0.3); font-size:1.5em; }
 
+#target-privileges-print { display:none; }
+
 #menu {
 	width:100%;
 	background-color:#666;
 	padding:1em;
-	color:#fff;
 	display:none;
+	font-size:14px!important;
 }
 
 #menu .modules button img {
 	width:100%;
 	max-width:32px;
 }
-
-
 
 #menu p { color:#000; border:none; margin:0; padding:0; }
 
@@ -304,16 +305,6 @@ table th {
 
 #menu .modules button.statelock {
 	opacity:1;
-}
-
-#menu input {
-	vertical-align:text-bottom;
-	margin-right:6px;
-}
-
-#menu label {
-	margin:0px;
-	padding:0 0 0 6px;
 }
 
 #menu div.countries {
@@ -345,12 +336,15 @@ table th {
 
 #worldno span { padding:4px 10px; }
 
+.printoff { display:none; }
+
 @media print {
 	* {
 		font-size: 10px;
+		line-height:1.2em;
 	}
 	
-	body { background-color:#fff; }
+	body { background-color:#fff; padding:0!important; }
 	
 	.container {
 		page-break-after: always;
@@ -407,6 +401,9 @@ table th {
 
 	#worldno span { padding:0; }
 	
-	.cards { display:none; }
+	#target-privileges { display:none; }
+	#target-privileges-print { display:block; }
+
+	.quickmenu { display:none; }
 
 }
