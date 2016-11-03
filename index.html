@@ -1640,7 +1640,7 @@
 				'parts': {'2': 48, '3': 30, '10': 5, '11': 5, '12': 10, '15g': 1, '33': 1},
 				'before_render': function(params, module) {
 					if(!params.residents) {
-						if(params.world[1] == '9') {
+						if(params.world[0] == '9') {
 							module['parts']['13s'] = 15;
 						} else {
 							module['parts']['13p'] = 20;
@@ -1656,7 +1656,7 @@
 				'parts': {'10': 5, '11': 5, '12': 10, '33': 1},
 				'before_render': function(params, module) {
 					if(!params.residents) {
-						if(params.world[1] == '9') {
+						if(params.world[0] == '9' || params.world[1] == '9') {
 							module['parts']['13s'] = 15;
 						} else {
 							module['parts']['13p'] = 20;
