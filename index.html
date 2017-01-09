@@ -877,12 +877,12 @@
 
 	{{#capture}}{{#residents}}
 		{{#hurry}}<p>While moving, the residents are <b>in a hurry</b>. Thus, if the {{agent}} moves them onto tiles with at least 1 of {{fowns}} exhausted residents, they remain active.</p>{{/hurry}}
-		{{#2}}
-			{{^2.III}}{{^1.I}}
-				<p>The first time the {{owner}} reaches 1 city and exchanges 1 resident for 1 settlement, {{sagent}} places that resident directly on top of the matching city card. IMPORTANT: The {{owners}} must reach the cities once during the game. They do not need to stay there until the end of the game. The players may voluntarily remove their settlements from these cities during the game, or may be forced to remove them because of war!</p>
-				{{#4}}<p>The {{owner}} reaches an opposing city the first time, if {{sagent}} moves 1 of {{fowns}} residents on this city. In that case he places 1 additional resident from {{owns}} storage on top of the matching city card (moving on the city is important, not the outcome of the following fight!).</p>{{/4}}
-			{{/1.I}}{{/2.III}}
-		{{/2}}
+		{{#2.I}}
+			<p>The first time the {{owner}} reaches {{^4}}1{{/4}}{{#4}}an unoccupied{{/4}} city and exchanges 1 resident for 1 settlement, {{sagent}} places that resident directly on top of the matching city card.{{#4}}When the {{owner}} reaches an opposing city the first time and places a resident on it, he places 1 additional resident from {{owns}} storage on top of the matching city card (moving on the city is important, not the outcome of the following fight!).{{/4}} IMPORTANT: The {{owners}} must reach the cities once during the game. They do not need to stay there until the end of the game. The players may voluntarily remove their settlements from these cities during the game{{^4}}.{{/4}}{{#4}}, or may be forced to remove them because of war!{{/4}}</p>
+		{{/2.I}}
+		{{#2.II}}{{^1}}
+			<p>The first time the {{owner}} reaches {{^4}}1{{/4}}{{#4}}an unoccupied{{/4}} city and exchanges 1 resident for 1 settlement, {{sagent}} places that resident directly on top of the matching city card.{{#4}}When the {{owner}} reaches an opposing city the first time and places a resident on it, he places 1 additional resident from {{owns}} storage on top of the matching city card (moving on the city is important, not the outcome of the following fight!).{{/4}} IMPORTANT: The {{owners}} must reach the cities once during the game. They do not need to stay there until the end of the game. The players may voluntarily remove their settlements from these cities during the game{{^4}}.{{/4}}{{#4}}, or may be forced to remove them because of war!{{/4}}</p>
+		{{/1}}{{/2.II}}
 		{{#4}}
 			<p>All residents and settlements (including the headquarters in the capital) count as armies. The {{agent}} attacks opponents with {{fowns}} residents, but defends {{fowns}} tiles with all {{owns}} armies he has there.</p>
 			<p>
@@ -1024,10 +1024,10 @@
 				{{#8}}{{^8.III}}<p>The cities are neutral and no {{owner}} controls them. Each {{agent}} may move onto a city for 1 MP.</p>{{/8.III}}{{/8}}
 				<p> If the transport trolley moves onto a tile without 1 of {{fowns}} settlements, the {{agent}} must unload at least 1 resident which turns into 1 settlement. If the transport trolley moves onto an opposing tile with loaded residents, the {{agent}} must unload them for the fight. The {{agent}} cannot load exhausted residents on an opposing tile. {{#2}}After the transport trolley finishes its movement, a fight follows immediately.{{/2}}</p>
 			{{/4}}
-			{{#2.II}}{{#residents}}<p>The {{agent}} reaches a city only with {{fowns}} transport trolley. In that case he places 1 resident from {{fowns}} storage on top of the matching city card.</p>{{/residents}}{{/2.II}}
+			{{#2.II}}{{#residents}}<p>When the {{agent}} reaches a city with {{fowns}} transport trolley, he places 1 resident from {{fowns}} storage on top of the matching city card.</p>{{/residents}}{{/2.II}}
 			{{^residents}}
 				<p>The {{owner}} may buy additional MP for {{owns}} transport trolley, see the table <b>Prices for Additional Movement Points (MP)</b>.</p>
-				{{#2}}{{^2.III}}<p>The {{agent}} reaches cities with {{fowns}} transport trolley. In that case he moves {{fowns}} resident from that city to the matching city card.{{/2.III}}{{/2}}
+				{{#2}}{{^2.III}}<p>When the {{agent}} reaches a city with {{fowns}} transport trolley, he moves {{fowns}} resident from that city to the matching city card.{{/2.III}}{{/2}}
 				{{#5}}
 					<p>The transport trolley may explore new tiles. It must move onto the newly explored tile for 1 movement point (MP), it only needs 2 MP for moving onto each mountain. If the {{agent}} explores 1 water tile, he needs 1 MP but the transport trolley must remain on the starting tile. If the {{agent}} explores 1 mountain tile with his last MP, the transport trolley must remain on the starting tile, too.</p>
 					<p><b>Exploring:</b> After choosing the destination space, the {{agent}} places the explorer tiles next to the following stacks, until he placed all 6 tiles.</p>
